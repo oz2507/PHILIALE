@@ -1,12 +1,12 @@
-<?php 
+<?php
 
 ?>
 
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-	<title></title>
 	<meta charset="utf-8">
+	<title>PHILIALE</title>
 </head>
 <body>
 
