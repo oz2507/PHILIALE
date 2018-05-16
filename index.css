@@ -12,6 +12,11 @@ li {
   list-style: none;
 }
 
+p {
+  font-style:italic;
+}
+
+
 
 
 /* header */
@@ -61,7 +66,11 @@ li {
 }
 
 h1{
-  font-size: 60px;
+  font-family: 'Alice in Wonderland';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Alice in Wonderland'), url('Alice_in_Wonderland_3.woff') format('woff');
+  font-size: 120px;
   text-align: center;
   margin: 0 0 90px;
 }
@@ -83,8 +92,9 @@ h2 {
   text-align: center;  
 }
 
-h4{
+h4 {
   font-size: 20px;
+  font-style:italic;
   padding-bottom: 30px;
 }
 
@@ -95,7 +105,7 @@ h4{
 .container-serv{
   width: 900px;
   margin: 0 auto;
-  height: 1100px;
+  height: 1300px;
   padding-top: 10px;
   position: relative;
   overflow: hidden;
@@ -106,7 +116,7 @@ img{
   width: 400px;
   margin: 0 auto;
   height: 500px;
-  padding-top: 30px;
+  padding-top: 0px;
   position: relative;
   overflow: hidden;
 
@@ -115,6 +125,7 @@ img{
 .container-serv{
   padding-top: 50px;
 }
+
 
 .desc{
   width: 360px;
@@ -144,8 +155,7 @@ img{
   overflow: hidden;
   text-align: center;
 
-
-
 }
+
 
 
