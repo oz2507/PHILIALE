@@ -1,0 +1,151 @@
+/*css bace*/
+
+html, body,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6, p,
+form, input, div {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+
+
+/* header */
+
+.container-head{
+  width: 900px;
+  margin: 0 auto;
+  height: 100px;
+  padding-top: 10px;
+  padding-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+
+  
+}
+
+.header{
+  background-color:;
+  color:;
+  height:;  
+}
+
+.header-logo{
+  float: left;
+  font-size: 36px;
+  padding: 20px 40px;
+ }
+
+
+.header-list li {
+  float: right;
+  padding: 33px 20px;
+}
+
+
+/* top */
+
+.container-top{
+  width: 900px;
+  margin: 0 auto;
+  height: 200px;
+  padding-top: 10px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+h1{
+  font-size: 60px;
+  text-align: center;
+  margin: 0 0 90px;
+}
+
+h2 {
+  display: block;
+}
+
+
+/* intro */
+
+.container-intro{
+  width: 900px;
+  margin: 0 auto;
+  height: 300px;
+  padding-top: 10px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;  
+}
+
+h4{
+  font-size: 20px;
+  padding-bottom: 30px;
+}
+
+
+
+/* servise */
+
+.container-serv{
+  width: 900px;
+  margin: 0 auto;
+  height: 1100px;
+  padding-top: 10px;
+  position: relative;
+  overflow: hidden;
+
+}
+
+img{
+  width: 400px;
+  margin: 0 auto;
+  height: 500px;
+  padding-top: 30px;
+  position: relative;
+  overflow: hidden;
+
+}
+
+.container-serv{
+  padding-top: 50px;
+}
+
+.desc{
+  width: 360px;
+  padding-top: 100px;
+}
+
+.pull-right{
+    float: right;
+    padding-right:30px;
+}
+
+.pull-left{
+  float: left;
+  padding-right: 90px;
+  padding-left: 50px;
+}
+
+
+/* message */
+.container-msg{
+  width: 900px;
+  margin: 0 auto;
+  height: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+
+
+
+}
+
+
