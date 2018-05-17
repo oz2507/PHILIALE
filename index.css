@@ -29,10 +29,9 @@ p {
   padding-bottom: 50px;
   position: relative;
   overflow: hidden;
-  text-align: center;
-
-  
+  text-align: center; 
 }
+
 
 .header{
   background-color:;
@@ -51,9 +50,6 @@ p {
   float: right;
   padding: 33px 20px;
 }
-
-
-
 
 
 /* top */
@@ -79,9 +75,6 @@ h1{
 }
 
 
-
-
-
 /* intro */
 
 .container-intro{
@@ -99,8 +92,6 @@ h4 {
   font-style:italic;
   padding-bottom: 30px;
 }
-
-
 
 
 
@@ -130,26 +121,24 @@ img{
   padding-top: 50px;
 }
 
+
 .desc{
   width: 360px;
   padding-top: 100px;
- }
-  
+}
+
 
 .pull-right{
     float: right;
     padding-right:30px;
-
 }
+
 
 .pull-left{
   float: left;
   padding-right: 90px;
   padding-left: 50px;
 }
-
-
-
 
 
 /* message */
