@@ -1,34 +1,34 @@
 <?php
-	session_start();
+  session_start();
    // var_dump($_POST);
 
-	if (!isset($_SESSION['register'])) {
-		header("Location: signup.php");
-		exit();
-	}
+  if (!isset($_SESSION['register'])) {
+    header("Location: signup.php");
+    exit();
+  }
 
-   	// ①
+    // ①
     $name = $_SESSION['register']['name'];
     $email = $_SESSION['register']['email'];
     $user_password = $_SESSION['register']['password'];
     $img_name = $_SESSION['register']['img_name'];
  
-	// echo "<pre>";
- 	// var_dump($_SESSION);
-	// echo "</pre>";
+  // echo "<pre>";
+  // var_dump($_SESSION);
+  // echo "</pre>";
 
     if (!empty($_POST)) {
-    	require('../dbconnect.php');
-    		$sql = 'INSERT INTO `users` SET `name`=?, `email`=?, `password`=?, `img_name`=?, `created`=NOW()';
-        	$data = array($name, $email, password_hash($user_password, PASSWORD_DEFAULT), $img_name);
-    	    $stmt = $dbh->prepare($sql);
-	        $stmt->execute($data);
+      require('../dbconnect.php');
+        $sql = 'INSERT INTO `users` SET `name`=?, `email`=?, `password`=?, `img_name`=?, `created`=NOW()';
+          $data = array($name, $email, password_hash($user_password, PASSWORD_DEFAULT), $img_name);
+          $stmt = $dbh->prepare($sql);
+          $stmt->execute($data);
 
-	        $dbh = null;
+          $dbh = null;
 
-			unset($_SESSION['register']);
-    		header('Location: thanks.php');
-    		exit();
+      unset($_SESSION['register']);
+        header('Location: thanks.php');
+        exit();
 
     }
 
@@ -46,33 +46,31 @@
 <body style="margin-top: 60px">
   <div class="container">
     <div class="row">
-      <div class="col-xs-8 col-xs-offset-2 thumbnail">
-        <h2 class="text-center content_header">アカウント情報確認</h2>
+      <div class="col-xs-8 col-xs-offset-2">
+        <h2 class="text-center">登録情報の確認</h2>
+        <br><br><br>
         <div class="row">
-          <div class="col-xs-4">
-            <img src="../user_profile_img/<?php echo htmlspecialchars($img_name); ?>" class="img-responsive img-thumbnail">
-          </div>
-          <div class="col-xs-8">
-            <div>
-              <span>ユーザー名</span>
+          <div class="col-xs-12">
+            <div class="thumbnail">
+              <span>ユーザーネーム</span>
               <p class="lead"><?php echo htmlspecialchars($name); ?></p>
             </div>
-            <div>
+            <div class="thumbnail">
               <span>メールアドレス</span>
               <p class="lead"><?php echo htmlspecialchars($email); ?></p>
             </div>
-            <div>
+            <div class="thumbnail">
               <span>パスワード</span>
               <!-- ② -->
               <p class="lead">●●●●●●●●</p>
             </div>
             <!-- ③ -->
             <form method="POST" action="">
-              <!-- ④ -->
-              <a href="signup.php" class="btn btn-default">&laquo;&nbsp;戻る</a> | 
               <!-- ⑤ -->
               <input type="hidden" name="action" value="submit">
-              <input type="submit" class="btn btn-primary" value="ユーザー登録">
+              <input type="submit" class="btn btn-secondary btn-lg btn-block" value="  ユーザー登録  ">
+              <!-- ④ -->
+              <a href="signup.php" class="btn btn-default btn-lg btn-block">&laquo;&nbsp;戻る</a>
             </form>
           </div>
         </div>
