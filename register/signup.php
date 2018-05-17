@@ -125,13 +125,20 @@ $errors = array();
 <body style="margin-top: 60px">
   <div class="container">
     <div class="row">
-      <!-- ここにコンテンツ -->
-      <div class="col-xs-8 col-xs-offset-2 thumbnail">
-        <h2 class="text-center content_header">アカウント作成</h2>
+      <!-- ここに左サイドコンテンツ -->
+      <div class="col-xs-12 col-md-6" style="background-color:#eeeeee; height:500px;">
+        <h3 class="content_header">アカウント新規登録</h3>
+        ここでユーザーへのメッセージを伝えます。<br>
+        世界観も守ります。
+      </div>
+
+      <!-- ここに右サイドコンテンツ -->
+      <div class="col-xs-12 col-md-6">
+        <!-- <h2 class="text-center content_header">アカウント作成</h2> -->
         <form method="POST" action="signup.php" enctype="multipart/form-data">
           <div class="form-group">
-            <label for="name">ユーザー名</label>
-            <input type="text" name="input_name" class="form-control" id="name" placeholder="山田 太郎">
+            <!-- <label for="name">ユーザー名</label> -->
+            <input type="text" name="input_name" class="form-control" id="name" placeholder="ユーザーネーム" style="height:3em;">
               <?php if(isset($errors['name']) && $errors['name'] == 'blank') { ?>
               <p class="text-danger">ユーザー名を入力してください</p>
               <?php } ?>
@@ -141,8 +148,8 @@ $errors = array();
           </div>
 
           <div class="form-group">
-            <label for="email">メールアドレス</label>
-            <input type="email" name="input_email" class="form-control" id="email" placeholder="example@gmail.com">
+            <!-- <label for="email">メールアドレス</label> -->
+            <input type="email" name="input_email" class="form-control" id="email" placeholder="example@gmail.com" style="height:3em;">
             <?php if(isset($errors['email']) && $errors['email'] == 'blank') { ?>
               <p class="text-danger">メールアドレスを入力してください</p>
             <?php } ?>
@@ -152,8 +159,8 @@ $errors = array();
           </div>
 
           <div class="form-group">
-            <label for="password">パスワード</label>
-            <input type="password" name="input_password" class="form-control" id="password" placeholder="4 ~ 16文字のパスワード">
+            <!-- <label for="password">パスワード</label> -->
+            <input type="password" name="input_password" class="form-control" id="password" placeholder="パスワード" style="height:3em;">
             <?php if(isset($errors['password']) && $errors['password'] == 'blank') { ?>
               <p class="text-danger">パスワードを入力してください</p>
             <?php } ?>
@@ -163,17 +170,17 @@ $errors = array();
           </div>
 
           <div class="form-group">
-            <label for="img_name">プロフィール画像</label>
-            <input type="file" name="input_img_name" id="img_name" accept="image/*">
-            <?php if(isset($errors['img_name']) && $errors['img_name'] == 'type') { ?>
-              <p class="text-danger">拡張子が「jpg」「png」「gif」の画像を選択してください</p>
+            <!-- <label for="password">確認用パスワード</label> -->
+            <input type="password" name="input_password" class="form-control" id="password" placeholder="確認用パスワード" style="height:3em;">
+            <?php if(isset($errors['password']) && $errors['password'] == 'blank') { ?>
+              <p class="text-danger">確認用パスワードを入力してください</p>
             <?php } ?>
-            <?php if(isset($errors['img_name']) && $errors['img_name'] == 'blank') { ?>
-              <p class="text-danger">画像を選択してください</p>
+            <?php if(isset($errors['password']) && $errors['password'] == 'length') { ?>
+              <p class="text-danger">パスワードは4〜16文字で入力してください</p>
             <?php } ?>
           </div>
-
-          <input type="submit" class="btn btn-default" value="確認">
+          <br><br><br>
+          <input type="submit" class="btn btn-secondary btn-lg btn-block" value="登録情報の確認">
           <a href="../signin.php" style="float: right; padding-top: 6px;" class="text-success">サインイン</a>
         </form>
       </div>
