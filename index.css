@@ -29,10 +29,9 @@ p {
   padding-bottom: 50px;
   position: relative;
   overflow: hidden;
-  text-align: center;
-
-  
+  text-align: center; 
 }
+
 
 .header{
   background-color:;
@@ -73,10 +72,6 @@ h1{
   font-size: 120px;
   text-align: center;
   margin: 0 0 90px;
-}
-
-h2 {
-  display: block;
 }
 
 
@@ -132,10 +127,12 @@ img{
   padding-top: 100px;
 }
 
+
 .pull-right{
     float: right;
     padding-right:30px;
 }
+
 
 .pull-left{
   float: left;
