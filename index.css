@@ -8,57 +8,61 @@ form, input, div {
   padding: 0;
 }
 
+
 li {
   list-style: none;
 }
 
-p {
-  font-style:italic;
+
+p{
+  font-style: italic;
+}
+
+
+/* fixed  nabvar */
+/* menu */
+#menu {
+  border-radius:10px;
+  bottom: 10px;
+  color: #000;
+  height: 90px;
+  line-height: 50px;
+  outline: 0;
+  position: fixed;
+  right: 10px;
+  width: 100px;
+  z-index: 3;
+  opacity: 0.5;
+}
+
+#menu {
+  padding:5px 10px;
+  font-size: 14px;
+  text-align: center;
+  background-color: #000;
+}
+
+#manu li {
+    transition: color .2s,background-color .2s,transform .2s;
+}
+
+#menu a{
+  color: #fff;
+}
+
+#menu a:hover{
+  color: #778899;
 }
 
 
 
-
-/* header */
-
-.container-head{
-  width: 900px;
-  margin: 0 auto;
-  height: 100px;
-  padding-top: 10px;
-  padding-bottom: 50px;
-  position: relative;
-  overflow: hidden;
-  text-align: center; 
-}
-
-
-.header{
-  background-color:;
-  color:;
-  height:;  
-}
-
-.header-logo{
-  float: left;
-  font-size: 36px;
-  padding: 20px 40px;
- }
-
-
-.header-list li {
-  float: right;
-  padding: 33px 20px;
-}
-
-
-/* top */
+/* title */
 
 .container-top{
   width: 900px;
   margin: 0 auto;
-  height: 200px;
-  padding-top: 10px;
+  height: 300px;
+  padding-top: 30px;
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -69,9 +73,9 @@ h1{
   font-style: normal;
   font-weight: normal;
   src: local('Alice in Wonderland'), url('Alice_in_Wonderland_3.woff') format('woff');
-  font-size: 120px;
+  font-size: 200px;
   text-align: center;
-  margin: 0 0 90px;
+  margin: 70px 70px;
 }
 
 
@@ -80,68 +84,114 @@ h1{
 .container-intro{
   width: 900px;
   margin: 0 auto;
-  height: 300px;
-  padding-top: 10px;
-  position: relative;
-  overflow: hidden;
+  height: 400px;
+  padding-top: 95px;
+  padding-bottom: 30px;
   text-align: center;  
 }
 
 h4 {
   font-size: 20px;
-  font-style:italic;
-  padding-bottom: 30px;
+  padding-bottom: 40px;
+}
+
+.intro{
+  padding-bottom: 50px;
+}
+
+/* explain1 intro */
+.btn {
+  line-height: 50px;
+  position: relative;
+  z-index: 2;
+  background-color: #000;
+  border: 2px solid #000;
+  opacity: 0.5;
+  color: #fff;
+}
+
+.btn:hover {
+  background-color: #fff;
+  border-color: #778899;
+  color: #778899;
+}
+
+.btn::before,
+.btn::after {
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #000;
+}
+
+.button::before {
+  top: 0;
+}
+.button::after {
+  bottom: 0;
+}
+.button:hover::before,
+.button:hover::after {
+  height: 0;
+  background-color: #778899;
+}
+
+.btn,
+.btn::before,
+.btn::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 
 
-/* servise */
+ /*servise */
 
-.container-serv{
+.container{
   width: 900px;
   margin: 0 auto;
-  height: 1300px;
-  padding-top: 10px;
-  position: relative;
-  overflow: hidden;
-
+  /*height: 1800px;*/
 }
+
+.row{
+  width: 900px;
+  /*height: 1000px;*/
+  /*margin-bottom: 90px;*/
+}
+
 
 img{
   width: 400px;
   margin: 0 auto;
   height: 500px;
-  padding-top: 0px;
-  position: relative;
-  overflow: hidden;
-
 }
-
-.container-serv{
-  padding-top: 50px;
-}
-
 
 .desc{
-  width: 360px;
+  width: 60px;
   padding-top: 100px;
 }
 
+.desc p{
+  text-align: center;
+}
 
 .pull-right{
-    float: right;
-    padding-right:30px;
+  float: right;
+  padding-right:30px;
 }
 
 
 .pull-left{
   float: left;
   padding-right: 90px;
-  padding-left: 50px;
+  padding-left: 100px;
 }
 
 
-/* message */
+ /* message */
 .container-msg{
   width: 900px;
   margin: 0 auto;
