@@ -8,29 +8,44 @@ form, input, div {
   padding: 0;
 }
 
+
 li {
   list-style: none;
 }
+/*
+@font-face{
+  font-family: 'MyFont';
+  scr:local('file:///Users/watanabemizuki/Desktop/github/T-zergが創るPHILIALEのレポジトリ/css/ki_kokugo/font_1_kokugl_1.15_rls.ttf');
+}*/
 
-p {
-  font-style:italic;
+p{
+  font-style: italic;
+
 }
-
 
 
 
 /* header */
 
+/*.container-head{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030;
+  background-color: #dcdcdc;
+}
+
+
 .container-head{
   width: 900px;
   margin: 0 auto;
-  height: 100px;
+  height: 50px;
   padding-top: 10px;
   padding-bottom: 50px;
-  position: relative;
-  overflow: hidden;
   text-align: center; 
 }
+
 
 
 .header{
@@ -45,20 +60,24 @@ p {
   padding: 20px 40px;
  }
 
-
-.header-list li {
+.header ul li {
+  display: inline-block;
+  width: 15%;
   float: right;
   padding: 33px 20px;
-}
+
+}*/
 
 
-/* top */
+
+
+ /*top */
 
 .container-top{
   width: 900px;
   margin: 0 auto;
-  height: 200px;
-  padding-top: 10px;
+  height: 300px;
+  padding-top: 30px;
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -69,42 +88,62 @@ h1{
   font-style: normal;
   font-weight: normal;
   src: local('Alice in Wonderland'), url('Alice_in_Wonderland_3.woff') format('woff');
-  font-size: 120px;
+  font-size: 200px;
   text-align: center;
-  margin: 0 0 90px;
+  margin: 70px 70px;
 }
 
 
-/* intro */
+ /*intro */
 
 .container-intro{
   width: 900px;
   margin: 0 auto;
-  height: 300px;
-  padding-top: 10px;
-  position: relative;
-  overflow: hidden;
+  height: 400px;
+  padding-top: 95px;
+  padding-bottom: 30px;
   text-align: center;  
 }
 
 h4 {
   font-size: 20px;
-  font-style:italic;
-  padding-bottom: 30px;
+  padding-bottom: 40px;
 }
 
+.intro{
+  padding-bottom: 50px;
+}
 
-
-/* servise */
+ /*servise */
 
 .container-serv{
   width: 900px;
   margin: 0 auto;
-  height: 1300px;
+  height: 1700px;
   padding-top: 10px;
-  position: relative;
-  overflow: hidden;
+}
 
+.servise1{
+  width: 900px;
+  margin: 0 auto;
+  height: 900px;
+  padding-top: 10px;
+}
+
+
+.servise2{
+  width: 900px;
+  margin: 0 auto;
+  height: 900px;
+  padding-top: 10px;
+}
+
+
+.servise3{
+  width: 900px;
+  margin: 0 auto;
+  height: 900px;
+  padding-top: 10px;
 }
 
 img{
@@ -117,16 +156,14 @@ img{
 
 }
 
-.container-serv{
-  padding-top: 50px;
-}
-
-
 .desc{
   width: 360px;
   padding-top: 100px;
 }
 
+.desc p{
+  text-align: center;
+}
 
 .pull-right{
     float: right;
@@ -141,7 +178,7 @@ img{
 }
 
 
-/* message */
+ /* message */
 .container-msg{
   width: 900px;
   margin: 0 auto;
