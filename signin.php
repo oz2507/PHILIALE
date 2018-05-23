@@ -21,42 +21,41 @@
 
         if ($password == '') {
         $errors['password'] = 'blank';
-        }
-
-            elseif ($count < 4 || $count > 16) {
+        
+        }elseif ($count < 4 || $count > 16) {
                     $errors['password'] = 'length';
-            }
+        }
 
         if ($email != '' && $password != '') {
 
           //データベースと照合
           //データベースから取り出し
-            $sql = 'SELECT * FROM `users` WHERE `email`=?';
-            $data = array($email);
-            $stmt = $dbh->prepare($sql);
-            $stmt->execute($data);
+          $sql = 'SELECT * FROM `users` WHERE `email`=?';
+          $data = array($email);
+          $stmt = $dbh->prepare($sql);
+          $stmt->execute($data);
             //
-            $record = $stmt->fetch(PDO::FETCH_ASSOC);
+          $record = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            // メールアドレスでの本人確認
-            if ($record == false) {
+          // メールアドレスでの本人確認
+          if ($record == false) {
                 //一致するレコードがなかったとき
                 $errors['signin'] = 'failed';
-            }else{
+          }else{
 
-                if (password_verify($password,$record['password'])){
+              if (password_verify($password,$record['password'])){
                     //※追加部分
                     //SESSION変数にIDを保存
                     $_SESSION['id'] = $record['id'];
 
   
-                    //timeline.phpに移動
-                    header("Location: timeline.php");
+                    //individual.phpに移動
+                    header("Location: individual.php");
                     exit();
 
                     //一致したら認証成功
                     echo "<h1>認証成功</h1>";
-                }else{
+              }else{
                     //認証失敗
                     $errors['signin'] = 'failed';
                     echo "<h1>認証失敗</h1>";
@@ -76,7 +75,7 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>Learn SNS</title>
+  <title>PHILIALE</title>
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="assets/font-awesome/css/font-awesome.css">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">

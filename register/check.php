@@ -11,24 +11,26 @@
     $name = $_SESSION['register']['name'];
     $email = $_SESSION['register']['email'];
     $user_password = $_SESSION['register']['password'];
-    $img_name = $_SESSION['register']['img_name'];
+    // $img_name = $_SESSION['register']['img_name'];
  
   // echo "<pre>";
   // var_dump($_SESSION);
   // echo "</pre>";
 
     if (!empty($_POST)) {
+
       require('../dbconnect.php');
-        $sql = 'INSERT INTO `users` SET `name`=?, `email`=?, `password`=?, `img_name`=?, `created`=NOW()';
-          $data = array($name, $email, password_hash($user_password, PASSWORD_DEFAULT), $img_name);
+
+          $sql = 'INSERT INTO `users` SET `name`=?, `email`=?, `password`=? ';
+          $data = array($name, $email, password_hash($user_password, PASSWORD_DEFAULT),);
           $stmt = $dbh->prepare($sql);
           $stmt->execute($data);
 
           $dbh = null;
 
       unset($_SESSION['register']);
-        header('Location: thanks.php');
-        exit();
+          header('Location: thanks.php');
+          exit();
 
     }
 
@@ -38,7 +40,7 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>Learn SNS</title>
+  <title>PHILIALE</title>
   <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../assets/font-awesome/css/font-awesome.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
