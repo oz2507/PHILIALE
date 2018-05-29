@@ -1,0 +1,64 @@
+/*library.php↓*/
+/*navvar*/
+.navbar-default{
+	background:linear-gradient(#f5f5f5,#dddddd);
+}
+
+.navbar-brand {
+  background: url("../philia_san_logo.png") no-repeat left center;
+  background-size: contain;
+  height: 50px;
+  width: 150px;
+}
+
+/*検索バー*/
+.search{
+	align-content:center;
+	height:50px;
+	width:90%;
+	border-radius:3px;
+}
+
+/*body内*/
+.book_frame {
+	text-align:center;
+}
+
+.book_img{
+	padding-top:30px;
+}
+
+.fuwat {
+ -webkit-animation-fill-mode:both;
+ -ms-animation-fill-mode:both;
+ animation-fill-mode:both;
+ -webkit-animation-duration:1.5s;
+ -ms-animation-duration:1.5s;
+ animation-duration:1.5s;
+ -webkit-animation-name: fuwatAnime;
+ -ms-animation-name: fuwatAnime;
+ animation-name: fuwatAnime;
+ visibility: visible !important;
+}
+@-webkit-keyframes fuwatAnime {
+ 0% { opacity: 0; -webkit-transform: translateY(-20px); }
+ 100% { opacity: 1; -webkit-transform: translateY(0); }
+}
+@keyframes fuwatAnime {
+ 0% { opacity: 0; -webkit-transform: translateY(-20px); -ms-transform: translateY(-20px); transform: translateY(-20px); }
+ 100% { opacity: 1; -webkit-transform: translateY(0); -ms-transform: translateY(0); transform: translateY(0); }
+}
+
+
+/*フッター↓*/
+#footer{
+	margin-top:100%;
+	width:100%;
+	height:50px;
+	background:linear-gradient(#f5f5f5,#dddddd);
+	text-align: center;
+}
+
+
+
+
