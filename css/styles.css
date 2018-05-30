@@ -1,0 +1,200 @@
+@charset "utf-8";
+
+/* common */
+
+body{
+  margin: 0;
+  font-size: 14px
+  font-family:Verdana,sans-serif;
+  /*color: #333;*/
+}
+
+a{
+  text-decoration:none;
+}
+
+p{
+  line-height: 2;
+}
+
+.btn{
+  display: inline-block;
+  width: 290px;
+  line-height: 45px;
+  /*background: #fff;*/
+  text-align: center;
+  /*color: #f0f;*/
+  border-radius: 5px;
+  /*opacity: 0.6;*/
+}
+
+.btn:hover{
+  opacity: 13;
+}
+
+img.shadow{
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+
+}
+
+section{
+  padding: 90px 0;
+}
+
+section:nth-child(odd){
+  background: #f8f8f8;
+}
+
+section .container{
+  width: 820px;
+  margin: 0 auto;
+}
+
+section h2{
+  font-size: 26px;
+  text-align: center;
+  margin: 0 0 90px;
+  font-weight: normal;
+}
+
+section:not(.call-to-action)
+h2:after{
+  /* content: ' - title - '; */
+  display: block;
+  font-size: 18px;
+  color: #aaa;
+  padding-top: 10px;
+}
+
+/* header */
+
+header{
+  background: url('../head-background.jpg');
+  background: cover;
+}
+
+header .container{
+  width: 820px;
+  margin: 0 auto;
+  height: 320px;
+  padding-top: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+header h1, header p{
+  color: #000080;
+}
+
+header p{
+  padding-top: 50px;
+}
+
+header h1{
+  font-size: 34px;
+  margin-bottom: 50px;
+}
+
+/*header img{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+*/
+
+/* features */
+.features h2:after{
+  content: ' - Features- ';
+}
+
+.desc{
+  width: 360px;
+}
+
+.pull-right{
+    float: right;
+    padding-left: 40px;
+}
+
+.pull-left{
+  float: left;
+  padding-right: 40px;
+}
+
+.row{
+  overflow: hidden;
+  margin-bottom: 90px;
+}
+
+.row:last-child{
+  margin-bottom: 0;
+}
+
+.features h3{
+  font-size: 24px;
+}
+
+/* voises */
+.voices h2:after{
+  content: ' - User Voices- ';
+}
+
+.user img{
+  border-radius: 50px;
+  border: 10px solid #C0C0C0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: -60px;
+}
+
+.user{
+  background: #fff;
+  width: 250px;
+  box-sizing: border-box;
+  padding: 65px 40px 24px;
+  position: relative;
+}
+
+.user h3{
+  text-align: center;
+}
+
+.voices .container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.voices h2{
+  margin-bottom: 150px;
+}
+
+/* call-to-action */
+
+.call-to-action{
+    background:url('../head-background.jpg')
+    ;
+    background-size: cover;
+    text-align: center;
+}
+
+.call-to-action h2{
+  color: #fff;
+  margin-bottom: 50px;
+}
+
+/* footer */
+
+footer{
+  padding: 90px 0;
+  text-align: center;
+}
+
+footer a[href="http://dotinstall.com"]{
+  color: blue;
+}
+
+footer a:hover{
+  color: pink;
+}
