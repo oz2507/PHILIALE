@@ -17,8 +17,8 @@ p{
 }
 
 body{
-  background-image: url("cat_collection/フィリアさん2.png");
-  background-image: url("cat_collection/フィリアさん1.png");
+  background-image: url("assets/img/cat_collection/フィリアさん2.png");
+  background-image: url("assets/img/cat_collection/フィリアさん1.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -82,7 +82,7 @@ body{
 /* title */
 
 body{
-  background-image: url("cat_collection/フィリアさん2.png");
+  background-image: url("assets/img/cat_collection/フィリアさん2.png");
 }  
 
 .container-top{
@@ -246,7 +246,7 @@ img{
   }
 
 body{
-  background-image: url("cat_collection/フィリアさん2.png");
+  background-image: url("assets/img/cat_collection/フィリアさん2.png");
 }  
 
 
@@ -421,7 +421,7 @@ img{
   }
 
 body{
-  background-image: url("cat_collection/フィリアさん1.png");
+  background-image: url("assets/img/cat_collection/フィリアさん1.png");
 }  
 
 
@@ -593,7 +593,7 @@ img{
   }
 
 body{
-  background-image: url("cat_collection/フィリアさん1.png");
+  background-image: url("assets/img/cat_collection/フィリアさん1.png");
 }  
 
 
