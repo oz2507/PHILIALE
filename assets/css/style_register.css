@@ -1,0 +1,66 @@
+/*register内サインアップ～サンクス,お問合せ*/
+body{
+	margin-top: 70px;
+}
+
+.left-column{
+	/*background:linear-gradient(#dddddd,#eeeeee);*/
+	background-color: #eeeeee;
+	height: 500px;
+	margin-bottom: 50px;
+	padding:20px;
+	/*background-image: :*/
+	/*background: url(../img/backgroundimg.jpg) no-repeat;*/
+}
+
+.right-column{
+	margin-top: 5em;
+	height: 500px;
+	margin-bottom: 50px;
+}
+
+.center-column{
+	text-align: center;
+	margin:30px;
+}
+
+.form-group{
+	text-align: center;
+}
+
+.form-group input{
+	height:4em;
+}
+
+#message{
+	margin-top:2em;
+	height:15em;
+}
+
+.btn-original{
+	/*border-radius:3px;*/
+	margin-top: 78px;
+	width: 80%;
+	height:3em;
+	box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
+}
+
+.left-column h3{
+	margin-top: 0;
+	margin-bottom: 3em;
+}
+
+
+.left-column p{
+	text-align: center;
+	letter-spacing: 0.1em;
+	line-height: 2.3em;
+}
+
+.logo {
+  background-size: contain;
+  height: 110px;
+  width: 110px;
+  margin: 5% 40%;
+  /*margin-left:43%;*/
+}

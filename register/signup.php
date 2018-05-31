@@ -117,23 +117,28 @@ $errors = array();
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>PHILIALE</title>
+  <title>Learn SNS</title>
   <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/style_register.css"> <!-- 追加 -->
   <link rel="stylesheet" type="text/css" href="../assets/font-awesome/css/font-awesome.css">
-  <link rel="stylesheet" type="text/css" href="../assets/css/style.css"> <!-- 追加 -->
 </head>
 <body style="margin-top: 60px">
   <div class="container">
     <div class="row">
       <!-- ここに左サイドコンテンツ -->
-      <div class="col-xs-12 col-md-6" style="background-color:#eeeeee; height:500px;">
+      <div class="col-xs-12 col-md-6 left-column">
         <h3 class="content_header">アカウント新規登録</h3>
-        ここでユーザーへのメッセージを伝えます。<br>
-        世界観も守ります。
+          <p>PHILIALEのご利用有難うございます。<br>当館のマスコット...改め、当館の支配人のフィリアと申します。<br>以下にご利用イメージを申し上げます。</p>
+          <img class="img-responsive img-circle logo" src="../assets/img/philia_logo.jpg">
+          <p><label>1.本をアーカイブしリストを作成、閲覧出来ます。</label><br>
+          <label>2.貴方様のリストより、私の書庫へ本の紹介が出来ます。</label><br>
+          <label>3.（サービス拡大に向け、現在増築中）</label><br></p>
+          <p><br></p>
+
       </div>
 
       <!-- ここに右サイドコンテンツ -->
-      <div class="col-xs-12 col-md-6">
+      <div class="col-xs-12 col-md-6 right-column">
         <!-- <h2 class="text-center content_header">アカウント作成</h2> -->
         <form method="POST" action="signup.php" enctype="multipart/form-data">
           <div class="form-group">
@@ -149,7 +154,7 @@ $errors = array();
 
           <div class="form-group">
             <!-- <label for="email">メールアドレス</label> -->
-            <input type="email" name="input_email" class="form-control" id="email" placeholder="example@gmail.com" style="height:3em;">
+            <input type="email" name="input_email" class="form-control" id="email" placeholder="example@gmail.com">
             <?php if(isset($errors['email']) && $errors['email'] == 'blank') { ?>
               <p class="text-danger">メールアドレスを入力してください</p>
             <?php } ?>
@@ -160,7 +165,7 @@ $errors = array();
 
           <div class="form-group">
             <!-- <label for="password">パスワード</label> -->
-            <input type="password" name="input_password" class="form-control" id="password" placeholder="パスワード" style="height:3em;">
+            <input type="password" name="input_password" class="form-control" id="password" placeholder="パスワード">
             <?php if(isset($errors['password']) && $errors['password'] == 'blank') { ?>
               <p class="text-danger">パスワードを入力してください</p>
             <?php } ?>
@@ -171,11 +176,11 @@ $errors = array();
 
           <div class="form-group">
             <!-- <label for="password">確認用パスワード</label> -->
-            <input type="password" name="input_password" class="form-control" id="password" placeholder="確認用パスワード" style="height:3em;">
-            <?php if(isset($errors['password']) && $errors['password'] == 'blank') { ?>
+            <input type="password" name="input_chk_password" class="form-control" id="chk_password" placeholder="確認用パスワード">
+            <?php if(isset($errors['chk_password']) && $errors['chk_password'] == 'blank') { ?>
               <p class="text-danger">確認用パスワードを入力してください</p>
             <?php } ?>
-            <?php if(isset($errors['password']) && $errors['password'] == 'length') { ?>
+            <?php if(isset($errors['chk_password']) && $errors['chk_password'] == 'length') { ?>
               <p class="text-danger">パスワードは4〜16文字で入力してください</p>
             <?php } ?>
           </div>
