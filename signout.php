@@ -1,9 +1,10 @@
 <?php
-
     session_start();
  
-    //SESSION変数の破棄
+    //SESSION変数の破棄(どちらでも可能)
     $_SESSION = array();
+    // $_SESSION = [];
+ 
  
     //サーバー内の$_SESSION変数のクリア
     session_destroy();
@@ -14,3 +15,4 @@
     exit();
  
 ?>
+ 
