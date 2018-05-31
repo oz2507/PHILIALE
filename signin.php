@@ -75,17 +75,18 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>PHILIALE</title>
+  <title>Learn SNS</title>
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="assets/font-awesome/css/font-awesome.css">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/style_register.css">
 </head>
 
 <body style="margin-top: 60px">
   <div class="container">
     <div class="row">
-      <div class="col-xs-8 col-xs-offset-2 thumbnail">
-        <h2 class="text-center content_header">サインイン</h2>
+      <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3 thumbnail" style="height:500px;">
+        <h2 class="text-center content_header">ログイン</h2>
         <form method="POST" action="signin.php" enctype="multipart/form-data">
           <div class="form-group">
             <label for="email">メールアドレス</label>
@@ -106,9 +107,10 @@
             <?php if(isset($errors['signin']) && $errors['signin'] == 'failed') { ?>
               <p class="text-danger">サインインに失敗しました</p>
             <?php } ?>
-            
           </div>
-          <input type="submit" class="btn btn-info" value="サインイン">
+          <div>
+          <input type="submit" class="btn btn-secondary btn-lg btn-block" value="サインイン" style="margin-top: 50px;">
+          </div>
         </form>
       </div>
     </div>
