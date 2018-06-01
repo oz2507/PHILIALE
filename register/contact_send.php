@@ -2,18 +2,18 @@
       $email = $_POST['input_email'];
       $content = $_POST['input_message'];
 
-    if (isset($email) && isset($content)) {
+    // if (isset($email) && isset($content)) {
 
-      if (mail("philiale0401@gmail.com", "お問合せ", $content,$email))
-      {
-      echo "メールが送信されました。";
-      } else {
-      echo "メールの送信に失敗しました。";
-      }
+      // if (mail("philiale0401@gmail.com", "お問合せ", $content,$email))
+      // {
+      // echo "メールが送信されました。";
+      // } else {
+      // echo "メールの送信に失敗しました。";
+      // }
 
-    }else{
-      echo "入力欄に不備があります。";
-    }
+    // }else{
+      // echo "入力欄に不備があります。";
+    // }
 
 
 
@@ -26,10 +26,11 @@
   <title>送信完了</title>
   <meta charset="utf-8">
 
-  <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
-  <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css"><!--グリッドシステムのみ-->
-  <link rel="stylesheet" type="text/css" href="../assets/font-awesome/css/font-awesome.css">
-  <link rel="stylesheet" type="text/css" href="../assets/css/style_register.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
+  <!-- <link rel="stylesheet" type="text/css" href="../assets/css/style.css"> -->
+  <!-- <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css"><!--グリッドシステムのみ-->
+  <!-- <link rel="stylesheet" type="text/css" href="../assets/font-awesome/css/font-awesome.css"> -->
+  <!-- <link rel="stylesheet" type="text/css" href="../assets/css/style_register.css"> -->
 
 
 </head>
@@ -50,15 +51,15 @@
               <p><?php echo nl2br($content); ?></p>
             </div>
             <div>
-              <input type="button" href="home.php" class="btn btn-secondary btn-lg" value="Back Home">
+              <input type="button" href="../index.html" class="btn btn-secondary btn-lg" value="Back Home">
             </div>
         </div>
       </div>
     </div><!-- row -->
   </div><!-- container -->
 
-  <script src="../assets/js/jquery-3.1.1.js"></script>
-  <script src="../assets/js/jquery-migrate-1.4.1.js"></script>
-  <script src="../assets/js/bootstrap.js"></script>
+  <!-- <script src="../assets/js/jquery-3.1.1.js"></script> -->
+  <!-- <script src="../assets/js/jquery-migrate-1.4.1.js"></script> -->
+  <!-- <script src="../assets/js/bootstrap.js"></script> -->
 </body>
 </html>

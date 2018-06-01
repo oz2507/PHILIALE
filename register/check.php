@@ -42,29 +42,29 @@
   <meta charset="utf-8">
   <title>Learn SNS</title>
   <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="../assets/font-awesome/css/font-awesome.css">
-  <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+  <!-- <link rel="stylesheet" type="text/css" href="../assets/font-awesome/css/font-awesome.css"> -->
+  <!-- <link rel="stylesheet" type="text/css" href="../assets/css/style.css"> -->
 </head>
-<body style="margin-top: 60px">
+<body style="margin: 60px 0;">
   <div class="container">
     <div class="row">
-      <div class="col-xs-8 col-xs-offset-2">
+      <div class="col-xs-12 col-md-8 col-md-offset-2">
         <h2 class="text-center">登録情報の確認</h2>
         <br><br><br>
         <div class="row">
           <div class="col-xs-12">
             <div class="thumbnail">
               <span>ユーザーネーム</span>
-              <p class="lead"><?php echo htmlspecialchars($name); ?></p>
+              <p class="lead text-center"><?php echo htmlspecialchars($name); ?>&nbsp;様</p>
             </div>
             <div class="thumbnail">
               <span>メールアドレス</span>
-              <p class="lead"><?php echo htmlspecialchars($email); ?></p>
+              <p class="lead text-center"><?php echo htmlspecialchars($email); ?></p>
             </div>
             <div class="thumbnail">
               <span>パスワード</span>
               <!-- ② -->
-              <p class="lead">●●●●●●●●</p>
+              <p class="lead text-center">●●●●●●●●</p>
             </div>
             <!-- ③ -->
             <form method="POST" action="">
@@ -79,9 +79,9 @@
       </div>
     </div>
   </div>
-  <script src="../assets/js/jquery-3.1.1.js"></script>
-  <script src="../assets/js/jquery-migrate-1.4.1.js"></script>
-  <script src="../assets/js/bootstrap.js"></script>
+  <!-- <script src="../assets/js/jquery-3.1.1.js"></script> -->
+  <!-- <script src="../assets/js/jquery-migrate-1.4.1.js"></script> -->
+  <!-- <script src="../assets/js/bootstrap.js"></script> -->
 </body>
 </html>
 
