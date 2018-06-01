@@ -120,7 +120,7 @@ $errors = array();
   <title>Learn SNS</title>
   <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/style_register.css"> <!-- 追加 -->
-  <link rel="stylesheet" type="text/css" href="../assets/font-awesome/css/font-awesome.css">
+  <!-- <link rel="stylesheet" type="text/css" href="../assets/font-awesome/css/font-awesome.css"> -->
 </head>
 <body style="margin-top: 60px">
   <div class="container">
@@ -128,12 +128,9 @@ $errors = array();
       <!-- ここに左サイドコンテンツ -->
       <div class="col-xs-12 col-md-6 left-column">
         <h3 class="content_header">アカウント新規登録</h3>
-          <p>PHILIALEのご利用有難うございます。<br>当館のマスコット...改め、当館の支配人のフィリアと申します。<br>以下にご利用イメージを申し上げます。</p>
+          <p><label>PHILIALEのご利用有難うございます。<br>ご入館の前に、ご登録をお願いいたします。<br></label></p>
           <img class="img-responsive img-circle logo" src="../assets/img/philia_logo.jpg">
-          <p><label>1.本をアーカイブしリストを作成、閲覧出来ます。</label><br>
-          <label>2.貴方様のリストより、私の書庫へ本の紹介が出来ます。</label><br>
-          <label>3.（サービス拡大に向け、現在増築中）</label><br></p>
-          <p><br></p>
+          <p>当館では文庫やコミック、情報誌などなんでもご登録出来ます。<br>本好きな当館支配人もまた、数多の本をお持ちだそうです。<br>皆様はどのような本がお好きでしょう。<br></p><p><br></p>
 
       </div>
 
@@ -192,8 +189,8 @@ $errors = array();
 
     </div>
   </div>
-  <script src="../assets/js/jquery-3.1.1.js"></script>
-  <script src="../assets/js/jquery-migrate-1.4.1.js"></script>
-  <script src="../assets/js/bootstrap.js"></script>
+  <!-- <script src="../assets/js/jquery-3.1.1.js"></script> -->
+  <!-- <script src="../assets/js/jquery-migrate-1.4.1.js"></script> -->
+  <!-- <script src="../assets/js/bootstrap.js"></script> -->
 </body>
 </html>
