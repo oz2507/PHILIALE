@@ -8,8 +8,7 @@
   <meta charset="utf-8">
   <title>Learn SNS</title>
   <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
-  <!-- <link rel="stylesheet" type="text/css" href="../assets/font-awesome/css/font-awesome.css"> -->
-  <!-- <link rel="stylesheet" type="text/css" href="../assets/css/style.css"> -->
+  <link rel="stylesheet" type="text/css" href="../assets/css/style_r.css">
 </head>
 <body style="margin-top: 60px">
   <div class="container">
@@ -23,7 +22,7 @@
               <img class="img-responsive img-circle" src="../assets/img/cat_collection/フィリアさん1.png" style="width:200px;">
               <!-- PHILIALEの支配人をしております -->
             </div>
-              <a href="../signin.php" ><input type="button" class="btn btn-secondary btn-lg" value=" サインイン"></a>
+              <a href="../signin.php"><input type="button" class="btn btn-secondary btn-lg" value=" サインイン"></a>
           </div>
         </div>
       </div>

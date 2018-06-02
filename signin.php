@@ -77,13 +77,14 @@
   <meta charset="utf-8">
   <title>Learn SNS</title>
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style_r.css">
 </head>
 
 <body style="margin-top: 60px">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-6 col-md-offset-3 thumbnail" style="height:400px;">
-        <h2 class="text-center content_header">ログイン</h2>
+        <h2 class="text-center">ログイン</h2>
         <form method="POST" action="signin.php" enctype="multipart/form-data">
           <div class="form-group">
             <label for="email">メールアドレス</label>
