@@ -8,8 +8,8 @@
                 <span class="icon-bar"></span>
             </button> 
 
-            <a class="navbar-brand-center" href="../../T-zergコピー/index2.html">
-                <img alt="phifia" src="assets/img/philia1.png" style="height: 20px;">
+            <a class="navbar-brand-center" style="position: absolute;top: 10px;z-index:2000;" href="../../T-zergコピー/index2.html">
+                <img alt="phifia" src="assets/img/philia1.png" style="height: 30px;">
             </a>           
         </div>
 
