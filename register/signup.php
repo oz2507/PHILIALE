@@ -119,7 +119,7 @@ $errors = array();
   <meta charset="utf-8">
   <title>Learn SNS</title>
   <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="../assets/css/style_register.css"> <!-- 追加 -->
+  <link rel="stylesheet" type="text/css" href="../assets/css/style_r.css"> <!-- 追加 -->
   <!-- <link rel="stylesheet" type="text/css" href="../assets/font-awesome/css/font-awesome.css"> -->
 </head>
 <body style="margin-top: 60px">
@@ -129,7 +129,7 @@ $errors = array();
       <div class="col-xs-12 col-md-6 left-column">
         <h3 class="content_header">アカウント新規登録</h3>
           <p><label>PHILIALEのご利用有難うございます。<br>ご入館の前に、ご登録をお願いいたします。<br></label></p>
-          <img class="img-responsive img-circle logo" src="../assets/img/philia_logo.jpg">
+          <img class="img-responsive img-circle logo_original" src="../assets/img/cat_collection/フィリアさん1.png">
           <p>当館では文庫やコミック、情報誌などなんでもご登録出来ます。<br>本好きな当館支配人もまた、数多の本をお持ちだそうです。<br>皆様はどのような本がお好きでしょう。<br></p><p><br></p>
 
       </div>
