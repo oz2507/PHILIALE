@@ -5,7 +5,7 @@
   $errors = array();
 
   if (!empty($_POST)) { 
-      //ポスト送信があったとき以下を実行
+      // ポスト送信があったとき以下を実行
       $name = $_POST['input_name'];
       $email = $_POST['input_email'];
       $password = $_POST['input_password'];
@@ -76,7 +76,7 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>Learn SNS</title>
+  <title>PHILIALE</title>
   <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/style_r.css"> <!-- 追加 -->
   <!-- <link rel="stylesheet" type="text/css" href="../assets/font-awesome/css/font-awesome.css"> -->
@@ -140,6 +140,7 @@
               <p class="text-danger">パスワードは4〜16文字で入力してください</p>
             <?php } ?>
           </div>
+          
           <br><br><br>
           <input type="submit" class="btn btn-secondary btn-lg btn-block" value="登録情報の確認">
           <a href="../signin.php" style="float: right; padding-top: 6px;" class="text-success">サインイン</a>
