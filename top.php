@@ -3,6 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>PHILIALE</title>
+
+	<!-- 1.css_link -->
+	<!-- <?php require('partial/css_link.php'); ?> -->
+	
+	<link rel="stylesheet" href="assets/css/top.css">
+
 </head>
 <body>
 <!-- navbar -->
@@ -10,9 +16,9 @@
 		<div class="navbar-header">
 			<!-- icon left -->
 			<!-- menu right -->
-			<ul>
-				<li>新規登録</li>
-				<li>ログイン</li>
+			<ul class="menu">
+				<li><a href="">ログイン</a></li>
+				<li><a href="">新規登録</a></li>
 			</ul>
 			
 		</div>
