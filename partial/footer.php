@@ -4,4 +4,3 @@
 	<li>&copy; 2018 PHILIALE T-zer</li>
   </ul>
 </div>
-
