@@ -12,24 +12,559 @@ li {
   list-style: none;
 }
 
+/* ボタン全般に関して */
+.btn {
+  line-height: 50px;
+  position: relative;
+  z-index: 2;
+  background-color: none;
+  border: 1.5px solid #8f4796;
+  opacity: 0.5;
+  color: #8f4796;
+}
+
+.btn:hover {
+  background-color: #8f4796;
+  border-color: #fff;
+  color: #fff;
+}
+
+.btn::before,
+.btn::after {
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #fff;
+}
+
+.button::before {
+  top: 0;
+}
+.button::after {
+  bottom: 0;
+}
+.button:hover::before,
+.button:hover::after {
+  height: 0;
+  background-color: #fff;
+}
+
+.btn,
+.btn::before,
+.btn::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+/* msgのボタン */
+.msg>.btn {
+  line-height: 50px;
+  position: relative;
+  z-index: 2;
+  background-color: none;
+  border: 1.5px solid #fff;
+  opacity: 0.5;
+  color: #fff;
+}
+
+.msg>.btn:hover {
+  background-color: #fff;
+  border-color: #fff;
+  color: #fff;
+}
+
+.msg>.btn::before,
+.msg>.btn::after {
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #fff;
+}
+
+.msg>.button::before {
+  top: 0;
+}
+.msg>.button::after {
+  bottom: 0;
+}
+.msg>.button:hover::before,
+.msg>.button:hover::after {
+  height: 0;
+  background-color: #fff;
+}
+
+.msg>.btn,
+.msg>.btn::before,
+.msg>.btn::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+
+/* 共通デザイン */
+.box{
+  border-bottom: 5px solid #dcdcdc;
+}
+
+
+h1{
+  color: #a9a9a9;
+  font-size: 70px;
+  font-weight: 90px;
+  padding-bottom: 40px;
+  text-align: left;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+h2{
+  padding: 20px;
+  font-size: 25px;
+}
+
+.botton{
+  padding: 30px;
+}
+
+
+/* what's philiale */
+h3{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 p{
-  font-style: italic;
+  line-height: 50px;
 }
 
-/* navbar */
-.navbar{
-	
-}
-li{
-	font-size: 25px;
-	display: inline;
-	float:right;
-	padding-left: 10px;
+
+/* 767px以下: デフォルト */
+.container {
+  padding-right: 15px;
+  padding-left: 35px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-li+ li {
-  border-right: 1px solid #333;
-  padding-right: 10px;
-  margin-left:10px;
-	
+@media (max-width: 768px){
+  .pc_only{
+    display: none;
+  }
+
+  br{
+    display: none;
+  }
+
+  .box{
+  border-bottom: 5px solid #dcdcdc;
 }
+
+
+  .header img{
+  width: 768px;
+}
+
+
+h1{
+  padding-top: 80px;
+}
+.phone_only{
+  width: 700px;
+  margin: 0 auto;
+  height: 600px;
+  padding-top: 20px;
+  padding-left: 55px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+  .container-who{
+  width: 700px;
+  margin: 0 auto;
+  height: 400px;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+
+h5{
+  padding-left: 10px;
+  padding-bottom: 30px;
+}
+
+.container-how{
+  width: 700px;
+  margin: 0 auto;
+  height: 1400px;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.container-who{
+  width: 700px;
+  margin: 0 auto;
+  height: 1450px;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.container-msg{
+  width: 768px;
+  padding-top: 60px;
+  padding-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  background-color: #8f4796;
+  color: #fff;
+}
+
+.msg>h2{
+  padding-left: 0px;
+}
+
+#copyright{
+  width: 768px;
+  color: #fff;
+  background-color: #696969;
+  text-align: center;
+}
+
+
+}
+
+
+/* 768px以上 */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+   .header img{
+  width: 780px;
+}
+
+.container-what{
+  width: 700px;
+  margin: 0 auto;
+  height: 400px;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.container-who{
+  width: 700px;
+  margin: 0 auto;
+  height: 400px;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.row{
+  padding-left: 200px;
+}
+
+h5{
+  padding-left: 70px;
+  padding-bottom: 30px;
+}
+
+.container-how{
+  width: 700px;
+  margin: 0 auto;
+  height: 1400px;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.container-who{
+  width: 700px;
+  margin: 0 auto;
+  height: 1400px;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.container-msg{
+  width: 700px;
+  padding-top: 60px;
+  padding-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  background-color: #8f4796;
+  color: #fff;
+}
+
+#copyright{
+  width: 700px;
+  color: #fff;
+  background-color: #696969;
+  text-align: center;
+}
+
+
+}
+
+
+/* 992px以上 */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+
+  /* header */
+.header img{
+  width: 1150px;
+}
+
+
+.container-what{
+  width: 1120px;
+  margin: 0 auto;
+  height: 850px;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+#what p{
+  text-align: left;
+}
+
+.desc{
+  width: 500px;
+}
+
+.pull-right{
+  text-align: left;
+}
+
+.container-how{
+  width: 1100px;
+  margin: 0 auto;
+  height: 700px;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.wrap{
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  align-items: stretch;
+}
+
+.intro>p{
+  padding-left: 25px;
+  text-align: center;
+}
+
+
+
+.container-who{
+  width: 1100px;
+  margin: 0 auto;
+  height: 1100px;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.wrap1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-content: space-around; 
+}
+
+.container-msg{
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  background-color: #8f4796;
+  color: #fff;
+}
+
+
+/*copyright*/
+#copyright{
+  color: #fff;
+  background-color: #696969;
+  text-align: center;
+}
+
+
+}
+
+/* 1200px以上 */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+
+  /* header */
+.header img{
+  width: 100%;
+}
+
+
+  .container-what{
+  width: 1100px;
+  margin: 0 auto;
+  height: 850px;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.row{
+  padding-left: 100px;
+}
+
+#what p{
+  text-align: left;
+}
+
+h5{
+  padding-left: 10px;
+}
+
+.desc{
+  width: 500px;
+}
+
+.pull-right{
+  text-align: left;
+}
+
+.container-how{
+  width: 1100px;
+  margin: 0 auto;
+  height: 700px;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.wrap{
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  align-items: stretch;
+}
+
+.intro>p{
+  padding-left: 25px;
+  text-align: center;
+}
+
+.container-who{
+  width: 1100px;
+  margin: 0 auto;
+  height: 1100px;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.row1{
+  float: left;
+}
+
+.row2{
+  text-align: left;
+  float: right;
+}
+
+.row2>h2{
+  padding-left: 0px;
+}
+
+.row2>.botton{
+  padding-left: 0px;
+}
+
+
+.row3{
+  padding-top: 40px;
+  float: right;
+}
+
+.row3>img{
+  padding-right: 30px;
+}
+
+.container1{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-around; 
+}
+
+.row3{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-around; 
+}
+
+.intro{
+  padding-right: 20px;
+}
+
+.container-msg{
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  background-color: #8f4796;
+  color: #fff;
+}
+
+
+/*copyright*/
+#copyright{
+  width: 100%;
+  color: #fff;
+  background-color: #696969;
+  text-align: center;
+}
+
+}
+

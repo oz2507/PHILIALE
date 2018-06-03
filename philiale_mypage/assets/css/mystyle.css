@@ -1,32 +1,41 @@
-.navbar-default{
- background:linear-gradient(#f5f5f5,#dddddd);
-}
 /*.navbar-default{
- background:linear-gradient(blue,skyblue);
-}
-*/
-
-/*.navbar-header {
-    float: none;
-    text-align: center;
-}
-*//*.navbar-brand {
-    width: 100%;
-}
-*/
-/*.navbar-header {
-    float: none;
-}
-.navbar-brand {
-    width: 100%;
-}
-.navbar-brand > img {
-    margin-left: auto;
-    margin-right: auto;
-    padding:0px;
+ background:linear-gradient(#f5f5f5,#dddddd);
 }*/
 
-.navbar-toggle {
+.navbar-default{
+ background:linear-gradient(#8f4796,#8f4796);
+ border-color: #8f4796;
+}
+
+.navbar-default .navbar-nav>li>a{
+    color: #fff;
+    font-size: 20px;
+}
+
+a i{
+    font-family: 'Roboto Condensed', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+    font-size: 40px;
+    color: #fff;
+    padding: 0px 30px;
+}
+
+li{
+  font-color: #fff;
+  font-size: 25px;
+  display: inline;
+  float:right;
+  padding-left: 10px;
+}
+
+.diviver{
+    padding-top: 5px;
+    color: #fff;
+}
+
+
+/*.navbar-toggle {
     z-index: 2;
 }
 
@@ -43,4 +52,44 @@
     .navbar-brand-center {
         margin-left: 0 !important;
     }
+}*/
+
+/* 767px以下: デフォルト */
+.container {
+  padding-right: 15px;
+  padding-left: 35px;
+  margin-right: auto;
+  margin-left: auto;
 }
+
+@media (max-width: 768px){
+  .pc_only{
+    display: none;
+  }
+}
+
+/* 768px以上 */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* 992px以上 */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* 1200px以上 */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+.container-fluid{
+    padding-right: 150px;
+    padding-left: 150px;
+}
+}
+
