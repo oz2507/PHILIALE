@@ -6,7 +6,6 @@
 
 	<title>PHILIALE</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
-
 	<link rel="stylesheet"x href="assets/css/styles.css">
 	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/fonts/Roboto_Condensed">
@@ -17,8 +16,30 @@
 </head>
 <body>
 <!-- navbar -->
-<?php require('partial/navbar.php'); ?>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarEexample">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button> 
 
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-book-open">PHILIALE</i>
+            </a>           
+        </div>
+
+        <div class="collapse navbar-collapse navbar-right" id="navbarEexample">
+            <ul class="nav navbar-nav">
+            <li><a href="register/signup.php">新規登録</a></li>
+            <li class="right diviver">|</li>
+            <li><a href="signin.php">ログイン</a></li>
+            </ul>
+  		</div>
+    </div>
+</nav>
 
 
 <!-- header -->

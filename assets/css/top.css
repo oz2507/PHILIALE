@@ -215,7 +215,7 @@ h5{
 .container-who{
   width: 700px;
   margin: 0 auto;
-  height: 1450px;
+  height: 1500px;
   padding-top: 80px;
   position: relative;
   overflow: hidden;
@@ -254,10 +254,10 @@ h5{
     width: 750px;
   }
 
-  .pc_only{
+  /*.pc_only{
     display: none;
   }
-
+*/
   br{
     display: none;
   }
@@ -323,7 +323,6 @@ h5{
   background-color: #696969;
   text-align: center;
 }
-
 
 }
 
