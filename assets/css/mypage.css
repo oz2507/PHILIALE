@@ -26,6 +26,12 @@ p{
     font-size: 20px;
 }
 
+.navbar-brand-center {
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+}
+
 a i{
     font-family: 'Roboto Condensed', sans-serif;
   font-style: normal;
