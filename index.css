@@ -1,0 +1,763 @@
+/*css bace*/
+
+html, body,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6, p,
+form, input, div {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+p{
+  font-style: italic;
+}
+
+body{
+  background-image: url("assets/img/cat_collection/フィリアさん2.png");
+  background-image: url("assets/img/cat_collection/フィリアさん1.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+}
+
+#top img{
+  width: 95%;
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* fixed  nabvar */
+/* menu */
+#menu {
+  border-radius:10px;
+  bottom: 10px;
+  color: #000;
+  height: 90px;
+  line-height: 50px;
+  outline: 0;
+  position: fixed;
+  right: 10px;
+  width: 100px;
+  z-index: 3;
+  opacity: 0.5;
+}
+
+#menu {
+  padding:5px 10px;
+  font-size: 14px;
+  text-align: center;
+  background-color: #000;
+}
+
+#manu li {
+    transition: color .2s,background-color .2s,transform .2s;
+}
+
+#menu a{
+  color: #fff;
+}
+
+#menu a:hover{
+  color: #778899;
+}
+
+
+
+/* 767px以下: デフォルト */
+.container {
+  padding-right: 15px;
+  padding-left: 35px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (max-width: 768px){
+/* title */
+
+body{
+  background-image: url("assets/img/cat_collection/フィリアさん2.png");
+}  
+
+.container-top{
+  width: 700px;
+  margin: 0 auto;
+  height: 300px;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+/*h1{
+  font-family: 'Alice in Wonderland';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Alice in Wonderland'), url('Alice_in_Wonderland_3.woff') format('woff');
+  font-size: 140px;
+  text-align: center;
+  margin: 70px 50px;
+}
+*/
+
+
+
+/* intro */
+
+.container-intro{
+  width: 700px;
+  margin: 0 auto;
+  height: 500px;
+  padding-top: 0px;
+  padding-bottom: 40px;
+  padding-left: 30px;
+  text-align: center;  
+}
+
+h4 {
+  font-size: 20px;
+  padding-bottom: 40px;
+}
+
+.intro{
+  padding-bottom: 50px;
+}
+
+/* explain1 intro */
+.btn {
+  line-height: 50px;
+  position: relative;
+  z-index: 2;
+  background-color: #000;
+  border: 2px solid #000;
+  opacity: 0.5;
+  color: #fff;
+}
+
+.btn:hover {
+  background-color: #fff;
+  border-color: #778899;
+  color: #778899;
+}
+
+.btn::before,
+.btn::after {
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #000;
+}
+
+.button::before {
+  top: 0;
+}
+.button::after {
+  bottom: 0;
+}
+.button:hover::before,
+.button:hover::after {
+  height: 0;
+  background-color: #778899;
+}
+
+.btn,
+.btn::before,
+.btn::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+
+
+ /*servise */
+
+.container{
+  width: 700px;
+  margin: 0 auto;
+  padding-left: 25px;
+}
+
+.row{
+  width: 700px;
+  padding-left: 30px;
+}
+
+img{
+  width: 300px;
+  height: 400px;
+}
+
+.desc{
+  width: 60px;
+  padding-top: 100px;
+}
+
+.desc p{
+  text-align: center;
+}
+
+
+ /* message */
+.container-msg{
+  width: 700px;
+  margin: 0 auto;
+  height: 200px;
+  padding-top: 150px;
+  padding-bottom: 50px;
+  padding-left: 40px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.container-msg a{
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+
+/*copyright*/
+.container-copy{
+  width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  padding-left: 35px;
+}
+
+
+
+
+}
+
+
+/* 768px以上 */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+
+body{
+  background-image: url("assets/img/cat_collection/フィリアさん2.png");
+}  
+
+
+/* title */
+
+.container-top{
+  width: 900px;
+  margin: 0 auto;
+  height: 300px;
+  padding-top: 30px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+h1{
+  font-family: 'Alice in Wonderland';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Alice in Wonderland'), url('Alice_in_Wonderland_3.woff') format('woff');
+  font-size: 200px;
+  text-align: center;
+  margin: 70px 70px;
+}
+
+
+/* intro */
+
+.container-intro{
+  width: 900px;
+  margin: 0 auto;
+  height: 400px;
+  padding-top: 95px;
+  padding-bottom: 30px;
+  text-align: center;  
+}
+
+h4 {
+  font-size: 20px;
+  padding-bottom: 40px;
+}
+
+.intro{
+  padding-bottom: 50px;
+}
+
+/* explain1 intro */
+.btn {
+  line-height: 50px;
+  position: relative;
+  z-index: 2;
+  background-color: #000;
+  border: 2px solid #000;
+  opacity: 0.5;
+  color: #fff;
+}
+
+.btn:hover {
+  background-color: #fff;
+  border-color: #778899;
+  color: #778899;
+}
+
+.btn::before,
+.btn::after {
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #000;
+}
+
+.button::before {
+  top: 0;
+}
+.button::after {
+  bottom: 0;
+}
+.button:hover::before,
+.button:hover::after {
+  height: 0;
+  background-color: #778899;
+}
+
+.btn,
+.btn::before,
+.btn::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+
+
+ /*servise */
+
+.container{
+  width: 900px;
+  margin: 0 auto;
+  /*height: 1800px;*/
+}
+
+.row{
+  width: 900px;
+  /*height: 1000px;*/
+  /*margin-bottom: 90px;*/
+}
+
+
+img{
+  width: 400px;
+  height: 500px;
+}
+
+.desc{
+  width: 60px;
+  padding-top: 100px;
+}
+
+.desc p{
+  text-align: center;
+}
+
+.pull-right{
+  float: right;
+  padding-right:30px;
+}
+
+
+.pull-left{
+  float: left;
+  padding-right: 90px;
+  padding-left: 100px;
+}
+
+
+ /* message */
+.container-msg{
+  width: 900px;
+  margin: 0 auto;
+  height: 300px;
+  padding-top: 150px;
+  padding-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.container-msg a{
+  margin-top: 50px;
+  margin-bottom: 500px;
+}
+
+
+/*copyright*/
+#copyright{
+  text-align: center;
+}
+
+
+
+
+
+
+}
+
+/* 992px以上 */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+
+body{
+  background-image: url("assets/img/cat_collection/フィリアさん1.png");
+}  
+
+
+/* title */
+
+.container-top{
+  width: 900px;
+  margin: 0 auto;
+  height: 300px;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+h1{
+  font-family: 'Alice in Wonderland';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Alice in Wonderland'), url('Alice_in_Wonderland_3.woff') format('woff');
+  font-size: 200px;
+  text-align: center;
+  margin: 70px 70px;
+}
+
+
+/* intro */
+
+.container-intro{
+  width: 900px;
+  margin: 0 auto;
+  height: 400px;
+  padding-top: 70px;
+  padding-bottom: 30px;
+  text-align: center;  
+}
+
+h4 {
+  font-size: 20px;
+  padding-bottom: 40px;
+}
+
+.intro{
+  padding-bottom: 30px;
+}
+
+/* explain1 intro */
+.btn {
+  line-height: 50px;
+  position: relative;
+  z-index: 2;
+  background-color: #000;
+  border: 2px solid #000;
+  opacity: 0.5;
+  color: #fff;
+}
+
+.btn:hover {
+  background-color: #fff;
+  border-color: #778899;
+  color: #778899;
+}
+
+.btn::before,
+.btn::after {
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #000;
+}
+
+.button::before {
+  top: 0;
+}
+.button::after {
+  bottom: 0;
+}
+.button:hover::before,
+.button:hover::after {
+  height: 0;
+  background-color: #778899;
+}
+
+.btn,
+.btn::before,
+.btn::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+
+
+ /*servise */
+
+.container{
+  width: 900px;
+  margin: 0 auto;
+  /*height: 1800px;*/
+}
+
+.row{
+  width: 900px;
+  /*height: 1000px;*/
+  /*margin-bottom: 90px;*/
+}
+
+
+img{
+  width: 400px;
+  height: 500px;
+}
+
+.desc{
+  width: 60px;
+  padding-top: 100px;
+}
+
+.desc p{
+  text-align: center;
+}
+
+.pull-right{
+  float: right;
+  padding-right:30px;
+}
+
+
+.pull-left{
+  float: left;
+  padding-right: 90px;
+  padding-left: 100px;
+}
+
+
+ /* message */
+.container-msg{
+  width: 900px;
+  margin: 0 auto;
+  height: 300px;
+  padding-top: 150px;
+  padding-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.container-msg a{
+  margin-top: 50px;
+  margin-bottom: 500px;
+}
+
+
+/*copyright*/
+#copyright{
+  text-align: center;
+}
+
+}
+
+
+
+/* 1200px以上 */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+
+body{
+  background-image: url("assets/img/cat_collection/フィリアさん1.png");
+}  
+
+
+/* title */
+
+.container-top{
+  width: 900px;
+  margin: 0 auto;
+  height: 300px;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+h1{
+  font-family: 'Alice in Wonderland';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Alice in Wonderland'), url('Alice_in_Wonderland_3.woff') format('woff');
+  font-size: 200px;
+  text-align: center;
+  margin: 70px 70px;
+}
+
+
+/* intro */
+
+.container-intro{
+  width: 900px;
+  margin: 0 auto;
+  height: 400px;
+  padding-top: 70px;
+  padding-bottom: 30px;
+  text-align: center;  
+}
+
+h4 {
+  font-size: 20px;
+  padding-bottom: 40px;
+}
+
+.intro{
+  padding-bottom: 50px;
+}
+
+/* explain1 intro */
+.btn {
+  line-height: 50px;
+  position: relative;
+  z-index: 2;
+  background-color: #000;
+  border: 2px solid #000;
+  opacity: 0.5;
+  color: #fff;
+}
+
+.btn:hover {
+  background-color: #fff;
+  border-color: #778899;
+  color: #778899;
+}
+
+.btn::before,
+.btn::after {
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #000;
+}
+
+.button::before {
+  top: 0;
+}
+.button::after {
+  bottom: 0;
+}
+.button:hover::before,
+.button:hover::after {
+  height: 0;
+  background-color: #778899;
+}
+
+.btn,
+.btn::before,
+.btn::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+
+
+ /*servise */
+
+.container{
+  width: 900px;
+  margin: 0 auto;
+  /*height: 1800px;*/
+}
+
+.row{
+  width: 900px;
+  /*height: 1000px;*/
+  /*margin-bottom: 90px;*/
+}
+
+
+img{
+  width: 400px;
+  height: 500px;
+}
+
+.desc{
+  width: 60px;
+  padding-top: 100px;
+}
+
+.desc p{
+  text-align: center;
+}
+
+.pull-right{
+  float: right;
+  padding-right:30px;
+}
+
+
+.pull-left{
+  float: left;
+  padding-right: 90px;
+  padding-left: 100px;
+}
+
+
+ /* message */
+.container-msg{
+  width: 900px;
+  margin: 0 auto;
+  height: 300px;
+  padding-top: 150px;
+  padding-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.container-msg a{
+  margin-top: 50px;
+  margin-bottom: 500px;
+}
+
+
+/*copyright*/
+#copyright{
+  text-align: center;
+}
+
+
+
+
+
+}
+
+
