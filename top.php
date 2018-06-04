@@ -8,7 +8,8 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
 	<link rel="stylesheet"x href="assets/css/styles.css">
 	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
-	<link rel="stylesheet" href="assets/fonts/Roboto_Condensed">
+	<!-- <link rel="stylesheet" href="assets/fonts/Roboto_Condensed"> -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700>
 	<link rel="stylesheet" href="philiale_mypage/assets/css/mystyle.css">
 	<link rel="stylesheet" href="assets/css/top.css">
 
