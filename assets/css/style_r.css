@@ -1,12 +1,12 @@
-/*register内サインアップ～サンクス*/
+/*register内サインアップ～サンクス,お問合せ*/
 .box2{
     padding: 0.5em 1em;
     margin: 2em 0;
     font-weight: bold;
-    color: #6091d3;/*文字色*/
+    color: #6091d3;
     background: #FFF;
-    border: solid 3px #6091d3;/*線*/
-    border-radius: 10px;/*角の丸み*/
+    border: solid 3px #6091d3;
+    border-radius: 10px;
 }
 
 .left-column{
@@ -93,3 +93,145 @@
 
 
 
+
+
+
+
+
+/*---------add_book.html------------↓*/
+
+
+.pop_header{
+	background-color: #f2eaf4;
+	width: 100%;
+	/*justify-content: center;*/
+}
+
+
+
+
+.pop_header p{
+	font:initial;
+	font-size: 20px;
+	color:#8f4796;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.pop_header a{
+	/*display: inline-block;*/
+	margin:15px;
+	/*vertical-align:middle;*/
+	/*text-align: right;*/
+	float: right;
+	position: static;
+/*}*/
+/*.pop_header a{*/
+	/*vertical-align:middle;*/
+	color: black;
+	/*text-align: right;*/
+}
+
+.pop_header a:hover{
+	color:grey;
+}
+
+.book_img{
+	text-align: center;
+	margin:20px;
+	border: 20px;
+}
+
+.book_pic{
+
+}
+
+.form_original label{
+	vertical-align:top;
+	font-size: 15px;
+	color: #bbb;
+}
+
+.form_original input{
+	margin-bottom: 25px;
+	width:100%;
+	height: 3em;
+	outline:none;
+	color:#8f4796;
+    background:none;
+    border-style: none;
+    border-bottom: solid 2px #f2eaf4;
+    /*border-radius: 3px;*/
+}
+
+.form_original textarea{
+	color: #8f4796;
+	outline:none;
+	width:100%;
+	height: 10em;
+	margin-bottom: 25px;
+    border-style: none;
+    border-bottom: solid 2px #f2eaf4;
+
+}
+
+
+.book_add_btn{
+	color: #e7daea;
+	font-size: 20px;
+	margin: 10px 0 5px 0;
+	width: 100%;
+	height:3em;
+    background-color: #f2eaf4;
+    border: 2px solid #f2eaf4;
+    border-radius: 3px;
+}
+
+.book_add_btn:hover {
+    color: #f2eaf4;
+    background-color: #b96cc4;
+}
+
+.book_del_btn {
+	margin: 20px 0;
+	float:right;
+    background-color: none;
+    border:none;
+    color: #8f4796;
+    font-size: 15px;
+    /*line-height: 1.6em;*/
+}
+
+
+
+
+
+
+
+
+/*---------add_order.html----------*/
+.order_img{
+	text-align: center;
+	margin:20px;
+	border: 20px;
+}
+
+.book_order_btn{
+	width: 30%;
+	height: 30px;
+	border-radius: 40%;
+	font-size: 30px;
+	color: #8f4796;
+	background-color:#f2eaf4;
+	margin:20px;
+}
+
+.order_cancel_btn{
+	margin: 20px 0;
+	float:right;
+    background-color: none;
+    border:none;
+    color: #8f4796;
+    font-size: 15px;
+    /*line-height: 1.6em;*/
+}
