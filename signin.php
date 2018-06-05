@@ -9,11 +9,15 @@
     $errors = array();
 
     if (!empty($_POST)) { //ポスト送信があったとき以下を実行
+        $name = $_POST['input_name'];
         $email = $_POST['input_email'];
         $password = $_POST['input_password'];
 
         $count = strlen($password);// hogehogeとパスワードを入力した場合、8が$countに代入される
 
+        if ($name == '') {
+            $errors['name'] = 'blank';
+        }
 
         if ($email == '') {
             $errors['email'] = 'blank';
@@ -23,18 +27,16 @@
         $errors['password'] = 'blank';
         
         }elseif ($count < 4 || $count > 16) {
-                    $errors['password'] = 'length';
+                $errors['password'] = 'length';
         }
 
-        if ($email != '' && $password != '') {
-
-          //データベースと照合
-          //データベースから取り出し
+        if ($name !== '' && $email !== '' && $password !== '') {
+          //データベースとemailを用いて照合
           $sql = 'SELECT * FROM `users` WHERE `email`=?';
           $data = array($email);
           $stmt = $dbh->prepare($sql);
           $stmt->execute($data);
-            //
+          
           $record = $stmt->fetch(PDO::FETCH_ASSOC);
 
           // メールアドレスでの本人確認
@@ -44,13 +46,11 @@
           }else{
 
               if (password_verify($password,$record['password'])){
-                    //※追加部分
                     //SESSION変数にIDを保存
                     $_SESSION['id'] = $record['id'];
 
-  
                     //individual.phpに移動
-                    header("Location: individual.php");
+                    header("Location: mypage2.php");
                     exit();
 
                     //一致したら認証成功
@@ -60,14 +60,9 @@
                     $errors['signin'] = 'failed';
                     echo "<h1>認証失敗</h1>";
                 }
-
             }
-
         }
-
-
     }
-
 
 
 ?>
@@ -85,14 +80,25 @@
     <div class="row">
       <div class="col-xs-12 col-md-6 col-md-offset-3 thumbnail" style="height:400px;">
         <h2 class="text-center">ログイン</h2>
+
         <form method="POST" action="signin.php" enctype="multipart/form-data">
+
+          <div class="form-group">
+            <label for="name">お名前</label>
+            <input type="text" name="input_name" class="form-control" id="name" placeholder="お名前">
+            <?php if(isset($errors['name']) && $errors['name'] == 'blank') { ?>
+              <p class="text-danger">お名前を入力してください</p>
+            <?php } ?>
+          </div>
+
           <div class="form-group">
             <label for="email">メールアドレス</label>
-            <input type="email" name="input_email" class="form-control" id="email" placeholder="example@gmail.com">
+            <input type="text" name="input_email" class="form-control" id="email" placeholder="example@gmail.com">
             <?php if(isset($errors['email']) && $errors['email'] == 'blank') { ?>
               <p class="text-danger">メールアドレスを入力してください</p>
             <?php } ?>
           </div>
+
           <div class="form-group">
             <label for="password">パスワード</label>
             <input type="password" name="input_password" class="form-control" id="password" placeholder="4 ~ 16文字のパスワード">
@@ -106,10 +112,12 @@
               <p class="text-danger">サインインに失敗しました</p>
             <?php } ?>
           </div>
+
           <div>
           <input type="submit" class="btn btn-lg btn-block" value="サインイン" style="margin-top: 50px;">
           </div>
         </form>
+
       </div>
     </div><!-- row -->
   </div><!-- container -->
