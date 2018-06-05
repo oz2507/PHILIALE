@@ -1,3 +1,12 @@
+<?php 
+	session_start();
+	
+	if (empty($_SESSION)) {
+		header("Location: top.php");
+	}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -125,3 +134,4 @@
 
 </body>
 </html>
+<?php var_dump($_SESSION); ?>
