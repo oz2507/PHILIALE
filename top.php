@@ -9,7 +9,7 @@
 	<link rel="stylesheet"x href="assets/css/styles.css">
 	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
 	<!-- <link rel="stylesheet" href="assets/fonts/Roboto_Condensed"> -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700">
 	<link rel="stylesheet" href="philiale_mypage/assets/css/mystyle.css">
 	<link rel="stylesheet" href="assets/css/top.css">
 
@@ -153,6 +153,10 @@
 				<img src="assets/img/frame.jpg" alt="">
 				<p>普段はこの姿であなたを見守ります。</p>
 			</div>
+			<div class="intro">
+				<img src="assets/img/frame.jpg" alt="">
+				<p>普段はこの姿であなたを見守ります。</p>
+			</div>
 			
 			<div class="intro">
 				<img src="assets/img/frame.jpg" alt="">
@@ -168,7 +172,7 @@
 	<div class="msg">
 		<h2>あなたの大好きな本をフィリアールで保管しませんか？</h2>
 
-		<div class="botton">
+		<div class="button">
 			<a class="btn" href="register/signup.php">フィリアールの会員になる</a> 
 		</div>	
 	</div>
