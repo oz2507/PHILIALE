@@ -24,6 +24,12 @@ p{
 .navbar-default .navbar-nav>li>a{
     color: #fff;
     font-size: 20px;
+    /*text-decoration: underline;*/
+}
+
+.navbar-default .navbar-nav>.active>a{
+  color:#fff;
+  background-color: #8f4796;
 }
 
 .navbar-brand-center {
@@ -34,8 +40,8 @@ p{
 
 a i{
     font-family: 'Roboto Condensed', sans-serif;
-  font-style: normal;
-  font-weight: normal;
+    font-style: normal;
+    font-weight: normal;
     font-size: 40px;
     color: #fff;
     padding: 0px 30px;
@@ -49,15 +55,40 @@ li{
   padding-left: 10px;
 }
 
-.diviver{
-  /*padding-top: 4px;*/
-  color: #fff;
+a li {
+  /*border-bottom: solid 3px #fff;*/
+}
+
+.nav-tabs{
+  border: none;
+  border-bottom: none;
+}
+
+.nav-tabs>li.active>a{
+  border:none;
+  border-radius: none;
+}
+
+.nav-tabs > li > a{
+  border-radius: 4px;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
+  color: #8f4796;
+  background-color: #fff;
+  margin-top: 1px;
+  /*color: none;
+  background-color:none;*/
+}
+
+.navbar-form{
+  /*margin-top: 0px;*/
 }
 
 
 /* book */
-.row{
-	padding-top: 50px;
+#tab2{
+	/*padding-top: 50px;*/
 	margin: 10px 60px;
 }
 
