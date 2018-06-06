@@ -3,26 +3,28 @@
 <head>
 	<meta charset="UTF-8">
 	<title>PHILIALE</title>
-  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/style_r.css">
-  <link rel="stylesheet" type="text/css" href="assets/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css"><!-- グリッドシステムのみ -->
+  <link rel="stylesheet" type="text/css" href="../assets/css/style_r.css">
 </head>
 <body>
-  <div class="container pop_header">
+  <div class="container-fluid pop_header">
   	<div class="row">
   	  <div class="col-xs-12 col-md-12">
   	    <p>登録本の確認</p>
-	  	<a href="#"><i class="fa fa-times fa-3x " aria-hidden="true"></i></a>
+	  	<a href="#">✕</a>
 	  </div>
     </div>
   </div>
 
-  <div class="container" style="margin-top:100px;">
+  <div class="container" style="">
 
   	<div class="row">
+  		<div class="pop_p">
+  	  	  <p>この内容で間違いありませんか？</p>
+  	  	</div>
   	  	<div class="col-xs-12 col-md-6 col-md-offset-3">
   	  	  <div class="book_img">
-  	  	  	<a href="#"><img class="book_pic" src="https://placehold.jp/b96cc4/ffffff/210x296.png?text=NO IMAGE" width="148"></a>
+  	  	  	<img class="book_pic" src="https://placehold.jp/b96cc4/ffffff/210x296.png?text=NO IMAGE" width="148">
   	  	  </div>
   	  	</div>
     </div><!-- row -->
@@ -33,20 +35,20 @@
 			<form action="" method="" class="form_original">
 			  <div>
 			    <label for="book_title">作品名</label>
-			    <input type="text" id="book_title" name="book_title">
+			    <input type="text" id="book_title" name="book_title" placeholder="ここに作品名が入ります">
 			  </div>
 			  <div>
 			    <label for="book_author">著者</label>
-			    <input type="text" id="book_author" name="book_author">
+			    <input type="text" id="book_author" name="book_author" placeholder="ここに著者が入ります">
 			  </div>
 			  <div>
 			    <label for="book_publisher">出版社</label>
-			    <input type="text" id="book_publisher" name="book_publisher">
+			    <input type="text" id="book_publisher" name="book_publisher" placeholder="ここに出版社名が入ります">
 			  </div>
-			  <div>
+<!-- 			  <div>
 			    <label for="book_story">解説文</label>
 			    <textarea id="book_story" name="book_story"></textarea>
-			  </div>
+			  </div> -->
 <!-- 			  <div>
 			    <label>コメント</label> <br />
 			    <textarea id="book_comment" name="book_comment"></textarea>
