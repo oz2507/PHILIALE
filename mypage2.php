@@ -20,7 +20,7 @@
 
 	
 </head>
-<body>
+<body style="margin-top: 90px;">
 <!-- navbar -->
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
@@ -39,10 +39,10 @@
         </div>
 
         <div class="collapse navbar-collapse" id="navbarEexample">
-            <ul class="nav navbar-nav">
-            	<li><a href="#">読みたい</a></li>
-            	<li class="right diviver">|</li>
-                <li><a href="#">読んだ</a></li>
+            <ul class="nav navbar-nav nav-tabs">
+            	<li class="active">
+            	<a href="#tab1" data-toggle="tab">読みたい</a></li>
+            	<li><a href="#tab2" data-toggle="tab">読んだ</a></li>
             </ul>
 
           	<form class="navbar-form navbar-right" role="search">
@@ -56,72 +56,173 @@
     </div>
 </nav>
 
-<!-- add book -->
-<div class="row">
-	<div class="col-xs-6 col-md-3">
-		<div class="thumbnail">
-			<img src="assets/img/add1.png">
-			<div class="caption">
-				<h3>サムネイル・ラベル</h3>
-				<p>段落。</p>
-				<p>...</p>
-				<p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p>
+<!-- 読んだ読みたい -->
+<div class="tab-content">
+    
+    <div id="tab1" class="tab-pane fade in active">
+		<!-- add book -->
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-6 col-md-3">
+					<div class="thumbnail">
+						<img src="assets/img/add1.png">
+						<div class="caption">
+							<!-- <h3>サムネイル・ラベル</h3>
+							<p>段落。</p>
+							<p>...</p> -->
+							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-md-3">
+					<div class="thumbnail">
+						<img src="assets/img/燃えよ剣.jpeg">
+						<div class="caption">
+							<!-- <h3>サムネイル・ラベル</h3>
+							<p>段落。</p>
+							<p>...</p> -->
+							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-md-3">
+					<div class="thumbnail">
+						<img src="assets/img/harmony.jpg">
+						<div class="caption">
+							<!-- <h3>サムネイル・ラベル</h3>
+							<p>段落。</p>
+							<p>...</p> -->
+							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 
+	<!-- book -->
+	<div id="tab2" class="tab-pane fade">
+		<div class="container">
+			<div class="row">
+				<a href="add.php">
+					<div class="col-xs-6 col-md-3">
+						<div class="thumbnail">
+							<img src="assets/img/add1.png">
+							<div class="caption">
+								<!-- <h3>サムネイル・ラベル</h3>
+								<p>段落。</p>
+								<p>...</p> -->
+								<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
+							</div>
+						</div>
+					</div>
+				</a>
+				<div class="col-xs-6 col-md-3">
+					<div class="thumbnail">
+						<img src="assets/img/燃えよ剣.jpeg">
+						<div class="caption">
+							<!-- <h3>サムネイル・ラベル</h3>
+							<p>段落。</p>
+							<p>...</p> -->
+							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-md-3">
+					<div class="thumbnail">
+						<img src="assets/img/harmony.jpg">
+						<div class="caption">
+							<!-- <h3>サムネイル・ラベル</h3>
+							<p>段落。</p>
+							<p>...</p> -->
+							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-md-3">
+					<div class="thumbnail">
+						<img src="assets/img/jenoside.jpg">
+						<div class="caption">
+							<!-- <h3>サムネイル・ラベル</h3>
+							<p>段落。</p>
+							<p>...</p> -->
+							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
+						</div>
+					</div>
+				</div>
 
+				<div class="col-xs-6 col-md-3">
+					<div class="thumbnail">
+						<img src="assets/img/empelar.jpg">
+						<div class="caption">
+							<!-- <h3>サムネイル・ラベル</h3>
+							<p>段落。</p>
+							<p>...</p> -->
+							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
+						</div>
+					</div>
+				</div>
 
+				<div class="col-xs-6 col-md-3">
+					<div class="thumbnail">
+						<img src="assets/img/add1.png">
+						<div class="caption">
+							<!-- <h3>サムネイル・ラベル</h3>
+							<p>段落。</p>
+							<p>...</p> -->
+							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-md-3">
+					<div class="thumbnail">
+						<img src="assets/img/燃えよ剣.jpeg">
+						<div class="caption">
+							<!-- <h3>サムネイル・ラベル</h3>
+							<p>段落。</p>
+							<p>...</p> -->
+							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-md-3">
+					<div class="thumbnail">
+						<img src="assets/img/harmony.jpg">
+						<div class="caption">
+							<!-- <h3>サムネイル・ラベル</h3>
+							<p>段落。</p>
+							<p>...</p> -->
+							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-md-3">
+					<div class="thumbnail">
+						<img src="assets/img/jenoside.jpg">
+						<div class="caption">
+							<!-- <h3>サムネイル・ラベル</h3>
+							<p>段落。</p>
+							<p>...</p> -->
+							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
+						</div>
+					</div>
+				</div>
 
-<!-- book -->
-	<div class="col-xs-6 col-md-3">
-		<div class="thumbnail">
-			<img src="assets/img/philia2.png">
-			<div class="caption">
-				<h3>サムネイル・ラベル</h3>
-				<p>段落。</p>
-				<p>...</p>
-				<p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p>
-			</div>
-		</div>
-	</div>
-	<div class="col-xs-6 col-md-3">
-		<div class="thumbnail">
-			<img src="assets/img/philia2.png">
-			<div class="caption">
-				<h3>サムネイル・ラベル</h3>
-				<p>段落。</p>
-				<p>...</p>
-				<p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p>
-			</div>
-		</div>
-	</div>
-	<div class="col-xs-6 col-md-3">
-		<div class="thumbnail">
-			<img src="assets/img/philia2.png">
-			<div class="caption">
-				<h3>サムネイル・ラベル</h3>
-				<p>段落。</p>
-				<p>...</p>
-				<p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p>
-			</div>
-		</div>
+				<div class="col-xs-6 col-md-3">
+					<div class="thumbnail">
+						<img src="assets/img/empelar.jpg">
+						<div class="caption">
+							<!-- <h3>サムネイル・ラベル</h3>
+							<p>段落。</p>
+							<p>...</p> -->
+							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
+						</div>
+					</div>
+				</div>
 	</div>
 </div>
-
-<div class="row">
-<div class="col-xs-6 col-md-3">
-		<div class="thumbnail">
-			<img src="assets/img/philia2.png">
-			<div class="caption">
-				<h3>サムネイル・ラベル</h3>
-				<p>段落。</p>
-				<p>...</p>
-				<p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p>
-			</div>
-		</div>
-	</div>
 </div>
+
 
 
 <!-- 5.footer -->

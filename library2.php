@@ -1,3 +1,27 @@
+<!-- <?php 
+    // session_start();
+    // require("dbconnect.php");
+
+    // $sql='select * from mines
+    //       where id=?';
+
+    // $data=array($_SESSION['id']);
+    // $stmt = $dbh->prepare($sql);
+    // $stmt->execute($data);
+
+    // $books=array();
+
+    //     while (true) {
+    //         $record=$stmt->fetch(PDO::FETCH_ASSOC);
+
+    //         if ($record==false) {
+    //             break;
+    //         }
+
+    //     $books[]=$record;
+       
+    //     }
+ ?> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +31,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
 	<link rel="stylesheet" href="assets/css/mypage.css">
 </head>
-<body>
+<body style="margin-top: 90px;">
 <!-- navbar -->
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
@@ -43,6 +67,7 @@
 </nav>
 
 <!-- book -->
+<div class="container">
 <div class="row">
 	<div class="col-xs-6 col-md-3">
 		<div class="thumbnail">
@@ -56,6 +81,9 @@
 		</div>
 	</div>
 </div>
+</div>
+
+
 
 
 <!-- 5.footer -->
