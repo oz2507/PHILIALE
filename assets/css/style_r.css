@@ -109,7 +109,7 @@
 
 
 .pop_header p{
-	font-size: 20px;
+	font-size: 15px;
 	font-weight: 600;
 	color:#b96cc4;
 	vertical-align: middle;
@@ -142,7 +142,7 @@
 
 .book_img{
 	text-align: center;
-	margin:20px;
+	margin: 20px;
 	border: 20px;
 }
 
@@ -170,7 +170,7 @@
 	color: #8f4796;
 	outline:none;
 	width:100%;
-	height: 10em;
+	height: 7em;
 	margin-bottom: 25px;
     border-style: none;
     border-bottom: solid 2px #f2eaf4;
@@ -206,7 +206,7 @@
     border:none;
     color: #8f4796;
     font-size: 15px;
-    /*line-height: 1.6em;*/
+    line-height: 1.6em;
 }
 
 
