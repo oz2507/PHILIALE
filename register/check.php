@@ -70,7 +70,7 @@
             <form method="POST" action="">
               <!-- ⑤ -->
               <input type="hidden" name="action" value="submit">
-              <input type="submit" class="btn btn-secondary btn-lg btn-block" value="  ユーザー登録  ">
+              <input type="submit" class="btn btn-secondary btn-lg btn-block" value="  ユーザー登録  " style="height:4em;color:#eeeeee;background-color:#b96cc4;margin-top: 5em;">
               <!-- ④ -->
               <a href="signup.php" class="btn btn-default btn-lg btn-block">&laquo;&nbsp;戻る</a>
             </form>
