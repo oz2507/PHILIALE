@@ -1,3 +1,5 @@
+<!-- 画像回転アニメーション試作 -->
+
 <!DOCTYPE html>
 <html>
 <head>
