@@ -73,10 +73,10 @@
 		<div class="thumbnail">
 			<img src="assets/img/philia2.png">
 			<div class="caption">
-				<h3>サムネイル・ラベル</h3>
+				<!-- <h3>サムネイル・ラベル</h3>
 				<p>段落。</p>
 				<p>...</p>
-				<p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p>
+				<p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
 			</div>
 		</div>
 	</div>

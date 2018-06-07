@@ -1,9 +1,30 @@
 <?php 
 	session_start();
+
+	require('dbconnect.php');
 	
 	if (empty($_SESSION)) {
 		header("Location: top.php");
 	}
+
+	$sql='SELECT * FROM `archives` WHERE user_id=?';
+
+	$data=array($_SESSION["id"]);
+	$stmt = $dbh->prepare($sql);
+    $stmt->execute($data);
+
+    $books=array();
+
+    while (true) {
+    	$record=$stmt->fetch(PDO::FETCH_ASSOC);
+
+    	if ($record==false) {
+    		break;
+    	}
+
+    	$books[]=$record;
+
+    }
 
 ?>
 
@@ -48,8 +69,10 @@
           	<form class="navbar-form navbar-right" role="search">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="文庫検索">
+                    <button type="submit" class="btn btn-default">検索</button>
+
                 </div>
-                <button type="submit" class="btn btn-default">検索</button>
+                
             </form>
 
   		</div>
@@ -117,6 +140,8 @@
 						</div>
 					</div>
 				</a>
+
+				<?php foreach ($books as $book) {?>
 				<div class="col-xs-6 col-md-3">
 					<div class="thumbnail">
 						<img src="assets/img/燃えよ剣.jpeg">
@@ -128,97 +153,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xs-6 col-md-3">
-					<div class="thumbnail">
-						<img src="assets/img/harmony.jpg">
-						<div class="caption">
-							<!-- <h3>サムネイル・ラベル</h3>
-							<p>段落。</p>
-							<p>...</p> -->
-							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-md-3">
-					<div class="thumbnail">
-						<img src="assets/img/jenoside.jpg">
-						<div class="caption">
-							<!-- <h3>サムネイル・ラベル</h3>
-							<p>段落。</p>
-							<p>...</p> -->
-							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
-						</div>
-					</div>
-				</div>
-
-				<div class="col-xs-6 col-md-3">
-					<div class="thumbnail">
-						<img src="assets/img/empelar.jpg">
-						<div class="caption">
-							<!-- <h3>サムネイル・ラベル</h3>
-							<p>段落。</p>
-							<p>...</p> -->
-							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
-						</div>
-					</div>
-				</div>
-
-				<div class="col-xs-6 col-md-3">
-					<div class="thumbnail">
-						<img src="assets/img/add1.png">
-						<div class="caption">
-							<!-- <h3>サムネイル・ラベル</h3>
-							<p>段落。</p>
-							<p>...</p> -->
-							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-md-3">
-					<div class="thumbnail">
-						<img src="assets/img/燃えよ剣.jpeg">
-						<div class="caption">
-							<!-- <h3>サムネイル・ラベル</h3>
-							<p>段落。</p>
-							<p>...</p> -->
-							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-md-3">
-					<div class="thumbnail">
-						<img src="assets/img/harmony.jpg">
-						<div class="caption">
-							<!-- <h3>サムネイル・ラベル</h3>
-							<p>段落。</p>
-							<p>...</p> -->
-							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-md-3">
-					<div class="thumbnail">
-						<img src="assets/img/jenoside.jpg">
-						<div class="caption">
-							<!-- <h3>サムネイル・ラベル</h3>
-							<p>段落。</p>
-							<p>...</p> -->
-							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
-						</div>
-					</div>
-				</div>
-
-				<div class="col-xs-6 col-md-3">
-					<div class="thumbnail">
-						<img src="assets/img/empelar.jpg">
-						<div class="caption">
-							<!-- <h3>サムネイル・ラベル</h3>
-							<p>段落。</p>
-							<p>...</p> -->
-							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
-						</div>
-					</div>
-				</div>
+				<?php } ?>
 	</div>
 </div>
 </div>
@@ -235,4 +170,4 @@
 
 </body>
 </html>
-<?php var_dump($_SESSION); ?>
+<!-- <?php var_dump($_SESSION); ?> -->
