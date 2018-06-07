@@ -51,6 +51,7 @@
   <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/style_r.css">
   <link rel="stylesheet" type="text/css" href="../assets/font-awesome/css/font-awesome.css">
+  <?php  require('../partial/favicon.php');  ?>
 </head>
 <body style="margin-top: 60px">
   <div class="container">
