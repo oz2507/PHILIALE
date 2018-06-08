@@ -50,6 +50,8 @@
   <title>Learn SNS</title>
   <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/style_r.css">
+  <link rel="stylesheet" type="text/css" href="../assets/font-awesome/css/font-awesome.css">
+  <?php  require('../partial/favicon.php');  ?>
 </head>
 <body style="margin-top: 60px">
   <div class="container">
@@ -60,8 +62,7 @@
           <p>こちらはPHILIALEへのお問合せページになります。<br>当館へのご感想、ご意見等をご連絡ください。<br></p>
           <img class="responsive img-circle logo_original" src="../assets/img/philia2.png">
           <p>こちらの館へも足を運ぶよう心がけておりますが、広い館内ゆえ<br>お返事には少々お時間を頂いております。<br>ご感想などは、ツイッターもご用意してございます。<br>よろしければ是非こちらまでお寄せください。
-            <a href="https://twitter.com/hashtag/PHILIALE?src=hash"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-          </p>
+            <a href="https://twitter.com/hashtag/PHILIALE?src=hash"><i class="fa fa-twitter-square fa-2x" style="color: white;" aria-hidden="true"></i></a></p>
       </div>
 
       <!-- ここに右サイドコンテンツ -->
@@ -71,24 +72,28 @@
         <form class="form-group" method="POST" action="" enctype="multipart/form-data">
           <div>
             <input type="name" name="input_name" class="form-control" id="name" placeholder="お名前">
+            <span>　</span>
             <?php if(isset($errors['name']) && $errors['name'] == 'name_blank') { ?>
-              <p class="text-danger">お名前が入力されていません</p>
+              <span class="text-danger">お名前が入力されていません</span>
             <?php } ?>
           </div>
           <div>
             <input type="email" name="input_email" class="form-control" id="email" placeholder="メールアドレス">
+            <span>　</span>
             <?php if(isset($errors['email']) && $errors['email'] == 'email_blank') { ?>
-              <p class="text-danger">メールアドレスが入力されていません</p>
+              <span class="text-danger">メールアドレスが入力されていません</span>
             <?php } ?>
           </div>
           <div>
             <textarea type="text" name="input_comment" class="form-control" placeholder="メッセージ" id="message"></textarea>
+            <span>　</span>
             <?php if(isset($errors['comment']) && $errors['comment'] == 'comment_blank') { ?>
-              <p class="text-danger">お問合せ内容が入力されていません</p>
+              <span class="text-danger">お問合せ内容が入力されていません</span>
             <?php } ?>
           </div>
-          <br><br>
-          <button type="submit" href="#" class="btn btn-lg btn-block">送信</button>
+          <div class="right_btn">
+          <button type="submit" href="#" class="btn">送　信</button>
+          </div>
         </form>
       </div>
     <?php } ?>
@@ -113,7 +118,9 @@
             <label><?php echo nl2br(htmlspecialchars($comment)); ?></label>
           </div>
           <br><br>
-          <a href="../top.php"><button type="button" class="btn btn-lg btn-block">Back Home</button></a>
+          <div class="right_btn" style="margin-top: 100px;">
+            <a href="../top.php"><button type="button" class="btn">Back Home</button></a>
+          </div>
       </div>
     <?php } ?>
     </div>

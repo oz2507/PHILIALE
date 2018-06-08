@@ -73,12 +73,13 @@
   <title>Learn SNS</title>
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="assets/css/style_r.css">
+  <?php  require('partial/favicon.php');  ?>
 </head>
 
 <body style="margin-top: 60px">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-md-6 col-md-offset-3 thumbnail" style="height:400px;">
+      <div class="col-xs-12 col-md-6 col-md-offset-3 thumbnail" style="height:500px;">
         <h2 class="text-center">ログイン</h2>
 
         <form method="POST" action="signin.php" enctype="multipart/form-data">
@@ -114,7 +115,7 @@
           </div>
 
           <div>
-          <input type="submit" class="btn btn-lg btn-block" value="サインイン" style="margin-top: 50px;">
+          <button type="submit" class="btn btn-original" style="width:100%;">サインイン</button>
           </div>
         </form>
 

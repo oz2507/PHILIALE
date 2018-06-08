@@ -43,7 +43,7 @@
   <title>Learn SNS</title>
   <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/style_r.css">
-  <!-- <link rel="stylesheet" type="text/css" href="../assets/font-awesome/css/font-awesome.css"> -->
+  <?php  require('../partial/favicon.php');  ?>
 </head>
 <body style="margin: 60px 0;">
   <div class="container">
@@ -70,7 +70,7 @@
             <form method="POST" action="">
               <!-- ⑤ -->
               <input type="hidden" name="action" value="submit">
-              <input type="submit" class="btn btn-secondary btn-lg btn-block" value="  ユーザー登録  ">
+              <input type="submit" class="btn btn-secondary btn-lg btn-block" value="  ユーザー登録  " style="height:4em;color:#eeeeee;background-color:#b96cc4;margin-top: 5em;">
               <!-- ④ -->
               <a href="signup.php" class="btn btn-default btn-lg btn-block">&laquo;&nbsp;戻る</a>
             </form>

@@ -120,7 +120,7 @@ $errors = array();
   <title>Learn SNS</title>
   <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/style_r.css"> <!-- 追加 -->
-  <!-- <link rel="stylesheet" type="text/css" href="../assets/font-awesome/css/font-awesome.css"> -->
+  <?php  require('../partial/favicon.php');  ?>
 </head>
 <body style="margin-top: 60px">
   <div class="container">
@@ -129,7 +129,7 @@ $errors = array();
       <div class="col-xs-12 col-md-6 left-column">
         <h3 class="content_header">アカウント新規登録</h3>
           <p><label>PHILIALEのご利用有難うございます。<br>ご入館の前に、ご登録をお願いいたします。<br></label></p>
-          <img class="img-responsive img-circle logo_original" src="../assets/img/フィリアさん1.png">
+          <img class="img-responsive img-circle logo_original" src="../assets/img/philia2.png">
           <p>当館では文庫やコミック、情報誌などなんでもご登録出来ます。<br>本好きな当館支配人もまた、数多の本をお持ちだそうです。<br>皆様はどのような本がお好きでしょう。<br></p><p><br></p>
 
       </div>
@@ -137,52 +137,59 @@ $errors = array();
       <!-- ここに右サイドコンテンツ -->
       <div class="col-xs-12 col-md-6 right-column">
         <!-- <h2 class="text-center content_header">アカウント作成</h2> -->
-        <form method="POST" action="signup.php" enctype="multipart/form-data">
-          <div class="form-group">
+        <form method="POST" class="form-group" action="signup.php" enctype="multipart/form-data">
+          <div>
             <!-- <label for="name">ユーザー名</label> -->
             <input type="text" name="input_name" class="form-control" id="name" placeholder="ユーザーネーム" style="height:3em;">
+            <span>　</span>
+            <span>　</span>
               <?php if(isset($errors['name']) && $errors['name'] == 'blank') { ?>
-              <p class="text-danger">ユーザー名を入力してください</p>
+              <span class="text-danger">ユーザー名を入力してください</span>
               <?php } ?>
               <?php if(isset($errors['name']) && $errors['name'] == 'duplication') { ?>
-              <p class="text-danger">すでに存在するユーザーネームです</p>
+              <span class="text-danger">すでに存在するユーザーネームです</span>
               <?php } ?>
           </div>
 
-          <div class="form-group">
+          <div>
             <!-- <label for="email">メールアドレス</label> -->
             <input type="email" name="input_email" class="form-control" id="email" placeholder="example@gmail.com">
+            <span>　</span>
             <?php if(isset($errors['email']) && $errors['email'] == 'blank') { ?>
-              <p class="text-danger">メールアドレスを入力してください</p>
+              <span class="text-danger">メールアドレスを入力してください</span>
             <?php } ?>
             <?php if(isset($errors['email']) && $errors['email'] == 'duplication') { ?>
-              <p class="text-danger">すでに登録されたメールアドレスです</p>
+              <span class="text-danger">すでに登録されたメールアドレスです</span>
             <?php } ?>
           </div>
 
-          <div class="form-group">
+          <div>
             <!-- <label for="password">パスワード</label> -->
             <input type="password" name="input_password" class="form-control" id="password" placeholder="パスワード">
+            <span>　</span>
             <?php if(isset($errors['password']) && $errors['password'] == 'blank') { ?>
-              <p class="text-danger">パスワードを入力してください</p>
+              <span class="text-danger">パスワードを入力してください</span>
             <?php } ?>
             <?php if(isset($errors['password']) && $errors['password'] == 'length') { ?>
-              <p class="text-danger">パスワードは4〜16文字で入力してください</p>
+              <span class="text-danger">パスワードは4〜16文字で入力してください</span>
             <?php } ?>
           </div>
 
-          <div class="form-group">
+          <div>
             <!-- <label for="password">確認用パスワード</label> -->
             <input type="password" name="input_chk_password" class="form-control" id="chk_password" placeholder="確認用パスワード">
+            <span>　</span>
             <?php if(isset($errors['chk_password']) && $errors['chk_password'] == 'blank') { ?>
-              <p class="text-danger">確認用パスワードを入力してください</p>
+              <span class="text-danger">確認用パスワードを入力してください</span>
             <?php } ?>
             <?php if(isset($errors['chk_password']) && $errors['chk_password'] == 'length') { ?>
-              <p class="text-danger">パスワードは4〜16文字で入力してください</p>
+              <span class="text-danger">パスワードは4〜16文字で入力してください</span>
             <?php } ?>
           </div>
           <br><br><br>
-          <input type="submit" class="btn btn-secondary btn-lg btn-block" value="登録情報の確認">
+          <div class="right_btn" style="margin-top: 70px;">
+          <button type="submit" class="btn">登録情報の確認</button>
+          </div>
           <a href="../signin.php" style="float: right; padding-top: 6px;" class="text-success">サインイン</a>
         </form>
       </div>
