@@ -83,7 +83,7 @@
 	color: #e7daea;
 	font-size: 20px;
 	margin: 10px 0 5px 0;
-	width: 100%;
+	width: 80%;
 	height:3em;
     background-color: #f2eaf4;
     border: 2px solid #f2eaf4;
@@ -190,24 +190,28 @@
 
 
 
+.form_original_2{
+	text-align: center;
+}
+
 .form_original_2 input{
 	margin-bottom: 25px;
-	width:100%;
+	width:80%;
 	height: 3em;
 	outline:none;
-	color:#8f4796;
+	color:#b96cc4;
     background:none;
     border-style: none;
     border-bottom: solid 2px #f2eaf4;
 
 }
 .form_original_2 input::placeholder {
-  color: #e7daea;
+  color: #b96cc4;
 }
 .form_original_2 textarea{
-	color: #8f4796;
+	color: #b96cc4;
 	outline:none;
-	width:100%;
+	width:80%;
 	height: 5em;
 	margin-bottom: 20px;
     border-style: none;
@@ -215,21 +219,14 @@
 }
 
 .form_original_2 textarea::placeholder {
-  color: #e7daea;
-}
-
-.form_original_2 label{
-	vertical-align:top;
-	font-size: 15px;
-	color: #bbb;
+  color: #b96cc4;
 }
 
 .pop_p{
-	margin-top: 30px;
 	font-weight:600;
 	letter-spacing: 0.1em;
 	font-size: 20px;
 	color:#8f4796;
 	vertical-align: middle;
-	text-align: center;
+	text-align: center; 
 }
