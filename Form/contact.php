@@ -47,7 +47,7 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>Learn SNS</title>
+  <title>PHILIALE</title>
   <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/style_r.css">
   <link rel="stylesheet" type="text/css" href="../assets/font-awesome/css/font-awesome.css">
@@ -61,8 +61,7 @@
         <h3 class="content_header">お問い合わせ</h3>
           <p>こちらはPHILIALEへのお問合せページになります。<br>当館へのご感想、ご意見等をご連絡ください。<br></p>
           <img class="responsive img-circle logo_original" src="../assets/img/philia2.png">
-          <p>こちらの館へも足を運ぶよう心がけておりますが、広い館内ゆえ<br>お返事には少々お時間を頂いております。<br>ご感想などは、ツイッターもご用意してございます。<br>よろしければ是非こちらまでお寄せください。
-            <a href="https://twitter.com/hashtag/PHILIALE?src=hash"><i class="fa fa-twitter-square fa-2x" style="color: white;" aria-hidden="true"></i></a></p>
+          <p>お返事には少々お時間を頂いております。<br>ご感想などは、ツイッターもご用意してございます。<br>よろしければ是非こちらまでお寄せください。</p>
       </div>
 
       <!-- ここに右サイドコンテンツ -->

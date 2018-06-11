@@ -15,7 +15,7 @@
         <h2 class="text-center">登録完了</h2>
         <div class="row">
           <div class="col-xs-12 text-center">
-            <div class="thumbnail" style="letter-spacing: 0.2em; line-height:1.65;">
+            <div class="thumbnail" style="letter-spacing: 0.2em; line-height:1.65; border: none;">
               <p>ご登録有難うございます。<br>さあまずはサインインしてマイページへ。<br>ご登録本の情報は、タイトルや著者名などから検索も出来ます。</p>
               <img class="img-responsive img-circle" src="../assets/img/philia2.png" style="width:200px;">
             </div>
@@ -29,4 +29,3 @@
   </div>
 </body>
 </html>
-
