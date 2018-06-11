@@ -29,7 +29,7 @@
           $dbh = null;
 
       unset($_SESSION['register']);
-          header('Location: thanks.html');
+          header('Location: thanks.php');
           exit();
 
     }
