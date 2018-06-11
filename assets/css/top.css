@@ -166,6 +166,10 @@ p{
   border-bottom: 5px solid #dcdcdc;
 }
 
+.diviver{
+  padding-top: 1px;
+}
+
 
   .header img{
   width: 100%;
@@ -482,28 +486,29 @@ h5{
   width: 100%;
 }
 
-
-  .container-what{
+.container-what{
   width: 1100px;
-  margin: 0 auto;
+  margin: 0px 0px 0px 170px;
   height: 850px;
-  padding-top: 80px;
+  /*padding-top: 80px;
   position: relative;
   overflow: hidden;
   text-align: center;
+*/
+  /*margin-left: 170px;*/
+  /*margin-right: 0px;*/
 }
 
 .row{
   padding-left: 100px;
 }
 
-/*.pc_only {
-  box-sizing: border-box;
-  margin-left: calc(((800vw - 1100rem) / 2) * -1);
-  margin-right: calc(((800vw - 1100rem) / 2) * -1);
-  padding: 1.5em calc((800vw - 1100rem) / 2);
+.pc_only{
+  width: 400px;
+  height: 600px;
+
 }
-*/
+
 #what p{
   text-align: left;
 }
@@ -515,6 +520,7 @@ h5{
 .desc{
   width: 500px;
 }
+
 
 .pull-right{
   text-align: left;

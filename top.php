@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, maximum-scale=1.0, user-scalable=yes">
@@ -56,7 +56,7 @@
 		</div>
 		<div class="row">
 			<div class="desc pull-right">
-				<img src="assets/img/pc.jpg" alt="pc_img" class="pc_only">
+				<img src="assets/img/phone.png" alt="phone_img" class="pc_only" style="margin-right:0px;">
 			</div>
 			<div class="desc pull-left phone_only">
 				<h3>読書フェチのためのWeb上の書庫です。</h3>
