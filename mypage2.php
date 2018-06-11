@@ -145,7 +145,7 @@
 					</div>
 				</a>
 				<!-- <div class="col-xs-6 col-md-3"> -->
-					<?php require('detail.html'); ?>
+					<?php require('detail_pop/detail.html'); ?>
 				<!-- </div> -->
 				
 			</div>
