@@ -1,26 +1,61 @@
 <?php 
 	session_start();
 	
+	require('dbconnect.php');
+
 	if (empty($_SESSION)) {
 		header("Location: top.php");
 	}
 
+	$past_sql='SELECT * FROM `past_archives` WHERE user_id=?';
+	$past_data=array($_SESSION["id"]);
+	$past_stmt = $dbh->prepare($past_sql);
+    $past_stmt->execute($past_data);
+    
+    $past_books=array();
+    
+    while (true) {
+    	$record_past=$past_stmt->fetch(PDO::FETCH_ASSOC);
+    	if ($record_past==false) {
+    		break;
+    	}
+    	$past_books[]=$record_past;
+    }
+
+    $future_sql='SELECT * FROM `future_archives` WHERE user_id=?';
+	$future_data=array($_SESSION["id"]);
+	$future_stmt = $dbh->prepare($future_sql);
+    $future_stmt->execute($future_data);
+    
+    $future_books=array();
+    
+    while (true) {
+    	$record_future=$future_stmt->fetch(PDO::FETCH_ASSOC);
+    	if ($record_future==false) {
+    		break;
+    	}
+    	$future_books[]=$record_future;
+    }
+
+
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 	<meta charset="UTF-8">
 	<title>MYPAGE</title>
 
-	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+	<!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css"> -->
+	<link rel="stylesheet" href="assets/css/bootstrap_phl.css">
+	<link rel="stylesheet" href="assets/css/style.css">
 	<link rel="stylesheet" href="assets/css/mypage.css">
 
 
 
 	
 </head>
-<body style="margin-top: 90px;">
+<body style="margin-top: 90px;background-image: url(assets/img/back.jpg);">
 <!-- navbar -->
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
@@ -32,7 +67,7 @@
                 <span class="icon-bar"></span>
             </button> 
 
-            <a class="navbar-brand-center" style="position: absolute;top:10px;z-index:2000;"  href="#">
+            <a class="navbar-brand-center" style="position: absolute;top:10px;z-index:2000;"  href="library2.php">
                 <img alt="philia" src="assets/img/philia2.png" style="height: 35px;">
             </a>       
         
@@ -56,6 +91,8 @@
     </div>
 </nav>
 
+
+
 <!-- 読んだ読みたい -->
 <div class="tab-content">
     
@@ -63,39 +100,35 @@
 		<!-- add book -->
 		<div class="container">
 			<div class="row">
+				
 				<div class="col-xs-6 col-md-3">
 					<div class="thumbnail">
 						<img src="assets/img/add1.png">
-						<div class="caption">
-							<!-- <h3>サムネイル・ラベル</h3>
-							<p>段落。</p>
-							<p>...</p> -->
-							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
-						</div>
 					</div>
 				</div>
+
+				<!-- <figure class="hover-parent">
 				<div class="col-xs-6 col-md-3">
 					<div class="thumbnail">
-						<img src="assets/img/燃えよ剣.jpeg">
-						<div class="caption">
-							<!-- <h3>サムネイル・ラベル</h3>
-							<p>段落。</p>
-							<p>...</p> -->
-							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-md-3">
-					<div class="thumbnail">
+						
 						<img src="assets/img/harmony.jpg">
-						<div class="caption">
-							<!-- <h3>サムネイル・ラベル</h3>
-							<p>段落。</p>
-							<p>...</p> -->
-							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
-						</div>
+						<figcaption class="hover-mask">
+							タイトルと説明文が入るよ
+						</figcaption>
+						
 					</div>
+					
 				</div>
+				</figure> -->	
+				<!-- <figure class=”hover-parent”>
+					<img src=”assets/img/harmony.jpg”>
+						<figcaption class=”hover-mask”>
+							タイトルと説明文が入るよ
+						</figcaption>
+				</figure> -->
+				<!-- <?php foreach ($past_books as $past_book) {
+					include("detail.html");
+				}?> -->
 			</div>
 		</div>
 	</div>
@@ -104,123 +137,20 @@
 	<div id="tab2" class="tab-pane fade">
 		<div class="container">
 			<div class="row">
-				<a href="add.php">
+				<a href="#">
 					<div class="col-xs-6 col-md-3">
 						<div class="thumbnail">
 							<img src="assets/img/add1.png">
-							<div class="caption">
-								<!-- <h3>サムネイル・ラベル</h3>
-								<p>段落。</p>
-								<p>...</p> -->
-								<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
-							</div>
 						</div>
 					</div>
 				</a>
-				<div class="col-xs-6 col-md-3">
-					<div class="thumbnail">
-						<img src="assets/img/燃えよ剣.jpeg">
-						<div class="caption">
-							<!-- <h3>サムネイル・ラベル</h3>
-							<p>段落。</p>
-							<p>...</p> -->
-							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-md-3">
-					<div class="thumbnail">
-						<img src="assets/img/harmony.jpg">
-						<div class="caption">
-							<!-- <h3>サムネイル・ラベル</h3>
-							<p>段落。</p>
-							<p>...</p> -->
-							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-md-3">
-					<div class="thumbnail">
-						<img src="assets/img/jenoside.jpg">
-						<div class="caption">
-							<!-- <h3>サムネイル・ラベル</h3>
-							<p>段落。</p>
-							<p>...</p> -->
-							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
-						</div>
-					</div>
-				</div>
-
-				<div class="col-xs-6 col-md-3">
-					<div class="thumbnail">
-						<img src="assets/img/empelar.jpg">
-						<div class="caption">
-							<!-- <h3>サムネイル・ラベル</h3>
-							<p>段落。</p>
-							<p>...</p> -->
-							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
-						</div>
-					</div>
-				</div>
-
-				<div class="col-xs-6 col-md-3">
-					<div class="thumbnail">
-						<img src="assets/img/add1.png">
-						<div class="caption">
-							<!-- <h3>サムネイル・ラベル</h3>
-							<p>段落。</p>
-							<p>...</p> -->
-							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-md-3">
-					<div class="thumbnail">
-						<img src="assets/img/燃えよ剣.jpeg">
-						<div class="caption">
-							<!-- <h3>サムネイル・ラベル</h3>
-							<p>段落。</p>
-							<p>...</p> -->
-							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-md-3">
-					<div class="thumbnail">
-						<img src="assets/img/harmony.jpg">
-						<div class="caption">
-							<!-- <h3>サムネイル・ラベル</h3>
-							<p>段落。</p>
-							<p>...</p> -->
-							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-md-3">
-					<div class="thumbnail">
-						<img src="assets/img/jenoside.jpg">
-						<div class="caption">
-							<!-- <h3>サムネイル・ラベル</h3>
-							<p>段落。</p>
-							<p>...</p> -->
-							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
-						</div>
-					</div>
-				</div>
-
-				<div class="col-xs-6 col-md-3">
-					<div class="thumbnail">
-						<img src="assets/img/empelar.jpg">
-						<div class="caption">
-							<!-- <h3>サムネイル・ラベル</h3>
-							<p>段落。</p>
-							<p>...</p> -->
-							<!-- <p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p> -->
-						</div>
-					</div>
-				</div>
+				<!-- <div class="col-xs-6 col-md-3"> -->
+					<?php require('detail.html'); ?>
+				<!-- </div> -->
+				
+			</div>
+		</div>
 	</div>
-</div>
 </div>
 
 
@@ -235,4 +165,4 @@
 
 </body>
 </html>
-<?php var_dump($_SESSION); ?>
+<!-- <?php var_dump($_SESSION); ?> -->

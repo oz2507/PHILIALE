@@ -23,7 +23,7 @@
     //     }
  ?> -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 	<meta charset="UTF-8">
 	<title>PHILIBLARY</title>
@@ -31,7 +31,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
 	<link rel="stylesheet" href="assets/css/mypage.css">
 </head>
-<body style="margin-top: 90px;">
+<body style="margin-top: 90px;background-image: url(assets/img/back.jpg);">
 <!-- navbar -->
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
@@ -43,7 +43,7 @@
                 <span class="icon-bar"></span>
             </button> 
 
-            <a class="navbar-brand-center" style="position: absolute;top:10px;z-index:2000;"  href="#">
+            <a class="navbar-brand-center" style="position: absolute;top:10px;z-index:2000;"  href="mypage2.php">
                 <img alt="philia" src="assets/img/philia2.png" style="height: 35px;">
             </a>       
         
@@ -51,7 +51,7 @@
 
         <div class="collapse navbar-collapse" id="navbarEexample">
             <ul class="nav navbar-nav">
-            	<li><a href="#">PHILIBRARY</a></li>
+            	<li><a href="#top">PHILIBRARY</a></li>
             	
             </ul>
 
@@ -70,16 +70,110 @@
 <div class="container">
 <div class="row">
 	<div class="col-xs-6 col-md-3">
-		<div class="thumbnail">
-			<img src="assets/img/philia2.png">
-			<div class="caption">
-				<h3>サムネイル・ラベル</h3>
-				<p>段落。</p>
-				<p>...</p>
-				<p><a href="#" class="btn btn-default" role="button" target="_blank">ボタン</a></p>
-			</div>
-		</div>
-	</div>
+        <div class="thumbnail">
+            <img src="assets/img/philia2.png">
+        </div>
+    </div><div class="col-xs-6 col-md-3">
+        <div class="thumbnail">
+            <img src="assets/img/philia2.png">
+        </div>
+    </div><div class="col-xs-6 col-md-3">
+        <div class="thumbnail">
+            <img src="assets/img/philia2.png">
+        </div>
+    </div><div class="col-xs-6 col-md-3">
+        <div class="thumbnail">
+            <img src="assets/img/philia2.png">
+        </div>
+    </div><div class="col-xs-6 col-md-3">
+        <div class="thumbnail">
+            <img src="assets/img/philia2.png">
+        </div>
+    </div><div class="col-xs-6 col-md-3">
+        <div class="thumbnail">
+            <img src="assets/img/philia2.png">
+        </div>
+    </div><div class="col-xs-6 col-md-3">
+        <div class="thumbnail">
+            <img src="assets/img/philia2.png">
+        </div>
+    </div><div class="col-xs-6 col-md-3">
+        <div class="thumbnail">
+            <img src="assets/img/philia2.png">
+        </div>
+    </div><div class="col-xs-6 col-md-3">
+        <div class="thumbnail">
+            <img src="assets/img/philia2.png">
+        </div>
+    </div><div class="col-xs-6 col-md-3">
+        <div class="thumbnail">
+            <img src="assets/img/philia2.png">
+        </div>
+    </div><div class="col-xs-6 col-md-3">
+        <div class="thumbnail">
+            <img src="assets/img/philia2.png">
+        </div>
+    </div><div class="col-xs-6 col-md-3">
+        <div class="thumbnail">
+            <img src="assets/img/philia2.png">
+        </div>
+    </div><div class="col-xs-6 col-md-3">
+        <div class="thumbnail">
+            <img src="assets/img/philia2.png">
+        </div>
+    </div><div class="col-xs-6 col-md-3">
+        <div class="thumbnail">
+            <img src="assets/img/philia2.png">
+        </div>
+    </div><div class="col-xs-6 col-md-3">
+        <div class="thumbnail">
+            <img src="assets/img/philia2.png">
+        </div>
+    </div><div class="col-xs-6 col-md-3">
+        <div class="thumbnail">
+            <img src="assets/img/philia2.png">
+        </div>
+    </div><div class="col-xs-6 col-md-3">
+        <div class="thumbnail">
+            <img src="assets/img/philia2.png">
+        </div>
+    </div><div class="col-xs-6 col-md-3">
+        <div class="thumbnail">
+            <img src="assets/img/philia2.png">
+        </div>
+    </div><div class="col-xs-6 col-md-3">
+        <div class="thumbnail">
+            <img src="assets/img/philia2.png">
+        </div>
+    </div><div class="col-xs-6 col-md-3">
+        <div class="thumbnail">
+            <img src="assets/img/philia2.png">
+        </div>
+    </div><div class="col-xs-6 col-md-3">
+        <div class="thumbnail">
+            <img src="assets/img/philia2.png">
+        </div>
+    </div><div class="col-xs-6 col-md-3">
+        <div class="thumbnail">
+            <img src="assets/img/philia2.png">
+        </div>
+    </div><div class="col-xs-6 col-md-3">
+        <div class="thumbnail">
+            <img src="assets/img/philia2.png">
+        </div>
+    </div><div class="col-xs-6 col-md-3">
+        <div class="thumbnail">
+            <img src="assets/img/philia2.png">
+        </div>
+    </div><div class="col-xs-6 col-md-3">
+        <div class="thumbnail">
+            <img src="assets/img/philia2.png">
+        </div>
+    </div><div class="col-xs-6 col-md-3">
+        <div class="thumbnail">
+            <img src="assets/img/philia2.png">
+        </div>
+    </div>
 </div>
 </div>
 
