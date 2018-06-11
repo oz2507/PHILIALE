@@ -117,7 +117,7 @@ $errors = array();
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>Learn SNS</title>
+  <title>PHILIALE</title>
   <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/style_r.css"> <!-- 追加 -->
   <?php  require('../partial/favicon.php');  ?>

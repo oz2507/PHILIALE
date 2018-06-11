@@ -348,3 +348,48 @@
   color: #e7daea;
   font-weight: 900;
 }
+
+
+
+
+
+
+
+
+
+
+
+/*---------terms.php----------*/
+.wrapKIYAKU{
+	margin: 200px auto 300px;
+	padding: 20px;
+	border-radius: 4px;
+    border: solid 2px #f2eaf4;
+	box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
+}
+
+.wrapKIYAKU ul{
+	list-style: none;
+}
+
+.wrapKIYAKU h1{
+	margin:30px 0;
+    /*border: solid 5px #f2eaf4;*/
+	/*border-radius: 4px;*/
+	width:400px;
+	text-align: center;
+}
+
+/*.wrapKIYAKU p{
+	margin:20px auto;
+	font-size: 0.95em;
+	line-height: 140%;
+	text-align: justify;
+}
+*/
+.wrapKIYAKU p.tR{
+	margin:50px auto;
+	font-size: 0.95em;
+	line-height: 140%;
+	text-align: right;
+}
