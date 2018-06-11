@@ -29,7 +29,7 @@
           $dbh = null;
 
       unset($_SESSION['register']);
-          header('Location: thanks.html');
+          header('Location: thanks.php');
           exit();
 
     }
@@ -40,7 +40,7 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>Learn SNS</title>
+  <title>PHILIALE</title>
   <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/style_r.css">
   <?php  require('../partial/favicon.php');  ?>
