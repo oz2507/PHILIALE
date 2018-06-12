@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <title>PHILIALE</title>
-  <link rel="stylesheet" type="text/css" href="new_add_book.css">
-  <link rel="stylesheet" type="text/css" href="check_add_book_pop.css">
-  <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css"><!-- グリッドシステムのみ -->
+  <link rel="stylesheet" type="text/css" href="new_add_book/new_add_book.css">
+  <link rel="stylesheet" type="text/css" href="new_add_book/check_add_book_pop.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css"><!-- グリッドシステムのみ -->
 </head>
 
 <body>
@@ -55,11 +55,15 @@
 
 	</div>
 
-	<p><a id="modal-open" class="button-link">クリックするとモーダルウィンドウを開きます。</a></p>
+	<!-- <p><a id="modal-open" class="button-link">クリックするとモーダルウィンドウを開きます。</a></p> -->
+
+	<a id="modal-open" class="button-link">
+		<button type="submit" name="" class="book_add_btn">確認する</button>
+	</a>
 
 
-	<script src="../assets/js/jquery-3.1.1.js"></script>
-	<script src="new_add_book.js"></script>
+	<script src="assets/js/jquery-3.1.1.js"></script>
+	<script src="new_add_book/new_add_book.js"></script>
 
 </body>
 </html>

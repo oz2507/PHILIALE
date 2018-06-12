@@ -7,8 +7,7 @@
 	<title>PHILIALE</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
 	<link rel="stylesheet"x href="assets/css/styles.css">
-	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
-	<!-- <link rel="stylesheet" href="assets/fonts/Roboto_Condensed"> -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700">
 	<link rel="stylesheet" href="philiale_mypage/assets/css/mystyle.css">
 	<link rel="stylesheet" href="assets/css/top.css">
@@ -27,8 +26,8 @@
                 <span class="icon-bar"></span>
             </button> 
 
-            <a class="navbar-brand" href="#">
-                <i class="fas fa-book-open">PHILIALE</i>
+            <a class="navbar-brand" href="#top">
+                <i class="fas fa-book-open fa-2x"><span>PHILIALE</span></i>
             </a>           
         </div>
 
