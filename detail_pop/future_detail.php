@@ -61,27 +61,31 @@
 
 	</div>
 
-	<!-- <p><a id="modal-open" class="button-link">クリックするとモーダルウィンドウを開きます。</a></p> -->
 
-	<a id="modal-open" class="button-link">
-			<!-- <div class="col-xs-6 col-md-3">
-				<div class="thumbnail">
-					<img src="assets/img/harmony.jpg">
-					
-				</div>
-			</div> -->
+		
+		<?php foreach ($future_books as $future) { ?>
+			<a id="modal-open" class="button-link">	
 			<div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/harmony.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    フェチる
-		                </span>
-        			</div>
-     			</div>
+	            <div class="l-thumbnail">
+    			    <figure class="thumbnail-wrapper">
+    			    	<?php if ($future["book_img"]!='') {?>
+           					<img src="book_img/<?php echo $future["book_img"]; ?>">
+           					<span class="more-text">
+	                    フェチる
+	                </span>
+           				<?php }else{ ?>
+           					<img src="assets/img/philia2.png" alt="no image">
+           					<span class="more-text">
+	                    NO IMAGE
+	                </span>
+						<?php } ?>
+         			</figure>
+	                
+    			</div>
+     		</div>
+     	</a>
+     	<?php } ?>
 
-		</a>
 
 
 	<script src="assets/js/jquery-3.1.1.js"></script>
