@@ -7,35 +7,52 @@
 		header("Location: top.php");
 	}
 
-	$past_sql='SELECT * FROM `past_archives` WHERE user_id=?';
-	$past_data=array($_SESSION["id"]);
-	$past_stmt = $dbh->prepare($past_sql);
-    $past_stmt->execute($past_data);
-    
-    $past_books=array();
-    
-    while (true) {
-    	$record_past=$past_stmt->fetch(PDO::FETCH_ASSOC);
-    	if ($record_past==false) {
-    		break;
-    	}
-    	$past_books[]=$record_past;
-    }
+// 読んだ用
+	$past_books=array();
 
-    $future_sql='SELECT * FROM `future_archives` WHERE user_id=?';
-	$future_data=array($_SESSION["id"]);
-	$future_stmt = $dbh->prepare($future_sql);
-    $future_stmt->execute($future_data);
-    
-    $future_books=array();
-    
-    while (true) {
-    	$record_future=$future_stmt->fetch(PDO::FETCH_ASSOC);
-    	if ($record_future==false) {
-    		break;
-    	}
-    	$future_books[]=$record_future;
-    }
+    if (isset($_GET['search_word'])==true) {
+        $past_sql='SELECT * FROM `past_archives`
+        		   WHERE book_title like"%'.$_GET['search_word'].'%"';
+    }else{
+		$past_sql='SELECT * FROM `past_archives` WHERE user_id=?';
+	}
+
+		$past_data=array($_SESSION["id"]);
+		$past_stmt = $dbh->prepare($past_sql);
+	    $past_stmt->execute($past_data);
+	    
+		while (true) {
+	    	$record_past=$past_stmt->fetch(PDO::FETCH_ASSOC);
+	    	if ($record_past==false) {
+	    		break;
+	    	}
+	    	$past_books[]=$record_past;
+	    }
+  	
+      
+
+// 読みたい用
+	$future_books=array();
+
+    if (isset($_GET['search_word'])==true) {
+		$future_sql='SELECT * FROM `future_archives` WHERE user_id=? and like"%'.$_GET['search_word'].'%"';
+	}else{
+
+    	$future_sql='SELECT * FROM `future_archives` WHERE user_id=?';
+	}
+
+		$future_data=array($_SESSION["id"]);
+		$future_stmt = $dbh->prepare($future_sql);
+	    $future_stmt->execute($future_data);
+	    	
+	    while (true) {
+	    	$record_future=$future_stmt->fetch(PDO::FETCH_ASSOC);
+	    	if ($record_future==false) {
+	    		break;
+	    	}
+	    	$future_books[]=$record_future;
+	    }
+
 
 
 ?>
@@ -79,9 +96,9 @@
             	<li><a href="#tab2" data-toggle="tab">読んだ</a></li>
             </ul>
 
-          	<form class="navbar-form navbar-right" role="search">
+          	<form class="navbar-form navbar-right" role="search" method="get">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="文庫検索">
+                    <input type="text" class="form-control" placeholder="文庫検索" name="seach_word">
                 </div>
                 <button type="submit" class="btn btn-default">検索</button>
             </form>
@@ -92,111 +109,70 @@
 
 
 
-<!-- 読んだ読みたい -->
+<!-- 読みたい -->
 <div class="tab-content">
     
     <div id="tab1" class="tab-pane fade in active">
 		<!-- add book -->
 		<div class="container">
 			<div class="row">
-				<?php include("new_add_book/new_add_book.php"); ?>
 
 				<div class="col-xs-6 col-md-3">
+		            <div class="thumbnail">
+		                <img src="assets/img/add.png">
+		            </div>
+		        </div>
+
+				
+				<!-- <div class="col-xs-6 col-md-3">
 		            <div class="l-thumbnail">
 		                <figure class="thumbnail-wrapper">
-		                    <img src="assets/img/add.png">
+		                    <img src="assets/img/harmony.jpg">
 		                 </figure>
 		                <span class="more-text">
                 		    フェチる
                 		</span>
             		</div>
       			</div>
-				
-				<!-- <?php foreach ($past_books as $past_book) {
-					include("detail.html");
-				}?> -->
+				 -->
+				<?php include("detail_pop/future_detail.php");?>
 			</div>
 		</div>
 	</div>
 
-	<!-- book -->
+	<!-- 読んだ -->
 	<div id="tab2" class="tab-pane fade">
 		<div class="container">
 			<div class="row">
+				<div class="col-xs-6 col-md-3">
+		            <div class="thumbnail">
+		                <img src="assets/img/add.png">
+		            </div>
+		        </div>
+
+
 				<div class="col-xs-6 col-md-3"> 
 		            <div class="l-thumbnail">
         			    <figure class="thumbnail-wrapper">
                				<img src="assets/img/empelar.jpg">
              			</figure>
 		                <span class="more-text">
-		                    フェチる
+		                    EDIT
 		                </span>
         			</div>
      			</div>
-     			<!-- <div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/empelar.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    フェチる
-		                </span>
-        			</div>
-     			</div><div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/empelar.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    フェチる
-		                </span>
-        			</div>
-     			</div><div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/empelar.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    フェチる
-		                </span>
-        			</div>
-     			</div><div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/empelar.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    フェチる
-		                </span>
-        			</div>
-     			</div><div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/empelar.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    フェチる
-		                </span>
-        			</div>
-     			</div><div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/empelar.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    フェチる
-		                </span>
-        			</div>
-     			</div> -->
+     			
 
-         		<?php include("detail_pop/detail.html"); ?>
+         		<?php include("detail_pop/past_detail.php"); ?>
 			</div>
 		</div>
 	</div>
 
 </div>
 
-
+<?php var_dump($past_books); ?>
+<?php var_dump($_GET); ?>
+<?php echo $past_books["book_img"]; ?>
 
 <!-- 5.footer -->
 	<?php require('partial/footer.php'); ?>
@@ -208,4 +184,3 @@
 
 </body>
 </html>
-<!-- <?php var_dump($_SESSION); ?> -->
