@@ -154,6 +154,16 @@ p{
 }
 
 @media (max-width: 768px){
+ .container-fluid {
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.navbar-default{
+     padding-right: 30px;
+    padding-left: 30px; 
+}
+  
   .pc_only{
     display: none;
   }
@@ -170,6 +180,10 @@ p{
   padding-top: 1px;
 }
 
+.container-fluid {
+    padding-right: 30px;
+    padding-left: 30px;
+}
 
   .header img{
   width: 100%;
@@ -258,7 +272,6 @@ h5{
   .container {
     width: 750px;
   }
-
   /*.pc_only{
     display: none;
   }
@@ -506,7 +519,7 @@ h5{
 .pc_only{
   width: 400px;
   height: 600px;
-
+  /*box-shadow:-2px -2px 2px #999 inset;*/
 }
 
 #what p{

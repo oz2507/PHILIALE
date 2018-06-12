@@ -46,8 +46,7 @@
 	<meta charset="UTF-8">
 	<title>MYPAGE</title>
 
-	<!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css"> -->
-	<link rel="stylesheet" href="assets/css/bootstrap_phl.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.phl.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 	<link rel="stylesheet" href="assets/css/mypage.css">
 
@@ -100,32 +99,19 @@
 		<!-- add book -->
 		<div class="container">
 			<div class="row">
-				
-				<div class="col-xs-6 col-md-3">
-					<div class="thumbnail">
-						<img src="assets/img/add1.png">
-					</div>
-				</div>
+				<?php include("new_add_book/new_add_book.php"); ?>
 
-				<!-- <figure class="hover-parent">
 				<div class="col-xs-6 col-md-3">
-					<div class="thumbnail">
-						
-						<img src="assets/img/harmony.jpg">
-						<figcaption class="hover-mask">
-							タイトルと説明文が入るよ
-						</figcaption>
-						
-					</div>
-					
-				</div>
-				</figure> -->	
-				<!-- <figure class=”hover-parent”>
-					<img src=”assets/img/harmony.jpg”>
-						<figcaption class=”hover-mask”>
-							タイトルと説明文が入るよ
-						</figcaption>
-				</figure> -->
+		            <div class="l-thumbnail">
+		                <figure class="thumbnail-wrapper">
+		                    <img src="assets/img/add.png">
+		                 </figure>
+		                <span class="more-text">
+                		    フェチる
+                		</span>
+            		</div>
+      			</div>
+				
 				<!-- <?php foreach ($past_books as $past_book) {
 					include("detail.html");
 				}?> -->
@@ -137,20 +123,77 @@
 	<div id="tab2" class="tab-pane fade">
 		<div class="container">
 			<div class="row">
-				<a href="#">
-					<div class="col-xs-6 col-md-3">
-						<div class="thumbnail">
-							<img src="assets/img/add1.png">
-						</div>
-					</div>
-				</a>
-				<!-- <div class="col-xs-6 col-md-3"> -->
-					<?php require('detail_pop/detail.html'); ?>
-				<!-- </div> -->
-				
+				<div class="col-xs-6 col-md-3"> 
+		            <div class="l-thumbnail">
+        			    <figure class="thumbnail-wrapper">
+               				<img src="assets/img/empelar.jpg">
+             			</figure>
+		                <span class="more-text">
+		                    フェチる
+		                </span>
+        			</div>
+     			</div>
+     			<!-- <div class="col-xs-6 col-md-3"> 
+		            <div class="l-thumbnail">
+        			    <figure class="thumbnail-wrapper">
+               				<img src="assets/img/empelar.jpg">
+             			</figure>
+		                <span class="more-text">
+		                    フェチる
+		                </span>
+        			</div>
+     			</div><div class="col-xs-6 col-md-3"> 
+		            <div class="l-thumbnail">
+        			    <figure class="thumbnail-wrapper">
+               				<img src="assets/img/empelar.jpg">
+             			</figure>
+		                <span class="more-text">
+		                    フェチる
+		                </span>
+        			</div>
+     			</div><div class="col-xs-6 col-md-3"> 
+		            <div class="l-thumbnail">
+        			    <figure class="thumbnail-wrapper">
+               				<img src="assets/img/empelar.jpg">
+             			</figure>
+		                <span class="more-text">
+		                    フェチる
+		                </span>
+        			</div>
+     			</div><div class="col-xs-6 col-md-3"> 
+		            <div class="l-thumbnail">
+        			    <figure class="thumbnail-wrapper">
+               				<img src="assets/img/empelar.jpg">
+             			</figure>
+		                <span class="more-text">
+		                    フェチる
+		                </span>
+        			</div>
+     			</div><div class="col-xs-6 col-md-3"> 
+		            <div class="l-thumbnail">
+        			    <figure class="thumbnail-wrapper">
+               				<img src="assets/img/empelar.jpg">
+             			</figure>
+		                <span class="more-text">
+		                    フェチる
+		                </span>
+        			</div>
+     			</div><div class="col-xs-6 col-md-3"> 
+		            <div class="l-thumbnail">
+        			    <figure class="thumbnail-wrapper">
+               				<img src="assets/img/empelar.jpg">
+             			</figure>
+		                <span class="more-text">
+		                    フェチる
+		                </span>
+        			</div>
+     			</div> -->
+
+         		<?php include("detail_pop/detail.html"); ?>
 			</div>
 		</div>
 	</div>
+
 </div>
 
 
