@@ -12,7 +12,7 @@
 
     if (isset($_GET['search_word'])==true) {
         $past_sql='SELECT * FROM `past_archives`
-        		   WHERE book_title like"%'.$_GET['search_word'].'%"';
+        		   WHERE book_title like "%'.$_GET['search_word'].'%" AND user_id=?';
     }else{
 		$past_sql='SELECT * FROM `past_archives` WHERE user_id=?';
 	}
@@ -35,7 +35,7 @@
 	$future_books=array();
 
     if (isset($_GET['search_word'])==true) {
-		$future_sql='SELECT * FROM `future_archives` WHERE user_id=? and like"%'.$_GET['search_word'].'%"';
+		$future_sql='SELECT * FROM `future_archives` WHERE user_id=? and book_title like "%'.$_GET['search_word'].'%"';
 	}else{
 
     	$future_sql='SELECT * FROM `future_archives` WHERE user_id=?';
@@ -57,18 +57,26 @@
 
 ?>
 
+<!-- <?php var_dump($past_books); ?>
+<?php var_dump($future_books); ?>
+<?php var_dump($_GET); ?>
+<?php echo $past_books["book_img"]; ?>
+<?php echo $past_sql; ?>
+<?php echo $future_sql; ?>
+ -->
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
 	<meta charset="UTF-8">
 	<title>MYPAGE</title>
 
+	<link rel="stylesheet" type="text/css" href="detail_pop/detail.css">
+  	<link rel="stylesheet" type="text/css" href="detail_pop/detail_pop.css">
+
 	<link rel="stylesheet" href="assets/css/bootstrap.phl.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 	<link rel="stylesheet" href="assets/css/mypage.css">
-
-
-
 	
 </head>
 <body style="margin-top: 90px;background-image: url(assets/img/back.jpg);">
@@ -98,7 +106,7 @@
 
           	<form class="navbar-form navbar-right" role="search" method="get">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="文庫検索" name="seach_word">
+                    <input type="text" class="form-control" placeholder="文庫検索" name="search_word">
                 </div>
                 <button type="submit" class="btn btn-default">検索</button>
             </form>
@@ -108,6 +116,57 @@
 </nav>
 
 
+<!-- pop -->
+<div id="modal-content">
+
+	<div class="container-fluid pop_header" style="background-color: white;">
+	    <div class="row">
+	      <div class="col-xs-12 col-md-12">
+			<a id="modal-close" class="button-link">×</a>
+	  </div>
+	</div>
+	</div>
+
+	<div class="container">
+	<div class="row">
+	  	  <div class="col-xs-12 col-md-6 col-md-offset-3">
+	  	    <div class="book_img">
+	  	  	<img class="book_pic" src="https://placehold.jp/b96cc4/ffffff/210x296.png?text=NO IMAGE" width="148">
+	  	    </div>
+	  	  </div>
+	</div><!-- row -->
+
+	<div class="row">
+		  <div class="col-xs-12 col-md-6 col-md-offset-3">
+		<form action="" method="" class="form_original">
+			<div>
+			  <label for="book_title">作品名</label>
+			  <input type="text" id="book_title" name="book_title">
+			</div>
+			<div>
+			  <label for="book_author">著者</label>
+			  <input type="text" id="book_author" name="book_author">
+			</div>
+			<div>
+			  <label for="book_publisher">出版社</label>
+			  <input type="text" id="book_publisher" name="book_publisher">
+			</div>
+			<div>
+			  <label for="book_story">解説文</label>
+			  <textarea id="book_story" name="book_story"></textarea>
+			</div>
+			<div>
+			 <button type="submit" name="" class="book_add_btn">更新する</button>
+			</div>
+				<div>
+			 <a onClick="return confirm('この本をリストから削除しますか？');" href="#" class="book_del_btn">削除する</a>
+			</div>
+		</form>
+	  </div>
+	</div><!-- row -->
+	</div>
+
+</div>
 
 <!-- 読みたい -->
 <div class="tab-content">
@@ -117,63 +176,59 @@
 		<div class="container">
 			<div class="row">
 
-				<div class="col-xs-6 col-md-3">
-		            <div class="thumbnail">
-		                <img src="assets/img/add.png">
-		            </div>
-		        </div>
-
 		        <div class="col-xs-6 col-md-3"> 
 		            <div class="l-thumbnail">
         			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/empelar.jpg">
+               				<img src="assets/img/add.png">
              			</figure>
 		                <span class="more-text">
-		                    EDIT
+		                    ADDITION
 		                </span>
         			</div>
-     			</div><div class="col-xs-6 col-md-3"> 
+     			</div>
+     			<div class="col-xs-6 col-md-3"> 
 		            <div class="l-thumbnail">
         			    <figure class="thumbnail-wrapper">
                				<img src="assets/img/empelar.jpg">
              			</figure>
 		                <span class="more-text">
-		                    EDIT
+		                    DETAIL
 		                </span>
         			</div>
-     			</div><div class="col-xs-6 col-md-3"> 
+     			</div>
+     			<div class="col-xs-6 col-md-3"> 
 		            <div class="l-thumbnail">
         			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/empelar.jpg">
+               				<img src="assets/img/harmony.jpg">
              			</figure>
 		                <span class="more-text">
-		                    EDIT
+		                    DETAIL
 		                </span>
         			</div>
-     			</div><div class="col-xs-6 col-md-3"> 
+     			</div>
+     			<div class="col-xs-6 col-md-3"> 
 		            <div class="l-thumbnail">
         			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/empelar.jpg">
+               				<img src="assets/img/jenoside.jpg">
              			</figure>
 		                <span class="more-text">
-		                    EDIT
+		                    DETAIL
+		                </span>
+        			</div>
+     			</div>
+     			<div class="col-xs-6 col-md-3"> 
+		            <div class="l-thumbnail">
+        			    <figure class="thumbnail-wrapper">
+               				<img src="assets/img/book1.jpg">
+             			</figure>
+		                <span class="more-text">
+		                    DETAIL
 		                </span>
         			</div>
      			</div>
 
+				 <?php include("detail_pop/future_detail.php"); ?>
 				
-				<!-- <div class="col-xs-6 col-md-3">
-		            <div class="l-thumbnail">
-		                <figure class="thumbnail-wrapper">
-		                    <img src="assets/img/harmony.jpg">
-		                 </figure>
-		                <span class="more-text">
-                		    フェチる
-                		</span>
-            		</div>
-      			</div>
-				 -->
-				<?php include("detail_pop/future_detail.php");?>
 			</div>
 		</div>
 	</div>
@@ -182,96 +237,67 @@
 	<div id="tab2" class="tab-pane fade">
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-6 col-md-3">
-		            <div class="thumbnail">
-		                <img src="assets/img/add.png">
-		            </div>
-		        </div>
-
 
 				<div class="col-xs-6 col-md-3"> 
 		            <div class="l-thumbnail">
         			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/empelar.jpg">
+               				<img src="assets/img/add.png">
              			</figure>
 		                <span class="more-text">
-		                    EDIT
-		                </span>
-        			</div>
-     			</div><div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/empelar.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    EDIT
-		                </span>
-        			</div>
-     			</div><div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/empelar.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    EDIT
-		                </span>
-        			</div>
-     			</div><div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/empelar.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    EDIT
-		                </span>
-        			</div>
-     			</div><div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/empelar.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    EDIT
-		                </span>
-        			</div>
-     			</div><div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/empelar.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    EDIT
-		                </span>
-        			</div>
-     			</div><div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/empelar.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    EDIT
-		                </span>
-        			</div>
-     			</div><div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/empelar.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    EDIT
-		                </span>
-        			</div>
-     			</div><div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/empelar.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    EDIT
+		                    ADDITION
 		                </span>
         			</div>
      			</div>
-     			
+     			<div class="col-xs-6 col-md-3"> 
+		            <div class="l-thumbnail">
+        			    <figure class="thumbnail-wrapper">
+               				<img src="assets/img/harmony.jpg">
+             			</figure>
+		                <span class="more-text">
+		                    DETAIL
+		                </span>
+        			</div>
+     			</div>
+     			<div class="col-xs-6 col-md-3"> 
+		            <div class="l-thumbnail">
+        			    <figure class="thumbnail-wrapper">
+               				<img src="assets/img/harmony.jpg">
+             			</figure>
+		                <span class="more-text">
+		                    DETAIL
+		                </span>
+        			</div>
+     			</div>
+     			<div class="col-xs-6 col-md-3"> 
+		            <div class="l-thumbnail">
+        			    <figure class="thumbnail-wrapper">
+               				<img src="assets/img/harmony.jpg">
+             			</figure>
+		                <span class="more-text">
+		                    DETAIL
+		                </span>
+        			</div>
+     			</div>
+     			<div class="col-xs-6 col-md-3"> 
+		            <div class="l-thumbnail">
+        			    <figure class="thumbnail-wrapper">
+               				<img src="assets/img/harmony.jpg">
+             			</figure>
+		                <span class="more-text">
+		                    DETAIL
+		                </span>
+        			</div>
+     			</div>
+     			<div class="col-xs-6 col-md-3"> 
+		            <div class="l-thumbnail">
+        			    <figure class="thumbnail-wrapper">
+               				<img src="assets/img/harmony.jpg">
+             			</figure>
+		                <span class="more-text">
+		                    DETAIL
+		                </span>
+        			</div>
+     			</div>
 
          		<?php include("detail_pop/past_detail.php"); ?>
 			</div>
@@ -280,15 +306,14 @@
 
 </div>
 
-<!-- <?php var_dump($past_books); ?>
-<?php var_dump($_GET); ?>
-<?php echo $past_books["book_img"]; ?>
- -->
 <!-- 5.footer -->
 	<?php require('partial/footer.php'); ?>
 
 <!-- 6.js -->
+
 <script src="assets/js/jquery-3.1.1.js"></script>
+<script src="detail_pop/past_detail.js"></script>
+
 <script src="assets/js/jquery-migrate-1.4.1.js"></script>
 <script src="assets/js/bootstrap.js"></script>
 
