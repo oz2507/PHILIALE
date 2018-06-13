@@ -108,6 +108,10 @@ li {
 
 
 /* 共通デザイン */
+.navbar-nav{
+  clear: both;
+}
+
 .box{
   border-bottom: 5px solid #dcdcdc;
 }
