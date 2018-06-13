@@ -5,8 +5,8 @@
 	<title>library</title>
 
 	<?php require('partial/css_link.php'); ?>
-
-	
+    <link rel="shortcut icon" href="assets/img/favicon/favicon.ico" type="image/vnd.microsoft.icon">
+    <link rel="icon" href="assets/img/favicon/favicon.ico" type="image/vnd.microsoft.icon">
 </head>
 <body>
 
