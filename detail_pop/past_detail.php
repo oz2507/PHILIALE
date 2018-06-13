@@ -63,35 +63,21 @@
 
 <?php foreach ($past_books as $past) { ?>
 	<a id="modal-open" class="button-link">	
-			<div class="col-xs-6 col-md-3">
+		<div class="col-xs-6 col-md-3">
 			<?php if ($past["book_img"] != '') {?> 
 	            <div class="l-thumbnail">
     			    <figure class="thumbnail-wrapper">
-    			    	
-           					<img src="book_img/<?php echo $past["book_img"]; ?>">
-           					<!-- <span class="more-text">
-	                    EDIT
-	                </span> -->
-           				
-         			</figure>
-	                
+    			    	<img src="book_img/<?php echo $past["book_img"]; ?>">
+           			</figure>
     			</div>
     		<?php }else{ ?>
     			<div class="l-thumbnail">
     			    <figure class="thumbnail-wrapper">
-    			    	
-           				
-							<img src="assets/img/philia2.png" alt="no image">
-							<!-- <span class="more-text">
-	                    EDIT
-	                </span> -->
-						
-         			</figure>
-	                
-    			</div>
-
-    			<?php } ?>
-     		</div>
+    			    	<img src="assets/img/philia2.png" alt="no image">
+					</figure>
+	            </div>    			
+	        <?php } ?>
+     	</div>
     </a>
 <?php } ?>
 		
