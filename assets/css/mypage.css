@@ -16,6 +16,7 @@ p{
 	line-height: 50px;
 }
 
+/* background-image */
 body{
   background-position: center center;
   background-repeat: no-repeat;
@@ -24,6 +25,7 @@ body{
 
 }
 
+/* navbar */
 .navbar-default{
  background:linear-gradient(#8f4796,#8f4796);
  border-color: #8f4796;
@@ -88,13 +90,12 @@ li{
 }
 
 
-/* book */
+/* 読んだ */
 #tab2{
 	margin: 10px 60px;
-  /*padding-left: 15px;*/
 }
 
-
+/* book-col */
 .l-thumbnail>figure>img {
   width: 100%;
   height: 200px;
@@ -108,6 +109,46 @@ li{
 }
 
 .col-xs-6,.col-md-3{
+  overflow: hidden;
+  /*width: 300px;*/
+  width: 265px;
+  padding: 0;
+  /*margin: 24px auto;*/
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+  /*box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.1);*/
+}
+
+.tab-content>#tab2>.container>.row>.col-xs-6,.col-md-3{
+  overflow: hidden;
+  /*width: 300px;*/
+  width: 265px;
+  padding: 0;
+  /*margin: 24px auto;*/
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+  /*box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.1);*/
+}
+
+
+.tab-content>#tab1>.container>.row>.col-xs-6,.col-md-3{
+  overflow: hidden;
+  /*width: 300px;*/
+  width: 265px;
+  padding: 0;
+  /*margin: 24px auto;*/
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+  /*box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.1);*/
+}
+
+.button-link>.col-xs-6,.col-md-3{
   overflow: hidden;
   /*width: 300px;*/
   width: 265px;
@@ -168,8 +209,21 @@ li{
   opacity: 1;
 }
 
+.thumbnail,.l-thumbnail {
+  display: block;
+  padding: 4px;
+  margin-bottom: 0px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: border .2s ease-in-out;
+       -o-transition: border .2s ease-in-out;
+          transition: border .2s ease-in-out;
+}
 
 
+/* footer */
 #footer{
 	margin-top: 100px;
 	position: fixed;
@@ -186,6 +240,8 @@ h5{
   line-height: 50px;
 }
 
+
+/* footer-btn */
 a.btn {
     display: inline-block;
     padding: 5px 30px;
@@ -261,11 +317,6 @@ a.btn::after {
   margin-left: auto;
 }
 
-/*.row {
-    margin-left: -15px;
-    margin-right: -15px;
-}
-*/
 @media (max-width: 768px){
 .navbar-default{
      padding-right: 50px;
@@ -278,6 +329,21 @@ a.btn::after {
   margin-right: auto;
   margin-left: auto;
 }
+
+#tab2>.container {
+  padding-right: 15px;
+  padding-left: 30px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#tab1>.container {
+  padding-right: 15px;
+  padding-left: 90px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 
 }
 
@@ -294,6 +360,19 @@ a.btn::after {
   margin-left: auto;
 }
 
+#tab2>.container {
+  padding-right: 15px;
+  padding-left: 90px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#tab1>.container {
+  padding-right: 15px;
+  padding-left: 90px;
+  margin-right: auto;
+  margin-left: auto;
+}
 
 }
 
@@ -304,6 +383,20 @@ a.btn::after {
   }
 
   .container {
+  padding-right: 15px;
+  padding-left: 75px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#tab2>.container {
+  padding-right: 15px;
+  padding-left: 75px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#tab1>.container {
   padding-right: 15px;
   padding-left: 75px;
   margin-right: auto;
@@ -323,6 +416,20 @@ a.btn::after {
 }
 
 .container {
+  padding-right: 15px;
+  padding-left: 30px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#tab2>.container {
+  padding-right: 15px;
+  padding-left: 30px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#tab1>.container {
   padding-right: 15px;
   padding-left: 30px;
   margin-right: auto;

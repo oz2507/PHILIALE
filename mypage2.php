@@ -123,6 +123,44 @@
 		            </div>
 		        </div>
 
+		        <div class="col-xs-6 col-md-3"> 
+		            <div class="l-thumbnail">
+        			    <figure class="thumbnail-wrapper">
+               				<img src="assets/img/empelar.jpg">
+             			</figure>
+		                <span class="more-text">
+		                    EDIT
+		                </span>
+        			</div>
+     			</div><div class="col-xs-6 col-md-3"> 
+		            <div class="l-thumbnail">
+        			    <figure class="thumbnail-wrapper">
+               				<img src="assets/img/empelar.jpg">
+             			</figure>
+		                <span class="more-text">
+		                    EDIT
+		                </span>
+        			</div>
+     			</div><div class="col-xs-6 col-md-3"> 
+		            <div class="l-thumbnail">
+        			    <figure class="thumbnail-wrapper">
+               				<img src="assets/img/empelar.jpg">
+             			</figure>
+		                <span class="more-text">
+		                    EDIT
+		                </span>
+        			</div>
+     			</div><div class="col-xs-6 col-md-3"> 
+		            <div class="l-thumbnail">
+        			    <figure class="thumbnail-wrapper">
+               				<img src="assets/img/empelar.jpg">
+             			</figure>
+		                <span class="more-text">
+		                    EDIT
+		                </span>
+        			</div>
+     			</div>
+
 				
 				<!-- <div class="col-xs-6 col-md-3">
 		            <div class="l-thumbnail">
@@ -160,6 +198,78 @@
 		                    EDIT
 		                </span>
         			</div>
+     			</div><div class="col-xs-6 col-md-3"> 
+		            <div class="l-thumbnail">
+        			    <figure class="thumbnail-wrapper">
+               				<img src="assets/img/empelar.jpg">
+             			</figure>
+		                <span class="more-text">
+		                    EDIT
+		                </span>
+        			</div>
+     			</div><div class="col-xs-6 col-md-3"> 
+		            <div class="l-thumbnail">
+        			    <figure class="thumbnail-wrapper">
+               				<img src="assets/img/empelar.jpg">
+             			</figure>
+		                <span class="more-text">
+		                    EDIT
+		                </span>
+        			</div>
+     			</div><div class="col-xs-6 col-md-3"> 
+		            <div class="l-thumbnail">
+        			    <figure class="thumbnail-wrapper">
+               				<img src="assets/img/empelar.jpg">
+             			</figure>
+		                <span class="more-text">
+		                    EDIT
+		                </span>
+        			</div>
+     			</div><div class="col-xs-6 col-md-3"> 
+		            <div class="l-thumbnail">
+        			    <figure class="thumbnail-wrapper">
+               				<img src="assets/img/empelar.jpg">
+             			</figure>
+		                <span class="more-text">
+		                    EDIT
+		                </span>
+        			</div>
+     			</div><div class="col-xs-6 col-md-3"> 
+		            <div class="l-thumbnail">
+        			    <figure class="thumbnail-wrapper">
+               				<img src="assets/img/empelar.jpg">
+             			</figure>
+		                <span class="more-text">
+		                    EDIT
+		                </span>
+        			</div>
+     			</div><div class="col-xs-6 col-md-3"> 
+		            <div class="l-thumbnail">
+        			    <figure class="thumbnail-wrapper">
+               				<img src="assets/img/empelar.jpg">
+             			</figure>
+		                <span class="more-text">
+		                    EDIT
+		                </span>
+        			</div>
+     			</div><div class="col-xs-6 col-md-3"> 
+		            <div class="l-thumbnail">
+        			    <figure class="thumbnail-wrapper">
+               				<img src="assets/img/empelar.jpg">
+             			</figure>
+		                <span class="more-text">
+		                    EDIT
+		                </span>
+        			</div>
+     			</div><div class="col-xs-6 col-md-3"> 
+		            <div class="l-thumbnail">
+        			    <figure class="thumbnail-wrapper">
+               				<img src="assets/img/empelar.jpg">
+             			</figure>
+		                <span class="more-text">
+		                    EDIT
+		                </span>
+        			</div>
      			</div>
      			
 
@@ -170,10 +280,10 @@
 
 </div>
 
-<?php var_dump($past_books); ?>
+<!-- <?php var_dump($past_books); ?>
 <?php var_dump($_GET); ?>
 <?php echo $past_books["book_img"]; ?>
-
+ -->
 <!-- 5.footer -->
 	<?php require('partial/footer.php'); ?>
 
