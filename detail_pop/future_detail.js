@@ -1,6 +1,6 @@
 $(function(){
 
-$(".modal-open").click(function(){
+$(".modal-open<?php echo $future["id"]; ?>").click(function(){
 	//キーボード操作などにより、オーバーレイが多重起動するのを防止する
 	//ボタンからフォーカスを外す
 	$(this).blur() ;

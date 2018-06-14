@@ -26,11 +26,18 @@
 
 	<div class="row">
 		  <div class="col-xs-12 col-md-6 col-md-offset-3">
-		<form action="" method="" class="form_original">
+		<form action="future_edit.php" method="post" class="form_original">
+
+			<div>
+			  <label for="book_img"><?php echo $future['book_img']; ?></label>
+			  <input type="file" name="book_img" id="img_name" accept="image/*">
+			</div>
+
 			<div>
 			  <label for="book_title"><?php echo $future['book_title']; ?></label>
 			  <input type="text" id="book_title" name="book_title">
 			</div>
+
 			<div>
 			  <label for="book_author"><?php echo $future['book_author']; ?></label>
 			  <input type="text" id="book_author" name="book_author">
@@ -41,7 +48,7 @@
 			</div> -->
 			<div>
 			  <label for="book_story">解説文</label>
-			  <textarea id="book_story" name="book_story"></textarea>
+			  <textarea id="book_story" name="comment" placeholder="<?php echo $future['comment']; ?>"></textarea>
 			</div>
 			<div>
 			 <button type="submit" name="" class="book_add_btn">更新する</button>
