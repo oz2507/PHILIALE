@@ -43,7 +43,8 @@
   <title>PHILIALE</title>
   <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/style_r.css">
-  <?php  require('../partial/favicon.php');  ?>
+  <link rel="shortcut icon" href="../assets/img/favicon/favicon.ico" type="image/vnd.microsoft.icon">
+  <link rel="icon" href="../assets/img/favicon/favicon.ico" type="image/vnd.microsoft.icon">
 </head>
 <body style="margin: 60px 0;">
   <div class="container">
