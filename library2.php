@@ -38,6 +38,8 @@
 
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.phl.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700">
+  
 	<link rel="stylesheet" href="assets/css/mypage.css">
     <link rel="shortcut icon" href="assets/img/favicon/favicon.ico" type="image/vnd.microsoft.icon">
     <link rel="icon" href="assets/img/favicon/favicon.ico" type="image/vnd.microsoft.icon">
