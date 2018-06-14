@@ -12,7 +12,7 @@
 
     if (isset($_GET['search_word'])==true) {
         $past_sql='SELECT * FROM `past_archives`
-        		   WHERE book_title like "%'.$_GET['search_word'].'%" AND user_id=?';
+        		   WHERE book_title LIKE "%'.$_GET['search_word'].'%" OR book_author LIKE "%'.$_GET['search_word'].'%" AND user_id=?';
     }else{
 		$past_sql='SELECT * FROM `past_archives` WHERE user_id=?';
 	}
@@ -35,7 +35,7 @@
 	$future_books=array();
 
     if (isset($_GET['search_word'])==true) {
-		$future_sql='SELECT * FROM `future_archives` WHERE user_id=? and book_title like "%'.$_GET['search_word'].'%"';
+		$future_sql='SELECT * FROM `future_archives` WHERE user_id=? AND book_title LIKE "%'.$_GET['search_word'].'%" OR book_author LIKE "%'.$_GET['search_word'].'%"';
 	}else{
 
     	$future_sql='SELECT * FROM `future_archives` WHERE user_id=?';
@@ -116,57 +116,6 @@
 </nav>
 
 
-<!-- pop -->
-<div id="modal-content">
-
-	<div class="container-fluid pop_header" style="background-color: white;">
-	    <div class="row">
-	      <div class="col-xs-12 col-md-12">
-			<a id="modal-close" class="button-link">×</a>
-	  </div>
-	</div>
-	</div>
-
-	<div class="container">
-	<div class="row">
-	  	  <div class="col-xs-12 col-md-6 col-md-offset-3">
-	  	    <div class="book_img">
-	  	  	<img class="book_pic" src="https://placehold.jp/b96cc4/ffffff/210x296.png?text=NO IMAGE" width="148">
-	  	    </div>
-	  	  </div>
-	</div><!-- row -->
-
-	<div class="row">
-		  <div class="col-xs-12 col-md-6 col-md-offset-3">
-		<form action="" method="" class="form_original">
-			<div>
-			  <label for="book_title">作品名</label>
-			  <input type="text" id="book_title" name="book_title">
-			</div>
-			<div>
-			  <label for="book_author">著者</label>
-			  <input type="text" id="book_author" name="book_author">
-			</div>
-			<div>
-			  <label for="book_publisher">出版社</label>
-			  <input type="text" id="book_publisher" name="book_publisher">
-			</div>
-			<div>
-			  <label for="book_story">解説文</label>
-			  <textarea id="book_story" name="book_story"></textarea>
-			</div>
-			<div>
-			 <button type="submit" name="" class="book_add_btn">更新する</button>
-			</div>
-				<div>
-			 <a onClick="return confirm('この本をリストから削除しますか？');" href="#" class="book_del_btn">削除する</a>
-			</div>
-		</form>
-	  </div>
-	</div><!-- row -->
-	</div>
-
-</div>
 
 <!-- 読みたい -->
 <div class="tab-content">
