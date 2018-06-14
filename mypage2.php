@@ -28,7 +28,7 @@
 	    	}
 	    	$past_books[]=$record_past;
 	    }
-  	
+  
       
 
 // 読みたい用
