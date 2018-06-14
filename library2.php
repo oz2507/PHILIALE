@@ -37,9 +37,9 @@
     <link rel="stylesheet" type="text/css" href="detail_pop/detail_pop.css">
 
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.phl.css">
-
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700">
-    
+  
 	<link rel="stylesheet" href="assets/css/mypage.css">
     <link rel="shortcut icon" href="assets/img/favicon/favicon.ico" type="image/vnd.microsoft.icon">
     <link rel="icon" href="assets/img/favicon/favicon.ico" type="image/vnd.microsoft.icon">
@@ -49,7 +49,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarEexample">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarExample">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -62,8 +62,8 @@
         
         </div>
 
-        <div class="collapse navbar-collapse" id="navbarEexample">
-            <ul id="title" class="nav navbar-nav">
+        <div class="collapse navbar-collapse" id="navbarExample">
+            <ul id="title" class="nav navbar-nav nab-tabs">
             	<li><a href="#top">PHILIBRARY</a></li>	
             </ul>
 

@@ -85,7 +85,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarEexample">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarExample">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -98,7 +98,7 @@
         
         </div>
 
-        <div class="collapse navbar-collapse" id="navbarEexample">
+        <div class="collapse navbar-collapse" id="navbarExample">
             <ul class="nav navbar-nav nav-tabs">
             	<li class="active">
             	<a href="#tab1" data-toggle="tab">読みたい</a></li>
