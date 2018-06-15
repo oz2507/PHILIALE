@@ -57,7 +57,8 @@
 			 <button type="submit" name="" class="book_add_btn">更新する</button>
 			</div>
 			<div>
-				<a onClick="return confirm('この本をリストから削除しますか？');" href="future_delete.php?id=<?php echo $future['id'];?>" class="book_del_btn">削除する</a>
+				<a onClick="return confirm('この本をリストから削除しますか？');" href="future_delete.php?id=<?php echo $future['id'];?>" class="book_del_btn"><button type="submit" name="" class="book_delete_btn">削除する</button></a>
+			
 			</div>
 
 		</form>
