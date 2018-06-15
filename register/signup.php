@@ -9,8 +9,10 @@ $errors = array();
         $name = $_POST['input_name'];
         $email = $_POST['input_email'];
         $password = $_POST['input_password'];
+        $check = $_POST['input_chk_password'];
 
         $count = strlen($password);// hogehogeとパスワードを入力した場合、8が$countに代入される
+        $chk_count = strlen($check);
 
 
            // ユーザー名の空チェック
@@ -71,6 +73,14 @@ $errors = array();
             $errors['password'] = 'length';
           }
 
+          if ($check == '') {
+            $errors['check'] = 'blank';
+          }
+
+          elseif ($chk_count < 4 || $chk_count > 16) {
+            $errors['check'] = 'length';
+          }
+
         // //画像名を取得
         //   $file_name = $_FILES['input_img_name']['name'];
         // // echo $file_name."<br>";
@@ -127,33 +137,32 @@ $errors = array();
     <div class="row">
       <!-- ここに左サイドコンテンツ -->
       <div class="col-xs-12 col-md-6 left-column">
-        <h3 class="content_header">アカウント新規登録</h3>
-          <p><label>PHILIALEのご利用有難うございます。<br>ご入館の前に、ご登録をお願いいたします。<br></label></p>
+        <h3 class="content_header">入館手続</h3>
+          <p>ようこそPHILIALEへおいで下さいました。<br>ご利用の前に、入館手続をお願い致します。<br></p>
           <img class="img-responsive img-circle logo_original" src="../assets/img/philia2.png">
-          <p>当館では文庫やコミック、情報誌などなんでもご登録出来ます。<br>本好きな当館支配人もまた、数多の本をお持ちだそうです。<br>皆様はどのような本がお好きでしょう。<br></p><p><br></p>
+          <p>当館では、皆様個人のためだけの図書館を作る事が出来ます。<br>本好きな当館支配人もまた、数多の本を所蔵しております。<br>それでは、本の世界へ行ってらっしゃいませ。<br></p><p><br></p>
 
       </div>
 
       <!-- ここに右サイドコンテンツ -->
-      <div class="col-xs-12 col-md-6 right-column">
+      <div class="col-xs-12 col-md-6 right-column" style="margin-top: 50px;">
         <!-- <h2 class="text-center content_header">アカウント作成</h2> -->
-        <form method="POST" class="form-group" action="signup.php" enctype="multipart/form-data">
+        <!-- <form method="POST" class="form-group" action="signup.php" enctype="multipart/form-data"> -->
+        <form method="POST" action="signup.php" enctype="multipart/form-data">  
           <div>
-            <!-- <label for="name">ユーザー名</label> -->
-            <input type="text" name="input_name" class="form-control" id="name" placeholder="ユーザーネーム" style="height:3em;">
+            <input type="text" name="input_name" class="form-control" id="name" placeholder="お名前">
             <span>　</span>
             <span>　</span>
               <?php if(isset($errors['name']) && $errors['name'] == 'blank') { ?>
-              <span class="text-danger">ユーザー名を入力してください</span>
+              <span class="text-danger">お名前を入力してください</span>
               <?php } ?>
               <?php if(isset($errors['name']) && $errors['name'] == 'duplication') { ?>
-              <span class="text-danger">すでに存在するユーザーネームです</span>
+              <span class="text-danger">すでに存在するお名前です</span>
               <?php } ?>
           </div>
 
           <div>
-            <!-- <label for="email">メールアドレス</label> -->
-            <input type="email" name="input_email" class="form-control" id="email" placeholder="example@gmail.com">
+            <input type="email" name="input_email" class="form-control" id="email" placeholder="メールアドレス">
             <span>　</span>
             <?php if(isset($errors['email']) && $errors['email'] == 'blank') { ?>
               <span class="text-danger">メールアドレスを入力してください</span>
@@ -164,7 +173,6 @@ $errors = array();
           </div>
 
           <div>
-            <!-- <label for="password">パスワード</label> -->
             <input type="password" name="input_password" class="form-control" id="password" placeholder="パスワード">
             <span>　</span>
             <?php if(isset($errors['password']) && $errors['password'] == 'blank') { ?>
@@ -176,21 +184,19 @@ $errors = array();
           </div>
 
           <div>
-            <!-- <label for="password">確認用パスワード</label> -->
             <input type="password" name="input_chk_password" class="form-control" id="chk_password" placeholder="確認用パスワード">
             <span>　</span>
-            <?php if(isset($errors['chk_password']) && $errors['chk_password'] == 'blank') { ?>
+            <?php if(isset($errors['check']) && $errors['check'] == 'blank') { ?>
               <span class="text-danger">確認用パスワードを入力してください</span>
             <?php } ?>
-            <?php if(isset($errors['chk_password']) && $errors['chk_password'] == 'length') { ?>
+            <?php if(isset($errors['check']) && $errors['check'] == 'length') { ?>
               <span class="text-danger">パスワードは4〜16文字で入力してください</span>
             <?php } ?>
           </div>
-          <br><br><br>
-          <div class="right_btn" style="margin-top: 70px;">
-          <button type="submit" class="btn">登録情報の確認</button>
+
+          <div>
+            <button type="submit" class="btn btn-original">登録情報の確認</button>
           </div>
-          <a href="../signin.php" style="float: right; padding-top: 6px;" class="text-success">サインイン</a>
         </form>
       </div>
 
