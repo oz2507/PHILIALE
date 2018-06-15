@@ -28,7 +28,7 @@
 
 	
     if(empty($errors)){
-    	date_default_timezone_set('Asia/Manila');
+    	  date_default_timezone_set('Asia/Manila');
         $date_str = date('YmdHis'); 
         $submit_file_name = $date_str.$book_img;
 
@@ -49,7 +49,7 @@
     $stmt->execute($data);
 
     header("Location:mypage2.php");
-}
+
 }
 
 	$sql = "select *
@@ -63,4 +63,5 @@
   $feeds = array();
 
   $feed=$stmt->fetch(PDO::FETCH_ASSOC);
+
 ?>

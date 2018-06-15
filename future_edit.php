@@ -40,11 +40,11 @@
 	$update_stmt = $dbh->prepare($update_sql);
     $update_stmt->execute($update_data);
 
-    echo $data_str;
-    echo $submit_file_img;
-    echo $book_title;
-    echo $book_author;
-    echo $comment; 
-    echo $_GET['id'];
+    // echo $data_str;
+    // echo $submit_file_img;
+    // echo $book_title;
+    // echo $book_author;
+    // echo $comment; 
+    // echo $_GET['id'];
 
 ?>
