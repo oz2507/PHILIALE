@@ -26,21 +26,23 @@
 
 	<div class="row">
 		  <div class="col-xs-12 col-md-6 col-md-offset-3">
-		<form action="future_edit.php" method="post" class="form_original">
+		<form action="future_edit.php?id=<?php echo $future['id'] ?>" method="post" class="form_original">
 
 			<div>
-			  <label for="book_img"><?php echo $future['book_img']; ?></label>
+			  <label for="book_img"></label>
 			  <input type="file" name="book_img" id="img_name" accept="image/*">
 			</div>
 
 			<div>
-			  <label for="book_title"><?php echo $future['book_title']; ?></label>
-			  <input type="text" id="book_title" name="book_title">
+			  <label for="book_title">本のタイトル</label>
+			  <textarea name="book_title"><?php echo $future['book_title']; ?></textarea>
+			  <!-- <input type="text" id="book_title" name="book_title"> -->
 			</div>
 
 			<div>
-			  <label for="book_author"><?php echo $future['book_author']; ?></label>
-			  <input type="text" id="book_author" name="book_author">
+			  <label for="book_author">著者</label>
+			  <textarea name="book_author"><?php echo $future['book_author']; ?></textarea>
+			  <!-- <input type="text" id="book_author" name="book_author"> -->
 			</div>
 			<!-- <div>
 			  <label for="book_publisher">出版社</label>
@@ -48,14 +50,16 @@
 			</div> -->
 			<div>
 			  <label for="book_story">解説文</label>
-			  <textarea id="book_story" name="comment" placeholder="<?php echo $future['comment']; ?>"></textarea>
+			  <textarea id="book_story" name="comment"><?php echo $future['comment']; ?></textarea>
 			</div>
+
 			<div>
 			 <button type="submit" name="" class="book_add_btn">更新する</button>
 			</div>
-				<div>
-			 <a onClick="return confirm('この本をリストから削除しますか？');" href="future_delete.php?id=<?php echo $future['id'];?>" class="book_del_btn">削除する</a>
+			<div>
+				<a onClick="return confirm('この本をリストから削除しますか？');" href="future_delete.php?id=<?php echo $future['id'];?>" class="book_del_btn">削除する</a>
 			</div>
+
 		</form>
 	  </div>
 	</div><!-- row -->

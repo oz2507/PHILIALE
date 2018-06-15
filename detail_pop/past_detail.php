@@ -34,13 +34,15 @@
 			</div>
 
 			<div>
-			  <label for="book_title">title</label>
-			  <span></span>
-			  <input type="text" id="book_title" name="book_title"><?php echo $past['book_title']; ?>
+			  <label for="book_title">タイトル</label>
+			  <textarea name="book_title"><?php echo $past['book_title']; ?></textarea>
+			  <!-- <input type="text" id="book_title" name="book_title"> -->
 			</div>
+
 			<div>
-			  <label for="book_author"><?php echo $past['book_author']; ?></label>
-			  <input type="text" id="book_author" name="book_author">
+			  <label for="book_author">著者</label>
+			  <textarea name="book_author"><?php echo $past['book_author']; ?></textarea>
+			  <!-- <input type="text" id="book_author" name="book_author"> -->
 			</div>
 			<!-- <div>
 			  <label for="book_publisher">出版社</label>
@@ -48,7 +50,7 @@
 			</div> -->
 			<div>
 			  <label for="book_story">解説文</label>
-			  <textarea id="book_story" name="comment"></textarea>
+			  <textarea id="book_story" name="comment"><?php echo $past['comment']; ?></textarea>
 			</div>
 			<div>
 			 <button type="submit" name="" class="book_add_btn">更新する</button>
