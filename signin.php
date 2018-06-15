@@ -58,7 +58,7 @@
               }else{
                     //認証失敗
                     $errors['signin'] = 'failed';
-                    echo "<h1>認証失敗</h1>";
+                    // echo "<h1>認証失敗</h1>";
                 }
             }
         }
@@ -80,30 +80,34 @@
 <body style="margin-top: 60px">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-md-6 col-md-offset-3 thumbnail" style="height:500px;">
-        <h2 class="text-center">ログイン</h2>
+      <div class="col-xs-12 col-md-6 col-md-offset-3" style="height:500px;">
+        <h2 class="text-center">入館する</h2>
+
+        <br>
+        <br>
+        <br>
 
         <form method="POST" action="signin.php" enctype="multipart/form-data">
 
-          <div class="form-group">
-            <label for="name">お名前</label>
-            <input type="text" name="input_name" class="form-control" id="name" placeholder="お名前">
+          <div>
+            <!-- <label for="name">お名前</label> -->
+            <input type="text" name="input_name" class="form-control signin" id="name" placeholder="お名前">
             <?php if(isset($errors['name']) && $errors['name'] == 'blank') { ?>
               <p class="text-danger">お名前を入力してください</p>
             <?php } ?>
           </div>
 
-          <div class="form-group">
-            <label for="email">メールアドレス</label>
-            <input type="text" name="input_email" class="form-control" id="email" placeholder="example@gmail.com">
+          <div>
+            <!-- <label for="email">メールアドレス</label> -->
+            <input type="text" name="input_email" class="form-control signin" id="email" placeholder="メールアドレス">
             <?php if(isset($errors['email']) && $errors['email'] == 'blank') { ?>
               <p class="text-danger">メールアドレスを入力してください</p>
             <?php } ?>
           </div>
 
-          <div class="form-group">
-            <label for="password">パスワード</label>
-            <input type="password" name="input_password" class="form-control" id="password" placeholder="4 ~ 16文字のパスワード">
+          <div>
+            <!-- <label for="password">パスワード</label> -->
+            <input type="password" name="input_password" class="form-control signin" id="password" placeholder="4 ~ 16文字のパスワード">
             <?php if(isset($errors['password']) && $errors['password'] == 'blank') { ?>
               <p class="text-danger">パスワードを入力してください</p>
             <?php } ?>
@@ -111,12 +115,12 @@
               <p class="text-danger">パスワードは4〜16文字で入力してください</p>
             <?php } ?>
             <?php if(isset($errors['signin']) && $errors['signin'] == 'failed') { ?>
-              <p class="text-danger">サインインに失敗しました</p>
+              <p class="text-danger">ログインに失敗しました</p>
             <?php } ?>
           </div>
 
           <div>
-          <button type="submit" class="btn btn-original" style="width:100%;">サインイン</button>
+          <button type="submit" class="btn btn-original" style="width:100%;">ログイン</button>
           </div>
         </form>
 

@@ -45,7 +45,8 @@
 
 <!-- header -->
 <div class="header">
-	<img src="assets/img/head.jpg" alt="head-design">
+	<img src="assets/img/gif/フィリア.gif" alt="head-design" class="philia">
+	<img src="assets/img/gif/文字.gif" alt="" class="state">
 </div>
 
 <!-- what's philiale -->
@@ -71,7 +72,7 @@
 
 			<div>
 				<h5>
-					<a href="signin.php"><font color="#8f4796"> すでに会員の方はこちらから入館</font></a>
+					<a href="signin.php"><!-- <font color="#8f4796">  -->会員の方はこちらから入館<!-- </font> --></a>
 				</h5>
 			</div>	
 			</div>	
@@ -181,10 +182,12 @@
 <!-- footer -->
 <div id="footer">
 	<div id="copyright">
-	    <div class="container-copy"> 
-	       <p>
-	          &copy; 2018 T-zerg ALL RIGHTS RESERVE
-	        </p>
+	    <div class="container-copy">
+	    	<a href="#"> 
+		       <p>
+		          &copy; 2018 T-zerg ALL RIGHTS RESERVE
+		        </p>
+		    </a>
 	    </div>
 	</div>
 </div>

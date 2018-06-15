@@ -17,10 +17,13 @@
           <div class="col-xs-12 text-center">
             <div class="thumbnail" style="letter-spacing: 0.2em; line-height:1.65; border: none;">
               <p>ご登録有難うございます。<br>さあまずはサインインしてマイページへ。<br>ご登録本の情報は、タイトルや著者名などから検索も出来ます。</p>
+              <p><br>3秒後にログイン画面に遷移致します。</p>
               <img class="img-responsive img-circle" src="../assets/img/philia2.png" style="width:200px;">
             </div>
             <div>
-              <a href="../signin.php"><button type="button" class="btn btn-original">サインイン</button></a>
+              <a href="../signin.php">
+                <button type="button" class="btn btn-original btn-last">ログイン</button>
+              </a>
             </div>
           </div>
         </div>
