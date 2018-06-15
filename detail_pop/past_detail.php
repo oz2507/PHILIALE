@@ -26,7 +26,7 @@
 
 	<div class="row">
 		  <div class="col-xs-12 col-md-6 col-md-offset-3">
-		<form action="past_edit.php" method="post" class="form_original">
+		<form action="past_edit.php" method="post" class="form_original" enctype="multipart/form-data">
 
 			<div>
 			  <label for="book_img">イメージ</label>

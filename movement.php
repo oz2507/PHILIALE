@@ -28,6 +28,8 @@
 
     include("future_delete.php");
 
+    header("Location:mypage2.php?isbn_code=".$record["isbn_code"]);
+
     // var_dump($record);
 
 ?>

@@ -54,6 +54,38 @@
 	    }
 
 
+// libraryに入れるアラートを表示させるかどうか
+// 読みたいから読んだに追加されたとき、libraryとの照合
+	if(isset($_POST['isbn'])){
+		// pastに入った本
+		$isbn=$_POST['isbn'];
+
+	}elseif(isset($_GET['isbn_code'])) {
+		$isbn=$_GET['isbn_code'];
+
+	}else{
+		$isbn=0;
+	}
+
+	// libraryにある本
+		$isbn_sql='select isbn_code from library_archives where isbn_code=?';
+		
+		$isbn_data=array($isbn);
+		$isbn_stmt = $dbh->prepare($isbn_sql);
+		$isbn_stmt->execute($isbn_data);
+
+		$isbn_record=array();
+		$isbn_record=$isbn_stmt->fetch(PDO::FETCH_ASSOC);
+
+	if (!isset($isbn_record['isbn_code'])) {
+			// libraryでは初の本だったら、寄贈しますかのアラート
+			// はい、を選択されたら、into_library.phpへ
+	}
+
+
+
+
+
 
 ?>
 
