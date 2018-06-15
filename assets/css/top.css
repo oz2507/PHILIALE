@@ -6,11 +6,13 @@ h1, h2, h3, h4, h5, h6, p,
 form, input, div {
   margin: 0;
   padding: 0;
+   font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif
 }
 
 li {
   list-style: none;
 }
+
 
 /* ボタン全般に関して */
 .btn {

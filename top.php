@@ -183,7 +183,7 @@
 <div id="footer">
 	<div id="copyright">
 	    <div class="container-copy">
-	    	<a href="#"> 
+	    	<a href="Form/contact.php"> 
 		       <p>
 		          &copy; 2018 T-zerg ALL RIGHTS RESERVE
 		        </p>

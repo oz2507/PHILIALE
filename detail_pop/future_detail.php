@@ -56,12 +56,19 @@
 			<div>
 			 <button type="submit" name="" class="book_add_btn">更新する</button>
 			</div>
+
+		</form>
+
+		<div>
+			<a href="movement.php?id=<?php echo $future['id'];?>">
+			 <button type="submit" name="" class=" book_past_btn">読んだへ追加</button>
+			</a>
+		</div>
+
 			<div>
 				<a onClick="return confirm('この本をリストから削除しますか？');" href="future_delete.php?id=<?php echo $future['id'];?>" class="book_del_btn"><button type="submit" name="" class="book_delete_btn">削除する</button></a>
 			
 			</div>
-
-		</form>
 	  </div>
 	</div><!-- row -->
 	</div>
