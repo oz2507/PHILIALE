@@ -53,12 +53,9 @@
                     header("Location: mypage2.php");
                     exit();
 
-                    //一致したら認証成功
-                    echo "<h1>認証成功</h1>";
               }else{
-                    //認証失敗
                     $errors['signin'] = 'failed';
-                    // echo "<h1>認証失敗</h1>";
+                    
                 }
             }
         }
@@ -83,9 +80,7 @@
       <div class="col-xs-12 col-md-6 col-md-offset-3" style="height:500px;">
         <h2 class="text-center">入館する</h2>
 
-        <br>
-        <br>
-        <br>
+        <br><br><br>
 
         <form method="POST" action="signin.php" enctype="multipart/form-data">
 

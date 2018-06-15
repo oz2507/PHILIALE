@@ -1,9 +1,8 @@
 <?php
     // PHPプログラム
-session_start();
+    session_start();
 
-
-$errors = array();
+    $errors = array();
 
     if (!empty($_POST)) { //ポスト送信があったとき以下を実行
         $name = $_POST['input_name'];
@@ -14,13 +13,11 @@ $errors = array();
         $count = strlen($password);// hogehogeとパスワードを入力した場合、8が$countに代入される
         $chk_count = strlen($check);
 
-
            // ユーザー名の空チェック
           if ($name == '') {
             $errors['name'] = 'blank';
-          }
-
-          else{
+          
+          }else{
                 require('../dbconnect.php');
 
                 $sql = 'SELECT COUNT(*) as `cnt` FROM `users` WHERE `name`=?';
@@ -32,12 +29,9 @@ $errors = array();
 
                 $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 
-                // var_dump($rec);
-
                 if ($rec['cnt'] > 0) {//メールアドレスの数が0異常ですでに登録済み
                   $errors['name'] = 'duplication';
                 }
-
           }
 
           if ($email == '') {
@@ -61,9 +55,7 @@ $errors = array();
                 if ($rec['cnt'] > 0) {//メールアドレスの数が0異常ですでに登録済み
                   $errors['email'] = 'duplication';
                 }
-
           }
-
 
           if ($password == '') {
             $errors['password'] = 'blank';
@@ -81,45 +73,16 @@ $errors = array();
             $errors['check'] = 'length';
           }
 
-        // //画像名を取得
-        //   $file_name = $_FILES['input_img_name']['name'];
-        // // echo $file_name."<br>";
-        //   if (!empty($file_name)) {
-        //     $file_type = substr($file_name, -3); // 画像名の後ろから3文字を取得
-        //       $file_type = strtolower($file_type); // 大文字が含まれていた場合すべて小文字化
-        //       if ($file_type != 'jpg' && $file_type != 'png' && $file_type != 'gif') {
-        //         $errors['img_name'] = 'type';
-        //       }
-        //   }
-            
-        //   else {
-        //   $errors['img_name'] = 'blank';
-        //   }
-
           if (empty($errors)) {
-            $date_str = date('YmdHis'); // YmdHisを指定することで取得フォーマットを指定
-            $submit_file_name = $date_str . $file_name;
-            // echo $date_str;
-            // echo "<br>";
-            // echo $submit_file_name;
-            move_uploaded_file($_FILES['input_img_name']['tmp_name'], '../user_profile_img/'.$submit_file_name);
 
             $_SESSION['register']['name'] = $_POST['input_name'];
             $_SESSION['register']['email'] = $_POST['input_email'];
             $_SESSION['register']['password'] = $_POST['input_password'];
-            // 上記3つは$_SESSION['register'] = $_POST;という書き方で1文にまとめることもできます
-            $_SESSION['register']['img_name'] = $submit_file_name;
-
 
             header('Location: check.php');
             exit();
 
           }
-        // echo "<pre>";
-        // var_dump($file_type);
-        // var_dump($errors);
-        // echo "</pre>";
-
     }
     
 ?>
@@ -146,8 +109,7 @@ $errors = array();
 
       <!-- ここに右サイドコンテンツ -->
       <div class="col-xs-12 col-md-6 right-column" style="margin-top: 50px;">
-        <!-- <h2 class="text-center content_header">アカウント作成</h2> -->
-        <!-- <form method="POST" class="form-group" action="signup.php" enctype="multipart/form-data"> -->
+ 
         <form method="POST" action="signup.php" enctype="multipart/form-data">  
           <div>
             <input type="text" name="input_name" class="form-control" id="name" placeholder="お名前">
@@ -202,8 +164,6 @@ $errors = array();
 
     </div>
   </div>
-  <!-- <script src="../assets/js/jquery-3.1.1.js"></script> -->
-  <!-- <script src="../assets/js/jquery-migrate-1.4.1.js"></script> -->
-  <!-- <script src="../assets/js/bootstrap.js"></script> -->
+  
 </body>
 </html>
