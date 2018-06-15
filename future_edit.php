@@ -17,7 +17,8 @@
         $date_str = date('YmdHis'); 
         $submit_file_name = $date_str . $file_name;
 
-        move_uploaded_file($_FILES['book_img'],'book_img/'.$submit_file_name);
+        $updir = "./book_img/";
+        move_uploaded_file($submit_file_name,$book_img.$submit_file_name);
 
         if ($file_type != 'jpg' && $file_type != 'png' && $file_type != 'gif') {
             $errors['img_name'] = 'type';
@@ -35,5 +36,4 @@
 	$stmt = $dbh->prepare($sql);
     $stmt->execute($data);
 
-    var_dump($book_img);
 ?>

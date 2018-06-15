@@ -27,9 +27,16 @@
 	<div class="row">
 		  <div class="col-xs-12 col-md-6 col-md-offset-3">
 		<form action="past_edit.php" method="post" class="form_original">
+
 			<div>
-			  <label for="book_title"><?php echo $past['book_title']; ?></label>
-			  <input type="text" id="book_title" name="book_title">
+			  <label for="book_img"></label>
+			  <input type="file" name="book_img" id="img_name" accept="image/*">
+			</div>
+
+			<div>
+			  <label for="book_title">title</label>
+			  <span></span>
+			  <input type="text" id="book_title" name="book_title"><?php echo $past['book_title']; ?>
 			</div>
 			<div>
 			  <label for="book_author"><?php echo $past['book_author']; ?></label>

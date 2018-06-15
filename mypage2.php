@@ -255,6 +255,8 @@
 	</div>
 
 </div>
+<?php var_dump($_FILES);echo $book_img;
+ ?>
 
 <!-- 5.footer -->
 	<?php require('partial/footer.php'); ?>
