@@ -42,10 +42,23 @@
 	max-height: 150px;
 }
 
+label input{
+	display: none
+}
+
 .form_original label{
 	vertical-align:top;
 	font-size: 12px;
 	color: #bbb;
+}
+
+.form_original label input{
+ /*background: #000;*/
+     /*color: #fff;*/
+     cursor: pointer;
+     padding: 15px 30px;
+     margin: 0 10px 0 0;
+     display: inline-block;
 }
 
 .form_original input{
@@ -60,6 +73,7 @@
 	margin-left:1em;
 }
 
+
 .form_original input::placeholder {
   color: #e7daea;
 }
@@ -68,7 +82,8 @@
 	color: #8f4796;
 	outline:none;
 	width:100%;
-	height: 5em;
+	/*height: 5em;*/
+	height: 2em;
 	margin-bottom: 20px;
     border-style: none;
     border-bottom: solid 2px #f2eaf4;
@@ -84,6 +99,7 @@
 	color: #e7daea;
 	font-size: 15px;
 	margin: 10px 0 0 0;
+	margin-left: 15px;
 	width: 100%;
 	height:3em;
     background-color: #f2eaf4;
@@ -97,12 +113,51 @@
     border: 2px solid #b96cc4;
 }
 
-.book_del_btn {
+
+.book_delete_btn{
+	color: #e7daea;
+	font-size: 15px;
+	margin: 10px 0 0 0;
+	margin-left: 15px;
+	width: 100%;
+	/*width: 50%;*/
+	height:3em;
+    background-color: #f2eaf4;
+    border: 2px solid #f2eaf4;
+    border-radius: 3px;
+}
+
+.book_delete_btn:hover {
+    color: #f2eaf4;
+    background-color: #b96cc4;
+    border: 2px solid #b96cc4;
+}
+
+.book_past_btn{
+	color: #e7daea;
+	font-size: 15px;
+	margin: 10px 0 0 0;
+	margin-left: 15px;
+	width: 100%;
+	/*width: 50%;*/
+	height:3em;
+    background-color: #f2eaf4;
+    border: 2px solid #f2eaf4;
+    border-radius: 3px;
+}
+
+.book_past_btn:hover {
+    color: #f2eaf4;
+    background-color: #b96cc4;
+    border: 2px solid #b96cc4;
+}
+
+/*.book_del_btn {
 	margin: 10px 0;
 	float:right;
     background-color: none;
     border:none;
     color: #8f4796;
     font-size: 12px;
-    /*line-height: 1.6em;*/
-}
+    line-height: 1.6em;
+}*/

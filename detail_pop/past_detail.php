@@ -29,8 +29,10 @@
 		<form action="past_edit.php" method="post" class="form_original">
 
 			<div>
-			  <label for="book_img"></label>
+			  <label for="book_img">イメージ</label>
+			  <label for="img_name">
 			  <input type="file" name="book_img" id="img_name" accept="image/*">
+			</label>
 			</div>
 
 			<div>
@@ -55,9 +57,17 @@
 			<div>
 			 <button type="submit" name="" class="book_add_btn">更新する</button>
 			</div>
-				<div>
-			 <a onClick="return confirm('この本をリストから削除しますか？');" href="past_delete.php?id=<?php echo $past['id'];?>" class="book_del_btn">削除する</a>
+			<div>
+			 <!-- <a onClick="return confirm('この本をリストから削除しますか？');" href="past_delete.php?id=<?php echo $past['id'];?>" class="book_del_btn">削除する</a> -->
+
+			 <a onClick="return confirm('この本をリストから削除しますか？');" href="future_delete.php?id=<?php echo $future['id'];?>" class="book_del_btn"><button type="submit" name="" class=" book_delete_btn">削除する</button></a>
 			</div>
+
+			<div>
+			 <button type="submit" name="" class=" book_past_btn">読んだへ追加</button>
+			</div>
+
+			
 		</form>
 	  </div>
 	</div><!-- row -->
