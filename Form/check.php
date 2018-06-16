@@ -1,26 +1,27 @@
   <?php
-  $nickname = $_POST['nickname'];
-  $email = $_POST['email'];
-  $content = $_POST['content'];
 
-  // ニックネーム
-  if ($nickname == '') {
-    $nickname_result = 'Emailが入力されていません。';
-  } else {
-    $nickname_result = 'ようこそ' . $nickname .'様';
-  }
-  // メールアドレス
-  if ($email == '') {
-    $email_result = 'メールアドレスが入力されていません。';
-  } else {
-    $email_result = 'メールアドレス：' . $email;
-  }
-  // お問い合わせ内容
-  if ($content == '') {
-    $content_result = 'メッセージが入力されていません。';
-  } else {
-    $content_result = 'メッセージ：' . $content;
-  }
+    $nickname = $_POST['nickname'];
+    $email = $_POST['email'];
+    $content = $_POST['content'];
+
+    // ニックネーム
+    if ($nickname == '') {
+        $nickname_result = 'Emailが入力されていません。';
+    }else {
+        $nickname_result = 'ようこそ' . $nickname .'様';
+    }
+    // メールアドレス
+    if ($email == '') {
+        $email_result = 'メールアドレスが入力されていません。';
+    }else{
+        $email_result = 'メールアドレス：' . $email;
+    }
+    // お問い合わせ内容
+    if ($content == '') {
+        $content_result = 'メッセージが入力されていません。';
+    }else{
+        $content_result = 'メッセージ：' . $content;
+    }
 
 ?>
 

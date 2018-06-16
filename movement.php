@@ -1,11 +1,10 @@
-<?php 
+<?php
+
 	session_start();
 	require('dbconnect.php');
 
 	// future_detail.phpの読んだへ追加からやってくる
 	$book_id=$_GET['id'];
-
-	// $insert_books[]=array();
 
 	// futureにあった情報を取得
 	$sql='select * from future_archives where id=?';
@@ -16,7 +15,6 @@
 
     // 取得した情報を変数へ
     $record=$stmt->fetch(PDO::FETCH_ASSOC);
-
 
     // past_archivesへデータを追加したい
 	$insert_sql='insert into past_archives
@@ -29,7 +27,5 @@
     include("future_delete.php");
 
     header("Location:mypage2.php?isbn_code=".$record["isbn_code"]);
-
-    // var_dump($record);
 
 ?>

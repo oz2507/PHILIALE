@@ -11,5 +11,4 @@
    	$insert_stmt = $dbh->prepare($insert_sql); 
    	$insert_stmt->execute($insert_data);
 
-
 ?>

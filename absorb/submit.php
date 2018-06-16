@@ -1,14 +1,13 @@
-<?php  
+<?php
+
 	if (!empty($_POST['id'])) {
 		header("Location: check.php?id=".$_POST['id']);
-	}
-
-	else{
+	
+	}else{
 		echo "以下のフォームにスプレッドシートのIDを入力して下さい。";
 	}
 
 ?>
-
 
 
 <!DOCTYPE html>

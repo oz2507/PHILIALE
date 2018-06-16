@@ -17,16 +17,16 @@
 
       require('../dbconnect.php');
 
-          $sql = 'INSERT INTO `users` SET `name`=?, `email`=?, `password`=? ';
-          $data = array($name, $email, password_hash($user_password, PASSWORD_DEFAULT),);
-          $stmt = $dbh->prepare($sql);
-          $stmt->execute($data);
+      $sql = 'INSERT INTO `users` SET `name`=?, `email`=?, `password`=? ';
+      $data = array($name, $email, password_hash($user_password, PASSWORD_DEFAULT),);
+      $stmt = $dbh->prepare($sql);
+      $stmt->execute($data);
 
-          $dbh = null;
+      $dbh = null;
 
       unset($_SESSION['register']);
-          header('Location: thanks.php');
-          exit();
+      header('Location: thanks.php');
+      exit();
     }
 
 ?>

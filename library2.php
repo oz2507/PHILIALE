@@ -1,4 +1,5 @@
-<?php 
+<?php
+
     session_start();
     require("dbconnect.php");
 
@@ -15,12 +16,12 @@
     $stmt = $dbh->prepare($books_sql);
     $stmt->execute($data);
     
-        while (true) {
-            $record=$stmt->fetch(PDO::FETCH_ASSOC);
+    while (true) {
+        $record=$stmt->fetch(PDO::FETCH_ASSOC);
 
-            if ($record==false) {
-                break;
-            }
+        if ($record==false) {
+            break;
+        }
 
         $books[]=$record;
        

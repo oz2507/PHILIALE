@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 	session_start();
 	
 	require('dbconnect.php');
@@ -7,7 +8,7 @@
 		header("Location: top.php");
 	}
 
-// 読んだ用
+	// 読んだ用
 	$past_books=array();
 
     if (isset($_GET['search_word'])==true) {
@@ -17,45 +18,42 @@
 		$past_sql='SELECT * FROM `past_archives` WHERE user_id=?';
 	}
 
-		$past_data=array($_SESSION["id"]);
-		$past_stmt = $dbh->prepare($past_sql);
-	    $past_stmt->execute($past_data);
+	$past_data=array($_SESSION["id"]);
+	$past_stmt = $dbh->prepare($past_sql);
+	$past_stmt->execute($past_data);
 	    
-		while (true) {
-	    	$record_past=$past_stmt->fetch(PDO::FETCH_ASSOC);
-	    	if ($record_past==false) {
-	    		break;
-	    	}
-	    	$past_books[]=$record_past;
+	while (true) {
+	    $record_past=$past_stmt->fetch(PDO::FETCH_ASSOC);
+	    if ($record_past==false) {
+	    	break;
+	    }
+	    $past_books[]=$record_past;
 	    }
   
-      
 
-// 読みたい用
+	// 読みたい用
 	$future_books=array();
 
     if (isset($_GET['search_word'])==true) {
 		$future_sql='SELECT * FROM `future_archives` WHERE user_id=? AND book_title LIKE "%'.$_GET['search_word'].'%" OR book_author LIKE "%'.$_GET['search_word'].'%"';
 	}else{
-
     	$future_sql='SELECT * FROM `future_archives` WHERE user_id=?';
 	}
 
-		$future_data=array($_SESSION["id"]);
-		$future_stmt = $dbh->prepare($future_sql);
-	    $future_stmt->execute($future_data);
+	$future_data=array($_SESSION["id"]);
+	$future_stmt = $dbh->prepare($future_sql);
+	$future_stmt->execute($future_data);
 	    	
-	    while (true) {
-	    	$record_future=$future_stmt->fetch(PDO::FETCH_ASSOC);
-	    	if ($record_future==false) {
-	    		break;
-	    	}
-	    	$future_books[]=$record_future;
+	while (true) {
+	   	$record_future=$future_stmt->fetch(PDO::FETCH_ASSOC);
+	    if ($record_future==false) {
+	    	break;
+	    }
+	    $future_books[]=$record_future;
 	    }
 
-
-// libraryに入れるアラートを表示させるかどうか
-// 読みたいから読んだに追加されたとき、libraryとの照合
+	// libraryに入れるアラートを表示させるかどうか
+	// 読みたいから読んだに追加されたとき、libraryとの照合
 	if(isset($_POST['isbn'])){
 		// pastに入った本
 		$isbn=$_POST['isbn'];
@@ -68,34 +66,21 @@
 	}
 
 	// libraryにある本
-		$isbn_sql='select isbn_code from library_archives where isbn_code=?';
+	$isbn_sql='select isbn_code from library_archives where isbn_code=?';
 		
-		$isbn_data=array($isbn);
-		$isbn_stmt = $dbh->prepare($isbn_sql);
-		$isbn_stmt->execute($isbn_data);
+	$isbn_data=array($isbn);
+	$isbn_stmt = $dbh->prepare($isbn_sql);
+	$isbn_stmt->execute($isbn_data);
 
-		$isbn_record=array();
-		$isbn_record=$isbn_stmt->fetch(PDO::FETCH_ASSOC);
+	$isbn_record=array();
+	$isbn_record=$isbn_stmt->fetch(PDO::FETCH_ASSOC);
 
 	if (!isset($isbn_record['isbn_code'])) {
 			// libraryでは初の本だったら、寄贈しますかのアラート
 			// はい、を選択されたら、into_library.phpへ
 	}
 
-
-
-
-
-
 ?>
-
-<!-- <?php var_dump($past_books); ?>
-<?php var_dump($future_books); ?>
-<?php var_dump($_GET); ?>
-<?php echo $past_books["book_img"]; ?>
-<?php echo $past_sql; ?>
-<?php echo $future_sql; ?>
- -->
 
 <!DOCTYPE html>
 <html lang="ja">

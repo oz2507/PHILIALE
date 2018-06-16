@@ -9,9 +9,6 @@ $json_decode = json_decode($json);
 
 $books = $json_decode->feed->entry;
 
- // echo "<pre>";
- // var_dump($books);
- // echo "</pre>";
 ?>
 
 <!DOCTYPE html>
@@ -20,12 +17,8 @@ $books = $json_decode->feed->entry;
  <title>スプレッドシート</title>
 </head>
 <body>
- <!-- <form action="absorb.php?id=<?php echo $_GET['id']; ?>" method="GET">
-  <input type="text" name="id">
-  <input type="submit" name="送信">
- </form> -->
 
- <h1>検索結果</h1>
+  <h1>検索結果</h1>
   
   <?php if (isset($_GET['id'])) { 
    foreach($books as $book ){?>
@@ -36,12 +29,9 @@ $books = $json_decode->feed->entry;
   <?php } ?>
   <?php } ?>
 
-
-
   <a href="absorb.php?id=<?php echo $id; ?>">
   	<p>保管</p> 
   </a>
-
   
 </body>
 </html>
