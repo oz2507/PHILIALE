@@ -19,7 +19,7 @@
                 <span class="icon-bar"></span>
             </button> 
 
-            <a class="navbar-brand" href="#top">
+            <a class="navbar-brand" href="../top.php">
                 <i class="fas fa-book-open fa-2x"><span>PHILIALE</span></i>
             </a>           
         </div>

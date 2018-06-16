@@ -1,6 +1,6 @@
 $(function(){
 
-$(".modal-open").click(function(){
+$(".modal-open-past").click(function(){
 	// console.log("modal-open");
 	//キーボード操作などにより、オーバーレイが多重起動するのを防止する
 	//ボタンからフォーカスを外す
@@ -19,13 +19,13 @@ $(".modal-open").click(function(){
 	centeringModalSyncer();
 
 	//[$modal-content]をフェードインさせる
-	$("#modal-content").fadeIn("slow");
+	$("#modal-content-past").fadeIn("slow");
 
 	//[#modal-overlay]、または[#modal-close]をクリックしたら…
 	$( "#modal-overlay,#modal-close" ).unbind().click( function(){
 
-		//[#modal-content]と[#modal-overlay]をフェードアウトした後に…
-		$( "#modal-content,#modal-overlay" ).fadeOut( "slow" , function(){
+		//[#modal-content-past]と[#modal-overlay]をフェードアウトした後に…
+		$( "#modal-content-past,#modal-overlay" ).fadeOut( "slow" , function(){
 
 			//[#modal-overlay]を削除する
 			$('#modal-overlay').remove() ;
@@ -51,13 +51,13 @@ function centeringModalSyncer(){
 	var h = $(window).height();
 
 	// コンテンツの幅を取得し変数に格納
-	// var cw = $("#modal-content").outerWidth({margin:true});
+	// var cw = $("#modal-content-past").outerWidth({margin:true});
 
 	// コンテンツの高さを取得し変数に格納
-	// var ch = $("#modal-content").outerHeight({margin:true});
+	// var ch = $("#modal-content-past").outerHeight({margin:true});
 
-	var cw = $( "#modal-content" ).outerWidth();
-	var ch = $( "#modal-content" ).outerHeight();
+	var cw = $( "#modal-content-past" ).outerWidth();
+	var ch = $( "#modal-content-past" ).outerHeight();
 
 	// 真ん中に配置するために左から何px離せばいいかを計算し変数に格納
 	var pxleft = ((w - cw)/2);
@@ -65,11 +65,11 @@ function centeringModalSyncer(){
 	// 真ん中に配置するために上から何px離せばいいかを計算し変数に格納
 	var pxtop = ((h - ch)/2);
 
-	// #modal-contentのCSSにleftの値をpxleftを使って設定
-	$("#modal-content").css({"left": pxleft + "px"});
+	// #modal-content-pastのCSSにleftの値をpxleftを使って設定
+	$("#modal-content-past").css({"left": pxleft + "px"});
 
-	// #modal-contentのCSSにtopの値をpxtopを使って設定
-	$("#modal-content").css({"top": pxtop + "px"});
+	// #modal-content-pastのCSSにtopの値をpxtopを使って設定
+	$("#modal-content-past").css({"top": pxtop + "px"});
 
 	}
 

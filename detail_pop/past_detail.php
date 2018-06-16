@@ -1,7 +1,7 @@
 <?php foreach ($past_books as $past) { ?>
 
 <!-- pop -->
-<div id="modal-content">
+<div id="modal-content-past">
 
 	<div class="container-fluid pop_header" style="background-color: white;">
 	    <div class="row">
@@ -26,7 +26,7 @@
 
 	<div class="row">
 		  <div class="col-xs-12 col-md-6 col-md-offset-3">
-		<form action="past_edit.php" method="post" class="form_original" enctype="multipart/form-data">
+		<form action="past_edit.php?id=<?php echo $past['id'];?>" method="post" class="form_original" enctype="multipart/form-data">
 
 			<div>
 			  <label for="book_img">イメージ</label>
@@ -55,8 +55,10 @@
 			  <textarea id="book_story" name="comment"><?php echo $past['comment']; ?></textarea>
 			</div>
 			<div>
+			<a href="past_edit.php?id=<?php echo $past['id'];?>">
 			 <button type="submit" name="" class="book_add_btn">更新する</button>
 			</div>
+		</a>
 			
 		</form>
 		<div>
@@ -68,19 +70,31 @@
 
 </div>
 
-	<a id="modal-open<?php echo $past["id"]; ?>" class="button-link modal-open">	
+	<a id="modal-open<?php echo $past["id"]; ?>" class="button-link modal-open-past">	
 		<div class="col-xs-6 col-md-3">
 			<?php if ($past["book_img"] != '') {?> 
 	            <div class="l-thumbnail">
     			    <figure class="thumbnail-wrapper">
     			    	<img src="book_img/<?php echo $past["book_img"]; ?>">
            			</figure>
+           			<span class="more-text">
+                    	<?php echo $past['book_title']; ?>
+                	</span>
+                	<span class="more-text1">
+                    	<?php echo $past['book_author']; ?>
+                	</span>
     			</div>
     		<?php }else{ ?>
     			<div class="l-thumbnail">
     			    <figure class="thumbnail-wrapper">
     			    	<img src="assets/img/philia2.png" alt="no image">
 					</figure>
+					<!-- <span class="more-text">
+                    	<?php echo $past['book_title']; ?>
+                	</span>
+                	<span class="more-text">
+                    	<?php echo $past['book_author']; ?>
+                	</span> -->
 	            </div>    			
 	        <?php } ?>
      	</div>
