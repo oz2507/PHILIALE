@@ -9,7 +9,7 @@
 	<link rel="stylesheet"x href="assets/css/styles.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700">
-	<link rel="stylesheet" href="philiale_mypage/assets/css/mystyle.css">
+	<link rel="stylesheet" href="assets/css/mystyle.css">
 	<link rel="stylesheet" href="assets/css/top.css">
 	<link rel="shortcut icon" href="assets/img/favicon/favicon.ico" type="image/vnd.microsoft.icon">
 	<link rel="icon" href="assets/img/favicon/favicon.ico" type="image/vnd.microsoft.icon">
