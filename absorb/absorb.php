@@ -1,4 +1,5 @@
 <?php
+
 	session_start();
 	require('../dbconnect.php');
 
@@ -23,13 +24,9 @@
 		    $insert_stmt = $dbh->prepare($insert_sql); 
 		    $insert_stmt->execute($insert_data);
 
-
 		} 
-
 	}
 
 	header("Location:../mypage2.php");
-	// echo "<pre>";
-	// var_dump($books);
-	// echo "</pre>";
+
 ?>

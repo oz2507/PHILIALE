@@ -14,74 +14,69 @@
         $chk_count = strlen($check);
 
            // ユーザー名の空チェック
-          if ($name == '') {
+        if ($name == '') {
             $errors['name'] = 'blank';
           
-          }else{
-                require('../dbconnect.php');
+        }else{
+            require('../dbconnect.php');
 
-                $sql = 'SELECT COUNT(*) as `cnt` FROM `users` WHERE `name`=?';
-                $data = array($name);
-                $stmt = $dbh->prepare($sql);
-                $stmt->execute($data);
+            $sql = 'SELECT COUNT(*) as `cnt` FROM `users` WHERE `name`=?';
+            $data = array($name);
+            $stmt = $dbh->prepare($sql);
+            $stmt->execute($data);
 
-                $dbh = null;
+            $dbh = null;
 
-                $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+            $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 
-                if ($rec['cnt'] > 0) {//メールアドレスの数が0異常ですでに登録済み
-                  $errors['name'] = 'duplication';
-                }
-          }
+            if ($rec['cnt'] > 0) {//メールアドレスの数が0異常ですでに登録済み
+                $errors['name'] = 'duplication';
+            }
+        }
 
-          if ($email == '') {
+        if ($email == '') {
             $errors['email'] = 'blank';
-          }
-          //重複しているかの確認
-          else{
-                require('../dbconnect.php');
+        }else{
+            require('../dbconnect.php');
 
-                $sql = 'SELECT COUNT(*) as `cnt` FROM `users` WHERE `email`=?';
-                $data = array($email);
-                $stmt = $dbh->prepare($sql);
-                $stmt->execute($data);
+            $sql = 'SELECT COUNT(*) as `cnt` FROM `users` WHERE `email`=?';
+            $data = array($email);
+            $stmt = $dbh->prepare($sql);
+            $stmt->execute($data);
 
-                $dbh = null;
+            $dbh = null;
 
-                $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+            $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 
-                // var_dump($rec);
+            if ($rec['cnt'] > 0) {//メールアドレスの数が0異常ですでに登録済み
+                $errors['email'] = 'duplication';
+            }
+        }
 
-                if ($rec['cnt'] > 0) {//メールアドレスの数が0異常ですでに登録済み
-                  $errors['email'] = 'duplication';
-                }
-          }
-
-          if ($password == '') {
+        if ($password == '') {
             $errors['password'] = 'blank';
-          }
+        }
 
-          elseif ($count < 4 || $count > 16) {
+        elseif ($count < 4 || $count > 16) {
             $errors['password'] = 'length';
-          }
+        }
 
-          if ($check == '') {
+        if ($check == '') {
             $errors['check'] = 'blank';
-          }
+        }
 
-          elseif ($chk_count < 4 || $chk_count > 16) {
+        elseif ($chk_count < 4 || $chk_count > 16) {
             $errors['check'] = 'length';
-          }
+        }
 
-          if (empty($errors)) {
+        if (empty($errors)) {
 
-            $_SESSION['register']['name'] = $_POST['input_name'];
-            $_SESSION['register']['email'] = $_POST['input_email'];
-            $_SESSION['register']['password'] = $_POST['input_password'];
+          $_SESSION['register']['name'] = $_POST['input_name'];
+          $_SESSION['register']['email'] = $_POST['input_email'];
+          $_SESSION['register']['password'] = $_POST['input_password'];
 
-            header('Location: check.php');
-            exit();
-
+          header('Location: check.php');
+          exit();
           }
     }
     

@@ -1,22 +1,15 @@
 <?php
+
+	require('../dbconnect.php');
+
  	$nickname = $_POST['nickname'];
  	$email = $_POST['email'];
  	$content = $_POST['content'];
 
-  	// １．データベースに接続する
-	$dsn = 'mysql:dbname=inquiry;host=localhost';
-	$user = 'root';
-	$password = '';
-	$dbh = new PDO($dsn, $user, $password);
-	$dbh->query('SET NAMES utf8');
-
-	// ２．SQL文を実行する
 	$sql = "INSERT INTO `inquiry_system` SET `nickname`='".$nickname."',`email`='".$email."', `content`='".$content."'";
 	
 	$stmt = $dbh->prepare($sql);
 	$stmt->execute();
-
-	
 
 ?>
 

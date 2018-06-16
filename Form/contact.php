@@ -1,12 +1,10 @@
 <?php
 
-//テーブル名をcontactsで作成(カラムは名前、メアド、コメント)
+    session_start();
 
-    session_start();  // $_SESSIONを使うための合図
     $errors = array();
 
     $flag = 0;
-
 
     if (!empty($_POST)) {//POST送信があった時--ここから
         $name = $_POST['input_name'];
@@ -26,22 +24,19 @@
         }
 
         if (empty($errors)) {
-        require('../dbconnect.php');
-        $sql='INSERT INTO `contacts`(`name`,`email`,`comment`) VALUES (?,?,?)';
-        $data = array($name,$email,$comment);
-        $stmt = $dbh->prepare($sql);
-        $stmt->execute($data);
-        $dbh = null;
+            require('../dbconnect.php');
+            $sql='INSERT INTO `contacts`(`name`,`email`,`comment`) VALUES (?,?,?)';
+            $data = array($name,$email,$comment);
+            $stmt = $dbh->prepare($sql);
+            $stmt->execute($data);
+            $dbh = null;
 
-        $flag = 1;
+            $flag = 1;
 
         }
-        session_destroy();
+    session_destroy();
     }
 
-// echo "<pr>";
-// echo $flag;
-// echo "<pr>";
 ?>
 <!DOCTYPE html>
 <html lang="ja">
