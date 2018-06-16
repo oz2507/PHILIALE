@@ -220,6 +220,7 @@
 		<div class="container">
 			<div class="row">
 
+				<!-- 新規追加 -->
 				<div class="col-xs-6 col-md-3"> 
 		            <div class="l-thumbnail">
         			    <figure class="thumbnail-wrapper">
@@ -230,6 +231,22 @@
 		                </span>
         			</div>
      			</div>
+
+     			<!-- スプレッドシート -->
+     			<a href="absorb/submit.php">
+	     			<div class="col-xs-6 col-md-3"> 
+			            <div class="l-thumbnail">
+	        			    <figure class="thumbnail-wrapper">
+	               				<img src="assets/img/add1.png">
+	             			</figure>
+			                <span class="more-text">
+			                    ADDITION
+			                </span>
+	        			</div>
+	     			</div>
+     			</a>
+
+
      			<div class="col-xs-6 col-md-3"> 
 		            <div class="l-thumbnail">
         			    <figure class="thumbnail-wrapper">
@@ -295,6 +312,7 @@
 <!-- 6.js -->
 
 <script src="assets/js/jquery-3.1.1.js"></script>
+<script src="detail_pop/past_detail.js"></script>
 <script src="detail_pop/past_detail.js"></script>
 
 <script src="assets/js/jquery-migrate-1.4.1.js"></script>

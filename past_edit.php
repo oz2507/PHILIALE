@@ -6,7 +6,7 @@
 
 	if (!empty($_POST)) {
 
-		$book_id=$_SESSION['id'];
+		$book_id=$_GET['id'];
 
 		//画像名を取得
 	    $book_img = $_FILES['book_img']['name'];
@@ -51,24 +51,13 @@
     $stmt->execute($data);
 }
 
-	$sql = "select *
-	 from past_archives
-	 where id=?";
 
-  
-  $data = array($_SESSION['id']);
-  $stmt = $dbh->prepare($sql);
-  $stmt->execute($data);
-  $feeds = array();
-
-  $feed=$stmt->fetch(PDO::FETCH_ASSOC);
-
-  var_dump($book_img);
-  var_dump($submit_file_name);
-  var_dump($img);
-  var_dump($date_str);
+  // var_dump($book_img);
+  // var_dump($submit_file_name);
+  // var_dump($img);
+  // var_dump($date_str);
 
 
-  // header("Location:mypage2.php");
+  header("Location:mypage2.php");
 
 ?>

@@ -1,12 +1,12 @@
 <?php foreach ($future_books as $future) { ?>
 
 <!-- pop -->
-<div id="modal-content">
+<div id="modal-content-future">
 
 	<div class="container-fluid pop_header" style="background-color: white;">
 	    <div class="row">
 	      <div class="col-xs-12 col-md-12">
-			<a id="modal-close" class="button-link">×</a>
+			<a id="modal-close-future" class="button-link">×</a>
 	  </div>
 	</div>
 	</div>
@@ -26,7 +26,7 @@
 
 	<div class="row">
 		  <div class="col-xs-12 col-md-6 col-md-offset-3">
-		<form action="future_edit.php?id=<?php echo $future['id'] ?>" method="post" class="form_original">
+		<form action="future_edit.php?id=<?php echo $future['id'];?>" method="post" class="form_original" enctype="multipart/form-data">
 
 			<div>
 			  <label for="book_img"></label>
@@ -54,8 +54,10 @@
 			</div>
 
 			<div>
+				<a href="future_edit.php?id=<?php echo $future['id'];?>">
 			 <button type="submit" name="" class="book_add_btn">更新する</button>
 			</div>
+		</a>
 
 		</form>
 
@@ -76,7 +78,7 @@
 </div>
 
 
-	<a id="modal-open<?php echo $future["id"]; ?>" class="button-link modal-open">	
+	<a id="modal-open<?php echo $future["id"]; ?>" class="button-link modal-open-future">	
 	<div class="col-xs-6 col-md-3"> 
         <div class="l-thumbnail">
 		    <figure class="thumbnail-wrapper">

@@ -202,6 +202,20 @@ li{
   border: 1px solid #fff;
   opacity: 0;
 }
+
+.more-text1 {
+  transition: 0.5s;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  padding: 6px 12px 8px;
+  color: #fff;
+  font-size: 14px;
+  border: 1px solid #fff;
+  opacity: 0;
+}
 .col-xs-6,.col-md-3:hover .thumbnail-wrapper::after {
   opacity: 1;
 }

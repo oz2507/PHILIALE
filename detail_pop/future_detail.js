@@ -1,6 +1,6 @@
 $(function(){
 
-$(".modal-open<?php echo $future["id"]; ?>").click(function(){
+$(".modal-open-future").click(function(){
 	//キーボード操作などにより、オーバーレイが多重起動するのを防止する
 	//ボタンからフォーカスを外す
 	$(this).blur() ;
@@ -20,10 +20,10 @@ $(".modal-open<?php echo $future["id"]; ?>").click(function(){
 	//[$modal-content]をフェードインさせる
 	$("#modal-content-future").fadeIn("slow");
 
-	//[#modal-overlay]、または[#modal-close]をクリックしたら…
-	$( "#modal-overlay,#modal-close" ).unbind().click( function(){
+	//[#modal-overlay]、または[#modal-close-future]をクリックしたら…
+	$( "#modal-overlay,#modal-close-future" ).unbind().click( function(){
 
-		//[#modal-content]と[#modal-overlay]をフェードアウトした後に…
+		//[#modal-content-future]と[#modal-overlay]をフェードアウトした後に…
 		$( "#modal-content-future,#modal-overlay" ).fadeOut( "slow" , function(){
 
 			//[#modal-overlay]を削除する
@@ -50,10 +50,10 @@ function centeringModalSyncer(){
 	var h = $(window).height();
 
 	// コンテンツの幅を取得し変数に格納
-	// var cw = $("#modal-content").outerWidth({margin:true});
+	// var cw = $("#modal-content-future").outerWidth({margin:true});
 
 	// コンテンツの高さを取得し変数に格納
-	// var ch = $("#modal-content").outerHeight({margin:true});
+	// var ch = $("#modal-content-future").outerHeight({margin:true});
 
 	var cw = $( "#modal-content-future" ).outerWidth();
 	var ch = $( "#modal-content-future" ).outerHeight();
