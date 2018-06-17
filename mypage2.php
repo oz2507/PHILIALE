@@ -86,13 +86,14 @@
 <html lang="ja">
 <head>
 	<meta charset="UTF-8">
+	<!-- <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, maximum-scale=1.0, user-scalable=yes"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>MYPAGE</title>
 
 	<link rel="stylesheet" type="text/css" href="detail_pop/detail.css">
   	<link rel="stylesheet" type="text/css" href="detail_pop/detail_pop.css">
 
 	<link rel="stylesheet" href="assets/css/bootstrap.phl.css">
-	<link rel="stylesheet" href="assets/css/style.css">
 	<link rel="stylesheet" href="assets/css/mypage.css">
 	<link rel="shortcut icon" href="assets/img/favicon/favicon.ico" type="image/vnd.microsoft.icon">
 	<link rel="icon" href="assets/img/favicon/favicon.ico" type="image/vnd.microsoft.icon">
@@ -142,7 +143,6 @@
 		<!-- add book -->
 		<div class="container">
 			<div class="row">
-
 		        <div class="col-xs-6 col-md-3"> 
 		            <div class="l-thumbnail">
         			    <figure class="thumbnail-wrapper">

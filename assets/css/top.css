@@ -118,7 +118,6 @@ li {
   border-bottom: 5px solid #dcdcdc;
 }
 
-
 h1{
   color: #a9a9a9;
   font-size: 70px;
@@ -160,25 +159,25 @@ p{
 }
 
 @media (max-width: 768px){
- .container-fluid {
-    padding-right: 30px;
-    padding-left: 30px;
+.container-fluid {
+  padding-right: 30px; 
+  padding-left: 30px;
 }
 
 .navbar-default{
-     padding-right: 30px;
-    padding-left: 30px; 
+  padding-right: 30px;
+  padding-left: 30px; 
 }
   
-  .pc_only{
-    display: none;
-  }
+.pc_only{
+  display: none;
+}
 
-  br{
-    display: none;
-  }
+br{
+  display: none;
+}
 
-  .box{
+.box{
   border-bottom: 5px solid #dcdcdc;
 }
 
@@ -187,22 +186,12 @@ p{
 }
 
 .container-fluid {
-    padding-right: 30px;
-    padding-left: 30px;
+  padding-right: 30px;
+  padding-left: 30px;
 }
 
-  .header img{
+.header img{
   width: 100%;
-}
-
-.header .philia{
-  position: relative;
-  margin-top: 25px;
-}
-
-.header .state{
-  position: absolute;
-  top: 160px;
 }
 
 h1{
@@ -220,11 +209,12 @@ h1{
   text-align: center;
 }
 
-  .container-who{
+.container-what{
   width: 700px;
   margin: 0 auto;
-  height: 400px;
+  height: 800px;
   padding-top: 80px;
+  padding-left: 40px;
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -241,6 +231,7 @@ h5{
   margin: 0 auto;
   height: 1400px;
   padding-top: 80px;
+  padding-left: 40px;
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -251,6 +242,7 @@ h5{
   margin: 0 auto;
   height: 1800px;
   padding-top: 80px;
+  padding-left: 40px;
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -291,37 +283,38 @@ a:hover{
 
 }
 
-
-/* 768px以上 */
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-  /*.pc_only{
-    display: none;
-  }
-*/
-  br{
-    display: none;
-  }
-
-   .header img{
+@media (max-width: 400px){
+.contaner{
   width: 100%;
 }
 
-.header .philia{
-  position: relative;
-  margin-top: 20px;
+.header img{
+  width: 210%;
 }
 
-.header .state{
-  position: absolute;
-  top: 210px;
 }
 
+
+/* 768px以上 */
+@media (min-width: 768px) {
+.container {
+  width: 750px;
+}
+
+.pc_only{
+  width: 70%;
+}
+
+br{
+  display: none;
+}
+
+.header img{
+  width: 980px;
+}
 
 .container-what{
-  width: 700px;
+  width: 980px;
   margin: 0 auto;
   height: 1000px;
   padding-top: 80px;
@@ -331,7 +324,7 @@ a:hover{
 }
 
 .row{
-  padding-left: 200px;
+  padding-left: 90px;
 }
 
 h5{
@@ -358,7 +351,6 @@ h5{
   overflow: hidden;
   text-align: center;
 }
-
 
 .container-msg{
   width: 980px;
@@ -388,33 +380,22 @@ a:hover{
   color:rgba(33, 39, 98, 0.5);
 }
 
-
-
 }
-
 
 /* 992px以上 */
 @media (min-width: 992px) {
-  .container {
+.container {
     width: 970px;
-  }
+}
 
-  /* header */
+/* header */
 .header img{
-  width: 100%;
+  width: 120%;
 }
 
-.header .philia{
-  position: relative;
-  margin-top: 20px;
+.pc_only{
+  width: 90%;
 }
-
-.header .state{
-  position: absolute;
-  top: 240px;
-}
-
-
 
 .container-what{
   width: 1170px;
@@ -527,6 +508,7 @@ a:hover{
 
 .container-msg{
   width: 100%;
+  width: 120%;
   padding-top: 60px;
   padding-bottom: 20px;
   position: relative;
@@ -540,6 +522,7 @@ a:hover{
 /*copyright*/
 #copyright{
   width: 100%;
+  width: 120%;
   color: #fff;
   background-color: #696969;
   text-align: center;
@@ -555,28 +538,17 @@ a:hover{
   color:rgba(33, 39, 98, 0.5);
 }
 
-
-
 }
 
 /* 1200px以上 */
 @media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
+.container {
+  width: 1170px;
+}
 
   /* header */
 .header img{
   width: 100%;
-}
-
-.header .philia{
-  position: relative;
-}
-
-.header .state{
-  position: absolute;
-  top: 290px;
 }
 
 .container-what{
@@ -584,13 +556,10 @@ a:hover{
   /*margin: 70px 0px 0px 170px;*/
   margin: 0 auto;
   height: 850px;
-  margin-top: 100px;
+  margin-top: 0px;
   position: relative;
   overflow: hidden;
   text-align: center;
-
-  /*margin-left: 170px;*/
-  /*margin-right: 0px;*/
 }
 
 .row{
@@ -600,7 +569,6 @@ a:hover{
 .pc_only{
   width: 400px;
   height: 600px;
-  /*box-shadow:-2px -2px 2px #999 inset;*/
 }
 
 #what p{
@@ -620,11 +588,9 @@ h5>a:hover{
   color:rgba(33, 39, 98, 0.5);
 }
 
-
 .desc{
   width: 500px;
 }
-
 
 .pull-right{
   text-align: left;
@@ -740,7 +706,4 @@ a:hover{
   color:rgba(33, 39, 98, 0.5);
 }
 
-
-
 }
-

@@ -87,7 +87,7 @@
   <meta charset="utf-8">
   <title>PHILIALE</title>
   <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="../assets/css/style_r.css"> <!-- 追加 -->
+  <link rel="stylesheet" type="text/css" href="../assets/css/style_r.css">
   <?php  require('../partial/favicon.php');  ?>
 </head>
 <body style="margin-top: 60px">
@@ -96,10 +96,12 @@
       <!-- ここに左サイドコンテンツ -->
       <div class="col-xs-12 col-md-6 left-column">
         <h3 class="content_header">入館手続</h3>
-          <p>ようこそPHILIALEへおいで下さいました。<br>ご利用の前に、入館手続をお願い致します。<br></p>
+          <p>ようこそPHILIALEへおいで下さいました。</p>
+          <P>ご利用の前に、入館手続をお願い致します。</p>
           <img class="img-responsive img-circle logo_original" src="../assets/img/philia2.png">
-          <p>当館では、皆様個人のためだけの図書館を作る事が出来ます。<br>本好きな当館支配人もまた、数多の本を所蔵しております。<br>それでは、本の世界へ行ってらっしゃいませ。<br></p><p><br></p>
-
+          <p>当館では、皆様個人のためだけの図書館を作る事が出来ます。</p>
+          <p>本好きな当館支配人もまた、数多の本を所蔵しております。</p>
+          <p>それでは、本の世界へ行ってらっしゃいませ。</p>
       </div>
 
       <!-- ここに右サイドコンテンツ -->
