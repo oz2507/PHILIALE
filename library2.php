@@ -86,66 +86,7 @@
 <!-- book -->
 <div class="container">
     <div class="row">
-
-    	<div class="col-xs-6 col-md-3">
-            <div class="thumbnail">
-                <img src="assets/img/add.png">
-            </div>
-         </div>
-
-
-                <div class="col-xs-6 col-md-3">
-            
-            <div class="l-thumbnail">
-                <figure class="thumbnail-wrapper">
-                    <img src="assets/img/philia2.png">
-                 </figure>
-                <span class="more-text">
-                    フェチる
-                </span>
-            </div>
-         
-         </div>
-        <div class="col-xs-6 col-md-3">
-            
-            <div class="l-thumbnail">
-                <figure class="thumbnail-wrapper">
-                    <img src="assets/img/empelar.jpg">
-                 </figure>
-                <span class="more-text">
-                    フェチる
-                </span>
-            </div>
-         
-         </div>
-        <div class="col-xs-6 col-md-3">
-            
-            <div class="l-thumbnail">
-                <figure class="thumbnail-wrapper">
-                    <img src="assets/img/harmony.jpg">
-                 </figure>
-                <span class="more-text">
-                    フェチる
-                </span>
-            </div>
-         
-         </div>
-        <div class="col-xs-6 col-md-3">
-            
-            <div class="l-thumbnail">
-                <figure class="thumbnail-wrapper">
-                    <img src="assets/img/philia2.png">
-                 </figure>
-                <span class="more-text">
-                    フェチる
-                </span>
-            </div>
-         
-         </div>
-
          <?php include('detail_pop/library_detail.php'); ?>
-
-
     </div>
 </div>
 

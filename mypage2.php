@@ -77,6 +77,7 @@
 
 	if (!isset($isbn_record['isbn_code'])) {
 			// libraryでは初の本だったら、寄贈しますかのアラート
+			header("Location:alert.php?isbn_code=".$_GET['isbn_code']);
 			// はい、を選択されたら、into_library.phpへ
 	}
 
@@ -153,47 +154,7 @@
 		                </span>
         			</div>
      			</div>
-     			<div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/empelar.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    DETAIL
-		                </span>
-        			</div>
-     			</div>
-     			<div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/harmony.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    DETAIL
-		                </span>
-        			</div>
-     			</div>
-     			<div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/jenoside.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    DETAIL
-		                </span>
-        			</div>
-     			</div>
-     			<div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/book1.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    DETAIL
-		                </span>
-        			</div>
-     			</div>
-
+     			
 				 <?php include("detail_pop/future_detail.php"); ?>
 				
 			</div>
@@ -230,58 +191,6 @@
 	        			</div>
 	     			</div>
      			</a>
-
-
-     			<div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/harmony.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    DETAIL
-		                </span>
-        			</div>
-     			</div>
-     			<div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/harmony.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    DETAIL
-		                </span>
-        			</div>
-     			</div>
-     			<div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/harmony.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    DETAIL
-		                </span>
-        			</div>
-     			</div>
-     			<div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/harmony.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    DETAIL
-		                </span>
-        			</div>
-     			</div>
-     			<div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/harmony.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    DETAIL
-		                </span>
-        			</div>
-     			</div>
 
          		<?php include("detail_pop/past_detail.php"); ?>
 			</div>
