@@ -20,7 +20,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarEexample">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarExample">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -32,7 +32,7 @@
             </a>           
         </div>
 
-        <div class="collapse navbar-collapse navbar-right" id="navbarEexample">
+        <div class="collapse navbar-collapse navbar-right" id="navbarExample">
             <ul class="nav navbar-nav">
             <li><a href="register/signup.php">新規登録</a></li>
             <li class="right diviver">|</li>
@@ -46,7 +46,6 @@
 <!-- header -->
 <div class="header">
 	<img src="assets/img/gif/フィリア.gif" alt="head-design" class="philia">
-	<img src="assets/img/gif/文字.gif" alt="" class="state">
 </div>
 
 <!-- what's philiale -->

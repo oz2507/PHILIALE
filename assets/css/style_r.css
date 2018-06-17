@@ -38,8 +38,8 @@
 	text-align: center;
 	/*color: #eeeeee;*/
 	color: #fff;
-	margin-top: 0;
-	margin-bottom: 3em;
+	margin-top: 0.5em;
+	margin-bottom: 2em;
 }
 
 .left-column p{
@@ -135,54 +135,6 @@
   transition: all .3s;
 }
 
-/* signup.php */
-/*.btn {
-  line-height: 50px;
-  position: relative;
-  z-index: 2;
-  background-color: none;
-  border: 1.5px solid #8f4796;
-  opacity: 0.7;
-  color: #8f4796;
-  padding: 6px 12px;
-}
-
-.btn:hover {
-  background-color: #8f4796;
-  border-color: #fff;
-  color: #fff;
-}
-
-.btn::before,
-.btn::after {
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background-color: #fff;
-}
-
-.button::before {
-  top: 0;
-}
-.button::after {
-  bottom: 0;
-}
-.button:hover::before,
-.button:hover::after {
-  height: 0;
-  background-color: #fff;
-}
-
-.btn,
-.btn::before,
-.btn::after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: all .3s;
-  transition: all .3s;
-}*/
-
 /* check.php */
 .thumbnail>.btn {
   line-height: 50px;
@@ -274,6 +226,10 @@
 	height:15em;
 }
 
+textarea{
+	resize: none;
+}
+
 /*.btn-original{
 	margin-top: 38px;
 	width: 80%;
@@ -328,6 +284,10 @@ input.form-control::placeholder{
 	color: #e7daea;
 }
 
+textarea.form-control::placeholder{
+	color: #e7daea;
+}
+
 input.signin{
 	margin-bottom: 15px;
 }
@@ -346,6 +306,21 @@ input.signin{
 	margin-top: 50px;
 }
 
+/* form/contact.php */
+a{
+  color: #fff;
+  text-decoration: underline;
+}
+
+a:hover{
+  color: rgba(33, 39, 98, 0.5);
+}
+
+.infobox {
+  height: 5.5em;
+  overflow: scroll;
+}
+
 
 
 
@@ -353,7 +328,7 @@ input.signin{
 /*---------edit_book.html------------↓*/
 
 
-.pop_header{
+/*.pop_header{
 	background-color: #f2eaf4;
 	height:80px;
 }
@@ -459,13 +434,7 @@ input.signin{
     font-size: 15px;
     line-height: 1.6em;
 }
-
-
-
-
-
-
-
+*/
 
 /*---------add_order.html----------*/
 .order_img{
@@ -474,7 +443,7 @@ input.signin{
 
 .order_col{
 	margin:30px auto 50px;
-	/*color: ;*/
+	color: ;
 	font-size: 20px;
 	font-weight: 900;
 	letter-spacing: 0.2em;
@@ -512,11 +481,6 @@ input.signin{
     font-size: 15px;
     font-weight: 600;
 }
-
-
-
-
-
 
 /*---------add_hand.html----------*/
 .add_img{

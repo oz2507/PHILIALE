@@ -1,12 +1,11 @@
 /*css bace*/
-
 html, body,
 ul, ol, li,
 h1, h2, h3, h4, h5, h6, p,
 form, input, div {
   margin: 0;
   padding: 0;
-   font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif
+  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif
 }
 
 li {
@@ -47,12 +46,12 @@ body{
 }
 
 li a{
-    font-family: 'Roboto Condensed', sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 40px;
-    color: #fff;
-    padding: 0px 30px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  color: #fff;
+  padding: 0px 30px;
 }
 
 li{
@@ -168,11 +167,13 @@ li{
   height: auto;
   padding: 10px;
 }
+
 .thumbnail-wrapper {
   display: block;
   margin: 0;
   padding: 0;
 }
+
 .thumbnail-wrapper::after {
   transition: 0.5s;
   content: "";
@@ -185,10 +186,12 @@ li{
   background: rgba(0, 0, 0, 0.4);
   opacity: 0;
 }
+
 .thumbnail-wrapper img{
   display: block;
   max-width: 100%;
 }
+
 .more-text {
   transition: 0.5s;
   position: absolute;
@@ -201,21 +204,11 @@ li{
   font-size: 14px;
   border: 1px solid #fff;
   opacity: 0;
+
+  width: 90%;
+  text-align: center;
 }
 
-.more-text1 {
-  transition: 0.5s;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  display: inline-block;
-  padding: 6px 12px 8px;
-  color: #fff;
-  font-size: 14px;
-  border: 1px solid #fff;
-  opacity: 0;
-}
 .col-xs-6,.col-md-3:hover .thumbnail-wrapper::after {
   opacity: 1;
 }
@@ -304,9 +297,11 @@ a.btn::after {
 a.button::before {
   top: 0;
 }
+
 a.button::after {
   bottom: 0;
 }
+
 a.button:hover::before,
 a.button:hover::after {
   height: 0;
@@ -333,8 +328,8 @@ a.btn::after {
 
 @media (max-width: 768px){
 .navbar-default{
-     padding-right: 50px;
-    padding-left: 50px; 
+  padding-right: 50px;
+  padding-left: 50px; 
 }
 
 .container {
@@ -353,23 +348,52 @@ a.btn::after {
 
 #tab1>.container {
   padding-right: 15px;
+  /*padding-left: 90px;*/
+  padding-left: 70px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+}
+
+@media (max-width: 400px){
+.navbar-default{
+  padding-right: 50px;
+  padding-left: 50px; 
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
   padding-left: 90px;
   margin-right: auto;
   margin-left: auto;
 }
 
-.navbar-nav{
-  /*float: left;*/
+#tab2>.container {
+  padding-right: 15px;
+  padding-left: 30px;
+  margin-right: auto;
+  margin-left: auto;
 }
+
+#tab1>.container {
+  padding-right: 15px;
+  padding-left: 70px;
+  margin-right: auto;
+  margin-left: auto;
 }
+
+}
+
 
 /* 768px以上 */
 @media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
+.container {
+  width: 750px;
+}
 
-  .container {
+.container {
   padding-right: 15px;
   padding-left: 90px;
   margin-right: auto;
@@ -394,11 +418,11 @@ a.btn::after {
 
 /* 992px以上 */
 @media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
+.container {
+  width: 970px;
+}
 
-  .container {
+.container {
   padding-right: 15px;
   padding-left: 75px;
   margin-right: auto;
@@ -418,13 +442,14 @@ a.btn::after {
   margin-right: auto;
   margin-left: auto;
 }
+
 }
 
 /* 1200px以上 */
 @media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
+.container {
+  width: 1170px;
+}
 
 .navbar-default .navbar-collapse{
   padding-right: 135px;
@@ -451,4 +476,5 @@ a.btn::after {
   margin-right: auto;
   margin-left: auto;
 }
+
 }

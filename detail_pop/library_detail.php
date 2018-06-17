@@ -41,22 +41,28 @@
 
 
 	<a id="modal-open<?php echo $book["id"]; ?>" class="button-link modal-open">	
-    	<div class="col-xs-6 col-md-3"> 
-          <div class="l-thumbnail">
-      		    <figure class="thumbnail-wrapper">
-        		    	<?php if ($book["book_img"]!='') {?>
-             					<img src="book_img/<?php echo $book["book_img"]; ?>">
-             					<span class="more-text">
-                          フェチる
-                      </span>
-           				<?php }else{ ?>
-             					<img src="assets/img/philia2.png" alt="no image">
-             					<span class="more-text">
-                          NO IMAGE
-                      </span>
-        				  <?php } ?>
-       			  </figure>        
-    		  </div>
-    	</div>
+      <div class="col-xs-6 col-md-3">
+          <?php if ($book["book_img"] != '') {?> 
+              <div class="l-thumbnail">
+              <figure class="thumbnail-wrapper">
+                <img src="book_img/<?php echo $book["book_img"]; ?>">
+                </figure>
+                <span class="more-text">
+                      <p>タイトル:<?php echo $book['book_title']; ?></p>
+                      <p>作者:<?php echo $book['book_author']; ?></p>
+                  </span>
+              </div>
+          <?php }else{ ?>
+              <div class="l-thumbnail">
+                  <figure class="thumbnail-wrapper">
+                      <img src="assets/img/philia2.png" alt="no image">
+                  </figure>
+                  <span class="more-text">
+                      <p>タイトル:<?php echo $book['book_title']; ?></p>
+                      <p>作者:<?php echo $book['book_author']; ?></p>
+                  </span>
+              </div>          
+          <?php } ?>
+    </div>    	
 	</a>
 <?php } ?>

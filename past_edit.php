@@ -14,11 +14,11 @@
 	        
 	    if (!empty($book_img)) {
 	        // 画像名の後ろから3文字を取得
-	        $file_type = substr($book_img, -3);
+	        $file_type = substr($book_img, -4);
 	        // 大文字が含まれていた場合すべて小文字化
 	        $file_type = strtolower($file_type);
 
-	        if ($file_type != 'jpg' && $file_type != 'png' && $file_type != 'gif') {
+	        if ($file_type != 'jpg' && $file_type != 'png' && $file_type != 'gif' && $file_type != 'jpeg') {
 	            $errors['img_name'] = 'type';
 	        }
 	    }else{
