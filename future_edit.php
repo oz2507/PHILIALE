@@ -18,14 +18,10 @@
             // 大文字が含まれていた場合すべて小文字化
             $file_type = strtolower($file_type);
 
-            if ($file_type != 'jpg' && $file_type != 'png' && $file_type != 'gif' && $file_type != 'jpeg') {
+            if ($file_type != '.jpg' && $file_type != '.png' && $file_type != '.gif' && $file_type != 'jpeg') {
                 $errors['img_name'] = 'type';
             }
-
-        }else{
-            //ファイルがないときの処理
-            $errors['img_name'] = 'blank';
-        }
+         }
     }
 
     if(empty($errors)){
@@ -40,12 +36,21 @@
     $img=$submit_file_name;
     $comment=$_POST["comment"];
 
-    $sql='UPDATE `future_archives` SET `book_title`=?, `book_author`=?, `book_img`=?,`comment`=? WHERE `id`=?';
+    $count = strlen($img);
 
-    $data=array($book_title,$book_author,$img,$comment,$book_id);
+    if ($count > 14) {
+        $sql='UPDATE `future_archives` SET `book_title`=?, `book_author`=?, `book_img`=?,`comment`=? WHERE `id`=?';
+
+        $data=array($book_title,$book_author,$img,$comment,$book_id);
+    }else{
+        $sql='UPDATE `future_archives` SET `book_title`=?, `book_author`=?,`comment`=? WHERE `id`=?';
+
+        $data=array($book_title,$book_author,$comment,$book_id);
+    }
+
     $stmt = $dbh->prepare($sql);
     $stmt->execute($data);
 }
     header("Location:mypage2.php");
-
+    
 ?>
