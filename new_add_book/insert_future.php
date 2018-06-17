@@ -28,6 +28,8 @@
 		$stmt = $dbh->prepare($sql);
     	$stmt->execute($data);
 
+    	}else{
+    		echo "isbnを入力してください。";
     	}
     }
 
