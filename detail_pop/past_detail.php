@@ -1,7 +1,7 @@
 <?php foreach ($past_books as $past) { ?>
 
 <!-- pop -->
-<div id="modal-content-past">
+<div id="modal-content-past<?php echo $past[`id`]; ?>">
 
 	<div class="container-fluid pop_header" style="background-color: white;">
 	    <div class="row">
@@ -69,7 +69,7 @@
 
 </div><!-- modal-content-past -->
 
-<a id="modal-open<?php echo $past["id"]; ?>" class="button-link modal-open-past">	
+<a id="modal-open-past<?php echo $past['id']; ?>" class="button-link modal-open-past">	
 	<div class="col-xs-6 col-md-3">
 		<?php if ($past["book_img"] != '') {?> 
             <div class="l-thumbnail">

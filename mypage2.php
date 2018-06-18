@@ -75,10 +75,16 @@
 	$isbn_record=array();
 	$isbn_record=$isbn_stmt->fetch(PDO::FETCH_ASSOC);
 
-	if (!isset($isbn_record['isbn_code'])) {
+	if (isset($_POST['isbn']) && empty($isbn_record)) {
 			// libraryでは初の本だったら、寄贈しますかのアラート
-			header("Location:alert.php?isbn_code=".$_GET['isbn_code']);
-			// はい、を選択されたら、into_library.phpへ
+			echo '<script type="text/javascript">
+				alert("図書館に寄贈しますか?");
+	    		</script>';
+	}elseif (isset($_GET['isbn_code']) && empty($isbn_record)){
+			// libraryでは初の本だったら、寄贈しますかのアラート
+			echo '<script type="text/javascript">
+				alert("図書館に寄贈しますか?");
+	    		</script>';
 	}
 
 ?>
