@@ -46,13 +46,13 @@
 	max-height: 150px;
 }
 
-.form_original label{
+.new_book label{
 	vertical-align:top;
 	font-size: 15px;
 	color: #bbb;
 }
 
-.form_original input{
+.new_book input{
 	margin-bottom: 25px;
 	width:100%;
 	height: 3em;
@@ -62,10 +62,10 @@
     border-style: none;
     border-bottom: solid 2px #f2eaf4;
 }
-.form_original input::placeholder {
+.new_book input::placeholder {
   color: #e7daea;
 }
-.form_original textarea{
+.new_book textarea{
 	color: #8f4796;
 	outline:none;
 	width:100%;
@@ -75,7 +75,7 @@
     border-bottom: solid 2px #f2eaf4;
 }
 
-.form_original textarea::placeholder {
+.new_book textarea::placeholder {
   color: #e7daea;
 }
 
@@ -84,7 +84,7 @@
 	color: #e7daea;
 	font-size: 20px;
 	margin: 10px 0 5px 0;
-	width: 80%;
+	width: 100%;
 	height:3em;
     background-color: #f2eaf4;
     border: 2px solid #f2eaf4;
@@ -195,7 +195,7 @@
 
 .form_original_2 input{
 	margin-bottom: 25px;
-	width:80%;
+	width:100%;
 	height: 3em;
 	outline:none;
 	color:#8f4796;
@@ -210,7 +210,7 @@
 .form_original_2 textarea{
 	color: #8f4796;
 	outline:none;
-	width:80%;
+	width:100%;
 	height: 5em;
 	margin-bottom: 20px;
     border-style: none;
