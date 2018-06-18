@@ -179,6 +179,7 @@ br{
 
 .box{
   border-bottom: 5px solid #dcdcdc;
+  width: 768px;
 }
 
 .diviver{
@@ -240,7 +241,7 @@ h5{
 .container-who{
   width: 700px;
   margin: 0 auto;
-  height: 1800px;
+  height: 1000px;
   padding-top: 80px;
   padding-left: 40px;
   position: relative;
@@ -289,8 +290,14 @@ a:hover{
 }
 
 .header img{
-  width: 210%;
+  width: 220%;
 }
+
+.box{
+  border-bottom: 5px solid #dcdcdc;
+  width: 220%;
+}
+
 
 }
 
@@ -312,6 +319,12 @@ br{
 .header img{
   width: 980px;
 }
+
+.box{
+  border-bottom: 5px solid #dcdcdc;
+  /*width: 140%;*/
+}
+
 
 .container-what{
   width: 980px;
@@ -345,7 +358,7 @@ h5{
 .container-who{
   width: 980px;
   margin: 0 auto;
-  height: 1800px;
+  height: 1000px;
   padding-top: 80px;
   position: relative;
   overflow: hidden;
@@ -390,7 +403,7 @@ a:hover{
 
 /* header */
 .header img{
-  width: 120%;
+  width: 130%;
 }
 
 .pc_only{
@@ -446,7 +459,7 @@ a:hover{
 .container-who{
   width: 1170px;
   margin: 0 auto;
-  height: 1000px;
+  height: 700px;
   padding-top: 80px;
   position: relative;
   overflow: hidden;
@@ -622,7 +635,7 @@ h5>a:hover{
 .container-who{
   width: 1100px;
   margin: 0 auto;
-  height: 1100px;
+  height: 700px;
   padding-top: 80px;
   position: relative;
   overflow: hidden;
