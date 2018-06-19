@@ -19,6 +19,27 @@
 	margin-top: 0;
 }
 
+#modal-content2{
+	width: 80%;
+	margin: 0.5rem auto 0;
+	padding: 10px 10px;
+	border: 2px solid #aaa;
+	background: #fff;
+	display: none ;
+	/*手前に表示させる（通常は0）*/
+	z-index: 2;
+	/*対象の要素を固定させる*/
+	position:fixed;
+}
+
+#modal-content2 p{
+	margin-top: 1em;
+}
+
+#modal-content2 p:first-child{
+	margin-top: 0;
+}
+
 .button-link{
 	color:#00f;
 	text-decoration:underline;

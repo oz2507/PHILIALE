@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 	session_start();
 	
 	require('dbconnect.php');
@@ -7,7 +8,7 @@
 		header("Location: top.php");
 	}
 
-// 読んだ用
+	// 読んだ用
 	$past_books=array();
 
     if (isset($_GET['search_word'])==true) {
@@ -17,45 +18,42 @@
 		$past_sql='SELECT * FROM `past_archives` WHERE user_id=?';
 	}
 
-		$past_data=array($_SESSION["id"]);
-		$past_stmt = $dbh->prepare($past_sql);
-	    $past_stmt->execute($past_data);
+	$past_data=array($_SESSION["id"]);
+	$past_stmt = $dbh->prepare($past_sql);
+	$past_stmt->execute($past_data);
 	    
-		while (true) {
-	    	$record_past=$past_stmt->fetch(PDO::FETCH_ASSOC);
-	    	if ($record_past==false) {
-	    		break;
-	    	}
-	    	$past_books[]=$record_past;
+	while (true) {
+	    $record_past=$past_stmt->fetch(PDO::FETCH_ASSOC);
+	    if ($record_past==false) {
+	    	break;
+	    }
+	    $past_books[]=$record_past;
 	    }
   
-      
 
-// 読みたい用
+	// 読みたい用
 	$future_books=array();
 
     if (isset($_GET['search_word'])==true) {
 		$future_sql='SELECT * FROM `future_archives` WHERE user_id=? AND book_title LIKE "%'.$_GET['search_word'].'%" OR book_author LIKE "%'.$_GET['search_word'].'%"';
 	}else{
-
     	$future_sql='SELECT * FROM `future_archives` WHERE user_id=?';
 	}
 
-		$future_data=array($_SESSION["id"]);
-		$future_stmt = $dbh->prepare($future_sql);
-	    $future_stmt->execute($future_data);
+	$future_data=array($_SESSION["id"]);
+	$future_stmt = $dbh->prepare($future_sql);
+	$future_stmt->execute($future_data);
 	    	
-	    while (true) {
-	    	$record_future=$future_stmt->fetch(PDO::FETCH_ASSOC);
-	    	if ($record_future==false) {
-	    		break;
-	    	}
-	    	$future_books[]=$record_future;
+	while (true) {
+	   	$record_future=$future_stmt->fetch(PDO::FETCH_ASSOC);
+	    if ($record_future==false) {
+	    	break;
+	    }
+	    $future_books[]=$record_future;
 	    }
 
-
-// libraryに入れるアラートを表示させるかどうか
-// 読みたいから読んだに追加されたとき、libraryとの照合
+	// libraryに入れるアラートを表示させるかどうか
+	// 読みたいから読んだに追加されたとき、libraryとの照合
 	if(isset($_POST['isbn'])){
 		// pastに入った本
 		$isbn=$_POST['isbn'];
@@ -68,46 +66,42 @@
 	}
 
 	// libraryにある本
-		$isbn_sql='select isbn_code from library_archives where isbn_code=?';
+	$isbn_sql='select isbn_code from library_archives where isbn_code=?';
 		
-		$isbn_data=array($isbn);
-		$isbn_stmt = $dbh->prepare($isbn_sql);
-		$isbn_stmt->execute($isbn_data);
+	$isbn_data=array($isbn);
+	$isbn_stmt = $dbh->prepare($isbn_sql);
+	$isbn_stmt->execute($isbn_data);
 
-		$isbn_record=array();
-		$isbn_record=$isbn_stmt->fetch(PDO::FETCH_ASSOC);
+	$isbn_record=array();
+	$isbn_record=$isbn_stmt->fetch(PDO::FETCH_ASSOC);
 
-	if (!isset($isbn_record['isbn_code'])) {
+	if (isset($_POST['isbn']) && empty($isbn_record)) {
 			// libraryでは初の本だったら、寄贈しますかのアラート
-			// はい、を選択されたら、into_library.phpへ
+			echo '<script type="text/javascript">
+				alert("図書館に寄贈しますか?");
+	    		</script>';
+	}elseif (isset($_GET['isbn_code']) && empty($isbn_record)){
+			// libraryでは初の本だったら、寄贈しますかのアラート
+			echo '<script type="text/javascript">
+				alert("図書館に寄贈しますか?");
+	    		</script>';
 	}
 
-
-
-
-
-
 ?>
-
-<!-- <?php var_dump($past_books); ?>
-<?php var_dump($future_books); ?>
-<?php var_dump($_GET); ?>
-<?php echo $past_books["book_img"]; ?>
-<?php echo $past_sql; ?>
-<?php echo $future_sql; ?>
- -->
 
 <!DOCTYPE html>
 <html lang="ja">
 <head>
 	<meta charset="UTF-8">
+	<!-- <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, maximum-scale=1.0, user-scalable=yes"> -->
+	<meta name="viewport" content="width=device=width">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>MYPAGE</title>
 
 	<link rel="stylesheet" type="text/css" href="detail_pop/detail.css">
   	<link rel="stylesheet" type="text/css" href="detail_pop/detail_pop.css">
 
 	<link rel="stylesheet" href="assets/css/bootstrap.phl.css">
-	<link rel="stylesheet" href="assets/css/style.css">
 	<link rel="stylesheet" href="assets/css/mypage.css">
 	<link rel="shortcut icon" href="assets/img/favicon/favicon.ico" type="image/vnd.microsoft.icon">
 	<link rel="icon" href="assets/img/favicon/favicon.ico" type="image/vnd.microsoft.icon">
@@ -157,7 +151,6 @@
 		<!-- add book -->
 		<div class="container">
 			<div class="row">
-
 		        <div class="col-xs-6 col-md-3"> 
 		            <div class="l-thumbnail">
         			    <figure class="thumbnail-wrapper">
@@ -168,47 +161,7 @@
 		                </span>
         			</div>
      			</div>
-     			<div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/empelar.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    DETAIL
-		                </span>
-        			</div>
-     			</div>
-     			<div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/harmony.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    DETAIL
-		                </span>
-        			</div>
-     			</div>
-     			<div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/jenoside.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    DETAIL
-		                </span>
-        			</div>
-     			</div>
-     			<div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/book1.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    DETAIL
-		                </span>
-        			</div>
-     			</div>
-
+     			
 				 <?php include("detail_pop/future_detail.php"); ?>
 				
 			</div>
@@ -245,58 +198,6 @@
 	        			</div>
 	     			</div>
      			</a>
-
-
-     			<div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/harmony.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    DETAIL
-		                </span>
-        			</div>
-     			</div>
-     			<div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/harmony.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    DETAIL
-		                </span>
-        			</div>
-     			</div>
-     			<div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/harmony.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    DETAIL
-		                </span>
-        			</div>
-     			</div>
-     			<div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/harmony.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    DETAIL
-		                </span>
-        			</div>
-     			</div>
-     			<div class="col-xs-6 col-md-3"> 
-		            <div class="l-thumbnail">
-        			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/harmony.jpg">
-             			</figure>
-		                <span class="more-text">
-		                    DETAIL
-		                </span>
-        			</div>
-     			</div>
 
          		<?php include("detail_pop/past_detail.php"); ?>
 			</div>

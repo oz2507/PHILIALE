@@ -1,4 +1,5 @@
-<?php 
+<?php
+
     session_start();
     require("dbconnect.php");
 
@@ -15,12 +16,12 @@
     $stmt = $dbh->prepare($books_sql);
     $stmt->execute($data);
     
-        while (true) {
-            $record=$stmt->fetch(PDO::FETCH_ASSOC);
+    while (true) {
+        $record=$stmt->fetch(PDO::FETCH_ASSOC);
 
-            if ($record==false) {
-                break;
-            }
+        if ($record==false) {
+            break;
+        }
 
         $books[]=$record;
        
@@ -32,13 +33,14 @@
 <html lang="ja">
 <head>
 	<meta charset="UTF-8">
+    <!-- <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, maximum-scale=1.0, user-scalable=yes"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>PHILIBLARY</title>
 
     <link rel="stylesheet" type="text/css" href="detail_pop/detail.css">
     <link rel="stylesheet" type="text/css" href="detail_pop/detail_pop.css">
 
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.phl.css">
-    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700">
   
 	<link rel="stylesheet" href="assets/css/mypage.css">
@@ -84,66 +86,7 @@
 <!-- book -->
 <div class="container">
     <div class="row">
-
-    	<div class="col-xs-6 col-md-3">
-            <div class="thumbnail">
-                <img src="assets/img/add.png">
-            </div>
-         </div>
-
-
-                <div class="col-xs-6 col-md-3">
-            
-            <div class="l-thumbnail">
-                <figure class="thumbnail-wrapper">
-                    <img src="assets/img/philia2.png">
-                 </figure>
-                <span class="more-text">
-                    フェチる
-                </span>
-            </div>
-         
-         </div>
-        <div class="col-xs-6 col-md-3">
-            
-            <div class="l-thumbnail">
-                <figure class="thumbnail-wrapper">
-                    <img src="assets/img/empelar.jpg">
-                 </figure>
-                <span class="more-text">
-                    フェチる
-                </span>
-            </div>
-         
-         </div>
-        <div class="col-xs-6 col-md-3">
-            
-            <div class="l-thumbnail">
-                <figure class="thumbnail-wrapper">
-                    <img src="assets/img/harmony.jpg">
-                 </figure>
-                <span class="more-text">
-                    フェチる
-                </span>
-            </div>
-         
-         </div>
-        <div class="col-xs-6 col-md-3">
-            
-            <div class="l-thumbnail">
-                <figure class="thumbnail-wrapper">
-                    <img src="assets/img/philia2.png">
-                 </figure>
-                <span class="more-text">
-                    フェチる
-                </span>
-            </div>
-         
-         </div>
-
          <?php include('detail_pop/library_detail.php'); ?>
-
-
     </div>
 </div>
 

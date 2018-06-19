@@ -14,74 +14,69 @@
         $chk_count = strlen($check);
 
            // ユーザー名の空チェック
-          if ($name == '') {
+        if ($name == '') {
             $errors['name'] = 'blank';
           
-          }else{
-                require('../dbconnect.php');
+        }else{
+            require('../dbconnect.php');
 
-                $sql = 'SELECT COUNT(*) as `cnt` FROM `users` WHERE `name`=?';
-                $data = array($name);
-                $stmt = $dbh->prepare($sql);
-                $stmt->execute($data);
+            $sql = 'SELECT COUNT(*) as `cnt` FROM `users` WHERE `name`=?';
+            $data = array($name);
+            $stmt = $dbh->prepare($sql);
+            $stmt->execute($data);
 
-                $dbh = null;
+            $dbh = null;
 
-                $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+            $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 
-                if ($rec['cnt'] > 0) {//メールアドレスの数が0異常ですでに登録済み
-                  $errors['name'] = 'duplication';
-                }
-          }
+            if ($rec['cnt'] > 0) {//メールアドレスの数が0異常ですでに登録済み
+                $errors['name'] = 'duplication';
+            }
+        }
 
-          if ($email == '') {
+        if ($email == '') {
             $errors['email'] = 'blank';
-          }
-          //重複しているかの確認
-          else{
-                require('../dbconnect.php');
+        }else{
+            require('../dbconnect.php');
 
-                $sql = 'SELECT COUNT(*) as `cnt` FROM `users` WHERE `email`=?';
-                $data = array($email);
-                $stmt = $dbh->prepare($sql);
-                $stmt->execute($data);
+            $sql = 'SELECT COUNT(*) as `cnt` FROM `users` WHERE `email`=?';
+            $data = array($email);
+            $stmt = $dbh->prepare($sql);
+            $stmt->execute($data);
 
-                $dbh = null;
+            $dbh = null;
 
-                $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+            $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 
-                // var_dump($rec);
+            if ($rec['cnt'] > 0) {//メールアドレスの数が0異常ですでに登録済み
+                $errors['email'] = 'duplication';
+            }
+        }
 
-                if ($rec['cnt'] > 0) {//メールアドレスの数が0異常ですでに登録済み
-                  $errors['email'] = 'duplication';
-                }
-          }
-
-          if ($password == '') {
+        if ($password == '') {
             $errors['password'] = 'blank';
-          }
+        }
 
-          elseif ($count < 4 || $count > 16) {
+        elseif ($count < 4 || $count > 16) {
             $errors['password'] = 'length';
-          }
+        }
 
-          if ($check == '') {
+        if ($check == '') {
             $errors['check'] = 'blank';
-          }
+        }
 
-          elseif ($chk_count < 4 || $chk_count > 16) {
+        elseif ($chk_count < 4 || $chk_count > 16) {
             $errors['check'] = 'length';
-          }
+        }
 
-          if (empty($errors)) {
+        if (empty($errors)) {
 
-            $_SESSION['register']['name'] = $_POST['input_name'];
-            $_SESSION['register']['email'] = $_POST['input_email'];
-            $_SESSION['register']['password'] = $_POST['input_password'];
+          $_SESSION['register']['name'] = $_POST['input_name'];
+          $_SESSION['register']['email'] = $_POST['input_email'];
+          $_SESSION['register']['password'] = $_POST['input_password'];
 
-            header('Location: check.php');
-            exit();
-
+          header('Location: check.php');
+          exit();
           }
     }
     
@@ -92,7 +87,7 @@
   <meta charset="utf-8">
   <title>PHILIALE</title>
   <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="../assets/css/style_r.css"> <!-- 追加 -->
+  <link rel="stylesheet" type="text/css" href="../assets/css/style_r.css">
   <?php  require('../partial/favicon.php');  ?>
 </head>
 <body style="margin-top: 60px">
@@ -101,10 +96,12 @@
       <!-- ここに左サイドコンテンツ -->
       <div class="col-xs-12 col-md-6 left-column">
         <h3 class="content_header">入館手続</h3>
-          <p>ようこそPHILIALEへおいで下さいました。<br>ご利用の前に、入館手続をお願い致します。<br></p>
+          <p>ようこそPHILIALEへおいで下さいました。</p>
+          <P>ご利用の前に、入館手続をお願い致します。</p>
           <img class="img-responsive img-circle logo_original" src="../assets/img/philia2.png">
-          <p>当館では、皆様個人のためだけの図書館を作る事が出来ます。<br>本好きな当館支配人もまた、数多の本を所蔵しております。<br>それでは、本の世界へ行ってらっしゃいませ。<br></p><p><br></p>
-
+          <p>当館では、皆様個人のためだけの図書館を作る事が出来ます。</p>
+          <p>本好きな当館支配人もまた、数多の本を所蔵しております。</p>
+          <p>それでは、本の世界へ行ってらっしゃいませ。</p>
       </div>
 
       <!-- ここに右サイドコンテンツ -->

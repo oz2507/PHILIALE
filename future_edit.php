@@ -1,4 +1,5 @@
-<?php 
+<?php
+
     session_start();
     require('dbconnect.php');
 
@@ -13,52 +14,43 @@
             
         if (!empty($book_img)) {
             // 画像名の後ろから3文字を取得
-            $file_type = substr($book_img, -3);
+            $file_type = substr($book_img, -4);
             // 大文字が含まれていた場合すべて小文字化
             $file_type = strtolower($file_type);
 
-            if ($file_type != 'jpg' && $file_type != 'png' && $file_type != 'gif') {
+            if ($file_type != '.jpg' && $file_type != '.png' && $file_type != '.gif' && $file_type != 'jpeg') {
                 $errors['img_name'] = 'type';
             }
-
-        }
-            else{
-                  //ファイルがないときの処理
-                $errors['img_name'] = 'blank';
-            }
+         }
     }
 
-    
     if(empty($errors)){
-          date_default_timezone_set('Asia/Manila');
+        date_default_timezone_set('Asia/Manila');
         $date_str = date('YmdHis'); 
         $submit_file_name = $date_str.$book_img;
 
         move_uploaded_file($_FILES['book_img']['tmp_name'],'book_img/'.$submit_file_name);
-    
-
 
     $book_title=$_POST['book_title'];
     $book_author=$_POST['book_author'];
     $img=$submit_file_name;
     $comment=$_POST["comment"];
 
+    $count = strlen($img);
 
-    $sql='UPDATE `future_archives` SET `book_title`=?, `book_author`=?, `book_img`=?,`comment`=? WHERE `id`=?';
+    if ($count > 14) {
+        $sql='UPDATE `future_archives` SET `book_title`=?, `book_author`=?, `book_img`=?,`comment`=? WHERE `id`=?';
 
-    $data=array($book_title,$book_author,$img,$comment,$book_id);
+        $data=array($book_title,$book_author,$img,$comment,$book_id);
+    }else{
+        $sql='UPDATE `future_archives` SET `book_title`=?, `book_author`=?,`comment`=? WHERE `id`=?';
+
+        $data=array($book_title,$book_author,$comment,$book_id);
+    }
+
     $stmt = $dbh->prepare($sql);
     $stmt->execute($data);
 }
-
-  
-
-  var_dump($book_img);
-  var_dump($submit_file_name);
-  var_dump($img);
-  var_dump($date_str);
-
-
-  header("Location:mypage2.php");
-
+    header("Location:mypage2.php");
+    
 ?>

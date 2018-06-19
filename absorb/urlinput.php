@@ -1,11 +1,14 @@
 <?php  
+
+		$input_display = true;
+
 	if (!empty($_POST['id'])) {
 		header("Location: check.php?id=".$_POST['id']);
 	}
 
 	else{
 		// echo "以下のフォームにスプレッドシートのIDを入力して下さい。";
-		$message = true;
+		$input_display = false;
 	}
 
 
@@ -73,6 +76,7 @@
 	</div>
 
 <!-- URL input display -->
+  <?php if ($input_display == true) { ?>
 	<div class="row">
 		<div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3">
 		 <form action="submit.php" method="POST" class="submit_form">
@@ -81,6 +85,7 @@
 		 </form>
 		</div>
     </div>
+ <?php } ?>
 
   </div><!-- container -->
 </body>

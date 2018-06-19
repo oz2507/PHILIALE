@@ -1,22 +1,18 @@
 <?php
- 	$nickname = $_POST['nickname'];
- 	$email = $_POST['email'];
- 	$content = $_POST['content'];
 
-  	// １．データベースに接続する
-	$dsn = 'mysql:dbname=inquiry;host=localhost';
-	$user = 'root';
-	$password = '';
-	$dbh = new PDO($dsn, $user, $password);
-	$dbh->query('SET NAMES utf8');
+  session_start();
+	require('../dbconnect.php');
 
-	// ２．SQL文を実行する
-	$sql = "INSERT INTO `inquiry_system` SET `nickname`='".$nickname."',`email`='".$email."', `content`='".$content."'";
-	
+ 	$user_id = $_SESSION['id'];
+  $name = $_SESSION['inquiry']['name'];
+  $comment = $_SESSION['inquiry']['comment'];
+
+
+	$sql = 'INSERT INTO `contacts` SET `user_id`=?, `name`=?, `comment`=? ';
+
+  $data = array($user_id,$name,$comment);
 	$stmt = $dbh->prepare($sql);
-	$stmt->execute();
-
-	
+	$stmt->execute($data);
 
 ?>
 
@@ -26,14 +22,40 @@
 <head>
   <title>送信完了</title>
   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/style_r.css">
+  <?php  require('../partial/favicon.php');  ?>
 </head>
-<body>
-  <h1>お問い合わせありがとうございました！</h1>
-<h3>お問い合わせ詳細内容</h3>
-    <p>ニックネーム：<?php echo $nickname; ?></p>
-    <p>メールアドレス：<?php echo $email; ?></p>
-    <p>お問い合わせ内容：<?php echo $content; ?></p>
+<body style="margin-top: 40px">
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-6 col-md-offset-3" style="height:300px;">
+            <h2 class="text-center">お問合せ有難うございました!</h2>
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <div class="thumbnail" style="letter-spacing: 0.2em; line-height:1.65; border: none;">
+                      <img class="img-responsive img-circle" src="../assets/img/philia2.png" style="width:200px;margin-bottom: 20px;">
 
-    <a href="index.html"><button>Homeに戻る</button></a>
+                      <br>     
+                    <div class="form-group">
+                        <span>お名前</span>
+                        <p class="lead text-center"><?php echo htmlspecialchars($name); ?>&nbsp;様</p>
+                    </div>
+            
+                    <div class="form-group infobox" style="height:150px;">
+                        <span>メッセージ</span>
+                        <p class="lead text-center"><?php echo htmlspecialchars($comment); ?></p>
+                    </div>
+            
+                    <div class="right_btn">
+                      <a href="../top.php"><button type="button" class="btn btn-original">Back Home</button></a>
+                    </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>      
 </body>
 </html>

@@ -9,7 +9,7 @@
 	<link rel="stylesheet"x href="assets/css/styles.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700">
-	<link rel="stylesheet" href="philiale_mypage/assets/css/mystyle.css">
+	<link rel="stylesheet" href="assets/css/mystyle.css">
 	<link rel="stylesheet" href="assets/css/top.css">
 	<link rel="shortcut icon" href="assets/img/favicon/favicon.ico" type="image/vnd.microsoft.icon">
 	<link rel="icon" href="assets/img/favicon/favicon.ico" type="image/vnd.microsoft.icon">
@@ -20,7 +20,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarEexample">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarExample">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -32,7 +32,7 @@
             </a>           
         </div>
 
-        <div class="collapse navbar-collapse navbar-right" id="navbarEexample">
+        <div class="collapse navbar-collapse navbar-right" id="navbarExample">
             <ul class="nav navbar-nav">
             <li><a href="register/signup.php">新規登録</a></li>
             <li class="right diviver">|</li>
@@ -46,7 +46,6 @@
 <!-- header -->
 <div class="header">
 	<img src="assets/img/gif/フィリア.gif" alt="head-design" class="philia">
-	<img src="assets/img/gif/文字.gif" alt="" class="state">
 </div>
 
 <!-- what's philiale -->
@@ -63,7 +62,8 @@
 				<h3>読書フェチのためのWeb上の書庫です。</h3>
 				<p>フィリアールは<font color="#8f4796">読み終わった本や読みたい本を保管するため</font>の<br>あなた専用のWeb上の書庫です。</p>
 				<p>フィリアールで本を保管しておけば、<font color="#8f4796">あなたに代わって本の詳細を記載して</font>いつでも引き出せるように本を管理することができます。</p>
-				<p>利用方法はとてもシンプルで、<font color="#8f4796">本のタイトルを入力する</font>だけ。<br>フィリアールはあなたの<font color="#8f4796">愛する本を簡単にそして美しく</font>管理することができます。</p>
+				<p>利用方法はとてもシンプルで、<font color="#8f4796">本のタイトルを入力する</font>だけ。</p>
+				<p>フィリアールはあなたの<font color="#8f4796">愛する本を簡単にそして美しく</font>管理することができます。</p>
 				<div>
 				<div class="botton">
 					<a class="btn" href="register/signup.php">フィリアールの会員になる</a> 
@@ -89,7 +89,7 @@
 		</div>
 		<div class="wrap">
 			<div class="element">
-				<img src="assets/img/how_to_1.jpg" alt="">
+				<img src="assets/img/how/how1.png" alt="">
 				<h2>
 					<font color="#8f4796">追加したい本の情報を入力</font>
 				</h2>
@@ -98,7 +98,7 @@
 				</div>
 			</div>
 			<div class="element">
-				<img src="assets/img/how_to_2.jpg" alt="">
+				<img src="assets/img/how/how2.png" alt="">
 				<h2>
 					<font color="#8f4796">ISBNで簡単に詳細管理</font>
 				</h2>
@@ -107,7 +107,7 @@
 				</div>
 			</div>
 			<div class="element">
-				<img src="assets/img/how_to_3.jpg" alt="">
+				<img src="assets/img/how/how3.png" alt="">
 				<h2>
 					<font color="#8f4796">初めての本が追加されると…？</font>
 				</h2>
@@ -127,7 +127,7 @@
 	</div>
 	<div class="container1">
 		<div class="row1">
-			<img src="assets/img/big_philia.jpg" alt="pc_img">
+			<img src="assets/img/how/philia_1.png" alt="pc_img">
 		</div>
 	
 
@@ -147,25 +147,6 @@
 			</div>	
 		</div>	
 	</div>	
-
-	<div class="container2">
-		<div class="row3">
-			<div class="intro">
-				<img src="assets/img/frame.jpg" alt="">
-				<p>普段はこの姿であなたを見守ります。</p>
-			</div>
-			<div class="intro">
-				<img src="assets/img/frame.jpg" alt="">
-				<p>普段はこの姿であなたを見守ります。</p>
-			</div>
-			
-			<div class="intro">
-				<img src="assets/img/frame.jpg" alt="">
-				<p>夢は自分の図書館を作ること</p>
-			</div>
-		</div>
-	</div>
-
 </div>	
 
 <!-- message -->
