@@ -62,25 +62,25 @@ li{
   padding-left: 10px;
 }
 
-.nav-tabs{
+.nab-tabs{
   border: none;
   border-bottom: none;
 }
 
-.nav-tabs>li.active>a{
+.nab-tabs>li.active>a{
   border:none;
 }
 
-.nav-tabs > li > a{
+.nab-tabs > li > a{
   font-size: 25px;
   border-radius: 0px;
   border:none;
   color: #fff;
 }
 
-.nav-tabs > li.active > a, 
-.nav-tabs > li.active > a:hover, 
-.nav-tabs > li.active > a:focus{
+.nab-tabs > li.active > a, 
+.nab-tabs > li.active > a:hover, 
+.nab-tabs > li.active > a:focus{
   font-size: 25px;
   color: #fff;
   text-decoration: none;
