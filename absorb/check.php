@@ -21,6 +21,17 @@
   <?php require("../partial/favicon.php"); ?>
 </head>
 <body>
+
+<!-- navbar -->
+  <div class="nav_container">
+      <div class="nav_header">
+          <a href="../mypage2.php">
+              <img alt="philia" src="../assets/img/philia2.png" style="height: 35px;">
+          </a>
+      </div>
+  </div>
+
+<!-- main -->
   <div class="container">
 
 <!-- import button -->
@@ -61,14 +72,6 @@
         <div class="list_form">
           <p>作品名 :<span>Harry Potter and the Philosopher's Stone (Harry Potter 1)&ensp;</span></p>
           <p>著者名 :<span>J. K. Rowling </span></p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
-        <div class="list_form">
-          <p>作品名 :<span>零戦 その誕生と栄光の記録&ensp;</span></p>
-          <p>著者名 :<span>堀越 二郎</span></p>
         </div>
       </div>
     </div> -->
