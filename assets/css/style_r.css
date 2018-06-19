@@ -1,3 +1,10 @@
+/*フォント統一*/
+body {
+    font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+}
+
+
+
 /*register内サインアップ～サンクス,お問合せ*/
 .box2{
     padding: 0.5em 1em;
@@ -328,9 +335,9 @@ a:hover{
 /*---------edit_book.html------------↓*/
 
 
-/*.pop_header{
+.pop_header{
 	background-color: #f2eaf4;
-	height:80px;
+	height:50px;
 }
 
 
@@ -343,6 +350,7 @@ a:hover{
 	letter-spacing: 0.1em;
 }
 
+/*
 .pop_header a{
 	margin:15px;
 	float:right;
@@ -365,7 +373,6 @@ a:hover{
 	vertical-align: middle;
 	text-align: center;
 }
-
 .book_img{
 	text-align: center;
 	margin: 20px;
@@ -536,3 +543,35 @@ a:hover{
   color: #e7daea;
   font-weight: 900;
 }
+
+
+/*add_thanks.html*/
+
+.thanks_logo{
+	text-align: center;
+	margin: 0;
+}
+.thanks_logo p{
+	font-family: 'Lucida Console','fantasy',sans-selif;
+	font-size: 40px;
+	color:#8f4796;
+}
+
+.back_btn{
+	text-align: center;
+	background-color: #fff;
+	color: #8f4796;
+	font-size: 20px;
+	font-weight: 900;
+	margin: 60px 0 5px 0;
+	width: 300px;
+	height:3em;
+    border: 3px solid #b96cc4;
+    border-radius: 5px;
+}
+
+.back_btn:hover{
+	background-color: #b96cc4;
+	color: #fff;
+}
+
