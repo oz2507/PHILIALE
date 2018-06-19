@@ -1,14 +1,24 @@
 <?php
 
-    $id = $_GET['id'];
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
 
-    $data = "https://spreadsheets.google.com/feeds/list/$id/od6/public/values?alt=json";
+        $data = "https://spreadsheets.google.com/feeds/list/$id/od6/public/values?alt=json";
 
 
-    $json = file_get_contents($data);
-    $json_decode = json_decode($json);
+        $header = @get_headers($data);
 
-    $books = $json_decode->feed->entry;
+        if($header !== false && !preg_match('#^HTTP/.*\s+[404]+\s#i', $header[0])) {
+            $json = file_get_contents($data);
+            $json_decode = json_decode($json);
+
+            $books = $json_decode->feed->entry;
+            fclose($fp);
+        }else{
+            header("Location :submit_2.php");
+
+        }
+    }
 
 ?>
 
@@ -62,7 +72,7 @@
     $message = "IDが正しくない可能性があります。"; ?>
         <div style="text-align: center;">
           <p><?php echo $message; ?></p>
-          <button href="submit.php" class="import_btn">戻る</button>
+          <a href="submit_2.php"><button class="import_btn">戻る</button></a>
         </div>
   <?php } ?>
 

@@ -2,12 +2,8 @@
 
 	if (!empty($_POST['id'])) {
 		header("Location: check.php?id=".$_POST['id']);
-	
-	}else{
-		// echo "以下のフォームにスプレッドシートのIDを入力して下さい。";
-	}
-?>
 
+?>
 
 
 <!DOCTYPE html>
@@ -85,11 +81,17 @@
 	<div class="row">
 		<div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3">
 		 <!-- <form action="submit.php" method="POST" class="submit_form"> -->
+
+	<div class="row">
+		<div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3">
+		 <form action="submit_2.php" method="POST" class="submit_form">
+
 		  <input type="text" name="id" placeholder="URL入力欄">
 		  <input type="submit" name="送信" id="submit_btn" value="検索する">
 		 <!-- </form> -->
 		</div>
     </div>
+
 </form>
 
   </div><!-- container -->
