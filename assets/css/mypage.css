@@ -33,6 +33,7 @@ body{
 
 #title>li>a{
   color: #fff;
+  padding-top: 17px;
 }
 
 #title>li>a:hover{

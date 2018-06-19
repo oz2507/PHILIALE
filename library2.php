@@ -67,7 +67,7 @@
 
         <div class="collapse navbar-collapse" id="navbarExample">
             <ul id="title" class="nav navbar-nav nab-tabs">
-            	<li><a href="#top">PHILIBRARY</a></li>	
+            	<li><a href="#top" style="font-size: 35px;">PHILIBRARY</a></li>	
             </ul>
 
           	<form class="navbar-form navbar-right" role="search">
