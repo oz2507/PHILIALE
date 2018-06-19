@@ -17,13 +17,14 @@
 <head>
  <title>スプレッドシート</title>
   <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css"><!-- グリッドシステムのみ -->
+  <link rel="stylesheet" href="../assets/css/bootstrap.phl.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/style_absorb.css">
   <?php require("../partial/favicon.php"); ?>
 </head>
 <body>
 
 <!-- navbar -->
-  <div class="nav_container">
+  <div class="nav_container navbar-fixed-top">
       <div class="nav_header">
           <a href="../mypage2.php">
               <img alt="philia" src="../assets/img/philia2.png" style="height: 35px;">

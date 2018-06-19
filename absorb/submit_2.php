@@ -1,39 +1,34 @@
 <?php  
 
-		$input_display = true;
-
 	if (!empty($_POST['id'])) {
 		header("Location: check.php?id=".$_POST['id']);
-	}
-
-	else{
+	
+	}else{
 		// echo "以下のフォームにスプレッドシートのIDを入力して下さい。";
-		$input_display = false;
 	}
-
-
 ?>
 
 
 
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
- <title>スプレッドシート</title>
-  <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css"><!-- グリッドシステムのみ -->
-  <link rel="stylesheet" type="text/css" href="../assets/css/style_absorb.css">
-  <?php require('../partial/favicon.php'); ?>
+	<title>スプレッドシート</title>
+	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css"><!-- グリッドシステムのみ -->
+	<link rel="stylesheet" href="../assets/css/bootstrap.phl.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/style_absorb.css">
+	<?php require('../partial/favicon.php'); ?>
 </head>
 <body>
 
 <!-- navbar -->
-  <div class="nav_container">
-      <div class="nav_header">
-          <a href="../mypage2.php">
-              <img alt="philia" src="../assets/img/philia2.png" style="height: 35px;">
-          </a>
-      </div>
+<div class="nav_container navbar-fixed-top">
+  <div class="nav_header">
+      <a href="../mypage2.php">
+          <img alt="philia" src="../assets/img/philia2.png" style="height: 35px;">
+      </a>
   </div>
+</div>
 
 <!-- main -->
   <div class="container">
@@ -85,16 +80,17 @@
 	</div>
 
 <!-- URL input display -->
-  <?php if ($input_display == true) { ?>
+
+<form action="submit_2.php" method="POST" class="submit_form">
 	<div class="row">
 		<div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3">
-		 <form action="submit.php" method="POST" class="submit_form">
+		 <!-- <form action="submit.php" method="POST" class="submit_form"> -->
 		  <input type="text" name="id" placeholder="URL入力欄">
 		  <input type="submit" name="送信" id="submit_btn" value="検索する">
-		 </form>
+		 <!-- </form> -->
 		</div>
     </div>
- <?php } ?>
+</form>
 
   </div><!-- container -->
 </body>
