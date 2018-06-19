@@ -575,3 +575,44 @@ a:hover{
 	color: #fff;
 }
 
+
+/*delete_alart.html*/
+.delete_logo{
+	text-align: center;
+	height: 100px;
+	margin: 0;
+	padding-top: 35px;
+	color: #4d4d4d;
+}
+.delete_logo p{
+	font-family: 'fantasy',sans-selif;
+	font-size: 35px;
+}
+.del_footer{
+	text-align: center;
+	margin:0 auto;
+}
+.del_footer_btn{
+	text-align: center;
+	background-color: #f2eaf4;
+	color: #e7daea;
+	font-size: 20px;
+	font-weight: 900;
+	margin: 60px auto;
+	width: 300px;
+	height:3em;
+    border: 3px solid #f2eaf4;
+    border-radius: 25px;
+}
+.del_footer_btn:hover{
+    border: 3px solid #b96cc4;
+	background-color: #b96cc4;
+}
+.del_footer_2{
+	text-align: center;
+}
+.del_footer_2 a{
+	color: #4d4d4d;
+	font-size: 15px;
+	font-weight: 900;
+}
