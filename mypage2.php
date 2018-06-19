@@ -125,7 +125,7 @@
         </div>
 
         <div class="collapse navbar-collapse" id="navbarExample">
-            <ul class="nav navbar-nav nav-tabs">
+            <ul class="nav navbar-nav nab-tabs">
             	<li class="active">
             	<a href="#tab1" data-toggle="tab">読みたい</a></li>
             	<li><a href="#tab2" data-toggle="tab">読んだ</a></li>
