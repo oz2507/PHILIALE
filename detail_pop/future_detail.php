@@ -2,7 +2,7 @@
 
 <!-- pop -->
 <div id="modal-content-future">
-
+	<div class="modal-content-future-c">
 	<div class="container-fluid pop_header" style="background-color: white;">
 	    <div class="row">
 	      	<div class="col-xs-12 col-md-12">
@@ -11,14 +11,14 @@
 		</div>
 	</div>
 
-	<div class="container">
+	<div class="container" style="padding-left: 0">
 		<div class="row">
 		  	 <div class="col-xs-12 col-md-6 col-md-offset-3">
 		  	    <div class="book_img">
 		  	  	<?php if ($future["book_img"]!='') {?>
-	                <img src="book_img/<?php echo $future["book_img"]; ?>">
+	                <img src="book_img/<?php echo $future["book_img"]; ?>" class="book_pic">
 	            <?php }else{ ?>
-	                <img src="assets/img/philia2.png" alt="no image">
+	                <img src="assets/img/philia2.png" alt="no image" class="book_pic">
 	            <?php } ?>
 		  	    </div>
 	  	  	</div>
@@ -26,14 +26,13 @@
 
 		<div class="row">
 		    <div class="col-xs-12 col-md-6 col-md-offset-3">
-				<form action="future_edit.php?id=<?php echo $future['id'];?>" method="post" class="form_original" enctype="multipart/form-data">
+				<form action="future_edit.php?id=<?php echo $future['id'];?>" method="post" enctype="multipart/form-data">
 
-					<div>
-						<label for="book_img">イメージ</label>
-						<label for="book_img"></label>
-						<input type="file" name="book_img" id="img_name" accept="image/*">
-					</div>
+					<div class="col-xs-12 add_img">
+		  	  	    <a href="#"><button type="submit" name="" class="add_img_btn">画像を登録</button></a>
+		  	  	    </div>
 
+				<div class="form_original">
 					<div>
 						<label for="book_title">本のタイトル</label>
 						<textarea name="book_title"><?php echo $future['book_title']; ?></textarea>
@@ -48,6 +47,7 @@
 					    <label for="book_story">解説文</label>
 					    <textarea id="book_story" name="comment"><?php echo $future['comment']; ?></textarea>
 					</div>
+				</div>
 
 					<div>
 						<a href="future_edit.php?id=<?php echo $future['id'];?>">
@@ -70,7 +70,7 @@
 	  		</div>
 		</div><!-- row -->
 	</div>
-
+	</div>
 </div><!-- modal-content-future -->
 
 

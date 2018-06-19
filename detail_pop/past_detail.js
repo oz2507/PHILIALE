@@ -19,13 +19,13 @@ $(".modal-open-past").click(function(){
 	centeringModalSyncer();
 
 	//[$modal-content]をフェードインさせる
-	$("#modal-content-past").fadeIn("slow");
+	$(".modal-content-past").fadeIn("slow");
 
 	//[#modal-overlay]、または[#modal-close]をクリックしたら…
-	$( "#modal-overlay,#modal-close" ).unbind().click( function(){
+	$( "#modal-overlay,#modal-close-past" ).unbind().click( function(){
 
 		//[#modal-content-past]と[#modal-overlay]をフェードアウトした後に…
-		$( "#modal-content-past,#modal-overlay" ).fadeOut( "slow" , function(){
+		$( ".modal-content-past,#modal-overlay" ).fadeOut( "slow" , function(){
 
 			//[#modal-overlay]を削除する
 			$('#modal-overlay').remove() ;
@@ -56,8 +56,8 @@ function centeringModalSyncer(){
 	// コンテンツの高さを取得し変数に格納
 	// var ch = $("#modal-content-past").outerHeight({margin:true});
 
-	var cw = $( "#modal-content-past" ).outerWidth();
-	var ch = $( "#modal-content-past" ).outerHeight();
+	var cw = $( ".modal-content-past" ).outerWidth();
+	var ch = $( ".modal-content-past" ).outerHeight();
 
 	// 真ん中に配置するために左から何px離せばいいかを計算し変数に格納
 	var pxleft = ((w - cw)/2);
@@ -66,10 +66,10 @@ function centeringModalSyncer(){
 	var pxtop = ((h - ch)/2);
 
 	// #modal-content-pastのCSSにleftの値をpxleftを使って設定
-	$("#modal-content-past").css({"left": pxleft + "px"});
+	$(".modal-content-past").css({"left": pxleft + "px"});
 
 	// #modal-content-pastのCSSにtopの値をpxtopを使って設定
-	$("#modal-content-past").css({"top": pxtop + "px"});
+	$(".modal-content-past").css({"top": pxtop + "px"});
 
 	}
 
