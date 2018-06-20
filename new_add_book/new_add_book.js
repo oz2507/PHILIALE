@@ -17,6 +17,9 @@ $(".modal-open").click(function(){
 	//[$modal-overlay]をフェードインさせる
 	$("#modal-overlay").fadeIn("slow");
 
+	// コンテンツをセンター配置するのを呼ぶ
+	centeringModalSyncer();
+
 	//[$modal-content]をフェードインさせる
 	$("#modal-content").fadeIn("slow");
 
@@ -55,8 +58,8 @@ function centeringModalSyncer(){
 	// コンテンツの高さを取得し変数に格納
 	// var ch = $("#modal-content-past").outerHeight({margin:true});
 
-	var cw2 = $( ".modal-content" ).outerWidth();
-	var ch2 = $( ".modal-content" ).outerHeight();
+	var cw2 = $( "#modal-content" ).outerWidth();
+	var ch2 = $( "#modal-content" ).outerHeight();
 
 	// 真ん中に配置するために左から何px離せばいいかを計算し変数に格納
 	var pxleft2 = ((w2 - cw2)/2);
@@ -65,10 +68,10 @@ function centeringModalSyncer(){
 	var pxtop2 = ((h2 - ch2)/2);
 
 	// #modal-content-pastのCSSにleftの値をpxleftを使って設定
-	$(".modal-content").css({"left": pxleft2 + "px"});
+	$("#modal-content").css({"left": pxleft2 + "px"});
 
 	// #modal-content-pastのCSSにtopの値をpxtopを使って設定
-	$(".modal-content").css({"top": pxtop2 + "px"});
+	$("#modal-content").css({"top": pxtop2 + "px"});
 
 	}
 
@@ -147,10 +150,10 @@ function centeringModalSyncer(){
 	var pxtop = ((h - ch)/2);
 
 	// #modal-content-pastのCSSにleftの値をpxleftを使って設定
-	$(".modal-content2").css({"left": pxleft + "px"});
+	$("#modal-content2").css({"left": pxleft + "px"});
 
 	// #modal-content-pastのCSSにtopの値をpxtopを使って設定
-	$(".modal-content2").css({"top": pxtop + "px"});
+	$("#modal-content2").css({"top": pxtop + "px"});
 
 	}
 
@@ -175,6 +178,9 @@ $(".modal-open2").click(function(){
 
 	//[$modal-overlay]をフェードインさせる
 	$("#modal-overlay").fadeIn("slow");
+
+	// コンテンツをセンター配置するのを呼ぶ
+	centeringModalSyncer();
 
 	//[$modal-content]をフェードインさせる
 	$("#modal-content3").fadeIn("slow");
@@ -224,10 +230,10 @@ function centeringModalSyncer(){
 	var pxtop2 = ((h2 - ch2)/2);
 
 	// #modal-content-pastのCSSにleftの値をpxleftを使って設定
-	$(".modal-content3").css({"left": pxleft2 + "px"});
+	$("#modal-content3").css({"left": pxleft2 + "px"});
 
 	// #modal-content-pastのCSSにtopの値をpxtopを使って設定
-	$(".modal-content3").css({"top": pxtop2 + "px"});
+	$("#modal-content3").css({"top": pxtop2 + "px"});
 
 	}
 
@@ -296,8 +302,8 @@ function centeringModalSyncer(){
 	// コンテンツの高さを取得し変数に格納
 	// var ch = $("#modal-content-past").outerHeight({margin:true});
 
-	var cw = $( ".modal-content4" ).outerWidth();
-	var ch = $( ".modal-content4" ).outerHeight();
+	var cw = $( "#modal-content4" ).outerWidth();
+	var ch = $( "#modal-content4" ).outerHeight();
 
 	// 真ん中に配置するために左から何px離せばいいかを計算し変数に格納
 	var pxleft = ((w - cw)/2);
@@ -306,10 +312,10 @@ function centeringModalSyncer(){
 	var pxtop = ((h - ch)/2);
 
 	// #modal-content-pastのCSSにleftの値をpxleftを使って設定
-	$(".modal-content4").css({"left": pxleft + "px"});
+	$("#modal-content4").css({"left": pxleft + "px"});
 
 	// #modal-content-pastのCSSにtopの値をpxtopを使って設定
-	$(".modal-content4").css({"top": pxtop + "px"});
+	$("#modal-content4").css({"top": pxtop + "px"});
 
 	}
 
