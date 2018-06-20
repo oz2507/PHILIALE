@@ -1,7 +1,7 @@
 <?php foreach ($future_books as $future) { ?>
 
 <!-- pop -->
-<div id="modal-content-future">
+<div id="modal-content-future<?php echo $future["id"]; ?>" class="modal-content-future">
 	<div class="modal-content-future-c">
 	<div class="container-fluid pop_header" style="background-color: white;">
 	    <div class="row">
