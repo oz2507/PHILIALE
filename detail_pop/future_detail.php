@@ -1,13 +1,12 @@
 <?php foreach ($future_books as $future) { ?>
 
 <!-- pop -->
-<div id="modal-content-future-modal-open<?php echo $future["id"]; ?>" class="modal-content-future">
-	
+<div id="modal-content-future">
 	<div class="modal-content-future-c">
 	<div class="container-fluid pop_header" style="background-color: white;">
 	    <div class="row">
 	      	<div class="col-xs-12 col-md-12">
-				<a id="modal-close-future" class="button-link modal-close-future">×</a>
+				<a id="modal-close-future" class="button-link">×</a>
 	  		</div>
 		</div>
 	</div>
