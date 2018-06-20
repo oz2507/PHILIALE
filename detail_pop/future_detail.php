@@ -2,6 +2,7 @@
 
 <!-- pop -->
 <div id="modal-content-future-modal-open<?php echo $future["id"]; ?>" class="modal-content-future">
+	
 	<div class="modal-content-future-c">
 	<div class="container-fluid pop_header" style="background-color: white;">
 	    <div class="row">
