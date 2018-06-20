@@ -1,0 +1,70 @@
+#modal-content-add{
+	width: 80%;
+	margin: 0.5rem auto 0;
+	padding: 10px 10px;
+	border: 2px solid #aaa;
+	background: #fff;
+	display: none ;
+	/*手前に表示させる（通常は0）*/
+	z-index: 2;
+	/*対象の要素を固定させる*/
+	position:fixed;
+}
+
+#modal-content-add p{
+	margin-top: 1em;
+}
+
+#modal-content-add p:first-child{
+	margin-top: 0;
+}
+
+
+#modal-content-thx{
+	width: 80%;
+	margin: 0.5rem auto 0;
+	padding: 10px 10px;
+	border: 2px solid #aaa;
+	background: #fff;
+	display: none ;
+	/*手前に表示させる（通常は0）*/
+	z-index: 2;
+	/*対象の要素を固定させる*/
+	position:fixed;
+}
+
+#modal-content-thx p{
+	margin-top: 1em;
+}
+
+#modal-content-thx p:first-child{
+	margin-top: 0;
+}
+
+
+.button-link{
+	color:#00f;
+	text-decoration:underline;
+}
+
+.button-link:hover{
+	cursor:pointer;
+	color:#f00;
+}
+
+#modal-overlay{
+	/*上でPOP表示させるものを「2」に
+	設定しているので「1」*/
+	z-index: 1;
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	/*画面全体を覆う*/
+	width: 100%;
+	/*スマホ対応の120%*/
+	height: 120%;
+	/*rgbaで「不透明度」を設定する*/
+	background-color: rgba(0,0,0,0.75);
+}
+
