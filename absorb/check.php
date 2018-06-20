@@ -5,26 +5,26 @@
     $options = [
         'http' => [
             'method'  => 'GET',
-            'timeout' => 3, // タイムアウト時間
+            'timeout' => 10, // タイムアウト時間
           ]
     ];
 
-    $json = file_get_contents($url, false, stream_context_create($options));
+    $json = @file_get_contents($url, false, stream_context_create($options));
 
     // もしFalseが返っていたらエラーなので空白配列を返す
     if ($json === false) {
-        return [];
+        return null;
     }
 
     // 200以外のステータスコードは失敗とみなし空配列を返す
     preg_match('/HTTP\/1\.[0|1|x] ([0-9]{3})/', $http_response_header[0], $matches);
     $statusCode = (int)$matches[1];
     if ($statusCode !== 200) {
-        return [];
+        return null;
     }
 
     // 文字列から変換
-    $jsonArray = json_decode($json, true);
+    $jsonArray = json_decode($json);
 
     return $jsonArray;
 
@@ -35,11 +35,18 @@
 
         $data = "https://spreadsheets.google.com/feeds/list/$id/od6/public/values?alt=json";
 
-        $json_decode = getApiData($data, ture);
-        $books = $json_decode->feed->entry;
+        $json_decode = getApiData($data);
 
-        echo $data;
-        var_dump($books);
+        if ($json_decode == null){
+          echo '';
+                   
+        }else{
+          $books = $json_decode->feed->entry;
+
+        }
+
+        // echo $data;
+        // var_dump($books);
 
     }
 
@@ -82,7 +89,7 @@
     </div>
 
   <!-- <h1>検索結果</h1> -->
-    <?php if (isset($_GET['id'])) { 
+    <?php if ($json_decode !== null) { 
       foreach($books as $book){ ?>
     <div class="row">
       <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
