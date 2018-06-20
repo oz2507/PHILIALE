@@ -81,7 +81,6 @@
 			  <div>
 			  	<button type="submit" name="" class="book_add_btn">保管する</button>
 			  </div>
-			  <a class="sheet">スプレッドシートですでに管理してる方はこちら</a>
 			</form>
 		  </div>
     	</div><!-- row -->
