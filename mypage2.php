@@ -85,6 +85,8 @@
 	// 			alert("図書館に寄贈しますか?");
 	//     		</script>';
 	// }
+	// 初めての本が追加された時に出るPOP
+    //<?php include("add_library/add_library_pop.php");
 
 ?>
 
@@ -97,12 +99,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>MYPAGE</title>
 
+	<!-- <link rel="stylesheet" type="text/css" href="add_library_pop/add_library_pop.css"> -->
+
 	<link rel="stylesheet" type="text/css" href="new_add_book/new_add_book.css">
   	<link rel="stylesheet" type="text/css" href="new_add_book/new_add_book_pop.css">
 	<link rel="stylesheet" type="text/css" href="detail_pop/detail.css">
   	<link rel="stylesheet" type="text/css" href="detail_pop/detail_pop.css">
 
-  	<link rel="stylesheet" type="text/css" href="add_library_pop/add_library_pop.css">
 
 	<link rel="stylesheet" href="assets/css/bootstrap.phl.css">
 	<link rel="stylesheet" href="assets/css/mypage.css">
@@ -193,8 +196,7 @@
      			
 
          		<?php include("detail_pop/past_detail.php"); ?>
-         		<!-- 初めての本が追加された時に出るPOP -->
-				<?php include("add_library/add_library_pop.php"); ?>
+         		
 			</div>
 		</div>
 	</div>
@@ -209,10 +211,10 @@
 <!-- 6.js -->
 
 <script src="assets/js/jquery-3.1.1.js"></script>
+<!-- <script src="add_library/add_library_pop.js"></script> -->
 <script src="detail_pop/past_detail.js"></script>
 <script src="detail_pop/future_detail.js"></script>
 <script src="new_add_book/new_add_book.js"></script>
-<script src="add_library/add_library_pop.js"></script>
 
 <script src="assets/js/jquery-migrate-1.4.1.js"></script>
 <script src="assets/js/bootstrap.js"></script>

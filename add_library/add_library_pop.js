@@ -19,7 +19,7 @@ $(function(){
 	$("#modal-content-add").fadeIn("slow");
 
 	//[#modal-overlay]、または[#modal-close-future]をクリックしたら…
-	$( "#modal-overlay,#modal-close-future" ).unbind().click( function(){
+	$( "#modal-overlay,#modal-close" ).unbind().click( function(){
 
 		//[#modal-content-future]と[#modal-overlay]をフェードアウトした後に…
 		$( "#modal-content-add,#modal-overlay" ).fadeOut( "slow" , function(){
@@ -32,6 +32,7 @@ $(function(){
 	} ) ;
 
 } ) ;
+
 
 //リサイズされたら、センタリングをする関数[centeringModalSyncer()]を実行する
 $( window ).resize( centeringModalSyncer ) ;
@@ -70,26 +71,25 @@ function centeringModalSyncer(){
 
 	}
 
-} ) ;
 
 // thanks
 
 $(function(){
 
 $(".book_order_btn").click(function(){
+
+	//modal_contentをフェードアウト
+	$( "#modal-content-add" ).fadeOut() ;
+
 	// console.log("modal-open");
 	//キーボード操作などにより、オーバーレイが多重起動するのを防止する
 	//ボタンからフォーカスを外す
 	$(this).blur() ;
 
-	//現在のモーダルウィンドウを削除して新しく起動する [上とどちらか選択]
-	if($("#modal-overlay")[0]) $("#modal-overlay").remove() ;
 
 	//オーバーレイ用のHTMLコードを、[body]内の最後に生成する
 	$("body").append('<div id="modal-overlay"></div>');
 
-	//[$modal-overlay]をフェードインさせる
-	$("#modal-overlay").fadeIn("slow");
 
 	// コンテンツをセンター配置するのを呼ぶ
 	centeringModalSyncer();
@@ -98,7 +98,7 @@ $(".book_order_btn").click(function(){
 	$("#modal-content-thx").fadeIn("slow");
 
 	//[#modal-overlay]、または[#modal-close]をクリックしたら…
-	$( "#modal-overlay,#modal-close-past" ).unbind().click( function(){
+	$( "#modal-overlay,#modal-close" ).unbind().click( function(){
 
 		//[#modal-content-past]と[#modal-overlay]をフェードアウトした後に…
 		$( "#modal-content-thx,#modal-overlay" ).fadeOut( "slow" , function(){
@@ -150,4 +150,5 @@ function centeringModalSyncer(){
 	}
 
 } ) ;
+
 
