@@ -1,23 +1,53 @@
 <?php
 
+    function getApiData($url){
+
+    $options = [
+        'http' => [
+            'method'  => 'GET',
+            'timeout' => 10, // タイムアウト時間
+          ]
+    ];
+
+    $json = @file_get_contents($url, false, stream_context_create($options));
+
+    // もしFalseが返っていたらエラーなので空白配列を返す
+    if ($json === false) {
+        return null;
+    }
+
+    // 200以外のステータスコードは失敗とみなし空配列を返す
+    preg_match('/HTTP\/1\.[0|1|x] ([0-9]{3})/', $http_response_header[0], $matches);
+    $statusCode = (int)$matches[1];
+    if ($statusCode !== 200) {
+        return null;
+    }
+
+    // 文字列から変換
+    $jsonArray = json_decode($json);
+
+    return $jsonArray;
+
+    }
+
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
 
         $data = "https://spreadsheets.google.com/feeds/list/$id/od6/public/values?alt=json";
 
+        $json_decode = getApiData($data);
 
-        $header = @get_headers($data);
-
-        if($header !== false && !preg_match('#^HTTP/.*\s+[404]+\s#i', $header[0])) {
-            $json = file_get_contents($data);
-            $json_decode = json_decode($json);
-
-            $books = $json_decode->feed->entry;
-            fclose($fp);
+        if ($json_decode == null){
+          echo '';
+                   
         }else{
-            header("Location :submit_2.php");
+          $books = $json_decode->feed->entry;
 
         }
+
+        // echo $data;
+        // var_dump($books);
+
     }
 
 ?>
@@ -59,7 +89,7 @@
     </div>
 
   <!-- <h1>検索結果</h1> -->
-    <?php if (isset($_GET['id'])) { 
+    <?php if ($json_decode !== null) { 
       foreach($books as $book){ ?>
     <div class="row">
       <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
@@ -75,20 +105,6 @@
           <a href="submit_2.php"><button class="import_btn">戻る</button></a>
         </div>
   <?php } ?>
-
-
-<!-- view sample -->
-<!--     <div class="row">
-      <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
-        <div class="list_form">
-          <p>作品名 :<span>Harry Potter and the Philosopher's Stone (Harry Potter 1)&ensp;</span></p>
-          <p>著者名 :<span>J. K. Rowling </span></p>
-        </div>
-      </div>
-    </div> -->
-<!-- view sample -->
-
-
 
 
   </div><!-- container -->
