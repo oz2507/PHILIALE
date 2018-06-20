@@ -23,9 +23,11 @@
 		<div class="row">
   	  	  <div class="col-xs-12 col-md-6 col-md-offset-3">
   	  	  	<div class="new_book">
+
+  	  	  		<form action="mypage2.php" method="post">
 			  <div>
 			    <!-- <label for="book_title">作品名</label> -->
-			    <input type="text" id="book_isbn" name="book_isbn" placeholder="  ISBNコード">
+			    <input type="text" id="book_isbn" name="future_isbn" placeholder="  ISBNコード">
 			  </div>
 			  <div>
 			    <!-- <label for="book_title">作品名</label> -->
@@ -35,9 +37,13 @@
 			    <!-- <label for="book_story">解説文</label> -->
 			    <textarea id="book_story" name="book_story" placeholder="  解説文（54文字まで)"></textarea>
 			  </div>
+
 			  <div>
 			  	<button type="submit" name="" class="book_add_btn2">検索する</button>
 			  </div>
+
+			</form>
+
 			</div>
 		  </div>
     	</div><!-- row -->
@@ -70,13 +76,13 @@
   	  	  <div class="col-xs-12 col-md-6 col-md-offset-3 form_info">
 			<form action="" method="" class="form_original_2">
 			  <div>
-			    <input type="text" id="book_title" name="book_title" placeholder="  ここにタイトルが入ります" readonly>
+			    <textarea name="future_book"><?php echo $future_book; ?></textarea>
 			  </div>
 			  <div>
-			    <input type="text" id="book_title" name="book_title" placeholder="  ここに著者名が入ります" readonly>
+			    <textarea name="future_author"><?php echo $future_author; ?></textarea>
 			  </div>
 			  <div>
-			    <textarea id="book_story" name="book_story" placeholder="  ここに解説文が入ります" readonly></textarea>
+			    <textarea id="book_story" name="future_story" placeholder="  ここに解説文が入ります" readonly><?php echo $future_comment ?></textarea>
 			  </div>
 			  <div>
 			  	<button type="submit" name="" class="book_add_btn">保管する</button>

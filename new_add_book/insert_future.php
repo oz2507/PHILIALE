@@ -2,7 +2,7 @@
 
 	session_start();
 
-	require('dbconnect.php');
+	require('../dbconnect.php');
 
 	if (isset($_POST['isbn'])) {
 	    $isbn = $_POST["isbn"];

@@ -87,6 +87,67 @@
 	    		</script>';
 	}
 
+	// futureの追加処理
+	if (isset($_POST['future_isbn'])) {
+	    $future_isbn = $_POST["future_isbn"];
+
+		$data = "https://www.googleapis.com/books/v1/volumes?q=isbn:$future_isbn";
+		$json = file_get_contents($data);
+		$json_decode = json_decode($json);
+	 	// jsonデータ内の『entry』部分を複数取得して、postsに格納
+	 	$posts = $json_decode->items;
+	 
+	 	if (isset($posts[0]->volumeInfo->title)) {
+	 		
+			$user_id=$_SESSION["id"];
+			$future_book=$posts[0]->volumeInfo->title;
+			$future_author=$posts[0]->volumeInfo->authors[0];
+
+			if (isset($_POST['img'])) {
+				$future_img = $_POST["img"];	
+			}else{
+				$future_img = '';
+			}
+		
+			if (isset($_POST['comment'])) {
+				$future_comment = $_POST["comment"];	
+			}else{
+				$future_comment = '';
+			}
+
+	if (isset($_GET['future_isbn'])) {
+			$future_isbn2 = $_GET['future_isbn'];
+
+			if (isset($_POST['future_book'])) {
+				$future_book2 = $_POST['future_book'];
+			}else{
+				$future_book2 = '';
+			}
+			if (isset($_POST['future_author'])) {
+				$future_author2 = $_POST['future_author'];
+			}else{
+				$future_author2 = '';
+			}
+			if (isset($_POST['future_story'])) {
+				$future_comment2 = $_POST['future_story'];
+			}else{
+				$future_comment2 = '';
+			}
+		
+
+		$future_sql='INSERT INTO `future_archives` SET `user_id`=?, `isbn_code`=?, `book_title`=?, `book_author`=?, `book_img`=?, `comment`=?';
+
+		$future_data=array($user_id,$future_isbn2,$future_book,$future_author,$img,$future_comment);
+		$future_stmt = $dbh->prepare($future_sql);
+  		$future_stmt->execute($future_data);
+  	}
+
+
+    	}else{
+    		echo "isbnが正しくないもしくはisbnが入力されていません。";
+    	}
+    }
+
 ?>
 
 <!DOCTYPE html>
