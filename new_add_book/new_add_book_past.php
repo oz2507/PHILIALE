@@ -37,6 +37,7 @@
 			  </div>
 			  <div>
 			  	<button type="submit" name="" class="book_add_btn">検索する</button>
+			  	<a class="sheet" href="absorb/submit_2.php" style="text-align: center;">スプレッドシートですでに管理してる方はこちら</a>
 			  </div>
 			</div>
 		  </div>
@@ -80,7 +81,6 @@
 			  </div>
 			  <div>
 			  	<button type="submit" name="" class="book_add_btn">保管する</button>
-			  	<a class="sheet">スプレッドシートですでに管理してる方はこちら</a>
 			  </div>
 			</form>
 		  </div>
