@@ -1,3 +1,5 @@
+var id = $('div').attr('id');
+
 $(function(){
 
 $(".modal-open-past").click(function(){
@@ -5,6 +7,9 @@ $(".modal-open-past").click(function(){
 	//キーボード操作などにより、オーバーレイが多重起動するのを防止する
 	//ボタンからフォーカスを外す
 	$(this).blur() ;
+
+	console.log($(this).attr('id'));
+	console.log("#modal-content-past-"+$(this).attr('id'));
 
 	//現在のモーダルウィンドウを削除して新しく起動する [上とどちらか選択]
 	if($("#modal-overlay")[0]) $("#modal-overlay").remove() ;
@@ -19,7 +24,8 @@ $(".modal-open-past").click(function(){
 	centeringModalSyncer();
 
 	//[$modal-content]をフェードインさせる
-	$(".modal-content-past").fadeIn("slow");
+
+	$("#modal-content-past-"+$(this).attr('id')).fadeIn("slow");
 
 	//[#modal-overlay]、または[#modal-close]をクリックしたら…
 	$( "#modal-overlay,#modal-close-past" ).unbind().click( function(){

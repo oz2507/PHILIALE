@@ -98,6 +98,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>MYPAGE</title>
 
+	<link rel="stylesheet" type="text/css" href="new_add_book/new_add_book.css">
+  	<link rel="stylesheet" type="text/css" href="new_add_book/new_add_book_pop.css">
 	<link rel="stylesheet" type="text/css" href="detail_pop/detail.css">
   	<link rel="stylesheet" type="text/css" href="detail_pop/detail_pop.css">
 
@@ -151,7 +153,7 @@
 		<!-- add book -->
 		<div class="container">
 			<div class="row">
-		        <div class="col-xs-6 col-md-3"> 
+		        <div class="col-xs-6 col-md-3 modal-open2"> 
 		            <div class="l-thumbnail">
         			    <figure class="thumbnail-wrapper">
                				<img src="assets/img/add.png">
@@ -161,6 +163,7 @@
 		                </span>
         			</div>
      			</div>
+     			<?php include("new_add_book/new_add_book_future.php"); ?>
      			
 				 <?php include("detail_pop/future_detail.php"); ?>
 				
@@ -174,16 +177,18 @@
 			<div class="row">
 
 				<!-- 新規追加 -->
-				<div class="col-xs-6 col-md-3"> 
+				<div class="col-xs-6 col-md-3 modal-open"> 
 		            <div class="l-thumbnail">
         			    <figure class="thumbnail-wrapper">
-               				<img src="assets/img/add.png">
+        			    	<img src="assets/img/add.png">
              			</figure>
 		                <span class="more-text">
 		                    ADDITION
 		                </span>
         			</div>
      			</div>
+     			<?php include("new_add_book/new_add_book_past.php"); ?>
+
 
      			<!-- スプレッドシート -->
      			<a href="absorb/submit_2.php">
@@ -198,7 +203,7 @@
 	        			</div>
 	     			</div>
      			</a>
-
+        
          		<?php include("detail_pop/past_detail.php"); ?>
 			</div>
 		</div>
@@ -215,6 +220,7 @@
 <script src="assets/js/jquery-3.1.1.js"></script>
 <script src="detail_pop/past_detail.js"></script>
 <script src="detail_pop/future_detail.js"></script>
+<script src="new_add_book/new_add_book.js"></script>
 
 <script src="assets/js/jquery-migrate-1.4.1.js"></script>
 <script src="assets/js/bootstrap.js"></script>

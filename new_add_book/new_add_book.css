@@ -1,3 +1,5 @@
+/*読んだ本*/
+
 #modal-content{
 	width: 80%;
 	margin: 0.5rem auto 0;
@@ -39,6 +41,53 @@
 #modal-content2 p:first-child{
 	margin-top: 0;
 }
+
+/*読みたい本*/
+
+/*読んだ本*/
+
+#modal-content3{
+	width: 80%;
+	margin: 0.5rem auto 0;
+	padding: 10px 10px;
+	border: 2px solid #aaa;
+	background: #fff;
+	display: none ;
+	/*手前に表示させる（通常は0）*/
+	z-index: 2;
+	/*対象の要素を固定させる*/
+	position:fixed;
+}
+
+#modal-content3 p{
+	margin-top: 1em;
+}
+
+#modal-content3 p:first-child{
+	margin-top: 0;
+}
+
+#modal-content4{
+	width: 80%;
+	margin: 0.5rem auto 0;
+	padding: 10px 10px;
+	border: 2px solid #aaa;
+	background: #fff;
+	display: none ;
+	/*手前に表示させる（通常は0）*/
+	z-index: 2;
+	/*対象の要素を固定させる*/
+	position:fixed;
+}
+
+#modal-content4 p{
+	margin-top: 1em;
+}
+
+#modal-content4 p:first-child{
+	margin-top: 0;
+}
+
 
 .button-link{
 	color:#00f;
