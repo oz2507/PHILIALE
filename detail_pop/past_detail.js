@@ -23,16 +23,18 @@ $(".modal-open-past").click(function(){
 	// コンテンツをセンター配置するのを呼ぶ
 	centeringModalSyncer();
 
-	//[$modal-content]をフェードインさせる
+	var idname="#modal-content-past-"+$(this).attr('id');
+	$(idname).fadeIn("slow");
 
 	$("#modal-content-past-"+$(this).attr('id')).fadeIn("slow");
 
 	//[#modal-overlay]、または[#modal-close]をクリックしたら…
-	$( "#modal-overlay,#modal-close-past" ).unbind().click( function(){
+	$( "#modal-overlay,.modal-close-past" ).unbind().click( function(){
 
 		//[#modal-content-past]と[#modal-overlay]をフェードアウトした後に…
-		$( ".modal-content-past,#modal-overlay" ).fadeOut( "slow" , function(){
-
+		$(idname).fadeOut("slow");
+		$( "#modal-overlay" ).fadeOut( "slow" , function(){
+			
 			//[#modal-overlay]を削除する
 			$('#modal-overlay').remove() ;
 

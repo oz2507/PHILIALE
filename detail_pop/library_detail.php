@@ -1,10 +1,11 @@
 <?php foreach ($books as $book) { ?>
 <!-- pop -->
-<div id="modal-content">
+<div id="modal-content-modal-open<?php echo $book['id']; ?>" class="modal-content">
+  
     <div class="container-fluid pop_header" style="background-color: white;">
         <div class="row">
           <div class="col-xs-12 col-md-12">
-            <a id="modal-close" class="button-link">×</a>
+            <a id="modal-close" class="button-link modal-close">×</a>
           </div>
         </div>
     </div>

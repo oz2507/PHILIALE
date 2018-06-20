@@ -9,8 +9,7 @@ $(".modal-open-future").click(function(){
 	$(this).blur() ;
 
 	console.log($(this).attr('id'));
-
-
+	console.log("#modal-content-future-"+$(this).attr('id'));
 
 	//現在のモーダルウィンドウを削除して新しく起動する [上とどちらか選択]
 	if($("#modal-overlay")[0]) $("#modal-overlay").remove() ;
@@ -25,10 +24,7 @@ $(".modal-open-future").click(function(){
 	centeringModalSyncer();
 
 	var idname="#modal-content-future-"+$(this).attr('id');
-	//[$modal-content]をフェードインさせる
 	$(idname).fadeIn("slow");
-
-
 
 	//[#modal-overlay]、または[#modal-close-future]をクリックしたら…
 	$( "#modal-overlay,.modal-close-future" ).unbind().click( function(){
