@@ -1,5 +1,3 @@
-var id = $('div').attr('id');
-
 $(function(){
 // これだけだったら読み込まれた時にする
 
@@ -7,9 +5,6 @@ $(".modal-open-future").click(function(){
 	//キーボード操作などにより、オーバーレイが多重起動するのを防止する
 	//ボタンからフォーカスを外す
 	$(this).blur() ;
-
-	console.log($(this).attr('id'));
-	console.log("#modal-content-future-"+$(this).attr('id'));
 
 	//現在のモーダルウィンドウを削除して新しく起動する [上とどちらか選択]
 	if($("#modal-overlay")[0]) $("#modal-overlay").remove() ;
@@ -23,18 +18,17 @@ $(".modal-open-future").click(function(){
 	// コンテンツをセンター配置するのを呼ぶ
 	centeringModalSyncer();
 
-	var idname="#modal-content-future-"+$(this).attr('id');
-	$(idname).fadeIn("slow");
+	//[$modal-content]をフェードインさせる
+	$("#modal-content-future").fadeIn("slow");
 
 	//[#modal-overlay]、または[#modal-close-future]をクリックしたら…
-	$( "#modal-overlay,.modal-close-future" ).unbind().click( function(){
+	$( "#modal-overlay,#modal-close-future" ).unbind().click( function(){
 
-		//[#modal-content-future]と[#modal-overlay]をフェードアウトした;後に
-		$(idname).fadeOut("slow");
-		$( "#modal-overlay" ).fadeOut( "slow" , function(){
+		//[#modal-content-future]と[#modal-overlay]をフェードアウトした後に…
+		$( "#modal-content-future,#modal-overlay" ).fadeOut( "slow" , function(){
 
 			//[#modal-overlay]を削除する
-			$('#modal-overlay').remove();
+			$('#modal-overlay').remove() ;
 
 		} ) ;
 

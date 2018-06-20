@@ -1,12 +1,12 @@
 <?php foreach ($past_books as $past) { ?>
 
 <!-- pop -->
-<div id="modal-content-past-modal-open-past<?php echo $past['id']; ?>" class="modal-content-past">
+<div id="modal-content-past<?php echo $past[`id`]; ?>" class="modal-content-past">
 
 	<div class="container-fluid pop_header" style="background-color: white;">
 	    <div class="row">
 	      	<div class="col-xs-12 col-md-12">
-				<a id="modal-close-past" class="button-link modal-close-past">×</a>
+				<a id="modal-close" class="button-link">×</a>
 	  		</div>
 		</div>
 	</div>
