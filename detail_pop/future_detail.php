@@ -73,6 +73,33 @@
 	</div>
 </div><!-- modal-content-future -->
 
+<!-- 削除POP -->
+<div id="modal_delete_future">
+<div class="container-fluid pop_header">
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <p>フィリアールからのお知らせ</p>
+      </div>
+    </div>
+  </div><!-- container-fluid -->
+
+
+  <!-- main -->
+    <div class="delete_logo">
+      <p>本当に削除しますか？</p>
+    </div>
+
+    <!-- footer -->
+    <div class="row">
+      <div class="del_footer">
+        <a href="#"><button class="del_footer_btn">削除する</button><a>
+      </div>
+      <div class="del_footer_2">
+        <a href="#">今はやめておく</a>
+      </div>
+    </div><!-- row -->
+</div>
+
 
 <a id="modal-open<?php echo $future["id"]; ?>" class="button-link modal-open-future">	
 	<div class="col-xs-6 col-md-3">
