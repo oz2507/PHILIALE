@@ -13,7 +13,7 @@
             $json_decode = json_decode($json);
 
             $books = $json_decode->feed->entry;
-            fclose($fp);
+            // fclose($fp);
         }else{
             header("Location :submit_2.php");
 
@@ -36,9 +36,7 @@
 <!-- navbar -->
   <div class="nav_container navbar-fixed-top">
       <div class="nav_header">
-          <a href="../mypage2.php">
-              <img alt="philia" src="../assets/img/philia2.png" style="height: 35px;">
-          </a>
+          <img alt="philia" src="../assets/img/philia2.png" style="height: 35px;">
       </div>
   </div>
 
@@ -63,8 +61,10 @@
       foreach($books as $book){ ?>
     <div class="row">
       <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
-        <p>作品名 :<span><?php echo $book->title->{'$t'}; ?>&ensp;</span></p>
-        <p>著者名 :<span><?php echo $book->content->{'$t'}; ?></span></p>
+        <div class="list_form">
+          <p>作品名 :<span><?php echo $book->title->{'$t'}; ?>&ensp;</span></p>
+          <p>著者名 :<span><?php echo $book->content->{'$t'}; ?></span></p>
+        </div>
       </div>
     </div>
     <?php } ?>
@@ -75,21 +75,6 @@
           <a href="submit_2.php"><button class="import_btn">戻る</button></a>
         </div>
   <?php } ?>
-
-
-<!-- view sample -->
-<!--     <div class="row">
-      <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
-        <div class="list_form">
-          <p>作品名 :<span>Harry Potter and the Philosopher's Stone (Harry Potter 1)&ensp;</span></p>
-          <p>著者名 :<span>J. K. Rowling </span></p>
-        </div>
-      </div>
-    </div> -->
-<!-- view sample -->
-
-
-
 
   </div><!-- container -->
 </body>

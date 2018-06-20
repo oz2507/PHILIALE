@@ -186,7 +186,7 @@
      			</div>
 
      			<!-- スプレッドシート -->
-     			<a href="absorb/submit.php">
+     			<a href="absorb/submit_2.php">
 	     			<div class="col-xs-6 col-md-3"> 
 			            <div class="l-thumbnail">
 	        			    <figure class="thumbnail-wrapper">

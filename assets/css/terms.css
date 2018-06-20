@@ -75,27 +75,19 @@ li{
   margin-bottom: 30px;
 }
 
-/*.wrapKIYAKU>.line2>h2{
-  font-size: 30px;
-  margin-top: 50px;
-  margin-bottom: 30px;
-}
-*/
-
 .wrapKIYAKU h3{
   margin-top: 30px;
   line-height: 30px;
 }
 
 .line1{
-  height: 320px;
+  height: 100px;
   margin-top: 50px;
 }
 
 .line2{
-  height: 550px;
+  height: 500px
   margin-top: 20px;
-  /*margin-bottom: 20px;*/
 }
 
 .line2 p{
@@ -113,12 +105,6 @@ li{
 .wrapKIYAKU p{
   font-size: 20px;
    padding-left: 60px;
-}
-
-.wrapKIYAKU>.tR{
-  padding-top: 50px;
-  /*padding-right: -0px;*/
-  text-align: right
 }
 
 .close1>p{
@@ -142,6 +128,27 @@ li{
   color:rgba(33, 39, 98, 0.5);
 }
 
+.policy,.col-xs-12{
+  padding-right: 0px;
+}
+
+.policy>a{
+  text-decoration: none;
+  color: #8f4796;
+  text-align: right;
+}
+
+.policy>a:hover{
+  text-decoration: none;
+  color:rgba(33, 39, 98, 0.5);
+  /*color:#b96cc4;*/
+}
+
+.container-copy>a>p{
+  line-height: 30px;
+}
+
+
 
 
 /* 767px以下: デフォルト */
@@ -161,6 +168,7 @@ li{
     padding-top: 4px;
     color: #fff;
 }
+
   #copyright{
   width: 768px;
   color: #fff;
@@ -189,6 +197,11 @@ a:hover{
   .container {
     width: 750px;
   }
+
+    .diviver{
+  padding-top: 3px;
+}
+
 
   #copyright{
   width: 980px;

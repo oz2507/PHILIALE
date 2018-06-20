@@ -80,7 +80,11 @@
       <div class="col-xs-12 col-md-6 col-md-offset-3" style="height:500px;">
         <h2 class="text-center">入館する</h2>
 
-        <br><br><br>
+          <div class="row">
+                <div class="col-xs-12 text-center">
+                    <div class="thumbnail" style="letter-spacing: 0.2em; line-height:1.65; border: none;">
+                      <img class="img-responsive" src="assets/img/お辞儀1.png" style="width:100px;margin-top: 30px;">
+                    </div>
 
         <form method="POST" action="signin.php" enctype="multipart/form-data">
 

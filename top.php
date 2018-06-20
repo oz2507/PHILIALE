@@ -156,6 +156,12 @@
 
 		<div class="button">
 			<a class="btn" href="register/signup.php">フィリアールの会員になる</a> 
+		</div>
+
+		<div class="contact">
+			<a href="Form/contact.php">
+				お問い合わせはこちらから
+			</a>
 		</div>	
 	</div>
 </div>
@@ -164,7 +170,7 @@
 <div id="footer">
 	<div id="copyright">
 	    <div class="container-copy">
-	    	<a href="Form/contact.php"> 
+	    	<a href="Form/terms.php"> 
 		       <p>
 		          &copy; 2018 T-zerg ALL RIGHTS RESERVE
 		        </p>
