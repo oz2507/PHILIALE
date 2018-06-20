@@ -34,7 +34,7 @@
             <div class="row">
                 <div class="col-xs-12 text-center">
                     <div class="thumbnail" style="letter-spacing: 0.2em; line-height:1.65; border: none;">
-                      <img class="img-responsive img-circle" src="../assets/img/philia2.png" style="width:200px;margin-bottom: 20px;">
+                      <img class="img-responsive" src="../assets/img/お辞儀2.png" style="width:200px;margin-bottom: 20px;margin-top: 10px;">
 
                       <br>     
                     <div class="form-group">

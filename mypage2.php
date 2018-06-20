@@ -189,8 +189,21 @@
      			</div>
      			<?php include("new_add_book/new_add_book_past.php"); ?>
 
-     			
 
+     			<!-- スプレッドシート -->
+     			<a href="absorb/submit_2.php">
+	     			<div class="col-xs-6 col-md-3"> 
+			            <div class="l-thumbnail">
+	        			    <figure class="thumbnail-wrapper">
+	               				<img src="assets/img/add1.png">
+	             			</figure>
+			                <span class="more-text">
+			                    ADDITION
+			                </span>
+	        			</div>
+	     			</div>
+     			</a>
+        
          		<?php include("detail_pop/past_detail.php"); ?>
 			</div>
 		</div>

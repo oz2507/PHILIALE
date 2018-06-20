@@ -37,9 +37,20 @@
 
         $json_decode = getApiData($data);
 
+      
+        $header = @get_headers($data);
+
+        if($header !== false && !preg_match('#^HTTP/.*\s+[404]+\s#i', $header[0])) {
+            $json = file_get_contents($data);
+            $json_decode = json_decode($json);
+
+            $books = $json_decode->feed->entry;
+            // fclose($fp);
+
         if ($json_decode == null){
           echo '';
                    
+
         }else{
           $books = $json_decode->feed->entry;
 
@@ -66,9 +77,7 @@
 <!-- navbar -->
   <div class="nav_container navbar-fixed-top">
       <div class="nav_header">
-          <a href="../mypage2.php">
-              <img alt="philia" src="../assets/img/philia2.png" style="height: 35px;">
-          </a>
+          <img alt="philia" src="../assets/img/philia2.png" style="height: 35px;">
       </div>
   </div>
 
@@ -93,8 +102,10 @@
       foreach($books as $book){ ?>
     <div class="row">
       <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
-        <p>作品名 :<span><?php echo $book->title->{'$t'}; ?>&ensp;</span></p>
-        <p>著者名 :<span><?php echo $book->content->{'$t'}; ?></span></p>
+        <div class="list_form">
+          <p>作品名 :<span><?php echo $book->title->{'$t'}; ?>&ensp;</span></p>
+          <p>著者名 :<span><?php echo $book->content->{'$t'}; ?></span></p>
+        </div>
       </div>
     </div>
     <?php } ?>
@@ -105,7 +116,6 @@
           <a href="submit_2.php"><button class="import_btn">戻る</button></a>
         </div>
   <?php } ?>
-
 
   </div><!-- container -->
 </body>

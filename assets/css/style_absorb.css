@@ -91,8 +91,10 @@ body {
 	color:#8f4796;
     background:none;
     border: solid 2px #b96cc4;
+    border-radius: 4px;
 	text-indent: 1em;
 }
+
 .submit_form input::placeholder {
   color: #e7daea;
   /*font-weight: 900;*/
@@ -124,6 +126,7 @@ body {
 	width: 400px;
 	height:3em;
 	border: 2px solid #b96cc4;
+	border-radius: 4px;
 	/*box-shadow: 0 0 8px #f2eaf4;*/
 }
 
@@ -133,17 +136,20 @@ body {
     border: 3px solid #b96cc4;
 }
 
-
 .list_form{
 	display: inline-block;
 	background-color: #f2eaf4;
-	margin-bottom: 20px;
-	padding: 5px;
+	margin-bottom: 5px;
+	padding: 10px;
 	width: 100%;
 	height: auto;
+	
 }
+
 .list_form p{
-	float:left;
+	margin-top: 10px;
+	vertical-align: middle;
+	text-align: center;
 }
 
 .list_form span{

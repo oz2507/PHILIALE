@@ -149,6 +149,10 @@ p{
   line-height: 50px;
 }
 
+.contact{
+  margin-top: 20px;
+}
+
 
 /* 767px以下: デフォルト */
 .container {
@@ -690,7 +694,7 @@ h5>a:hover{
 .container-msg{
   width: 100%;
   padding-top: 60px;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   position: relative;
   overflow: hidden;
   text-align: center;
