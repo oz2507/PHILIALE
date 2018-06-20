@@ -1,26 +1,6 @@
-<?php 
+<div id="modal-content">
 
-
-?>
-
-
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device=width">
-  <title>PHILIALE</title>
-  <link rel="stylesheet" type="text/css" href="new_add_book.css">
-  <link rel="stylesheet" type="text/css" href="new_add_book_pop.css">
-  <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css"><!-- グリッドシステムのみ -->
-  
-</head>
-
-<body>
-
-	<div id="modal-content">
-
-	  <div class="container-fluid pop_header">
+	  <div class="container-fluid pop_header2">
   	    <div class="row">
   	  	  <div class="col-xs-12 col-md-12">
   	    	<p>　本を登録する </p>
@@ -31,8 +11,8 @@
   	  <div class="container" style="margin-bottom: 50px;">
 		<div class="row">
   	  	  <div class="col-xs-12 col-md-6 col-md-offset-3">
-  	  	    <div class="book_img">
-  	  	  	  <img class="book_pic" src="https://placehold.jp/b96cc4/ffffff/210x296.png?text=NO IMAGE" width="148">
+  	  	    <div class="book_img2">
+  	  	  	  <img class="book_pic2" src="https://placehold.jp/b96cc4/ffffff/210x296.png?text=NO IMAGE" width="148">
   	  	    </div>
   	  	  </div>
   	  	  <div class="col-xs-12 add_img">
@@ -77,8 +57,8 @@
   	  <div class="container" style="margin-bottom: 50px;">
 		<div class="row">
   	  	  <div class="col-xs-12 col-md-6 col-md-offset-3">
-  	  	    <div class="book_img">
-  	  	  	  <img class="book_pic" src="https://placehold.jp/b96cc4/ffffff/210x296.png?text=NO IMAGE" width="148">
+  	  	    <div class="book_img3">
+  	  	  	  <img class="book_pic3" src="https://placehold.jp/b96cc4/ffffff/210x296.png?text=NO IMAGE" width="148">
   	  	    </div>
   	  	  </div>
     	</div><!-- row -->
@@ -100,29 +80,10 @@
 			  </div>
 			  <div>
 			  	<button type="submit" name="" class="book_add_btn">保管する</button>
+			  	<a class="sheet">スプレッドシートですでに管理してる方はこちら</a>
 			  </div>
 			</form>
 		  </div>
     	</div><!-- row -->
       </div><!-- container -->
 	</div>
-
-	<p><a id="modal-open" class="button-link modal-open">クリックするとモーダルウィンドウを開きます。</a></p>
-
-
-	<!-- <a id="modal-open" class="button-link modal-open">
-		<div class="col-xs-6 col-md-3">
-            <div class="thumbnail">
-                <img src="../assets/img/add.png">
-            </div>
-         </div>
-
-	</a> -->
-
-	<script src="../assets/js/jquery-3.1.1.js"></script>
-	<script src="new_add_book.js"></script>
-
-</body>
-</html>
-
-
