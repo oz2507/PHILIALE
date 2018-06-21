@@ -3,6 +3,14 @@
     session_start();
     require('../dbconnect.php');
 
+    //$_SESSIONが空の際のデバッグ
+    if (empty($_SESSION['id'])) {
+        $login_chk = false;
+    }else{
+        $login_chk = true;
+    }
+
+
     $errors = array();
 
     if (!empty($_POST)) {
@@ -47,11 +55,17 @@
                 <p>皆様のお声をお聞かせ下さい。</p>
                 <img class="responsive img-circle logo_original" src="../assets/img/philia2.png">
                 <p>お返事には少々お時間を頂いております。</p>
-                <p>ご感想・ご意見等は、<a href="https://twitter.com/philia_san">PHILIALE公式Twitter</a>もご用意しておりますので、<br>よろしければそちらにもお寄せください。</p>
+                <p>ご感想・ご意見等は、<a href="https://twitter.com/philia_san" target="blanck">PHILIALE公式Twitter</a>もご用意しておりますので、<br>よろしければそちらにもお寄せください。</p>
             </div>
 
                 <div class="col-xs-12 col-md-6 right-column_c" style="margin-top: 50px;">
+                        <?php if ($login_chk == false){ ?>
+                         <p style="margin: 100px auto 150px;">お問い合わせにはログインが必要です。</p>
+                          <a href="../signin.php"><button type="button" class="btn btn-original">ログイン</button></a>
+                          <a href="../top.php" class="btn btn-default btn-lg btn-block">&laquo;&nbsp;戻る</a>
+                       <?php }else{ ?>
                     <form method="POST" action="contact.php" enctype="multipart/form-data">
+                            
                         <div>
                             <input type="name" name="input_name" class="form-control" id="name" placeholder="お名前">
                             <?php if(isset($errors['name']) && $errors['name'] == 'name_blank') { ?>
@@ -65,10 +79,11 @@
                               <span class="text-danger">お問合せ内容が入力されていません</span>
                             <?php } ?>
                         </div>
-                        
                         <div>
                           <button type="submit" href="#" class="btn btn-original">送　信</button>
                         </div>
+                            
+                        <?php } ?>
                     </form>
                 </div>
         </div>
