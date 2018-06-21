@@ -21,6 +21,7 @@
 <html lang="ja">
 <head>
   <title>送信完了</title>
+  <meta http-equiv="Refresh" content="3;../top.php">
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/style_r.css">
