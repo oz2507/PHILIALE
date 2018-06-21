@@ -94,7 +94,7 @@
       <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
         <div class="list_form">
           <p>作品名 :<span><?php echo $book->title->{'$t'}; ?>&ensp;</span></p>
-          <p>著者名 :<span><?php echo $book->content->{'$t'}; ?></span></p>
+          <p>著者名 :<span><?php echo $book->{'gsx$作者'}->{'$t'}; ?></span></p>
         </div>
       </div>
     </div>

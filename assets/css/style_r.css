@@ -446,12 +446,17 @@ a:hover{
 /*---------add_order.html----------*/
 .order_img{
 	text-align: center;
+	margin-top: -80px;
+}
+
+.order_pic{
+	height: 150px;
+	width: auto;
+	margin-bottom: 10px;
 }
 
 .order_col{
-	margin:30px auto 50px;
-	color: ;
-	font-size: 20px;
+	font-size: 12px;
 	font-weight: 900;
 	letter-spacing: 0.2em;
 	text-align: center;
@@ -459,15 +464,15 @@ a:hover{
 
 .pop_footer{
 	background-color: #b96cc4;
-	height:auto;
+	height:150px;
 	text-align: center;
 }
 
 .book_order_btn{
 	color: #8f4796;
-	font-size: 20px;
+	font-size: 15px;
 	font-weight: 900;
-	margin: 60px 0 5px 0;
+	margin: 40px 0 5px 0;
 	width: 300px;
 	height:3em;
     background-color: #f2eaf4;
@@ -480,12 +485,12 @@ a:hover{
 }
 
 .order_cancel_btn{
-	margin: 20px;
+	margin-top : 5px;
 }
 
 .order_cancel_btn a{
 	color: #f2eaf4;
-    font-size: 15px;
+    font-size: 10px;
     font-weight: 600;
 }
 
@@ -549,7 +554,8 @@ a:hover{
 
 .thanks_logo{
 	text-align: center;
-	margin: 0;
+	margin-top: 20px;
+	margin-bottom: 80px;
 }
 .thanks_logo p{
 	font-family: 'Lucida Console','fantasy',sans-selif;
@@ -561,9 +567,9 @@ a:hover{
 	text-align: center;
 	background-color: #fff;
 	color: #8f4796;
-	font-size: 20px;
+	font-size: 15px;
 	font-weight: 900;
-	margin: 60px 0 5px 0;
+	margin: 30px 0 5px 0;
 	width: 300px;
 	height:3em;
     border: 3px solid #b96cc4;

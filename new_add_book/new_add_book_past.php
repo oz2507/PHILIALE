@@ -21,23 +21,24 @@
   	  	  <div class="col-xs-12 col-md-6 col-md-offset-3">
   	  	  	<div class="new_book">
 
-  	  	  		<form action="mypage2.php" method="post">
+<form action="pop_pages/past_add_book.php" method="post">
 
   	  	  			<div>
                        
                         <input type="file" name="book_img" id="img_name" accept="image/*" placeholder="画像" class="new_book_img">
                     </div>
+
 			  <div>
 			    <!-- <label for="book_title">作品名</label> -->
-			    <input type="text" id="book_isbn" name="book_isbn" placeholder="  ISBNコード">
+			    <input type="text" id="past_isbn" name="past_isbn" placeholder="  ISBN">
 			  </div>
 			  <div>
 			    <!-- <label for="book_title">作品名</label> -->
-			    <input type="text" id="book_title" name="book_title" placeholder="  本のタイトル">
+			    <input type="text" id="past_book" name="past_book" placeholder="  著者">
 			  </div>
 			  <div>
 			    <!-- <label for="book_story">解説文</label> -->
-			    <textarea id="book_story" name="book_story" placeholder="  解説文（54文字まで)"></textarea>
+			    <textarea id="past_story" name="past_story" placeholder="  解説文（54文字まで)"></textarea>
 			  </div>
 
 			  <div>

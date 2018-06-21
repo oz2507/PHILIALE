@@ -1,7 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, maximum-scale=1.0, user-scalable=yes"> -->
+  <!-- <meta name="viewport" content="width=device=width"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>MYPAGE</title>
+
+  <link rel="stylesheet" type="text/css" href="add_library_pop.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/style_r.css">
+
+  <link rel="shortcut icon" href="assets/img/favicon/favicon.ico" type="image/vnd.microsoft.icon">
+  <link rel="icon" href="assets/img/favicon/favicon.ico" type="image/vnd.microsoft.icon">
+</head>
+<body style="margin-top: 90px;background-image: url(assets/img/back.jpg);">
 
 <!-- add -->
 
-<div id="modal-content-add">
+<div class="modal-content-add">
 
   <div class="container-fluid pop_header">
     <div class="row">
@@ -16,14 +32,14 @@
     <!-- 画像 -->
     <div class="row">
   	  <div class="col-xs-12 order_img">
-  	  	<img src="assets/img/newbook2.png" width="350">
+  	  	<img src="../assets/img/newbook2.png" width="350" class="order_pic">
 		  </div>
     </div>
     <!-- 構文 -->
     <div class="row">
   	  <div class="col-xs-12 order_col">
 		    <p>初めての本が登録されました！</p>
-		    <p>よろしければ、現在建設中の私の図書館に</p>
+		    <p>宜しければ現在建設中の私の図書館に</p>
         <p>寄贈していただけませんか？</p>
 		  </div>
     </div>
@@ -45,7 +61,7 @@
 
 <!-- thanks -->
 
-<div id="modal-content-thx">
+<div class="modal-content-thx">
 
   <div class="container-fluid pop_header">
     <div class="row">
@@ -63,7 +79,7 @@
     <!-- 画像 -->
     <div class="row">
   	  <div class="col-xs-12 order_img">
-  	  	<img src="assets/img/お辞儀2.png" width="230">
+  	  	<img src="../assets/img/お辞儀2.png" width="230" class="order_pic">
 		  </div>
     </div>
     <!-- 構文 -->
@@ -84,3 +100,13 @@
     </div><!-- row -->
 
 </div>
+
+<script src="../assets/js/jquery-3.1.1.js"></script>
+<!-- <script src="add_library/add_library_pop.js"></script> -->
+<script src="add_library_pop.js"></script>
+
+<script src="assets/js/jquery-migrate-1.4.1.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+
+</body>
+</html>

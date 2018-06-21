@@ -8,6 +8,7 @@
 		header("Location: top.php");
 	}
 
+// 検索機能及び表示
 	// 読んだ用
 	$past_books=array();
 
@@ -35,7 +36,8 @@
 	$future_books=array();
 
     if (isset($_GET['search_word'])==true) {
-		$future_sql='SELECT * FROM `future_archives` WHERE user_id=? AND book_title LIKE "%'.$_GET['search_word'].'%" OR book_author LIKE "%'.$_GET['search_word'].'%"';
+		$future_sql='SELECT * FROM `future_archives` 
+					 WHERE user_id=? AND book_title LIKE "%'.$_GET['search_word'].'%" OR book_author LIKE "%'.$_GET['search_word'].'%"';
 	}else{
     	$future_sql='SELECT * FROM `future_archives` WHERE user_id=?';
 	}
@@ -52,7 +54,7 @@
 	    $future_books[]=$record_future;
 	    }
 
-	// libraryに入れるアラートを表示させるかどうか
+// libraryに入れるアラートを表示させるかどうか
 	// 読みたいから読んだに追加されたとき、libraryとの照合
 	if(isset($_POST['isbn'])){
 		// pastに入った本
@@ -88,6 +90,7 @@
 	// 初めての本が追加された時に出るPOP
     //<?php include("add_library/add_library_pop.php");
 
+// 追加処理
 	// futureの追加処理
 	if (isset($_POST['future_isbn'])) {
 	    $future_isbn = $_POST["future_isbn"];

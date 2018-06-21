@@ -21,11 +21,13 @@
   	  	  <div class="col-xs-12 col-md-6 col-md-offset-3">
   	  	  	<div class="new_book">
 
-  	  	  		<form action="mypage2.php" method="post">
+
+  	  	  		<form action="pop_pages/future_add_check.php" method="post">
   	  	  			<div>
                        
                         <input type="file" name="book_img" id="img_name" accept="image/*" placeholder="画像" class="new_book_img">
                     </div>
+
 			  <div>
 			    <!-- <label for="book_title">作品名</label> -->
 			    <input type="text" id="book_isbn" name="future_isbn" placeholder="  ISBNコード">
