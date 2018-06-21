@@ -64,8 +64,8 @@ function centeringModalSyncer(){
  // コンテンツの高さを取得し変数に格納
  // var ch = $("#modal-content-past").outerHeight({margin:true});
 
- var cw = $( ".modal-content-past" ).outerWidth();
- var ch = $( ".modal-content-past" ).outerHeight();
+ var cw = $( "#modal-content-past" ).outerWidth();
+ var ch = $( "#modal-content-past" ).outerHeight();
 
  // 真ん中に配置するために左から何px離せばいいかを計算し変数に格納
  var pxleft = ((w - cw)/2);
@@ -74,10 +74,10 @@ function centeringModalSyncer(){
  var pxtop = ((h - ch)/2);
 
  // #modal-content-pastのCSSにleftの値をpxleftを使って設定
- $(".modal-content-past").css({"left": pxleft + "px"});
+ $("#modal-content-past").css({"left": pxleft + "px"});
 
  // #modal-content-pastのCSSにtopの値をpxtopを使って設定
- $(".modal-content-past").css({"top": pxtop + "px"});
+ $("#modal-content-past").css({"top": pxtop + "px"});
 
  }
 

@@ -324,6 +324,7 @@
 
 
 </div>
+<?php var_dump($future_books); ?>
 
 
 <!-- 5.footer -->
