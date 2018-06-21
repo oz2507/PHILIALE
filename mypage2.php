@@ -75,17 +75,138 @@
 	$isbn_record=array();
 	$isbn_record=$isbn_stmt->fetch(PDO::FETCH_ASSOC);
 
-	if (isset($_POST['isbn']) && empty($isbn_record)) {
-			// libraryでは初の本だったら、寄贈しますかのアラート
-			echo '<script type="text/javascript">
-				alert("図書館に寄贈しますか?");
-	    		</script>';
-	}elseif (isset($_GET['isbn_code']) && empty($isbn_record)){
-			// libraryでは初の本だったら、寄贈しますかのアラート
-			echo '<script type="text/javascript">
-				alert("図書館に寄贈しますか?");
-	    		</script>';
-	}
+	// if (isset($_POST['isbn']) && empty($isbn_record)) {
+	// 		// libraryでは初の本だったら、寄贈しますかのアラート
+	// 		echo '<script type="text/javascript" src="add_library_pop.js">
+	//     		</script>';
+	// }elseif (isset($_GET['isbn_code']) && empty($isbn_record)){
+	// 		// libraryでは初の本だったら、寄贈しますかのアラート
+	// 		echo '<script type="text/javascript">
+	// 			alert("図書館に寄贈しますか?");
+	//     		</script>';
+	// }
+	// 初めての本が追加された時に出るPOP
+    //<?php include("add_library/add_library_pop.php");
+
+	// futureの追加処理
+	if (isset($_POST['future_isbn'])) {
+	    $future_isbn = $_POST["future_isbn"];
+
+		$data = "https://www.googleapis.com/books/v1/volumes?q=isbn:$future_isbn";
+		$json = file_get_contents($data);
+		$json_decode = json_decode($json);
+	 	// jsonデータ内の『entry』部分を複数取得して、postsに格納
+	 	$posts = $json_decode->items;
+	 
+	 	if (isset($posts[0]->volumeInfo->title)) {
+	 		
+			$user_id=$_SESSION["id"];
+			$future_book=$posts[0]->volumeInfo->title;
+			$future_author=$posts[0]->volumeInfo->authors[0];
+
+			if (isset($_POST['img'])) {
+				$future_img = $_POST["img"];	
+			}else{
+				$future_img = '';
+			}
+		
+			if (isset($_POST['comment'])) {
+				$future_comment = $_POST["comment"];	
+			}else{
+				$future_comment = '';
+			}
+
+	if (isset($_GET['future_isbn'])) {
+			$future_isbn2 = $_GET['future_isbn'];
+
+			if (isset($_POST['future_book'])) {
+				$future_book2 = $_POST['future_book'];
+			}else{
+				$future_book2 = '';
+			}
+			if (isset($_POST['future_author'])) {
+				$future_author2 = $_POST['future_author'];
+			}else{
+				$future_author2 = '';
+			}
+			if (isset($_POST['future_story'])) {
+				$future_comment2 = $_POST['future_story'];
+			}else{
+				$future_comment2 = '';
+			}
+		
+
+		$future_sql='INSERT INTO `future_archives` SET `user_id`=?, `isbn_code`=?, `book_title`=?, `book_author`=?, `book_img`=?, `comment`=?';
+
+		$future_data=array($user_id,$future_isbn2,$future_book,$future_author,$img,$future_comment);
+		$future_stmt = $dbh->prepare($future_sql);
+  		$future_stmt->execute($future_data);
+  	}
+
+    	}else{
+    		echo "isbnが正しくないもしくはisbnが入力されていません。";
+    	}
+    }
+
+    // pastの追加処理
+	if (isset($_POST['past_isbn'])) {
+	    $past_isbn = $_POST["past_isbn"];
+
+		$data = "https://www.googleapis.com/books/v1/volumes?q=isbn:$past_isbn";
+		$json = file_get_contents($data);
+		$json_decode = json_decode($json);
+	 	// jsonデータ内の『entry』部分を複数取得して、postsに格納
+	 	$posts = $json_decode->items;
+	 
+	 	if (isset($posts[0]->volumeInfo->title)) {
+	 		
+			$user_id=$_SESSION["id"];
+			$past_book=$posts[0]->volumeInfo->title;
+			$past_author=$posts[0]->volumeInfo->authors[0];
+
+			if (isset($_POST['img'])) {
+				$future_img = $_POST["img"];	
+			}else{
+				$future_img = '';
+			}
+		
+			if (isset($_POST['comment'])) {
+				$past_comment = $_POST["comment"];	
+			}else{
+				$past_comment = '';
+			}
+
+	if (isset($_GET['past_isbn'])) {
+			$past_isbn2 = $_GET['past_isbn'];
+
+			if (isset($_POST['past_book'])) {
+				$past_book2 = $_POST['past_book'];
+			}else{
+				$past_book2 = '';
+			}
+			if (isset($_POST['past_author'])) {
+				$past_author2 = $_POST['past_author'];
+			}else{
+				$past_author2 = '';
+			}
+			if (isset($_POST['past_story'])) {
+				$past_comment2 = $_POST['past_story'];
+			}else{
+				$past_comment2 = '';
+			}
+		
+
+		$past_sql='INSERT INTO `future_archives` SET `user_id`=?, `isbn_code`=?, `book_title`=?, `book_author`=?, `book_img`=?, `comment`=?';
+
+		$past_data=array($user_id,$past_isbn2,$past_book,$past_author,$img,$past_comment);
+		$past_stmt = $dbh->prepare($past_sql);
+  		$past_stmt->execute($past_data);
+  	}
+
+    	}else{
+    		echo "isbnが正しくないもしくはisbnが入力されていません。";
+    	}
+    }
 
 ?>
 
@@ -98,10 +219,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>MYPAGE</title>
 
+	<!-- <link rel="stylesheet" type="text/css" href="add_library_pop/add_library_pop.css"> -->
+
 	<link rel="stylesheet" type="text/css" href="new_add_book/new_add_book.css">
   	<link rel="stylesheet" type="text/css" href="new_add_book/new_add_book_pop.css">
 	<link rel="stylesheet" type="text/css" href="detail_pop/detail.css">
   	<link rel="stylesheet" type="text/css" href="detail_pop/detail_pop.css">
+
 
 	<link rel="stylesheet" href="assets/css/bootstrap.phl.css">
 	<link rel="stylesheet" href="assets/css/mypage.css">
@@ -188,11 +312,13 @@
         			</div>
      			</div>
      			<?php include("new_add_book/new_add_book_past.php"); ?>
-        
-         		<?php include("detail_pop/past_detail.php"); ?>
+
+         	<?php include("detail_pop/past_detail.php"); ?>
+         		
 			</div>
 		</div>
 	</div>
+
 
 </div>
 
@@ -203,6 +329,7 @@
 <!-- 6.js -->
 
 <script src="assets/js/jquery-3.1.1.js"></script>
+<!-- <script src="add_library/add_library_pop.js"></script> -->
 <script src="detail_pop/past_detail.js"></script>
 <script src="detail_pop/future_detail.js"></script>
 <script src="new_add_book/new_add_book.js"></script>

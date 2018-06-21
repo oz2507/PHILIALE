@@ -1,10 +1,11 @@
 <?php foreach ($books as $book) { ?>
+
 <!-- pop -->
-<div id="modal-content">
+<div id="modal-content-lib">
     <div class="container-fluid pop_header" style="background-color: white;">
         <div class="row">
           <div class="col-xs-12 col-md-12">
-            <a id="modal-close" class="button-link">×</a>
+            <a id="modal-close-lib" class="button-link">×</a>
           </div>
         </div>
     </div>
@@ -26,12 +27,12 @@
             <div class="col-xs-12 col-md-6 col-md-offset-3">
                 <form action="" method="" class="form_original">
                     <div>
-                      <label for="book_title"><?php echo $book['book_title']; ?></label>
-                      <input type="text" id="book_title" name="book_title">
+                      <label for="book_title">本のタイトル</label>
+                      <textarea name="book_title" readonly=""><?php echo $book['book_title']; ?></textarea>
                     </div>
                     <div>
-                      <label for="book_author"><?php echo $book['book_author']; ?></label>
-                      <input type="text" id="book_author" name="book_author">
+                      <label for="book_author">著者</label>
+                      <textarea name="book_author" readonly=""><?php echo $book['book_author']; ?></textarea>
                     </div>
                 </form>
           </div>
@@ -40,7 +41,7 @@
 </div>
 
 
-	<a id="modal-open<?php echo $book["id"]; ?>" class="button-link modal-open">	
+	<a id="modal-open<?php echo $book["id"]; ?>" class="button-link modal-open-lib">	
       <div class="col-xs-6 col-md-3">
           <?php if ($book["book_img"] != '') {?> 
               <div class="l-thumbnail">

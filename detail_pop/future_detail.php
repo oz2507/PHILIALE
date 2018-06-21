@@ -1,12 +1,12 @@
 <?php foreach ($future_books as $future) { ?>
 
 <!-- pop -->
-<div id="modal-content-future-modal-open<?php echo $future["id"]; ?>" class="modal-content-future">
+<div id="modal-content-future">
 	<div class="modal-content-future-c">
 	<div class="container-fluid pop_header" style="background-color: white;">
 	    <div class="row">
 	      	<div class="col-xs-12 col-md-12">
-				<a id="modal-close-future" class="button-link modal-close-future">×</a>
+				<a id="modal-close-future" class="button-link">×</a>
 	  		</div>
 		</div>
 	</div>
@@ -76,6 +76,33 @@
 	</div>
 	</div>
 </div><!-- modal-content-future -->
+
+<!-- 削除POP --><!-- 
+<div id="modal_delete_future">
+<div class="container-fluid pop_header">
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <p>フィリアールからのお知らせ</p>
+      </div>
+    </div>
+  </div> --><!-- container-fluid -->
+
+
+  <!-- main -->
+  <!--   <div class="delete_logo">
+      <p>本当に削除しますか？</p>
+    </div> -->
+
+    <!-- footer -->
+<!--     <div class="row">
+      <div class="del_footer">
+        <a href="#"><button class="del_footer_btn">削除する</button><a>
+      </div>
+      <div class="del_footer_2">
+        <a href="#">今はやめておく</a>
+      </div>
+    </div>
+</div> -->
 
 
 <a id="modal-open<?php echo $future["id"]; ?>" class="button-link modal-open-future">	
