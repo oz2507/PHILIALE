@@ -74,7 +74,7 @@
 
 		<div class="row">
   	  	  <div class="col-xs-12 col-md-6 col-md-offset-3 form_info">
-			<form action="" method="" class="form_original_2">
+			<form action="mypage2.php?future_isbn=<?php echo $future_isbn; ?>" method="post" class="form_original_2">
 			  <div>
 			    <textarea name="future_book"><?php echo $future_book; ?></textarea>
 			  </div>

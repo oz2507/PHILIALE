@@ -23,6 +23,8 @@
 		<div class="row">
   	  	  <div class="col-xs-12 col-md-6 col-md-offset-3">
   	  	  	<div class="new_book">
+
+  	  	  		<form action="mypage2.php" method="post">
 			  <div>
 			    <!-- <label for="book_title">作品名</label> -->
 			    <input type="text" id="book_isbn" name="book_isbn" placeholder="  ISBNコード">
@@ -35,8 +37,13 @@
 			    <!-- <label for="book_story">解説文</label> -->
 			    <textarea id="book_story" name="book_story" placeholder="  解説文（54文字まで)"></textarea>
 			  </div>
+
 			  <div>
 			  	<button type="submit" name="" class="book_add_btn">検索する</button>
+			  </div>
+			  </form>
+
+			  <div>
 			  	<a class="sheet" href="absorb/submit_2.php" style="text-align: center;">スプレッドシートですでに管理してる方はこちら</a>
 			  </div>
 			</div>
