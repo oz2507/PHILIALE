@@ -110,6 +110,7 @@ body {
 	height:2.5em;
 	border: 2px solid #f2eaf4;
 	/*box-shadow: 0 0 8px #f2eaf4;*/
+	padding-left: 0px;
 }
 
 #submit_btn:hover{
@@ -154,4 +155,148 @@ body {
 
 .list_form span{
 	font-weight: bold;
+}
+
+/* 767px以下: デフォルト */
+.container {
+  padding-right: 15px;
+  padding-left: 35px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (max-width: 768px){
+  .pc_only{
+    display: none;
+  }
+
+.diviver{
+    padding-top: 4px;
+    color: #fff;
+}
+
+  #copyright{
+  width: 768px;
+  color: #fff;
+  background-color: #696969;
+  text-align: center;
+}
+
+a{
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover{
+  text-decoration: none;
+  color:rgba(33, 39, 98, 0.5);
+}
+
+.container-copy>a>p{
+  line-height: 50px;
+}
+
+}
+
+/* 768px以上 */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+
+    .diviver{
+  padding-top: 3px;
+}
+
+
+  #copyright{
+  width: 980px;
+  color: #fff;
+  background-color: #696969;
+  text-align: center;
+}
+
+a{
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover{
+  text-decoration: none;
+  color:rgba(33, 39, 98, 0.5);
+}
+
+.container-copy>a>p{
+  line-height: 50px;
+}
+
+}
+
+/* 992px以上 */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+
+  /*copyright*/
+#copyright{
+  width: 100%;
+  color: #fff;
+  background-color: #696969;
+  text-align: center;
+}
+
+a{
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover{
+  text-decoration: none;
+  color:rgba(33, 39, 98, 0.5);
+}
+
+.container-copy>a>p{
+  line-height: 50px;
+}
+
+}
+
+/* 1200px以上 */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+.container-fluid{
+    padding-right: 150px;
+    padding-left: 150px;
+}
+
+.diviver{
+    padding-top: 7px;
+    color: #fff;
+}
+
+/*copyright*/
+#copyright{
+  width: 100%;
+  color: #fff;
+  background-color: #696969;
+  text-align: center;
+}
+
+a{
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover{
+  text-decoration: none;
+  color:rgba(33, 39, 98, 0.5);
+}
+
+.container-copy>a>p{
+  line-height: 50px;
+}
+
 }

@@ -53,5 +53,9 @@
 }
 
   header("Location:mypage2.php");
-
+  // echo $img.'<br>';
+  // echo $book_img.'<br>';
+  // echo $book_id.'<br>';
+  // var_dump($errors);
+  // var_dump($_FILES);
 ?>

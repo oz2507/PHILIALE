@@ -37,16 +37,6 @@
 
         $json_decode = getApiData($data);
 
-      
-        $header = @get_headers($data);
-
-        if($header !== false && !preg_match('#^HTTP/.*\s+[404]+\s#i', $header[0])) {
-            $json = file_get_contents($data);
-            $json_decode = json_decode($json);
-
-            $books = $json_decode->feed->entry;
-            // fclose($fp);
-
         if ($json_decode == null){
           echo '';
                    
@@ -64,7 +54,7 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
  <title>スプレッドシート</title>
   <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css"><!-- グリッドシステムのみ -->
@@ -118,5 +108,7 @@
   <?php } ?>
 
   </div><!-- container -->
+
+<?php include('../partial/footer_top.php'); ?>
 </body>
 </html>

@@ -67,6 +67,8 @@ label input{
      /*color: #fff;*/
      cursor: pointer;
      padding: 15px 30px;
+     padding-top: 1px;
+     padding-left: 40px;
      margin: 0 10px 0 0;
      display: inline-block;
 }
@@ -79,7 +81,7 @@ label input{
 	color:#8f4796;
     background:none;
     border-style: none;
-    border-bottom: solid 2px #f2eaf4;
+    /*border-bottom: solid 2px #f2eaf4;*/
 }
 
 
@@ -98,6 +100,7 @@ label input{
     border-bottom: solid 2px #f2eaf4;
 	margin-left: 1em;
 	margin-right: 1em;
+	resize: none;
 }
 
 #book_story{
@@ -166,10 +169,11 @@ label input{
     border: 2px solid #b96cc4;
 }
 
-.add_img{
+.add_img label{
 	display: inline-block;
 	text-align: center;
-	margin-bottom: 20px ;
+	margin-top: 25px;
+	margin-bottom: 10px;
 }
 
 .add_img_btn{
@@ -177,17 +181,27 @@ label input{
 	background-color: white;
 	vertical-align: middle;
 	font-size: 12px;
-	width: 120px;
-	height:1.8em;
+	/*width: 120px;*/
+	width: 60%;
+	height:2em;
+	/*height:35px;*/
 	border: 2px solid #f2eaf4;
-	border-radius: 30px;
+	border-radius: 3px;
 	margin-top: 10px;
 	margin-bottom: 5px;
+	/*z-index: 1000px;*/
 }
+
 .add_img_btn:hover{
 	color: #f2eaf4;
     background-color: #b96cc4;
     border: 2px solid #b96cc4;
+}
+
+input[type=file] {
+    /*position: fixed;*/
+    visibility: hidden;
+    bottom: -100px;
 }
 
 

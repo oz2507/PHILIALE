@@ -14,24 +14,33 @@
 	<div class="container" style="padding-left: 0">
 		<div class="row">
 		  	  <div class="col-xs-12 col-md-6 col-md-offset-3">
-		  	    <div class="book_img">
-		  	  	<?php if ($past["book_img"]!='') {?>
-	                        <img src="book_img/<?php echo $past["book_img"]; ?>" class="book_pic">
-	                    <?php }else{ ?>
-	                        <img src="assets/img/philia2.png" alt="no image" class="book_pic">
-	                    <?php } ?>
-		  	    </div>
+			  	    <div class="book_img">
+			  	  		<?php if ($past["book_img"]!='') {?>
+		                    <img src="book_img/<?php echo $past["book_img"]; ?>" class="book_pic">
+		                <?php }else{ ?>
+		                    <img src="assets/img/philia2.png" alt="no image" class="book_pic">
+		                <?php } ?>
+			  	    </div>
 		  	  </div>
 		</div><!-- row -->
-
-		<div class="col-xs-12 add_img">
-  	  	    <a href="#"><button type="submit" name="" class="add_img_btn">画像を登録</button></a>
-  	  	</div>
 
 		<div class="row">
 			<div class="col-xs-12 col-md-6 col-md-offset-3">
 				<form action="past_edit.php?id=<?php echo $past['id'];?>" method="post" class="form_original" enctype="multipart/form-data">
 
+  	  	    		<div class="col-xs-12 add_img">
+					  	<!-- <label for="book_img">イメージ</label> -->
+					  	<label for="img_name" class="add_img_btn">
+					  		
+					  	<input type="file" name="book_img" id="img_name" accept="image/*" >
+						</label>
+
+						<!-- <script>
+document.getElementById("img_name").addEventListener("change", function(e){
+e.target.nextSibling.nodeValue = e.target.files.length ? e.target.files[0].name : "画像";
+});
+</script> --> 
+					</div>
 
 					<div>
 					    <label for="book_title">タイトル</label>
@@ -49,16 +58,14 @@
 					</div>
 
 					<div>
-						<a href="past_edit.php?id=<?php echo $past['id'];?>">
-					 		<button type="submit" name="" class="book_add_btn">更新する</button>
-					 	</a>
+					 	<button type="submit" name="" class="book_add_btn">更新する</button>
 					</div>
 					
 				</form>
 				
 				<div> 
 					<a onClick="return confirm('この本をリストから削除しますか？');" href="past_delete.php?id=<?php echo $past['id'];?>" class="book_del_btn">
-						<button type="submit" name="" class=" book_delete_btn">削除する</button>
+					<button type="submit" name="" class=" book_delete_btn">削除する</button>
 					</a>
 				</div>
 	  		</div>

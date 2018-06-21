@@ -28,8 +28,14 @@
 		    <div class="col-xs-12 col-md-6 col-md-offset-3">
 				<form action="future_edit.php?id=<?php echo $future['id'];?>" method="post" enctype="multipart/form-data">
 
-					<div class="col-xs-12 add_img">
-		  	  	    <a href="#"><button type="submit" name="" class="add_img_btn">画像を登録</button></a>
+					<!-- <div class="col-xs-12 add_img">
+		  	  	    <a href="#"><button type="submit" name="" class="add_img_btn">画像を登録</button></a> -->
+		  	  	    <div class="col-xs-12 add_img">
+					  	<!-- <label for="book_img">イメージ</label> -->
+					  	<label for="img_name" class="add_img_btn">
+					  		
+					  	<input type="file" name="book_img" id="img_name" accept="image/*" >
+						</label>
 		  	  	    </div>
 
 				<div class="form_original">
@@ -50,9 +56,7 @@
 				</div>
 
 					<div>
-						<a href="future_edit.php?id=<?php echo $future['id'];?>">
 					    <button type="submit" name="" class="book_add_btn">更新する</button>
-					    </a>
 					</div>
 
 				</form>
