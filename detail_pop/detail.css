@@ -23,7 +23,7 @@
 
 
 /*読みたい*/
-#modal-content-future{
+.modal-content-future{
 	width: 80%;
 	margin: 0.5rem auto 0;
 	padding: 10px 10px;
@@ -36,11 +36,11 @@
 	position:fixed;
 }
 
-#modal-content-future p{
+.modal-content-future p{
 	margin-top: 1em;
 }
 
-#modal-content-future p:first-child{
+.modal-content-future p:first-child{
 	margin-top: 0;
 }
 

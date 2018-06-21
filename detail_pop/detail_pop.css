@@ -169,40 +169,40 @@ label input{
     border: 2px solid #b96cc4;
 }
 
-.add_img label{
+/*.add_img label{
 	display: inline-block;
 	text-align: center;
 	margin-top: 25px;
 	margin-bottom: 10px;
-}
+}*/
 
-.add_img_btn{
+/*.add_img_btn{
 	color: #e7daea;
 	background-color: white;
 	vertical-align: middle;
 	font-size: 12px;
-	/*width: 120px;*/
+	width: 120px;
 	width: 60%;
 	height:2em;
-	/*height:35px;*/
+	height:35px;
 	border: 2px solid #f2eaf4;
 	border-radius: 3px;
 	margin-top: 10px;
 	margin-bottom: 5px;
-	/*z-index: 1000px;*/
+	z-index: 1000px;
 }
-
-.add_img_btn:hover{
+*/
+/*.add_img_btn:hover{
 	color: #f2eaf4;
     background-color: #b96cc4;
     border: 2px solid #b96cc4;
-}
+}*/
 
-input[type=file] {
-    /*position: fixed;*/
+/*input[type=file] {
+    position: fixed;
     visibility: hidden;
     bottom: -100px;
-}
+}*/
 
 
 
