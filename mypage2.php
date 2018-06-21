@@ -77,16 +77,16 @@
 	$isbn_record=array();
 	$isbn_record=$isbn_stmt->fetch(PDO::FETCH_ASSOC);
 
-	// if (isset($_POST['isbn']) && empty($isbn_record)) {
-	// 		// libraryでは初の本だったら、寄贈しますかのアラート
-	// 		echo '<script type="text/javascript" src="add_library_pop.js">
-	//     		</script>';
-	// }elseif (isset($_GET['isbn_code']) && empty($isbn_record)){
-	// 		// libraryでは初の本だったら、寄贈しますかのアラート
-	// 		echo '<script type="text/javascript">
-	// 			alert("図書館に寄贈しますか?");
-	//     		</script>';
-	// }
+	if (isset($_POST['isbn']) && empty($isbn_record)) {
+			// libraryでは初の本だったら、寄贈しますかのアラート
+			echo '<script type="text/javascript" src="add_library_pop.js">
+	    		</script>';
+	}elseif (isset($_GET['isbn_code']) && empty($isbn_record)){
+			// libraryでは初の本だったら、寄贈しますかのアラート
+			echo '<script type="text/javascript">
+				alert("図書館に寄贈しますか?");
+	    		</script>';
+	}
 	// 初めての本が追加された時に出るPOP
     //<?php include("add_library/add_library_pop.php");
 
