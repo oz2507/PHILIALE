@@ -58,7 +58,7 @@
   		header("Location: ../mypage2.php");
   	}
 
-    var_dump($_POST);
+    // var_dump($_POST);
 ?>
 
 <!DOCTYPE html>
@@ -68,13 +68,14 @@
 	<title>PHILIALE</title>
   <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css"><!-- グリッドシステムのみ -->
   <link rel="stylesheet" type="text/css" href="../assets/css/style_r.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/pop_pages.css">
 </head>
 <body>
   <div class="container-fluid pop_header">
   	<div class="row">
   	  <div class="col-xs-12 col-md-12">
   	    <p>登録本の確認</p>
-	  	<a href="#">✕</a>
+	  	<!-- <a href="#">✕</a> -->
 	  </div>
     </div>
   </div>
