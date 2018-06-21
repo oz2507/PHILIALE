@@ -215,7 +215,7 @@
 <head>
 	<meta charset="UTF-8">
 	<!-- <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, maximum-scale=1.0, user-scalable=yes"> -->
-	<meta name="viewport" content="width=device=width">
+	<!-- <meta name="viewport" content="width=device=width"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>MYPAGE</title>
 
@@ -313,9 +313,7 @@
      			</div>
      			<?php include("new_add_book/new_add_book_past.php"); ?>
 
-     			
-
-         		<?php include("detail_pop/past_detail.php"); ?>
+         	<?php include("detail_pop/past_detail.php"); ?>
          		
 			</div>
 		</div>

@@ -41,12 +41,14 @@
 <!-- import explain_1 -->
 	<div class="row">
 		<div class="col-xs-12 col-md-6 half-col_1">
-			<img src="https://placehold.jp/400x260.png?text=NO IMAGE" width="400">
+			<img src="../assets/img/sheet.png" width="400">
 		</div>
 		<div class="col-xs-12 col-md-6 half-col_2">
 			<h2>1 .<br></h2>
 			<h3>Googleスプレットシートを開く</h3>
-			<p>データの形は自由ですが、取得できるデータは<br>「作品名」と「著者」のみです。その他のデータが<br>あるとうまく取得できない可能性があります。</p>
+			<!-- <p>取得できるデータは「作品名」と「著者」のみです。その他のデータがあるとうまく取得できない可能性があります。</p> -->
+			<p>左の画像のように、｢A2以下のA列に本のタイトル｣を、｢B2以下のB列に著者｣を記入して下さい。</p>
+			<p>尚、スプレッドシートの読み込みには、共有設定が必要となります。</p>
 		</div>
 	</div>
 
@@ -55,11 +57,13 @@
 		<div class="content">
 			<div class="col-xs-12 col-md-6 half-col_2">
 				<h2>2 .<br></h2>
-				<h3>URLをコピーする</h3>
-				<p>コピーする場所は<br><span>「https://docs.google.com/spreadsheets/d/」</span>の後ろから<br><span>「/edit?usp=drive_web&ouid=????????」</span>の前までです。</p>
+				<h3>共有設定をする</h3>
+				<p>該当のスプレッドシートを開き、｢ファイル｣→｢ウェブに公開｣を選択して下さい。</p>
+				<p>次に、当館に登録したいスプレッドシートを選択して下さい。</p>
+				
 			</div>
 			<div class="col-xs-12 col-md-6 half-col_1">
-				<img src="https://placehold.jp/400x260.png?text=NO IMAGE" width="400">
+				<img src="../assets/img/open.png" width="400">
 			</div>
 		</div>
 	</div>
@@ -67,12 +71,14 @@
 <!-- import explain_3 -->
 	<div class="row">
 	  	<div class="col-xs-12 col-md-6 half-col_1">
-	  		<img src="https://placehold.jp/400x260.png?text=NO IMAGE" width="400">
+	  		<img src="../assets/img/id1.png" width="400" height="300">
 	  	</div>
 	  	<div class="col-xs-12 col-md-6 half-col_2">
 	  		<h2>3 .<br></h2>
-	  		<h3>下の入力欄にペーストする</h3>
-	  		<p>２、３の手順について<br>Macの場合→⌘C(コピー)→⌘V(ペースト)」<br>Windowsの場合→「Ctrl+C→Ctrl+V」とすると楽です。</p>
+	  		<h3>スプレッドシートのIDをコピーする</h3>
+	  		<p>コピーする場所は<br><span>「https://docs.google.com/spreadsheets/d/」</span>の後ろから<span>「/edit#gid=0」</span>の前までです。</p>
+	  		<p>取得したIDを下記の欄に入力して下さい。</p>
+
 	  	</div>
 	</div>
 
@@ -81,12 +87,14 @@
 	<form action="submit_2.php" method="POST" class="submit_form">
 		<div class="row">
 			<div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3">
-				<input type="text" name="id" placeholder="URL入力欄">
-				<input type="submit" name="送信" id="submit_btn" value="検索する">
+				<input type="text" name="id" placeholder="スプレッドシートID入力欄">
+				<input type="submit" name="送信" id="submit_btn" value="Read Spreadsheet">
 			</div>
 	    </div>
 	</form>
 
 </div><!-- container -->
+
+<?php include('../partial/footer_top.php') ?>
 </body>
 </html>
