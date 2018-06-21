@@ -1,4 +1,4 @@
-#modal-content-add{
+.modal-content-add{
 	width: 80%;
 	margin: 0.5rem auto 0;
 	padding: 10px 10px;
@@ -11,16 +11,16 @@
 	position:fixed;
 }
 
-#modal-content-add p{
+.modal-content-add p{
 	margin-top: 1em;
 }
 
-#modal-content-add p:first-child{
+.modal-content-add p:first-child{
 	margin-top: 0;
 }
 
 
-#modal-content-thx{
+.modal-content-thx{
 	width: 80%;
 	margin: 0.5rem auto 0;
 	padding: 10px 10px;
@@ -33,11 +33,11 @@
 	position:fixed;
 }
 
-#modal-content-thx p{
+.modal-content-thx p{
 	margin-top: 1em;
 }
 
-#modal-content-thx p:first-child{
+.modal-content-thx p:first-child{
 	margin-top: 0;
 }
 
