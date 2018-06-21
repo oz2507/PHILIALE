@@ -1,11 +1,11 @@
 <?php foreach ($books as $book) { ?>
 
 <!-- pop -->
-<div id="modal-content-lib">
+<div id="modal-content-modal-open<?php echo $book['id']; ?>" class="modal-content-lib">
     <div class="container-fluid pop_header" style="background-color: white;">
         <div class="row">
           <div class="col-xs-12 col-md-12">
-            <a id="modal-close-lib" class="button-link">×</a>
+            <a id="modal-close" class="button-link modal-close">×</a>
           </div>
         </div>
     </div>
@@ -41,7 +41,7 @@
 </div>
 
 
-	<a id="modal-open<?php echo $book["id"]; ?>" class="button-link modal-open-lib">	
+	<a id="modal-open<?php echo $book["id"]; ?>" class="button-link modal-open">	
       <div class="col-xs-6 col-md-3">
           <?php if ($book["book_img"] != '') {?> 
               <div class="l-thumbnail">
