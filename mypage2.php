@@ -289,7 +289,7 @@
      			</div>
      			<?php include("new_add_book/new_add_book_future.php"); ?>
      			
-				 <?php include("detail_pop/future_detail.php"); ?>
+				<?php include("detail_pop/future_detail.php"); ?>
 				
 			</div>
 		</div>
@@ -313,7 +313,7 @@
      			</div>
      			<?php include("new_add_book/new_add_book_past.php"); ?>
 
-         	<?php include("detail_pop/past_detail.php"); ?>
+         	    <?php include("detail_pop/past_detail.php"); ?>
          		
 			</div>
 		</div>

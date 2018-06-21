@@ -46,7 +46,7 @@
 
 
 /*図書館*/
-#modal-content-lib{
+.modal-content-lib{
 	width: 80%;
 	margin: 0.5rem auto 0;
 	padding: 10px 10px;
@@ -59,11 +59,11 @@
 	position:fixed;
 }
 
-#modal-content-lib p{
+.modal-content-lib p{
 	margin-top: 1em;
 }
 
-#modal-content-lib p:first-child{
+.modal-content-lib p:first-child{
 	margin-top: 0;
 }
 

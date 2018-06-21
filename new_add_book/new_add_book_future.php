@@ -2,7 +2,7 @@
 
 	  <div class="container-fluid pop_header2">
   	    <div class="row">
-  	  	  <div class="col-xs-12 col-md-12">
+  	  	  <div class="col-xs-12 col-md-6 col-md-offset-3">
   	    	<p>　本を登録する </p>
 	  	  </div>
     	</div>
@@ -15,9 +15,6 @@
   	  	  	  <img class="book_pic2" src="https://placehold.jp/b96cc4/ffffff/210x296.png?text=NO IMAGE" width="148">
   	  	    </div>
   	  	  </div>
-  	  	  <div class="col-xs-12 add_img">
-  	  	    <a href="#"><button type="submit" name="" class="add_img_btn">画像を登録</button></a>
-  	  	  </div>
     	</div><!-- row -->
 
 		<div class="row">
@@ -25,6 +22,10 @@
   	  	  	<div class="new_book">
 
   	  	  		<form action="mypage2.php" method="post">
+  	  	  			<div>
+                       
+                        <input type="file" name="book_img" id="img_name" accept="image/*" placeholder="画像" class="new_book_img">
+                    </div>
 			  <div>
 			    <!-- <label for="book_title">作品名</label> -->
 			    <input type="text" id="book_isbn" name="future_isbn" placeholder="  ISBNコード">

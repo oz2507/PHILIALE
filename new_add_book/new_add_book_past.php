@@ -8,15 +8,12 @@
     	</div>
   	  </div>
 
-  	  <div class="container" style="margin-bottom: 50px;">
+  	  <div class="container" style="margin-bottom: 30px;">
 		<div class="row">
   	  	  <div class="col-xs-12 col-md-6 col-md-offset-3">
   	  	    <div class="book_img2">
   	  	  	  <img class="book_pic2" src="https://placehold.jp/b96cc4/ffffff/210x296.png?text=NO IMAGE" width="148">
   	  	    </div>
-  	  	  </div>
-  	  	  <div class="col-xs-12 add_img">
-  	  	    <a href="#"><button type="submit" name="" class="add_img_btn">画像を登録</button></a>
   	  	  </div>
     	</div><!-- row -->
 
@@ -25,6 +22,11 @@
   	  	  	<div class="new_book">
 
   	  	  		<form action="mypage2.php" method="post">
+
+  	  	  			<div>
+                       
+                        <input type="file" name="book_img" id="img_name" accept="image/*" placeholder="画像" class="new_book_img">
+                    </div>
 			  <div>
 			    <!-- <label for="book_title">作品名</label> -->
 			    <input type="text" id="book_isbn" name="book_isbn" placeholder="  ISBNコード">
@@ -43,8 +45,8 @@
 			  </div>
 			  </form>
 
-			  <div>
-			  	<a class="sheet" href="absorb/submit_2.php" style="text-align: center;">スプレッドシートですでに管理してる方はこちら</a>
+			  <div class="spread">
+			  	<a class="sheet" href="absorb/submit_2.php">スプレッドシートですでに管理してる方はこちら</a>
 			  </div>
 			</div>
 		  </div>

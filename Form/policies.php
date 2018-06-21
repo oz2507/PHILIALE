@@ -9,7 +9,7 @@
   <?php  require('../partial/favicon.php');  ?>
 </head>
 <body style="margin-top: 70px;">
-<?php include('../partial/navbar_top.php'); ?>
+<?php include('../partial/navbar_form.php'); ?>
 
 <div class="container">
   	<div class="row">

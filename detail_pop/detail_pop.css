@@ -65,12 +65,12 @@ label input{
 .form_original label input{
  /*background: #000;*/
      /*color: #fff;*/
-     cursor: pointer;
-     padding: 15px 30px;
-     padding-top: 1px;
-     padding-left: 40px;
-     margin: 0 10px 0 0;
-     display: inline-block;
+     /*cursor: pointer;*/
+     /*padding: 15px 30px;*/
+     /*padding-top: 1px;*/
+     /*padding-left: 40px;*/
+     /*margin: 0 10px 0 0;*/
+     /*display: inline-block;*/
 }
 
 .form_original input{
@@ -81,12 +81,18 @@ label input{
 	color:#8f4796;
     background:none;
     border-style: none;
-    /*border-bottom: solid 2px #f2eaf4;*/
+    border-bottom: solid 2px #f2eaf4;
+    margin-left: 1em;
+	margin-right: 1em;
 }
 
 
 .form_original input::placeholder {
   color: #e7daea;
+}
+
+.form_original input{
+	margin-top: 5px;
 }
 
 .form_original textarea{
@@ -202,8 +208,8 @@ label input{
     position: fixed;
     visibility: hidden;
     bottom: -100px;
-}*/
-
+}
+*/
 
 
 /*.book_del_btn {

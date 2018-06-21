@@ -37,10 +37,12 @@
 	margin-top: 20px;
 	margin-bottom: 10px;
 	border: 20px;
+	/*padding-left: 10px;*/
 }
 
 .book_pic2 {
 	text-align: center;
+	/*vertical-align: middle;*/
 	width: auto;
 	margin-bottom: 5px;
 	max-height: 150px;
@@ -75,9 +77,19 @@
     border-style: none;
     border-bottom: solid 2px #f2eaf4;
 }
+
 .new_book input::placeholder {
   color: #e7daea;
 }
+
+.new_book label::placeholder {
+  color: #e7daea;
+}
+
+/*.new_book>input .new_book_img{
+	padding-left: 40px;
+}
+*/
 .new_book textarea{
 	color: #8f4796;
 	outline:none;
@@ -86,6 +98,7 @@
 	margin-bottom: 25px;
     border-style: none;
     border-bottom: solid 2px #f2eaf4;
+    resize: none;
 }
 
 .pop_p{
@@ -131,10 +144,21 @@
     border: 2px solid #b96cc4;
 }
 
-.sheet{
+.spread{
 	vertical-align: middle;
+	text-align: center;
+	/*padding-left: 150px;*/
+	padding-top: 30px;
 }
 
+.spread>a{
+	text-decoration: underline;
+	color:#8f4796; 
+}
+
+.spread>a:hover{
+	color: #b96cc4;
+}
 
 
 
