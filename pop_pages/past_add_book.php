@@ -55,7 +55,7 @@
 		$past_stmt = $dbh->prepare($past_sql);
   		$past_stmt->execute($past_data);
 
-  		header("Location: ../mypage2.php");
+  		header("Location: ../mypage2.php?isbn_code=".$_GET['isbn']);
   	}
 
     var_dump($_POST);
