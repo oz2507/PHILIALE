@@ -77,18 +77,16 @@
 	$isbn_record=array();
 	$isbn_record=$isbn_stmt->fetch(PDO::FETCH_ASSOC);
 
-	// if (isset($_POST['isbn']) && empty($isbn_record)) {
-	// 		// libraryでは初の本だったら、寄贈しますかのアラート
-	// 		echo '<script type="text/javascript" src="add_library_pop.js">
-	//     		</script>';
-	// }elseif (isset($_GET['isbn_code']) && empty($isbn_record)){
-	// 		// libraryでは初の本だったら、寄贈しますかのアラート
-	// 		echo '<script type="text/javascript">
-	// 			alert("図書館に寄贈しますか?");
-	//     		</script>';
-	// }
-	// 初めての本が追加された時に出るPOP
-    //<?php include("add_library/add_library_pop.php");
+	if (isset($_POST['isbn']) && empty($isbn_record)) {
+			// libraryでは初の本だったら、寄贈しますかのアラート
+			echo '<script type="text/javascript" src="add_library_pop.js">
+	    		</script>';
+	}elseif (isset($_GET['isbn_code']) && empty($isbn_record)){
+			// libraryでは初の本だったら、寄贈しますかのアラート
+			echo '<script type="text/javascript">
+				alert("図書館に寄贈しますか?");
+	    		</script>';
+	}
 
 // 追加処理
 	// futureの追加処理
@@ -205,7 +203,6 @@
 		$past_stmt = $dbh->prepare($past_sql);
   		$past_stmt->execute($past_data);
   	}
-
     	}else{
     		echo "isbnが正しくないもしくはisbnが入力されていません。";
     	}
@@ -277,6 +274,9 @@
 <div class="tab-content">
     
     <div id="tab1" class="tab-pane fade in active">
+    	<?php if (isset($_GET['flag'])) {
+    		echo "isbnが正しくないもしくはisbnが入力されていません。";
+    	} ?>
 		<!-- add book -->
 		<div class="container">
 			<div class="row">
@@ -300,6 +300,9 @@
 
 	<!-- 読んだ -->
 	<div id="tab2" class="tab-pane fade">
+		<?php if (isset($_GET['flag'])) {
+    		echo "isbnが正しくないもしくはisbnが入力されていません。";
+    	} ?>
 		<div class="container">
 			<div class="row">
 
@@ -321,7 +324,6 @@
 			</div>
 		</div>
 	</div>
-
 
 </div>
 
