@@ -58,7 +58,10 @@
   		header("Location: ../mypage2.php?isbn_code=".$_GET['isbn']);
   	}
 
-    // var_dump($_POST);
+    var_dump($_POST);
+    var_dump($books);
+    var_dump($items);
+
 ?>
 
 <!DOCTYPE html>
