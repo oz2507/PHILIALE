@@ -5,7 +5,7 @@ h1, h2, h3, h4, h5, h6, p,
 form, input, div {
   margin: 0;
   padding: 0;
-   font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif
+  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif
 }
 
 li {
@@ -162,9 +162,13 @@ li{
 
 
 /*共通デザイン*/
-.head-img{
-	max-width: 100%;
+
+/*スマホ、タブレットで画像等の右端の隙間消す用*/
+#wrapper {
+  width:100%;
+  overflow:hidden;
 }
+
 h1{
   color: #a9a9a9;
   font-size: 70px;
@@ -196,7 +200,6 @@ h5>a:hover{
 	text-decoration: none;
 	color:rgba(33, 39, 98, 0.5);
 }
-
 
 p{
   line-height: 50px;
