@@ -72,7 +72,7 @@
                 </div>
 
                 <div class="close1 col-xs-12">  
-                  <a href="../top.php"> 
+                  <a href="../top2.php"> 
                     <p class="tR">以上(トップページへ)
                     </p>
                   </a>

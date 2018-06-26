@@ -62,7 +62,7 @@
                         <?php if ($login_chk == false){ ?>
                          <p style="margin: 100px auto 150px;">お問い合わせにはログインが必要です。</p>
                           <a href="../signin.php"><button type="button" class="btn btn-original">ログイン</button></a>
-                          <a href="../top.php" class="btn btn-default btn-lg btn-block">&laquo;&nbsp;戻る</a>
+                          <a href="../top2.php" class="btn btn-default btn-lg btn-block">&laquo;&nbsp;戻る</a>
                        <?php }else{ ?>
                     <form method="POST" action="contact.php" enctype="multipart/form-data">
                             

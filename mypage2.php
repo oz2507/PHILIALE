@@ -5,7 +5,7 @@
 	require('dbconnect.php');
 
 	if (empty($_SESSION)) {
-		header("Location: top.php");
+		header("Location: top2.php");
 	}
 
 // 検索機能及び表示

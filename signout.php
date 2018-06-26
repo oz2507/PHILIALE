@@ -9,7 +9,7 @@
     session_destroy();
  
     // signin.phpへ移動
-    header("Location: top.php");
+    header("Location: top2.php");
     exit();
  
 ?>
