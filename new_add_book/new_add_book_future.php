@@ -21,25 +21,30 @@
   	  	  <div class="col-xs-12 col-md-6 col-md-offset-3">
   	  	  	<div class="new_book">
 
-
   	  	  		<form action="pop_pages/future_add_check.php" method="post">
-  	  	  			<div>
-                       
-                        <input type="file" name="book_img" id="img_name" accept="image/*" placeholder="画像" class="new_book_img">
-                    </div>
+  	  	  		   <div>                       
+                    	<input type="file" name="book_img" id="img_name" accept="image/*" placeholder="画像" class="new_book_img">
+                	</div>
+			  		<div>
+			    	<!-- <label for="book_title">作品名</label> -->
+			    		<input type="text" id="book_isbn" name="future_isbn" placeholder="  ISBNコード">
+			  		</div>
+			  		<div>
+			  			<button type="submit" name="" class="book_add_btn2">検索する</button>
+			 		</div>
+			  	</form>
 
-			  <div>
-			    <!-- <label for="book_title">作品名</label> -->
-			    <input type="text" id="book_isbn" name="future_isbn" placeholder="  ISBNコード">
-			  </div>
-			  <div>
-			    <!-- <label for="book_title">作品名</label> -->
-			    <input type="text" id="book_title" name="book_title" placeholder="  本のタイトル">
-			  </div>
-			  <div>
-			    <!-- <label for="book_story">解説文</label> -->
-			    <textarea id="book_story" name="book_story" placeholder="  解説文（54文字まで)"></textarea>
-			  </div>
+			  	<form action="pop_pages/future_add_check.php" method="post">
+			  		<div>
+			    	<!-- <label for="book_title">作品名</label> -->
+			    		<input type="text" id="book_title" name="book_title" placeholder="  本のタイトル">
+			  		</div>
+			  	<form action="pop_pages/future_add_check.php" method="post">
+					<div>
+			    	<!-- <label for="book_story">解説文</label> -->
+			    		<textarea id="book_story" name="book_story" placeholder="  解説文（54文字まで)"></textarea>
+			 		</div>
+			 	</form>
 
 			  <div>
 			  	<button type="submit" name="" class="book_add_btn2">検索する</button>

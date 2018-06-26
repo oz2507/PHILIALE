@@ -9,12 +9,14 @@
 	    $future_isbn = $_POST["future_isbn"];
 
 		$data = "https://www.googleapis.com/books/v1/volumes?q=isbn:$future_isbn";
-		$json = file_get_contents($data);
+		$json = @file_get_contents($data);
 		$json_decode = json_decode($json);
-	 	// jsonデータ内の『entry』部分を複数取得して、postsに格納
+	 	
 	 	$posts = $json_decode->items;
 	 
 	 	if (isset($posts[0]->volumeInfo->title)) {
+
+	 		$flag = 0;
 	 		
 			$user_id=$_SESSION["id"];
 			$future_book=$posts[0]->volumeInfo->title;
@@ -26,6 +28,9 @@
 			}else{
 				$future_comment = '';
 			}
+		}else{
+			$flag = 1;
+			header("Location: ../mypage2.php?flag=".$flag);
 		}
 	}
 
@@ -79,6 +84,7 @@
     </div>
   </div>
 
+  <?php if ($flag == 0) { ?>
   <div class="container" style="">
 
   	<div class="row">
@@ -113,5 +119,9 @@
     </div><!-- row -->
 
   </div><!-- container -->
+	<?php }else{ ?>
+		<p>isbnが違う可能性があります。</p>
+		<a href="../mypage2.php">マイページに戻る。</a>
+	<?php } ?>
 </body>
 </html>
