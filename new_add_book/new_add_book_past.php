@@ -23,31 +23,29 @@
 
              <form action="pop_pages/past_add_book.php" method="post">
 
-  	  	  			<div>
-                        <input type="file" name="book_img" id="img_name" accept="image/*" placeholder="画像" class="new_book_img">
-                    </div>
+  	  			<div>
+                    <input type="file" name="book_img" id="img_name" accept="image/*" placeholder="画像" class="new_book_img">
+                </div>
 
-			  <div>
+			    <div>
 			    <!-- <label for="book_title">作品名</label> -->
-			    <input type="text" id="past_isbn" name="past_isbn" placeholder="  ISBN">
-			  </div>
-			  <div>
-			    <!-- <label for="book_title">作品名</label> -->
-			    <input type="text" id="past_book" name="past_book" placeholder="  著者">
-			  </div>
-			  <div>
+			        <input type="text" id="past_isbn" name="past_isbn" placeholder="  ISBN">
+			    </div>
+
+			    <div>
 			    <!-- <label for="book_story">解説文</label> -->
-			    <textarea id="past_story" name="past_story" placeholder="  解説文（54文字まで)"></textarea>
-			  </div>
+			        <textarea id="past_story" name="past_story" placeholder="  解説文（54文字まで)"></textarea>
+			    </div>
 
-			  <div>
-			  	<button type="submit" name="" class="book_add_btn">検索する</button>
-			  </div>
-			  </form>
+			    <div>
+			  	    <button type="submit" name="" class="book_add_btn">検索する</button>
+			    </div>
+			</form>
 
 			  <div class="spread">
 			  	<a class="sheet" href="absorb/submit_2.php">スプレッドシートですでに管理してる方はこちら</a>
 			  </div>
+			  
 			</div>
 		  </div>
     	</div><!-- row -->
