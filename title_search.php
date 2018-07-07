@@ -25,7 +25,7 @@
     	</div>
   	  </div>
 
-  	  <?php if (!isset($_POST)){ ?>
+  	  <?php if (!isset($_POST['book_title'])){ ?>
   	  <div class="container" style="margin-bottom: 50px;">
 		<div class="row">
   	  	  <div class="col-xs-12 col-md-6 col-md-offset-3">

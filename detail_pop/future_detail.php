@@ -1,9 +1,8 @@
 <?php foreach ($future_books as $future) { ?>
 
 <!-- pop -->
-<div id="modal-content-future-modal-open<?php echo $future["id"]; ?>" class="modal-content-future">
+<div id="modal-content-future-modal-open-future<?php echo $future["id"]; ?>" class="modal-content-future">
  
-    <div class="modal-content-future-c">
         <div class="container-fluid pop_header" style="background-color: white;">
            <div class="row">
               <div class="col-xs-12 col-md-12">
@@ -65,12 +64,11 @@
                     </div>
                </div>
             </div><!-- row -->
-        </div><!-- container15行目 -->
-    </div><!-- modal-content-future-c -->
+        </div>
 </div><!-- modal-content-future -->
 
 
-<a id="modal-open<?php echo $future["id"]; ?>" class="button-link modal-open-future"> 
+<a id="modal-open-future<?php echo $future["id"]; ?>" class="button-link modal-open-future"> 
     <div class="col-xs-6 col-md-3">
         <?php if ($future["book_img"] != '') {?> 
             <div class="l-thumbnail">

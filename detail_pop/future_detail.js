@@ -26,6 +26,8 @@ $(".modal-open-future").click(function(){
  var idname="#modal-content-future-"+$(this).attr('id');
  $(idname).fadeIn("slow");
 
+ $("#modal-content-future-"+$(this).attr('id')).fadeIn("slow");
+
  //[#modal-overlay]、または[#modal-close-future]をクリックしたら…
  $( "#modal-overlay,.modal-close-future" ).unbind().click( function(){
 
