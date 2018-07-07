@@ -79,13 +79,16 @@
 
 	if (isset($_POST['isbn']) && empty($isbn_record)) {
 			// libraryでは初の本だったら、寄贈しますかのアラート
-			echo '<script type="text/javascript" src="add_library_pop.js">
+			echo '<script type="text/javascript">
+				alert("初めて追加された本だったので図書館の方に寄贈させていただきました。ありがとうございます。");
 	    		</script>';
+	    	header("Location: into_library.php");
 	}elseif (isset($_GET['isbn_code']) && empty($isbn_record)){
 			// libraryでは初の本だったら、寄贈しますかのアラート
 			echo '<script type="text/javascript">
-				alert("図書館に寄贈しますか?");
+				alert("初めて追加された本だったので図書館の方に寄贈させていただきました。ありがとうございます。");
 	    		</script>';
+	    	header("Location: into_library.php?isbn_code=".$_GET["isbn_code"]);
 	}
 
 // 追加処理

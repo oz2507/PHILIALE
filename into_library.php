@@ -13,6 +13,7 @@
     $stmt->execute($data);
 
     $record=$stmt->fetch(PDO::FETCH_ASSOC);
+    var_dump($record);
 
 
 	$insert_sql='insert into library_archives set user_id=?, isbn_code=?, book_title=?, book_author=?, book_img=?';
