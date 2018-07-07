@@ -1,12 +1,15 @@
 <?php
-	if (isset($_POST['book_title'])) {
+
+	if ($_POST['book_title'] !== '') {
 		$book = $_POST["book_title"];
 		$data = "https://www.googleapis.com/books/v1/volumes?q=$book";
 		$json = file_get_contents($data);
 		$json_decode = json_decode($json);
 
 		$posts = $json_decode->items;
+
 	}
+
 	// echo "<pre>";
 	// var_dump($posts);
 	// echo "</pre>";
@@ -25,7 +28,7 @@
     	</div>
   	  </div>
 
-  	  <?php if (!isset($_POST['book_title'])){ ?>
+  	  <?php if ($_POST['book_title'] == ''){ ?>
   	  <div class="container" style="margin-bottom: 50px;">
 		<div class="row">
   	  	  <div class="col-xs-12 col-md-6 col-md-offset-3">
