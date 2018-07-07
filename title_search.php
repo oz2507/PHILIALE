@@ -5,7 +5,6 @@
 		$data = "https://www.googleapis.com/books/v1/volumes?q=$book";
 		$json = file_get_contents($data);
 		$json_decode = json_decode($json);
-
 		$posts = $json_decode->items;
 
 	}
