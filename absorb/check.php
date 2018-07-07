@@ -25,7 +25,9 @@
 
     // 文字列から変換
     $jsonArray = json_decode($json);
+
     return $jsonArray;
+
     }
 
     if (isset($_GET['id'])) {
@@ -38,10 +40,15 @@
         if ($json_decode == null){
           echo '';
                    
+
         }else{
           $books = $json_decode->feed->entry;
 
         }
+
+        // echo $data;
+        // var_dump($books);
+
     }
 
 ?>

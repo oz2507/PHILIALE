@@ -16,14 +16,13 @@
 	 
 	 	if (isset($posts[0]->volumeInfo->title)) {
 	 		
-			$user_id=$_SESSION["id"];
 			$past_book=$posts[0]->volumeInfo->title;
 			$past_author=$posts[0]->volumeInfo->authors[0];
 
 			$flag = 0;
 		
-			if (isset($_POST['comment'])) {
-				$past_comment = $_POST["comment"];	
+			if (isset($_POST['past_story'])) {
+				$past_comment = $_POST["past_story"];	
 			}else{
 				$past_comment = '';
 			}
@@ -61,10 +60,6 @@
 
   		header("Location: ../mypage2.php?isbn_code=".$_GET['isbn']);
   	}
-
-    var_dump($_POST);
-    var_dump($books);
-    var_dump($items);
 
 ?>
 

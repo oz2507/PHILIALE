@@ -79,13 +79,16 @@
 
 	if (isset($_POST['isbn']) && empty($isbn_record)) {
 			// libraryでは初の本だったら、寄贈しますかのアラート
-			echo '<script type="text/javascript" src="add_library_pop.js">
+			echo '<script type="text/javascript">
+				alert("初めて追加された本だったので図書館の方に寄贈させていただきました。ありがとうございます。");
 	    		</script>';
+	    	header("Location: into_library.php");
 	}elseif (isset($_GET['isbn_code']) && empty($isbn_record)){
 			// libraryでは初の本だったら、寄贈しますかのアラート
 			echo '<script type="text/javascript">
-				alert("図書館に寄贈しますか?");
+				alert("初めて追加された本だったので図書館の方に寄贈させていただきました。ありがとうございます。");
 	    		</script>';
+	    	header("Location: into_library.php?isbn_code=".$_GET["isbn_code"]);
 	}
 
 // 追加処理
@@ -274,9 +277,9 @@
 <div class="tab-content">
     
     <div id="tab1" class="tab-pane fade in active">
-    	<?php if (isset($_GET['flag'])) {
-    		echo "isbnが正しくないもしくはisbnが入力されていません。";
-    	} ?>
+    	<?php if (isset($_GET['flag']) && $_GET['flag'] == 2 ) { ?>
+    		<p>検索結果が得られなかった方は<a href="title_search.php?flag=<?php echo $_GET['flag']; ?>">こちら</a>。</p>
+    	<?php } ?>
 		<!-- add book -->
 		<div class="container">
 			<div class="row">
@@ -300,9 +303,10 @@
 
 	<!-- 読んだ -->
 	<div id="tab2" class="tab-pane fade">
-		<?php if (isset($_GET['flag'])) {
-    		echo "isbnが正しくないもしくはisbnが入力されていません。";
-    	} ?>
+		<?php if (isset($_GET['flag']) && $_GET['flag'] == 1) { ?>
+    		<p>isbnが正しくないもしくはisbnが入力されていません。</p>
+    		<p>検索結果が得られなかった方は<a href="title_search.php?flag=<?php echo $_GET['flag']; ?>">こちら</a>。</p>
+    	<?php } ?>
 		<div class="container">
 			<div class="row">
 
