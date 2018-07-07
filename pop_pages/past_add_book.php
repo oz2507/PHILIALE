@@ -28,7 +28,8 @@
 			}
 		}else{
 			$flag = 1;
-			header("Location: ../mypage2.php?flag=".$flag);
+			// header("Location: ../mypage2.php?flag=".$flag);
+			header("Location:../search_books/result_search.php?flag=".$flag);
 		}
 	}
 
