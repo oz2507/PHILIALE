@@ -33,18 +33,6 @@
     	</div>
   	</div>
 
-  	<div class="container-head">
-  		<div class="row">
-  			<div class="col-xs-12 col-md-12">
-	  			<div class="head">
-	  				<h3>該当する本の追加するボタンを押して下さい。</h3>
-	  				
-	  			</div>
-  			
-  			</div>
-  		</div>
-  		
-  	</div>
 
   	<?php if (empty($_POST) || $_POST['book_title'] == '') { ?>
 
@@ -90,8 +78,22 @@
       </div><!-- container -->
   	<?php  } ?>
   	<?php if (!empty($_POST)) {
-  			if ($_POST['book_title'] !== '') {
-				foreach($posts as $post){ ?>
+  			if ($_POST['book_title'] !== '') { ?>
+
+  			<div class="container-head">
+  		<div class="row">
+  			<div class="col-xs-12 col-md-12">
+	  			<div class="head">
+	  				<h3>該当する本の追加するボタンを押して下さい。</h3>
+	  				
+	  			</div>
+  			
+  			</div>
+  		</div>
+  		
+  	</div>
+
+				<?php foreach($posts as $post){ ?>
 			<form>
 				<div class="row">
       				<div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
