@@ -1,6 +1,7 @@
 <?php
 
 	if ($_POST['book_title'] !== '') {
+
 		$book = $_POST["book_title"];
 		$data = "https://www.googleapis.com/books/v1/volumes?q=$book";
 		$json = file_get_contents($data);
@@ -8,11 +9,9 @@
 		$posts = $json_decode->items;
 
 	}
-
-	// echo "<pre>";
-	// var_dump($posts);
-	// echo "</pre>";
+var_dump($_POST);
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>

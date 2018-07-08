@@ -1,15 +1,19 @@
-<!-- isbnで検索して結果が得られなかった場合、エラー文の表示とタイトルや著者名から検索するフォームを表示 -->
-
 <?php
-	if ($_POST['book_title'] !== '') {
-		$book = $_POST["book_title"];
-		$data = "https://www.googleapis.com/books/v1/volumes?q=$book";
-		$json = file_get_contents($data);
-		$json_decode = json_decode($json);
-		$posts = $json_decode->items;
+
+	if (!empty($_POST)) {
+		if ($_POST['book_title'] !== '') {
+			
+			$book = $_POST["book_title"];
+			$data = "https://www.googleapis.com/books/v1/volumes?q=$book";
+			$json = file_get_contents($data);
+			$json_decode = json_decode($json);
+			$posts = $json_decode->items;
+
+		}
 	}
 	
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,7 +46,7 @@
   		
   	</div>
 
-  	<?php if ($_POST['book_title'] == ''){ ?>
+  	<?php if (empty($_POST) || $_POST['book_title'] == '') { ?>
 
 <div class="container">
     <div class="row">
@@ -84,8 +88,10 @@
 		  </div>
     	</div><!-- row -->
       </div><!-- container -->
-  	<?php }else{ 
-			foreach($posts as $post){?>
+  	<?php  } ?>
+  	<?php if (!empty($_POST)) {
+  			if ($_POST['book_title'] !== '') {
+				foreach($posts as $post){ ?>
 			<form>
 				<div class="row">
       				<div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
@@ -98,6 +104,7 @@
 					</div>
 				</div>
 			</form>
+		<?php } ?>
 		<?php } ?>
 		<?php } ?>
 </body>
