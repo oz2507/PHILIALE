@@ -1,0 +1,645 @@
+/*フォント統一*/
+body {
+    font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+}
+
+
+
+/*register内サインアップ～サンクス,お問合せ*/
+.box2{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    color: #6091d3;
+    background: #FFF;
+    border: solid 3px #6091d3;
+    border-radius: 10px;
+}
+
+.left-column{
+	background-color:#8f4796;
+	height: 500px;
+	margin-bottom: 50px;
+	padding:20px;
+    border-radius: 3%;
+	/*box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/*/
+}
+
+.form-group label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    /*font-weight: bold;*/
+    color: ;
+}
+
+.thumbnail>span{
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    /*font-weight: bold;*/
+    color: #e7daea;
+}
+
+.left-column h3{
+	text-align: center;
+	/*color: #eeeeee;*/
+	color: #fff;
+	margin-top: 0.5em;
+	margin-bottom: 2em;
+}
+
+.left-column p{
+	/*color: #eeeeee;*/
+	color: #fff;
+	text-align: center;
+	letter-spacing: 0.1em;
+	line-height: 2.3em;
+}
+
+.right-column{
+	margin-top: 0;
+	height: 300px;
+	margin-bottom: 10px;
+}
+
+.right-column_c{
+	margin-top: 0;
+	height: 300px;
+	margin-bottom: 10px;
+}
+
+.right-column_c p{
+	font-size: 20px;
+	color: #8f4796;
+	margin-top: 0;
+	margin-bottom: 3em;
+	text-align: center;
+}
+
+.right-column_c label{
+	margin-left:20px;
+}
+
+/*.right_btn button{
+	width: 100%;
+	height:3em;
+	color: #eeeeee;
+	font-size: 20px;
+	font-weight: 600;
+	margin: 10px 0 5px 0;
+    background-color: #b96cc4;
+    border: 2px solid #b96cc4;
+    border-radius: 5px;
+}
+*/
+
+/* ボタン全般に関して */
+.btn {
+  line-height: 50px;
+  position: relative;
+  z-index: 2;
+  background-color: none;
+  border: 1.5px solid #8f4796;
+  opacity: 0.7;
+  color: #8f4796;
+  padding: 5px 230px;
+}
+
+.btn:hover {
+  background-color: #8f4796;
+  border-color: #fff;
+  color: #fff;
+}
+
+.btn::before,
+.btn::after {
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #fff;
+}
+
+.button::before {
+  top: 0;
+}
+.button::after {
+  bottom: 0;
+}
+.button:hover::before,
+.button:hover::after {
+  height: 0;
+  background-color: #fff;
+}
+
+.btn,
+.btn::before,
+.btn::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+/* check.php */
+.thumbnail>.btn {
+  line-height: 50px;
+  position: relative;
+  z-index: 2;
+  background-color: none;
+  border: 1.5px solid #8f4796;
+  opacity: 0.7;
+  color: #8f4796;
+  /*padding: 5px 230px;*/
+}
+
+.thumbnail>.btn:hover {
+  background-color: #8f4796;
+  border-color: #fff;
+  color: #fff;
+}
+
+.thumbnail>btn::before,
+.thumbnail>btn::after {
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #fff;
+}
+
+.thumbnail>.button::before {
+  top: 0;
+}
+.thumbnail>.button::after {
+  bottom: 0;
+}
+.thumbnail>.button:hover::before,
+.thumbnail>.button:hover::after {
+  height: 0;
+  background-color: #fff;
+}
+
+.thumbnail>btn,
+.thumbnail>btn::before,
+.thumbnail>btn::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.center-column{
+	text-align: center;
+	margin:30px;
+}
+
+.logo {
+  background-size: contain;
+  height: 50px;
+  width: 50px;
+}
+
+.logo_original {
+  background-size: contain;
+  height: 110px;
+  width: 110px;
+  margin: 5% 40%;
+  /*margin-left:43%;*/
+}
+
+.form-group input{
+	height:4em;
+	/*margin-top:1.8em;*/
+	text-indent: 1em;
+}
+
+.form-group{
+	border: 1.3px solid #e7daea;
+	height:4em;
+	/*margin-top:1.8em;*/
+	text-indent: 1em;
+	border-radius: 4px;
+}
+
+.form-group>span{
+	color: #e7daea
+}
+
+#message{
+	margin-top:2em;
+	margin-bottom: 1em;
+	height:15em;
+}
+
+/*textarea{
+	resize: none;
+	border-color: #f2eaf4;
+	font-family: "https://fonts.googleapis.com/css?family=Roboto+Condensed:700";
+	text-align: center;
+
+
+}*/
+
+textarea{
+	resize: none;
+}
+
+/*.list_form{
+	text-align: center;
+	vertical-align: middle;
+	display: inline-block;
+	background-color: #f2eaf4;
+	border-color: #f2eaf4;
+	margin-bottom: 5px;
+	padding: 10px;
+	width: 100%;
+	height: auto;
+}
+*/
+/*.btn-original{
+	margin-top: 38px;
+	width: 80%;
+	height:4em;
+	box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);影
+	background-color:#8f4796;
+    color: #bbbbbb;
+}
+
+.btn:hover {
+    border: solid 2px #8f4796;
+
+}
+*/
+
+.btn-original{
+	padding: 5px 200px;
+	margin-top: 35px;
+	width: 100%;
+}
+
+.btn-last{
+	padding: 5px 100px;
+	margin-top: 35px;
+	width: 65%;
+}
+
+.form-control{
+	border: 1.3px solid #e7daea;
+	height: 4em;
+    /* margin-top: 1.8em; */
+    text-indent: 1em;
+    border-radius: 4px;
+}
+
+.form-group{
+	padding: 6px 12px;
+	border: 1.3px solid #e7daea;
+	box-shadow: inset 0 1px 1.3px rgba(0, 0, 0, .15);
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.form-control{
+	padding: 6px 12px;
+	border: 1.3px solid #e7daea;
+	box-shadow: inset 0 1px 1.3px rgba(0, 0, 0, .15);
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+
+input.form-control::placeholder{
+	color: #e7daea;
+}
+
+textarea.form-control::placeholder{
+	color: #e7daea;
+}
+
+input.signin{
+	margin-bottom: 15px;
+}
+
+.thumbnail{
+	border: 1.5px solid #b96cc4;
+	/*border: 1.3px solid #e7daea;	*/
+}
+
+
+.text-center{
+	color: #8f4796;
+}
+
+.thumbnail>img{
+	margin-top: 50px;
+}
+
+/* form/contact.php */
+a{
+  color: #fff;
+  text-decoration: underline;
+}
+
+a:hover{
+  color: rgba(33, 39, 98, 0.5);
+}
+
+.infobox {
+  height: 5.5em;
+  overflow: scroll;
+}
+
+
+
+
+/*---------pop_pages------------↓*/
+/*---------edit_book.html------------↓*/
+
+
+.pop_header{
+	background-color: #f2eaf4;
+	height:50px;
+}
+
+
+.pop_header p{
+	font-size: 15px;
+	font-weight: 600;
+	color:#b96cc4;
+	vertical-align: middle;
+	text-align: center;
+	letter-spacing: 0.1em;
+}
+
+/*
+.pop_header a{
+	margin:15px;
+	float:right;
+	position: relative;
+	bottom:80px;
+	color:#666666;
+	font-size: 50px;
+	text-decoration: none;
+}
+
+.pop_header a:hover{
+	color:#333333;
+}
+
+.pop_p{
+	font-weight:600;
+	letter-spacing: 0.1em;
+	font-size: 20px;
+	color:#8f4796;
+	vertical-align: middle;
+	text-align: center;
+}
+.book_img{
+	text-align: center;
+	margin: 20px;
+	border: 20px;
+}
+
+.form_original label{
+	vertical-align:top;
+	font-size: 15px;
+	color: #bbb;
+}
+
+.form_original input{
+	margin-bottom: 25px;
+	width:100%;
+	height: 3em;
+	outline:none;
+	color:#8f4796;
+    background:none;
+    border-style: none;
+    border-bottom: solid 2px #f2eaf4;
+	text-indent: 1em;
+}
+.form_original input::placeholder {
+  color: #e7daea;
+}
+.form_original textarea{
+	color: #8f4796;
+	outline:none;
+	width:100%;
+	height: 7em;
+	margin-bottom: 25px;
+    border-style: none;
+    border-bottom: solid 2px #f2eaf4;
+	text-indent: 1em;
+}
+
+.form_original textarea::placeholder {
+  color: #e7daea;
+}
+
+
+.book_add_btn{
+	color: #e7daea;
+	font-size: 20px;
+	margin: 10px 0 5px 0;
+	width: 100%;
+	height:3em;
+    background-color: #f2eaf4;
+    border: 2px solid #f2eaf4;
+    border-radius: 3px;
+}
+
+.book_add_btn:hover {
+    color: #f2eaf4;
+    background-color: #b96cc4;
+    border: 2px solid #b96cc4;
+}
+
+.book_del_btn {
+	margin: 20px 0;
+	float:right;
+    background-color: none;
+    border:none;
+    color: #8f4796;
+    font-size: 15px;
+    line-height: 1.6em;
+}
+*/
+
+/*---------add_order.html----------*/
+.order_img{
+	text-align: center;
+	margin-top: -80px;
+}
+
+.order_pic{
+	height: 150px;
+	width: auto;
+	margin-bottom: 10px;
+}
+
+.order_col{
+	font-size: 12px;
+	font-weight: 900;
+	letter-spacing: 0.2em;
+	text-align: center;
+}
+
+.pop_footer{
+	background-color: #b96cc4;
+	height:150px;
+	text-align: center;
+}
+
+.book_order_btn{
+	color: #8f4796;
+	font-size: 15px;
+	font-weight: 900;
+	margin: 40px 0 5px 0;
+	width: 300px;
+	height:3em;
+    background-color: #f2eaf4;
+    border-radius: 30px;
+	border:none;
+}
+
+.book_order_btn:hover{
+    border: 3px solid #b96cc4;
+}
+
+.order_cancel_btn{
+	margin-top : 5px;
+}
+
+.order_cancel_btn a{
+	color: #f2eaf4;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+/*---------add_hand.html----------*/
+.add_img{
+	display: inline-block;
+	text-align: center;
+	margin-bottom: 30px ;
+}
+
+.add_img_btn{
+	color: #e7daea;
+	background-color: white;
+	vertical-align: middle;
+	font-size: 20px;
+	width: 148px;
+	height:1.5em;
+	border: 2px solid #f2eaf4;
+	border-radius: 30px;
+	box-shadow: 0 0 8px #f2eaf4;
+}
+.add_img_btn:hover{
+	box-shadow: none;
+	color: white;
+	background-color: #f2eaf4;
+}
+
+.form_original_2 input{
+	margin-bottom: 25px;
+	width:100%;
+	height: 3em;
+	outline:none;
+	color:#8f4796;
+    background:none;
+    border: solid 2px #f2eaf4;
+    border-radius: 4px;
+	text-indent: 1em;
+}
+.form_original_2 input::placeholder {
+  color: #e7daea;
+  font-weight: 900;
+}
+.form_original_2 textarea{
+	color: #8f4796;
+	outline:none;
+	width:100%;
+	height: 10em;
+	margin-bottom: 25px;
+    border: solid 2px #f2eaf4;
+    border-radius: 4px;
+	text-indent: 1em;
+}
+
+.form_original_2 textarea::placeholder {
+  color: #e7daea;
+  font-weight: 900;
+}
+
+
+/*add_thanks.html*/
+
+.thanks_logo{
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 80px;
+}
+.thanks_logo p{
+	font-family: 'Lucida Console','fantasy',sans-selif;
+	font-size: 40px;
+	color:#8f4796;
+}
+
+.back_btn{
+	text-align: center;
+	background-color: #fff;
+	color: #8f4796;
+	font-size: 15px;
+	font-weight: 900;
+	margin: 30px 0 5px 0;
+	width: 300px;
+	height:3em;
+    border: 3px solid #b96cc4;
+    border-radius: 5px;
+}
+
+.back_btn:hover{
+	background-color: #b96cc4;
+	color: #fff;
+}
+
+
+/*delete_alart.html*/
+.delete_logo{
+	text-align: center;
+	height: 100px;
+	margin: 0;
+	padding-top: 35px;
+	color: #4d4d4d;
+}
+.delete_logo p{
+	font-family: 'fantasy',sans-selif;
+	font-size: 35px;
+}
+.del_footer{
+	text-align: center;
+	margin:0 auto;
+}
+.del_footer_btn{
+	text-align: center;
+	background-color: #f2eaf4;
+	color: #e7daea;
+	font-size: 20px;
+	font-weight: 900;
+	margin: 60px auto;
+	width: 300px;
+	height:3em;
+    border: 3px solid #f2eaf4;
+    border-radius: 25px;
+}
+.del_footer_btn:hover{
+    border: 3px solid #b96cc4;
+	background-color: #b96cc4;
+}
+.del_footer_2{
+	text-align: center;
+}
+.del_footer_2 a{
+	color: #4d4d4d;
+	font-size: 15px;
+	font-weight: 900;
+}
