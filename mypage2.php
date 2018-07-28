@@ -282,7 +282,7 @@
 		<div class="container">
 			<div class="row">
 
-		        <div class="col-xs-6 col-md-3 modal-open-addition"> 
+		        <div class="col-xs-6 col-md-3 modal-open"> 
 		            <div class="l-thumbnail">
         			    <figure class="thumbnail-wrapper">
                				<img src="assets/img/add.png">
