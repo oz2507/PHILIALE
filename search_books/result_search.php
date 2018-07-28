@@ -83,7 +83,8 @@
 	  		<div class="row">
 	  			<div class="col-xs-12 col-md-12">
 		  			<div class="head">
-		  				<h3>該当する本の追加するボタンを押して下さい。</h3>		  				
+		  				<h3>該当する本の追加するボタンを押して下さい。</h3>
+		  				<h6>※空白部分は入力して情報を追加することができます。</h6>
 		  			</div>	  			
 	  			</div>
 	  		</div>	
@@ -96,13 +97,23 @@
 	  					<form action="insert.php" method="post" class="list_form">	  					
 							<div>
 								<h5>本のタイトル</h5> 
+								<?php if (isset($post->volumeInfo->title)){ ?>
 								<textarea readonly="true" class="list_form" name="book_title"><?php echo $post->volumeInfo->title;?>
 								</textarea>
+							<?php }else{ ?>
+								<textarea class="list_form" name="book_title" placeholder="タイトルを入力してください。">
+								</textarea>
+							<?php } ?>
 							</div>
 							<div>
 								<h5>著者</h5>
+								<?php if (isset($post->volumeInfo->authors[0])) { ?>
 								<textarea readonly="true" class="list_form" name="book_author"><?php echo $post->volumeInfo->authors[0]; ?>
 								</textarea>
+							<?php }else{ ?>
+								<textarea class="list_form" name="book_author" placeholder="著者を入力してください。">
+								</textarea>
+							<?php } ?>
 							</div>
 							<div class="add_btn">
 								<button type="submit" class="import_btn">追加する</button>
