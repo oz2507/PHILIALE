@@ -82,13 +82,11 @@
 			echo '<script type="text/javascript">
 				alert("初めて追加された本だったので図書館の方に寄贈させていただきました。ありがとうございます。");
 	    		</script>';
-	    	header("Location: into_library.php");
 	}elseif (isset($_GET['isbn_code']) && empty($isbn_record)){
 			// libraryでは初の本だったら、寄贈しますかのアラート
 			echo '<script type="text/javascript">
 				alert("初めて追加された本だったので図書館の方に寄贈させていただきました。ありがとうございます。");
 	    		</script>';
-	    	header("Location: into_library.php?isbn_code=".$_GET["isbn_code"]);
 	}
 
 // 追加処理
@@ -276,14 +274,15 @@
 <!-- 読みたい -->
 <div class="tab-content">
     
-    <div id="tab1" class="tab-pane fade in active">
+    <div id="tab1" class="tab-pane fade">
     	<?php if (isset($_GET['flag']) && $_GET['flag'] == 2 ) { ?>
     		<p>検索結果が得られなかった方は<a href="title_search.php?flag=<?php echo $_GET['flag']; ?>">こちら</a>。</p>
     	<?php } ?>
 		<!-- add book -->
 		<div class="container">
 			<div class="row">
-		        <div class="col-xs-6 col-md-3 modal-open2"> 
+
+		        <div class="col-xs-6 col-md-3 modal-open-addition"> 
 		            <div class="l-thumbnail">
         			    <figure class="thumbnail-wrapper">
                				<img src="assets/img/add.png">

@@ -1,4 +1,4 @@
-<div id="modal-content3">
+<div id="modal-content-addition">
 
 	  <div class="container-fluid pop_header2">
   	    <div class="row">
