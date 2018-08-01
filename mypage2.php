@@ -282,7 +282,7 @@
 		<div class="container">
 			<div class="row">
 
-		        <div class="col-xs-6 col-md-3 modal-open"> 
+		        <div class="col-xs-6 col-md-3 modal-open-addition"> 
 		            <div class="l-thumbnail">
         			    <figure class="thumbnail-wrapper">
                				<img src="assets/img/add.png">
@@ -292,9 +292,9 @@
 		                </span>
         			</div>
      			</div>
-     			<?php include("new_add_book/new_add_book_future.php"); ?>
+     			<?php // include("new_add_book/new_add_book_future.php"); ?>
      			
-				<?php include("detail_pop/future_detail.php"); ?>
+				<?php // include("detail_pop/future_detail.php"); ?>
 				
 			</div>
 		</div>
@@ -341,6 +341,7 @@
 <script src="detail_pop/past_detail.js"></script>
 <script src="detail_pop/future_detail.js"></script>
 <script src="new_add_book/new_add_book.js"></script>
+<script src="new_add_book/add_future_book.js"></script>
 
 <script src="assets/js/jquery-migrate-1.4.1.js"></script>
 <script src="assets/js/bootstrap.js"></script>
