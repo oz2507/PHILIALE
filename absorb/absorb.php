@@ -22,6 +22,6 @@ if (isset($_GET['id'])) {
         $insert_data = array($_SESSION['id'],$title,$author);
         $insert_stmt = $dbh->prepare($insert_sql); 
         $insert_stmt -> execute($insert_data);
-	} 
+	  } 
 }
 header("Location:../mypage2.php");

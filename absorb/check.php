@@ -7,7 +7,8 @@ function getApiData($url){
             'method'  => 'GET',
             'timeout' => 10, // タイムアウト時間
           ]
-];
+    ];
+}
 
 $json = @file_get_contents($url, false, stream_context_create($options));
 
@@ -19,6 +20,7 @@ if ($json === false) {
 // 200以外のステータスコードは失敗とみなし空配列を返す
 preg_match('/HTTP\/1\.[0|1|x] ([0-9]{3})/', $http_response_header[0], $matches);
 $statusCode = (int)$matches[1];
+
 if ($statusCode !== 200) {
     return null;
 }
@@ -27,10 +29,8 @@ if ($statusCode !== 200) {
 $jsonArray = json_decode($json);
 
 if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-
-    $data = "https://spreadsheets.google.com/feeds/list/$id/od6/public/values?alt=json";
-
+    $id          = $_GET['id'];
+    $data        = "https://spreadsheets.google.com/feeds/list/$id/od6/public/values?alt=json";
     $json_decode = getApiData($data);
 
     if ($json_decode == null){

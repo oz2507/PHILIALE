@@ -1,20 +1,17 @@
 <?php
 
-	session_start();
+session_start();
+require('../dbconnect.php');
 
-	require('../dbconnect.php');
-
-	if (!empty($_POST)) {
-		if ($_POST['book_title'] !== '') {
-			
-			$book = $_POST["book_title"];
-			$data = "https://www.googleapis.com/books/v1/volumes?q=$book";
-			$json = @file_get_contents($data);
-			$json_decode = json_decode($json);
-			$posts = $json_decode->items;
-
-		}
-	}
+if (!empty($_POST)) {
+	  if ($_POST['book_title'] !== '') {
+		    $book        = $_POST["book_title"];
+		    $data        = "https://www.googleapis.com/books/v1/volumes?q=$book";
+		    $json        = @file_get_contents($data);
+		    $json_decode = json_decode($json);
+		    $posts       = $json_decode->items;
+   	}
+}
 
 ?>
 
