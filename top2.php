@@ -46,7 +46,6 @@
 	    </div>
 	  </nav>
 
-
 	<!-- header -->
 	<div class="container-head">
 		<div class="row">
@@ -55,7 +54,6 @@
 			</div>
 		</div>
 	</div>
-
 
 	<!-- what's philiale -->
 	<div id="what" class="container">
@@ -123,9 +121,7 @@
 		</div>	
 	</div>
 
-
 	<div class="box"></div>
-
 
 	<!-- who is he -->
 	<div id="who" class="container">
