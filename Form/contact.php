@@ -1,39 +1,37 @@
 <?php
 
-    session_start();
-    require('../dbconnect.php');
+session_start();
+require('../dbconnect.php');
 
-    //$_SESSIONが空の際のデバッグ
-    if (empty($_SESSION['id'])) {
-        $login_chk = false;
-    }else{
-        $login_chk = true;
+//$_SESSIONが空の際のデバッグ
+if (empty($_SESSION['id'])) {
+    $login_chk = false;
+} else {
+    $login_chk = true;
+}
+
+$errors = array();
+
+if (!empty($_POST)) {
+    $name    = $_POST['input_name'];
+    $comment = $_POST['input_comment'];
+    //名前空チェック
+    if ($name == '') {
+        $errors['name'] = 'name_blank';
+    }
+    //コメント空チェック
+    if ($comment == '') {
+        $errors['comment'] = 'comment_blank';
     }
 
+    if (empty($errors)) {
+        $_SESSION['inquiry']['name']    = $name;
+        $_SESSION['inquiry']['comment'] = $comment;
 
-    $errors = array();
-
-    if (!empty($_POST)) {
-        $name = $_POST['input_name'];
-        $comment = $_POST['input_comment'];
-        //名前空チェック
-        if ($name == '') {
-          $errors['name'] = 'name_blank';
-        }
-        //コメント空チェック
-        if ($comment == '') {
-          $errors['comment'] = 'comment_blank';
-        }
-
-        if (empty($errors)) {
-
-            $_SESSION['inquiry']['name'] = $name;
-            $_SESSION['inquiry']['comment'] = $comment;
-
-            header("Location:check.php");
-            exit();
-        }
+        header("Location:check.php");
+        exit();
     }
+}
 
 ?>
 <!DOCTYPE html>

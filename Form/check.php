@@ -1,17 +1,17 @@
 <?php
 
-  session_start();
-  require('../dbconnect.php');
+session_start();
+require('../dbconnect.php');
 
-  $user_id = $_SESSION['id'];
+$user_id = $_SESSION['id'];
 
-  if (!isset($_SESSION['inquiry'])) {
+if (!isset($_SESSION['inquiry'])) {
     header("Location: contact.php");
     exit();
-  }
+}
 
-  $name = $_SESSION['inquiry']['name'];
-  $comment = $_SESSION['inquiry']['comment'];
+$name    = $_SESSION['inquiry']['name'];
+$comment = $_SESSION['inquiry']['comment'];
 
 ?>
 
