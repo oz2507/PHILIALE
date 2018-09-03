@@ -1,85 +1,79 @@
 <?php
-    // PHPプログラム
-    session_start();
 
-    $errors = array();
+session_start();
+$errors = array();
 
-    if (!empty($_POST)) { //ポスト送信があったとき以下を実行
-        $name = $_POST['input_name'];
-        $email = $_POST['input_email'];
-        $password = $_POST['input_password'];
-        $check = $_POST['input_chk_password'];
+if (!empty($_POST)) {
+    $name     = $_POST['input_name'];
+    $email    = $_POST['input_email'];
+    $password = $_POST['input_password'];
+    $check    = $_POST['input_chk_password'];
 
-        $count = strlen($password);// hogehogeとパスワードを入力した場合、8が$countに代入される
-        $chk_count = strlen($check);
+    $count     = strlen($password);
+    $chk_count = strlen($check);
 
-           // ユーザー名の空チェック
-        if ($name == '') {
-            $errors['name'] = 'blank';
-          
-        }else{
-            require('../dbconnect.php');
+    if ($name == '') {
+        $errors['name'] = 'blank';
+    } else {
+        require('../dbconnect.php');
 
-            $sql = 'SELECT COUNT(*) as `cnt` FROM `users` WHERE `name`=?';
-            $data = array($name);
-            $stmt = $dbh->prepare($sql);
-            $stmt->execute($data);
+        $sql  = 'SELECT COUNT(*) as `cnt` FROM `users` WHERE `name` = ?';
+        $data = array($name);
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute($data);
 
-            $dbh = null;
+        $dbh = null;
 
-            $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+        $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            if ($rec['cnt'] > 0) {//メールアドレスの数が0異常ですでに登録済み
-                $errors['name'] = 'duplication';
-            }
+        if ($rec['cnt'] > 0) {//メールアドレスの数が0異常ですでに登録済み
+            $errors['name'] = 'duplication';
         }
-
-        if ($email == '') {
-            $errors['email'] = 'blank';
-        }else{
-            require('../dbconnect.php');
-
-            $sql = 'SELECT COUNT(*) as `cnt` FROM `users` WHERE `email`=?';
-            $data = array($email);
-            $stmt = $dbh->prepare($sql);
-            $stmt->execute($data);
-
-            $dbh = null;
-
-            $rec = $stmt->fetch(PDO::FETCH_ASSOC);
-
-            if ($rec['cnt'] > 0) {//メールアドレスの数が0異常ですでに登録済み
-                $errors['email'] = 'duplication';
-            }
-        }
-
-        if ($password == '') {
-            $errors['password'] = 'blank';
-        }
-
-        elseif ($count < 4 || $count > 16) {
-            $errors['password'] = 'length';
-        }
-
-        if ($check == '') {
-            $errors['check'] = 'blank';
-        }
-
-        elseif ($chk_count < 4 || $chk_count > 16) {
-            $errors['check'] = 'length';
-        }
-
-        if (empty($errors)) {
-
-          $_SESSION['register']['name'] = $_POST['input_name'];
-          $_SESSION['register']['email'] = $_POST['input_email'];
-          $_SESSION['register']['password'] = $_POST['input_password'];
-
-          header('Location: check.php');
-          exit();
-          }
     }
-    
+
+    if ($email == '') {
+        $errors['email'] = 'blank';
+    } else {
+        require('../dbconnect.php');
+
+        $sql  = 'SELECT COUNT(*) as `cnt` FROM `users` WHERE `email` = ?';
+        $data = array($email);
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute($data);
+
+        $dbh = null;
+
+        $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($rec['cnt'] > 0) {//メールアドレスの数が0異常ですでに登録済み
+            $errors['email'] = 'duplication';
+        }
+    }
+
+    if ($password == '') {
+        $errors['password'] = 'blank';
+
+    } elseif ($count < 4 || $count > 16) {
+        $errors['password'] = 'length';
+    }
+
+    if ($check == '') {
+        $errors['check'] = 'blank';
+
+    } elseif ($chk_count < 4 || $chk_count > 16) {
+        $errors['check'] = 'length';
+    }
+
+    if (empty($errors)) {
+        $_SESSION['register']['name']     = $_POST['input_name'];
+        $_SESSION['register']['email']    = $_POST['input_email'];
+        $_SESSION['register']['password'] = $_POST['input_password'];
+
+      header('Location: check.php');
+      exit();
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
