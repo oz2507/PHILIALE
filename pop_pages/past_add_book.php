@@ -1,66 +1,65 @@
 <?php  
 	
-	require('../dbconnect.php');
-	session_start();
+require('../dbconnect.php');
+session_start();
 
-	$user_id = $_SESSION['id'];
+$user_id = $_SESSION['id'];
 
-	if (isset($_POST['past_isbn'])) {
-	    $past_isbn = $_POST["past_isbn"];
+if (isset($_POST['past_isbn'])) {
+    $past_isbn = $_POST["past_isbn"];
 
-		$data = "https://www.googleapis.com/books/v1/volumes?q=isbn:$past_isbn";
-		$json = file_get_contents($data);
-		$json_decode = json_decode($json);
-	 	
-	 	$posts = $json_decode->items;
-	 
-	 	if (isset($posts[0]->volumeInfo->title)) {
-	 		
-			$past_book=$posts[0]->volumeInfo->title;
-			$past_author=$posts[0]->volumeInfo->authors[0];
+	  $data        = "https://www.googleapis.com/books/v1/volumes?q=isbn:$past_isbn";
+	  $json        = file_get_contents($data);
+	  $json_decode = json_decode($json);
+   	$posts       = $json_decode->items;
+ 
+ 	  if (isset($posts[0]->volumeInfo->title)) {
+    		$past_book   = $posts[0]->volumeInfo->title;
+		    $past_author = $posts[0]->volumeInfo->authors[0];
 
-			$flag = 0;
-		
-			if (isset($_POST['past_story'])) {
-				$past_comment = $_POST["past_story"];	
-			}else{
-				$past_comment = '';
-			}
-		}else{
-			$flag = 1;
-			// header("Location: ../mypage2.php?flag=".$flag);
-			header("Location:../search_books/result_search.php?flag=".$flag);
-		}
+    		$flag = 0;
+
+    		if (isset($_POST['past_story'])) {
+		      	$past_comment = $_POST["past_story"];	
+		    } else {
+			      $past_comment = '';
+		    }
+
+	  } else {
+		    $flag = 1;
+		    header("Location:../search_books/result_search.php?flag=".$flag);
 	}
+}
 
-	if (isset($_GET['isbn'])) {
-			$past_isbn2 = $_GET['isbn'];
+if (isset($_GET['isbn'])) {
+		$past_isbn2 = $_GET['isbn'];
 
-			if (isset($_POST['past_book'])) {
-				$past_book2 = $_POST['past_book'];
-			}else{
-				$past_book2 = '';
-			}
-			if (isset($_POST['past_author'])) {
-				$past_author2 = $_POST['past_author'];
-			}else{
-				$past_author2 = '';
-			}
-			if (isset($_POST['past_story'])) {
-				$past_comment2 = $_POST['past_story'];
-			}else{
-				$past_comment2 = '';
-			}
-		
+		if (isset($_POST['past_book'])) {
+			  $past_book2 = $_POST['past_book'];
+		} else {
+			  $past_book2 = '';
+		}
 
-		$past_sql='INSERT INTO `past_archives` SET `user_id`=?, `isbn_code`=?, `book_title`=?, `book_author`=?, `comment`=?';
+		if (isset($_POST['past_author'])) {
+		  	$past_author2 = $_POST['past_author'];
+		} else {
+		  	$past_author2 = '';
+		}
 
-		$past_data=array($user_id,$past_isbn2,$past_book2,$past_author2,$past_comment2);
-		$past_stmt = $dbh->prepare($past_sql);
-  		$past_stmt->execute($past_data);
+		if (isset($_POST['past_story'])) {
+			  $past_comment2 = $_POST['past_story'];
+		} else {
+			  $past_comment2 = '';
+		}
 
-  		header("Location: ../mypage2.php?isbn_code=".$_GET['isbn']);
-  	}
+	  $past_sql = 'INSERT INTO `past_archives` SET `user_id` = ?, `isbn_code` = ?, `book_title` = ?, `book_author` = ?, `comment` = ?';
+
+	  $past_data = array($user_id,$past_isbn2,$past_book2,$past_author2,$past_comment2);
+	  $past_stmt = $dbh->prepare($past_sql);
+		$past_stmt->execute($past_data);
+
+		header("Location: ../mypage2.php?isbn_code=" . $_GET['isbn']);
+	}
 
 ?>
 
