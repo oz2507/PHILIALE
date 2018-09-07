@@ -1,33 +1,30 @@
 <?php
 
-  session_start();
+session_start();
 
-  if (!isset($_SESSION['register'])) {
+if (!isset($_SESSION['register'])) {
     header("Location: signup.php");
     exit();
-  }
+}
 
-    // SESSIONを用いて受け取り
-    $name = $_SESSION['register']['name'];
-    $email = $_SESSION['register']['email'];
-    $user_password = $_SESSION['register']['password'];
- 
+$name          = $_SESSION['register']['name'];
+$email         = $_SESSION['register']['email'];
+$user_password = $_SESSION['register']['password'];
 
-    if (!empty($_POST)) {
+if (!empty($_POST)) {
+    require('../dbconnect.php');
 
-      require('../dbconnect.php');
+    $sql  = 'INSERT INTO `users` SET `name` = ?, `email` = ?, `password` = ? ';
+    $data = array($name, $email, password_hash($user_password, PASSWORD_DEFAULT),);
+    $stmt = $dbh->prepare($sql);
+    $stmt->execute($data);
 
-      $sql = 'INSERT INTO `users` SET `name`=?, `email`=?, `password`=? ';
-      $data = array($name, $email, password_hash($user_password, PASSWORD_DEFAULT),);
-      $stmt = $dbh->prepare($sql);
-      $stmt->execute($data);
+    $dbh = null;
 
-      $dbh = null;
-
-      unset($_SESSION['register']);
-      header('Location: thanks.php');
-      exit();
-    }
+    unset($_SESSION['register']);
+    header('Location: thanks.php');
+    exit();
+}
 
 ?>
 

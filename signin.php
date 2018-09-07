@@ -1,68 +1,58 @@
 <?php 
 
-    session_start();
+session_start();
+require('dbconnect.php');
 
-    require('dbconnect.php');
+$errors = array();
 
+if (!empty($_POST)) {
+    $name     = $_POST['input_name'];
+    $email    = $_POST['input_email'];
+    $password = $_POST['input_password'];
 
-    // サインイン処理
-    $errors = array();
+    $count = strlen($password);
 
-    if (!empty($_POST)) { //ポスト送信があったとき以下を実行
-        $name = $_POST['input_name'];
-        $email = $_POST['input_email'];
-        $password = $_POST['input_password'];
+    if ($name == '') {
+        $errors['name'] = 'blank';
+    }
 
-        $count = strlen($password);// hogehogeとパスワードを入力した場合、8が$countに代入される
+    if ($email == '') {
+        $errors['email'] = 'blank';
+    }
 
-        if ($name == '') {
-            $errors['name'] = 'blank';
-        }
-
-        if ($email == '') {
-            $errors['email'] = 'blank';
-        }
-
-        if ($password == '') {
+    if ($password == '') {
         $errors['password'] = 'blank';
-        
-        }elseif ($count < 4 || $count > 16) {
-                $errors['password'] = 'length';
-        }
 
-        if ($name !== '' && $email !== '' && $password !== '') {
-          //データベースとemailを用いて照合
-          $sql = 'SELECT * FROM `users` WHERE `email`=?';
-          $data = array($email);
-          $stmt = $dbh->prepare($sql);
-          $stmt->execute($data);
-          
-          $record = $stmt->fetch(PDO::FETCH_ASSOC);
+    }elseif ($count < 4 || $count > 16) {
+        $errors['password'] = 'length';
+    }
 
-          // メールアドレスでの本人確認
-          if ($record == false) {
-                //一致するレコードがなかったとき
+    if ($name !== '' && $email !== '' && $password !== '') {
+        $sql  = 'SELECT * FROM `users` WHERE `email` = ?';
+        $data = array($email);
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute($data);
+
+        $record = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($record == false) {
+            $errors['signin'] = 'failed';
+        } else {
+
+            if (password_verify($password,$record['password'])){
+                $_SESSION['id'] = $record['id'];
+
+                header("Location: mypage2.php");
+                exit();
+            }else{
                 $errors['signin'] = 'failed';
-          }else{
-
-              if (password_verify($password,$record['password'])){
-                    //SESSION変数にIDを保存
-                    $_SESSION['id'] = $record['id'];
-
-                    //individual.phpに移動
-                    header("Location: mypage2.php");
-                    exit();
-
-              }else{
-                    $errors['signin'] = 'failed';
-                    
-                }
             }
         }
     }
-
+}
 
 ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -119,7 +109,7 @@
           </div>
 
           <div>
-          <button type="submit" class="btn btn-original" style="width:100%;">ログイン</button>
+            <button type="submit" class="btn btn-original" style="width:100%;">ログイン</button>
           </div>
         </form>
 
