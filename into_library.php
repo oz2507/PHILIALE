@@ -1,6 +1,5 @@
 <?php 
 
-// 寄贈する、のボタンを押したらlibrary_archivesに走る 
 session_start();
 require('dbconnect.php');
 

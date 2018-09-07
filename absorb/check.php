@@ -1,23 +1,20 @@
 <?php
 
 function getApiData($url){
-
     $options = [
         'http' => [
             'method'  => 'GET',
             'timeout' => 10, // タイムアウト時間
-          ]
+        ]
     ];
 }
 
 $json = @file_get_contents($url, false, stream_context_create($options));
 
-// もしFalseが返っていたらエラーなので空白配列を返す
 if ($json === false) {
     return null;
 }
 
-// 200以外のステータスコードは失敗とみなし空配列を返す
 preg_match('/HTTP\/1\.[0|1|x] ([0-9]{3})/', $http_response_header[0], $matches);
 $statusCode = (int)$matches[1];
 
@@ -25,9 +22,7 @@ if ($statusCode !== 200) {
     return null;
 }
 
-// 文字列から変換
 $jsonArray = json_decode($json);
-
 if (isset($_GET['id'])) {
     $id          = $_GET['id'];
     $data        = "https://spreadsheets.google.com/feeds/list/$id/od6/public/values?alt=json";
@@ -36,7 +31,7 @@ if (isset($_GET['id'])) {
     if ($json_decode == null){
         echo '';
     } else {
-        $books = $json_decode -> feed -> entry;
+        $books = $json_decode->feed->entry;
     }
 }
 
@@ -52,28 +47,27 @@ if (isset($_GET['id'])) {
     <?php require("../partial/favicon.php"); ?>
   </head>
   <body>
-    <!-- navbar -->
-    <div class="nav_container navbar-fixed-top">
-      <div class="nav_header">
-        <img alt="philia" src="../assets/img/philia2.png" style="height: 35px;">
+  <!-- navbar -->
+  <div class="nav_container navbar-fixed-top">
+    <div class="nav_header">
+      <img alt="philia" src="../assets/img/philia2.png" style="height: 35px;">
+    </div>
+  </div>
+
+  <!-- main -->
+  <div class="container">
+    <!-- import button -->
+    <div class="row">
+      <div class="head">
+        <h1>検索結果</h1>
+
+        <?php if (!empty($books)) { ?>
+          <a href="absorb.php?id=<?php echo $id; ?>">
+            <button class="import_btn">この内容でフィリアールの書庫に保管</button>
+          </a>
+        <?php } ?>
       </div>
     </div>
-
-    <!-- main -->
-    <div class="container">
-
-     <!-- import button -->
-      <div class="row">
-        <div class="head">
-          <h1>検索結果</h1>
-
-            <?php if (!empty($books)) { ?>
-            <a href="absorb.php?id=<?php echo $id; ?>">
-              <button class="import_btn">この内容でフィリアールの書庫に保管</button>
-            </a>
-          <?php } ?>
-        </div>
-      </div>
 
     <!-- <h1>検索結果</h1> -->
     <?php if ($json_decode !== null) { 
@@ -89,10 +83,10 @@ if (isset($_GET['id'])) {
     <?php } ?>
     <?php } else {
       $message = "IDが正しくない可能性があります。"; ?>
-        <div style="text-align: center;">
-          <p><?php echo $message; ?></p>
-          <a href="submit_2.php"><button class="import_btn">戻る</button></a>
-        </div>
+      <div style="text-align: center;">
+        <p><?php echo $message; ?></p>
+        <a href="submit_2.php"><button class="import_btn">戻る</button></a>
+      </div>
     <?php } ?>
 
     </div><!-- container -->

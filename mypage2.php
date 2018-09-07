@@ -7,40 +7,38 @@ if (empty($_SESSION)) {
     header("Location: top2.php");
 }
 
-// 検索機能及び表示
-// 読んだ用
 $past_books = array();
 
 if (isset($_GET['search_word']) == true) {
-    $past_sql = 'SELECT * FROM `past_archives` WHERE book_title LIKE "%' . $_GET['search_word'] . '%" OR book_author LIKE "%' . $_GET['search_word'] . '%" AND user_id = ?';
+    $past_sql = 'SELECT * FROM `past_archives` WHERE `book_title` LIKE "%' . $_GET['search_word'] . '%" OR `book_author` LIKE "%' . $_GET['search_word'] . '%" AND `user_id` = ?';
 } else {
-    $past_sql = 'SELECT * FROM `past_archives` WHERE user_id = ?';
+    $past_sql = 'SELECT * FROM `past_archives` WHERE `user_id` = ?';
 }
 
 $past_data = array($_SESSION["id"]);
 $past_stmt = $dbh->prepare($past_sql);
-$past_stmt -> execute($past_data);
+$past_stmt->execute($past_data);
 
 while (true) {
     $record_past = $past_stmt -> fetch(PDO::FETCH_ASSOC);
+
     if ($record_past == false) {
         break;
     }
     $past_books[] = $record_past;
-    }
+}
 
-// 読みたい用
 $future_books = array();
 
 if (isset($_GET['search_word']) == true) {
-    $future_sql = 'SELECT * FROM `future_archives` WHERE user_id = ? AND book_title LIKE "%' . $_GET['search_word'] . '%" OR book_author LIKE "%' . $_GET['search_word'] . '%"';
+    $future_sql = 'SELECT * FROM `future_archives` WHERE `user_id` = ? AND `book_title` LIKE "%' . $_GET['search_word'] . '%" OR `book_author` LIKE "%' . $_GET['search_word'] . '%"';
 } else {
-    $future_sql = 'SELECT * FROM `future_archives` WHERE user_id = ?';
+    $future_sql = 'SELECT * FROM `future_archives` WHERE `user_id` = ?';
 }
 
 $future_data = array($_SESSION["id"]);
 $future_stmt = $dbh -> prepare($future_sql);
-$future_stmt -> execute($future_data);
+$future_stmt->execute($future_data);
 
 while (true) {
    	$record_future = $future_stmt->fetch(PDO::FETCH_ASSOC);
@@ -50,10 +48,7 @@ while (true) {
     $future_books[] = $record_future;
 }
 
-// libraryに入れるアラートを表示させるかどうか
-// 読みたいから読んだに追加されたとき、libraryとの照合
 if(isset($_POST['isbn'])){
-    // pastに入った本
     $isbn = $_POST['isbn'];
 
 } elseif (isset($_GET['isbn_code'])) {
@@ -63,37 +58,29 @@ if(isset($_POST['isbn'])){
     $isbn = 0;
 }
 
-// libraryにある本
-$isbn_sql = 'select isbn_code from library_archives where isbn_code=?';
-		
+$isbn_sql  = 'SELECT `isbn_code` FROM `library_archives` WHERE `isbn_code` = ?';
 $isbn_data = array($isbn);
 $isbn_stmt = $dbh->prepare($isbn_sql);
-$isbn_stmt -> execute($isbn_data);
+$isbn_stmt->execute($isbn_data);
 
 $isbn_record = array();
 $isbn_record = $isbn_stmt->fetch(PDO::FETCH_ASSOC);
 
 if (isset($_POST['isbn']) && empty($isbn_record)) {
-    // libraryでは初の本だったら、寄贈しますかのアラート
     echo '<script type="text/javascript">
             alert("初めて追加された本だったので図書館の方に寄贈させていただきました。ありがとうございます。");
           </script>';
 } elseif (isset($_GET['isbn_code']) && empty($isbn_record)){
-    // libraryでは初の本だったら、寄贈しますかのアラート
     echo '<script type="text/javascript">
              alert("初めて追加された本だったので図書館の方に寄贈させていただきました。ありがとうございます。");
          </script>';
 }
 
-// 追加処理
-// futureの追加処理
 if (isset($_POST['future_isbn'])) {
     $future_isbn = $_POST["future_isbn"];
-
     $data        = "https://www.googleapis.com/books/v1/volumes?q=isbn:$future_isbn";
     $json        = file_get_contents($data);
     $json_decode = json_decode($json);
-   	// jsonデータ内の『entry』部分を複数取得して、postsに格納
    	$posts       = $json_decode->items;
 
    	if (isset($posts[0]->volumeInfo->title)) {
@@ -101,56 +88,56 @@ if (isset($_POST['future_isbn'])) {
         $future_book   = $posts[0]->volumeInfo->title;
         $future_author = $posts[0]->volumeInfo->authors[0];
 
-        if (isset($_POST['img']))
-            $future_img = $_POST["img"];	
+        if (isset($_POST['img'])){
+            $future_img = $_POST["img"];
         } else {
             $future_img = '';
         }
-    if (isset($_POST['comment'])) {
-        $future_comment = $_POST["comment"];	
-    } else {
-        $future_comment = '';
-    }
 
-    if (isset($_GET['future_isbn'])) {
-        $future_isbn2 = $_GET['future_isbn'];
-
-        if (isset($_POST['future_book'])) {
-            $future_book2 = $_POST['future_book'];
+        if (isset($_POST['comment'])) {
+            $future_comment = $_POST["comment"];
         } else {
-            $future_book2 = '';
+            $future_comment = '';
         }
 
-    if (isset($_POST['future_author']))
-        $future_author2 = $_POST['future_author'];
+        if (isset($_GET['future_isbn'])) {
+            $future_isbn2 = $_GET['future_isbn'];
+
+            if (isset($_POST['future_book'])) {
+                $future_book2 = $_POST['future_book'];
+            } else {
+                $future_book2 = '';
+            }
+
+            if (isset($_POST['future_author']))
+                $future_author2 = $_POST['future_author'];
+            } else {
+                $future_author2 = '';
+            }
+
+            if (isset($_POST['future_story'])) {
+                $future_comment2 = $_POST['future_story'];
+            } else {
+                $future_comment2 = '';
+            }
+        }
+
+        $future_sql = 'INSERT INTO `future_archives` SET `user_id` = ?, `isbn_code` = ?, `book_title` = ?, `book_author`=?, `book_img` = ?, `comment` = ?';
+
+        $future_data = array($user_id,$future_isbn2,$future_book,$future_author,$img,$future_comment);
+        $future_stmt = $dbh->prepare($future_sql);
+        $future_stmt->execute($future_data);
+
     } else {
-        $future_author2 = '';
+        echo "isbnが正しくないもしくはisbnが入力されていません。";
     }
-
-    if (isset($_POST['future_story'])) {
-        $future_comment2 = $_POST['future_story'];
-    } else {
-        $future_comment2 = '';
-    }
-
-    $future_sql = 'INSERT INTO `future_archives` SET `user_id` = ?, `isbn_code` = ?, `book_title` = ?, `book_author`=?, `book_img` = ?, `comment` = ?';
-
-    $future_data = array($user_id,$future_isbn2,$future_book,$future_author,$img,$future_comment);
-    $future_stmt = $dbh->prepare($future_sql);
-    $future_stmt->execute($future_data);
-
-} else {
-    echo "isbnが正しくないもしくはisbnが入力されていません。";
 }
 
-// pastの追加処理
 if (isset($_POST['past_isbn'])) {
-    $past_isbn = $_POST["past_isbn"];
-
+    $past_isbn   = $_POST["past_isbn"];
     $data        = "https://www.googleapis.com/books/v1/volumes?q=isbn:$past_isbn";
     $json        = file_get_contents($data);
     $json_decode = json_decode($json);
-    // jsonデータ内の『entry』部分を複数取得して、postsに格納
     $posts       = $json_decode->items;
 
     if (isset($posts[0]->volumeInfo->title)) {

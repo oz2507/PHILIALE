@@ -11,15 +11,14 @@ if (empty($_SESSION['id'])) {
 }
 
 $errors = array();
-
 if (!empty($_POST)) {
     $name    = $_POST['input_name'];
     $comment = $_POST['input_comment'];
-    //名前空チェック
+
     if ($name == '') {
         $errors['name'] = 'name_blank';
     }
-    //コメント空チェック
+
     if ($comment == '') {
         $errors['comment'] = 'comment_blank';
     }

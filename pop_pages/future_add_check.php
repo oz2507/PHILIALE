@@ -1,5 +1,5 @@
 <?php  
-	
+
 require('../dbconnect.php');
 session_start();
 
@@ -13,53 +13,53 @@ if (isset($_POST['future_isbn'])) {
     $json_decode = json_decode($json);
     $posts       = $json_decode->items;
 
-	if (isset($posts[0]->volumeInfo->title)) {
-	    $flag = 0;
+    if (isset($posts[0]->volumeInfo->title)) {
+        $flag = 0;
 
-	    $user_id       = $_SESSION["id"];
-	    $future_book   = $posts[0]->volumeInfo->title;
-	    $future_author = $posts[0]->volumeInfo->authors[0];
+        $user_id       = $_SESSION["id"];
+        $future_book   = $posts[0]->volumeInfo->title;
+        $future_author = $posts[0]->volumeInfo->authors[0];
 
-			if (isset($_POST['comment'])) {
-			    $future_comment = $_POST["comment"];	
-			} else {
-			    $future_comment = '';
-			}
-	} else {
-	    $flag = 1;
-	    header("Location: ../mypage2.php?flag=".$flag);
-	}
+        if (isset($_POST['comment'])) {
+            $future_comment = $_POST["comment"];	
+        } else {
+            $future_comment = '';
+        }
+    } else {
+        $flag = 1;
+        header("Location: ../mypage2.php?flag=".$flag);
+    }
 }
 
 if (isset($_GET['isbn'])) {
-		$future_isbn2 = $_GET['isbn'];
+    $future_isbn2 = $_GET['isbn'];
 
-		if (isset($_POST['future_book'])) {
-			  $future_book2 = $_POST['future_book'];
-		} else {
-			  $future_book2 = '';
-		}
+    if (isset($_POST['future_book'])) {
+        $future_book2 = $_POST['future_book'];
+    } else {
+        $future_book2 = '';
+    }
 
-		if (isset($_POST['future_author'])) {
-		  	$future_author2 = $_POST['future_author'];
-		} else {
-  			$future_author2 = '';
-		}
+    if (isset($_POST['future_author'])) {
+        $future_author2 = $_POST['future_author'];
+    } else {
+        $future_author2 = '';
+    }
 
-		if (isset($_POST['future_story'])) {
-		  	$future_comment2 = $_POST['future_story'];
-		} else {
-  			$future_comment2 = '';
-		}
+    if (isset($_POST['future_story'])) {
+        $future_comment2 = $_POST['future_story'];
+    } else {
+        $future_comment2 = '';
+    }
 
-	  $future_sql = 'INSERT INTO `future_archives` SET `user_id` = ?, `isbn_code` = ?, `book_title` = ?, `book_author` =?, `comment` = ?';
+    $future_sql  = 'INSERT INTO `future_archives` SET `user_id` = ?, `isbn_code` = ?, `book_title` = ?, `book_author` =?, `comment` = ?';
 
-  	$future_data = array($user_id,$future_isbn2,$future_book2,$future_author2,$future_comment2);
-	  $future_stmt = $dbh->prepare($future_sql);
-		$future_stmt->execute($future_data);
+    $future_data = array($user_id,$future_isbn2,$future_book2,$future_author2,$future_comment2);
+    $future_stmt = $dbh->prepare($future_sql);
+    $future_stmt->execute($future_data);
 
-		header("Location: ../mypage2.php");
-	}
+    header("Location: ../mypage2.php");
+}
 
 ?>
 

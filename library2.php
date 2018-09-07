@@ -4,10 +4,10 @@ session_start();
 require("dbconnect.php");
 
 $books = array();
-if (isset($_GET["search_word"])==true) {
-    $books_sql = 'SELECT * FROM `library_archives` WHERE book_title LIKE "%' . $_GET['search_word'] . '%" OR book_author LIKE "%' . $_GET['search_word'] . '%"';
+if (isset($_GET["search_word"]) == true) {
+    $books_sql = 'SELECT * FROM `library_archives` WHERE `book_title LIKE` "%' . $_GET['search_word'] . '%" OR `book_author` LIKE "%' . $_GET['search_word'] . '%"';
 } else {
-    $books_sql='SELECT * FROM `library_archives`';
+    $books_sql = 'SELECT * FROM `library_archives`';
 }
 
 $data = array();
@@ -75,8 +75,6 @@ while (true) {
       </div>
     </div>
   </nav>
-
-
 
   <!-- book -->
   <div class="container">

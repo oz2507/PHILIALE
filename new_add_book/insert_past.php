@@ -9,7 +9,6 @@ if (isset($_POST['isbn'])) {
     $data        = "https://www.googleapis.com/books/v1/volumes?q=isbn:$isbn";
     $json        = file_get_contents($data);
     $json_decode = json_decode($json);
-    // jsonデータ内の『entry』部分を複数取得して、postsに格納
     $posts       = $json_decode->items;
 
     if (isset($posts[0]->volumeInfo->title)) {

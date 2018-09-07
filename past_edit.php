@@ -6,14 +6,11 @@ require('dbconnect.php');
 $errors = array();
 
 if (!empty($_POST)) {
-    $book_id = $_GET['id'];
-    //画像名を取得
+    $book_id  = $_GET['id'];
     $book_img = $_FILES['book_img']['name'];
 
     if (!empty($book_img)) {
-        // 画像名の後ろから3文字を取得
         $file_type = substr($book_img, -4);
-        // 大文字が含まれていた場合すべて小文字化
         $file_type = strtolower($file_type);
 
         if ($file_type != '.jpg' && $file_type != '.png' && $file_type != '.gif' && $file_type != 'jpeg') {
@@ -35,12 +32,11 @@ if(empty($errors)){
     $comment     = $_POST["comment"];
 
     $count = strlen($img);
-
     if ($count > 14) {
         $sql  = 'UPDATE `past_archives` SET `book_title` = ?, `book_author` = ?, `book_img` = ?,`comment` = ? WHERE `id` = ?';
         $data = array($book_title,$book_author,$img,$comment,$book_id);
     } else {
-        $sql  = 'UPDATE `past_archives` SET `book_title` = ?, `book_author` = ?,`comment` = ? WHERE `id` = ?';
+        $sql  = 'UPDATE `past_archives` SET `book_title` = ?, `book_author` = ?, `comment` = ? WHERE `id` = ?';
         $data = array($book_title,$book_author,$comment,$book_id);
     }
 

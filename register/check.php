@@ -7,7 +7,6 @@ if (!isset($_SESSION['register'])) {
     exit();
 }
 
-// SESSIONを用いて受け取り
 $name          = $_SESSION['register']['name'];
 $email         = $_SESSION['register']['email'];
 $user_password = $_SESSION['register']['password'];
@@ -25,7 +24,7 @@ if (!empty($_POST)) {
     unset($_SESSION['register']);
     header('Location: thanks.php');
     exit();
-  }
+}
 
 ?>
 

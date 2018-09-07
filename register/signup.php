@@ -23,10 +23,9 @@ if (!empty($_POST)) {
         $stmt->execute($data);
 
         $dbh = null;
-
         $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($rec['cnt'] > 0) {//メールアドレスの数が0異常ですでに登録済み
+        if ($rec['cnt'] > 0) {
             $errors['name'] = 'duplication';
         }
     }

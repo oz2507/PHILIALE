@@ -31,17 +31,17 @@
   <div class="container" style="margin-top:100px;">
     <!-- 画像 -->
     <div class="row">
-  	  <div class="col-xs-12 order_img">
-  	  	<img src="../assets/img/newbook2.png" width="350" class="order_pic">
-		  </div>
+      <div class="col-xs-12 order_img">
+        <img src="../assets/img/newbook2.png" width="350" class="order_pic">
+      </div>
     </div>
     <!-- 構文 -->
     <div class="row">
-  	  <div class="col-xs-12 order_col">
-		    <p>初めての本が登録されました！</p>
-		    <p>宜しければ現在建設中の私の図書館に</p>
+      <div class="col-xs-12 order_col">
+        <p>初めての本が登録されました！</p>
+        <p>宜しければ現在建設中の私の図書館に</p>
         <p>寄贈していただけませんか？</p>
-		  </div>
+      </div>
     </div>
   </div>
     <!-- footer -->
@@ -78,18 +78,18 @@
     </div>
     <!-- 画像 -->
     <div class="row">
-  	  <div class="col-xs-12 order_img">
-  	  	<img src="../assets/img/お辞儀2.png" width="230" class="order_pic">
-		  </div>
+      <div class="col-xs-12 order_img">
+        <img src="../assets/img/お辞儀2.png" width="230" class="order_pic">
+      </div>
     </div>
     <!-- 構文 -->
     <div class="row">
-  	  <div class="col-xs-12 order_col">
-		    <p>私の図書館にあなたの寄贈した</p>
+      <div class="col-xs-12 order_col">
+        <p>私の図書館にあなたの寄贈した</p>
         <p>本が追加されました！</p>
-		    <p>これでまた一歩完成に近づきました。</p>
+        <p>これでまた一歩完成に近づきました。</p>
         <p>本当に有難うございます！</p>
-		  </div>
+      </div>
     </div>
   </div>
     <!-- footer -->
