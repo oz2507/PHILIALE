@@ -30,6 +30,7 @@ if (isset($_POST['past_isbn'])) {
         header("Location:../search_books/result_search.php?flag=".$flag);
     }
 }
+var_dump($past_isbn);
 
 if (isset($_GET['isbn'])) {
     $past_isbn2 = $_GET['isbn'];
@@ -58,7 +59,7 @@ if (isset($_GET['isbn'])) {
     $past_stmt = $dbh->prepare($past_sql);
     $past_stmt->execute($past_data);
 
-    header("Location: ../mypage2.php?isbn_code=" . $_GET['isbn']);
+    // header("Location: ../mypage2.php?isbn_code=" . $_GET['isbn']);
 }
 
 ?>

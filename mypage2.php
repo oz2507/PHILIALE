@@ -109,7 +109,7 @@ if (isset($_POST['future_isbn'])) {
                 $future_book2 = '';
             }
 
-            if (isset($_POST['future_author']))
+            if (isset($_POST['future_author'])) {
                 $future_author2 = $_POST['future_author'];
             } else {
                 $future_author2 = '';
