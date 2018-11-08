@@ -11,3 +11,4 @@ $stmt = $dbh->prepare($sql);
 $stmt->execute($data);
 
 header("Location:mypage2.php");
+?>

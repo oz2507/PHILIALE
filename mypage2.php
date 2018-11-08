@@ -258,7 +258,7 @@ if (isset($_POST['past_isbn'])) {
 		<!-- add book -->
 		<div class="container">
 			<div class="row">
-		    <div class="col-xs-6 col-md-3 modal-open-addition"> 
+		    <div id="modal-open-addition" class="col-xs-6 col-md-3"> 
 		      <div class="l-thumbnail">
         		<figure class="thumbnail-wrapper">
               <img src="assets/img/add.png">
@@ -268,7 +268,7 @@ if (isset($_POST['past_isbn'])) {
 		        </span>
         	</div>
      	  </div>
-     	  <?php // include("new_add_book/new_add_book_future.php"); ?>
+     	        <?php include("new_add_book/new_add_book_future.php"); ?>
 				<?php // include("detail_pop/future_detail.php"); ?>
 			</div>
 		</div>
@@ -279,7 +279,7 @@ if (isset($_POST['past_isbn'])) {
 		<?php if (isset($_GET['flag']) && $_GET['flag'] == 1) { ?>
     	<p>isbnが正しくないもしくはisbnが入力されていません。</p>
     	<p>検索結果が得られなかった方は<a href="title_search.php?flag=<?php echo $_GET['flag']; ?>">こちら</a>。</p>
-    <?php } ?>
+        <?php } ?>
 		<div class="container">
 			<div class="row">
 

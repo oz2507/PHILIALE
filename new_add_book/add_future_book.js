@@ -2,7 +2,7 @@
 
 $(function(){
 
-$(".modal-open-addition").click(function(){
+$("#modal-open-addition").click(function(){
 
 	//キーボード操作などにより、オーバーレイが多重起動するのを防止する
 	//ボタンからフォーカスを外す
@@ -24,7 +24,8 @@ $(".modal-open-addition").click(function(){
 	$("#modal-content-addition").fadeIn("slow");
 
 	//[#modal-overlay]、または[#modal-close]をクリックしたら…
-	$( "#modal-overlay,#modal-close-additioln" ).unbind().click( function(){
+	// $( "#modal-overlay,#modal-close-addition" ).unbind().click( function(){
+	$("#modal-overlay,#modal-close-addition").unbind().click( function(){
 
 		//[#modal-content]と[#modal-overlay]をフェードアウトした後に…
 		$( "#modal-content-addition,#modal-overlay" ).fadeOut( "slow" , function(){
