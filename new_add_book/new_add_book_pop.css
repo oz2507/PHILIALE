@@ -1,6 +1,10 @@
 /*---------pop_pages------------↓*/
 /*---------edit_book.html------------↓*/
 
+/* add_future_book.js*/
+#modal-open-content{
+	display: none;
+}
 
 .pop_header2{
 	background-color: #f2eaf4;
