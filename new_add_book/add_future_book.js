@@ -2,7 +2,7 @@
 
 $(function(){
 
-$("#modal-open-addition").click(function(){
+$(".modal-open-addition").click(function(){
 
 	//キーボード操作などにより、オーバーレイが多重起動するのを防止する
 	//ボタンからフォーカスを外す
