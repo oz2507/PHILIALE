@@ -1,6 +1,6 @@
 /*読んだ本*/
 
-#modal-content{
+#modal-content,#modal-content-addition{
 	width: 80%;
 	margin: 0.5rem auto 0;
 	padding: 10px 10px;

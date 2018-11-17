@@ -203,8 +203,8 @@ if (isset($_POST['past_isbn'])) {
 
 	<!-- <link rel="stylesheet" type="text/css" href="add_library_pop/add_library_pop.css"> -->
 
-	<link rel="stylesheet" type="text/css" href="new_add_book/new_add_book.css">
-  	<link rel="stylesheet" type="text/css" href="new_add_book/new_add_book_pop.css">
+	<link rel="stylesheet" type="text/css" href="new_add_book/new_add_book_past.css">
+  	<link rel="stylesheet" type="text/css" href="new_add_book/new_add_book_future.css">
 	<link rel="stylesheet" type="text/css" href="detail_pop/detail.css">
   	<link rel="stylesheet" type="text/css" href="detail_pop/detail_pop.css">
 
@@ -255,64 +255,56 @@ if (isset($_POST['past_isbn'])) {
       <p>検索結果が得られなかった方は<a href="title_search.php?flag=<?php echo $_GET['flag']; ?>">こちら</a>。</p>
     <?php } ?>
 
-		<!-- add book -->
-		<div class="container">
-		  <div class="row">
-		    <div class="col-xs-6 col-md-3 modal-open-addition"> 
-		      <div class="l-thumbnail">
-        		<figure class="thumbnail-wrapper">
+	<!-- add book -->
+	<div class="container">
+	  <div class="row">
+	    <div class="col-xs-6 col-md-3 modal-open-content"> 
+	      <div class="l-thumbnail">
+    		<figure class="thumbnail-wrapper">
               <img src="assets/img/add.png">
             </figure>
             <span class="more-text">
-              ADDITION
-		        </span>
-        	</div>
-     	  </div>
-     	        <?php include("new_add_book/new_add_book_future.php"); ?>
-				<?php // include("detail_pop/future_detail.php"); ?>
-			</div>
-		</div>
+            ADDITION
+	        </span>
+    	　</div>
+ 	    </div>
+ 	    <?php include("new_add_book/new_add_book_future.php"); ?>
+        <?php include("detail_pop/future_detail.php"); ?>
+	　</div>
 	</div>
+　</div>
 
-	<!-- 読んだ -->
-	<div id="tab2" class="tab-pane fade">
-		<?php if (isset($_GET['flag']) && $_GET['flag'] == 1) { ?>
-    	<p>isbnが正しくないもしくはisbnが入力されていません。</p>
-    	<p>検索結果が得られなかった方は<a href="title_search.php?flag=<?php echo $_GET['flag']; ?>">こちら</a>。</p>
-        <?php } ?>
-		<div class="container">
-		  <div class="row">
-			<!-- 新規追加 -->
-			<div class="col-xs-6 col-md-3 modal-open"> 
-              <div class="l-thumbnail">
-        		<figure class="thumbnail-wrapper">
-        		  <img src="assets/img/add.png">
-                </figure>
-		        <span class="more-text">
-		          ADDITION
-		        </span>
-        	  </div>
-     		</div>
-     		<?php include("new_add_book/new_add_book_past.php"); ?>
-     		<?php include("detail_pop/past_detail.php"); ?>
-			</div>
-		</div>
+　<!-- 読んだ -->
+　<div id="tab2" class="tab-pane fade">
+	<?php if (isset($_GET['flag']) && $_GET['flag'] == 1) { ?>
+	<p>isbnが正しくないもしくはisbnが入力されていません。</p>
+	<p>検索結果が得られなかった方は<a href="title_search.php?flag=<?php echo $_GET['flag']; ?>">こちら</a>。</p>
+    <?php } ?>
+	<div class="container">
+	  <div class="row">
+		<!-- 新規追加 -->
+		<div class="col-xs-6 col-md-3 modal-open"> 
+          <div class="l-thumbnail">
+    		<figure class="thumbnail-wrapper">
+    		  <img src="assets/img/add.png">
+            </figure>
+	        <span class="more-text">
+	          ADDITION
+	        </span>
+    	  </div>
+ 		</div>
+ 		<?php include("new_add_book/new_add_book_past.php"); ?>
+ 		<?php include("detail_pop/past_detail.php"); ?>
+	　</div>
 	</div>
+　</div>
 </div>
 
 <!-- 5.footer -->
 <?php require('partial/footer.php'); ?>
 
 <!-- 6.js -->
-<script src="assets/js/jquery-3.1.1.js"></script>
-<!-- <script src="add_library/add_library_pop.js"></script> -->
-<script src="detail_pop/past_detail.js"></script>
-<script src="detail_pop/future_detail.js"></script>
-<script src="new_add_book/new_add_book.js"></script>
-<script src="new_add_book/add_future_book.js"></script>
-
-<script src="assets/js/jquery-migrate-1.4.1.js"></script>
-<script src="assets/js/bootstrap.js"></script>
+<?php require('partial/js.php'); ?>
 
 </body>
 </html>

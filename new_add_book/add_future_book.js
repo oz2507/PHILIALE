@@ -1,8 +1,8 @@
-// 読んだ本
+// 読みたい
 
 $(function(){
 
-$(".modal-open-addition").click(function(){
+$(".modal-open-content").click(function(){
 
 	//キーボード操作などにより、オーバーレイが多重起動するのを防止する
 	//ボタンからフォーカスを外す
