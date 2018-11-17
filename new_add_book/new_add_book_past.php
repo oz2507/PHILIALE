@@ -2,7 +2,7 @@
 
 	  <div class="container-fluid pop_header2">
   	    <div class="row">
-  	  	  <div class="col-xs-12 col-md-12">
+  	  	  <div class="col-xs-12">
   	    	<p>　本を登録する </p>
 	  	  </div>
     	</div>

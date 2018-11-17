@@ -1,8 +1,6 @@
-/*---------pop_pages------------↓*/
-/*---------edit_book.html------------↓*/
-
 /* add_future_book.js*/
-#modal-open-content{
+/*読んだの本を追加する画面のcss*/
+#modal-open-content, #modal-content-addition{
 	display: none;
 }
 
