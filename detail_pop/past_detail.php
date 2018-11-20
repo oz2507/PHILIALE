@@ -1,4 +1,4 @@
-<?php foreach ($past_books as $past) { ?>
+<?php foreach ($past_books as $past) : ?>
 
 <!-- pop -->
 <div id="modal-content-past-modal-open-past<?php echo $past['id']; ?>" class="modal-content-past">
@@ -63,9 +63,9 @@
     </div>
 </div><!-- modal-content-past -->
 
-<a id="modal-open-past<?php echo $past['id']; ?>" class="button-link modal-open-past"> 
+<a id="modal-open-past<?php echo $past['id']; ?>" class="button-link modal-open-past">
     <div class="col-xs-6 col-md-3">
-        <?php if ($past["book_img"] != '') {?> 
+        <?php if ($past["book_img"] != '') :?>
             <div class="l-thumbnail">
                 <figure class="thumbnail-wrapper">
                     <img src="book_img/<?php echo $past["book_img"]; ?>">
@@ -75,7 +75,7 @@
                     <p>作者:<?php echo $past['book_author']; ?></p>
                 </span>
             </div>
-        <?php }else{ ?>
+        <?php else : ?>
             <div class="l-thumbnail">
                 <figure class="thumbnail-wrapper">
                     <img src="assets/img/philia2.png" alt="no image">
@@ -84,9 +84,9 @@
                     <p>タイトル:<?php echo $past['book_title']; ?></p>
                     <p>作者:<?php echo $past['book_author']; ?></p>
                 </span>
-            </div>       
-        <?php } ?>
+            </div>
+        <?php endif; ?>
     </div>
 </a>
 
-<?php } ?>
+<?php endforeach; ?>

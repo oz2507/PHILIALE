@@ -95,15 +95,15 @@
             <p>本規約の解釈にあたっては、日本法を準拠法とします。</p>
           </ol>
 
-        <div class="close1 col-xs-12">  
-          <a href="../top2.php"> 
+        <div class="close1 col-xs-12">
+          <a href="../top2.php">
             <p class="tR">以上(トップページへ)
             </p>
           </a>
         </div>
-        
+
         <div class="policy col-xs-12">
-          <a href="policies.php"> 
+          <a href="policies.php">
             <p>プライバシーポリシーはこちらから</p>
           </a>
         </div>

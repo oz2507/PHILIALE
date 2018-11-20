@@ -19,9 +19,9 @@ if (!empty($_POST)) {
     }
 }
 
-if(empty($errors)){
+if(empty($errors)) {
     date_default_timezone_set('Asia/Manila');
-    $date_str         = date('YmdHis'); 
+    $date_str         = date('YmdHis');
     $submit_file_name = $date_str . $book_img;
 
     move_uploaded_file($_FILES['book_img']['tmp_name'],'book_img/' . $submit_file_name);

@@ -44,7 +44,7 @@ if (!empty($_POST)) {
 
         $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($rec['cnt'] > 0) {//メールアドレスの数が0異常ですでに登録済み
+        if ($rec['cnt'] > 0) {
             $errors['email'] = 'duplication';
         }
     }
@@ -99,8 +99,8 @@ if (!empty($_POST)) {
 
       <!-- ここに右サイドコンテンツ -->
       <div class="col-xs-12 col-md-6 right-column" style="margin-top: 50px;">
- 
-        <form method="POST" action="signup.php" enctype="multipart/form-data">  
+
+        <form method="POST" action="signup.php" enctype="multipart/form-data">
           <div>
             <input type="text" name="input_name" class="form-control" id="name" placeholder="お名前">
             <span>　</span>
@@ -154,6 +154,6 @@ if (!empty($_POST)) {
 
     </div>
   </div>
-  
+
 </body>
 </html>

@@ -21,10 +21,10 @@ if (!empty($_POST)) {
 
 if(empty($errors)){
     date_default_timezone_set('Asia/Manila');
-    $date_str         = date('YmdHis'); 
+    $date_str         = date('YmdHis');
     $submit_file_name = $date_str.$book_img;
 
-    move_uploaded_file($_FILES['book_img']['tmp_name'],'book_img/'.$submit_file_name);	
+    move_uploaded_file($_FILES['book_img']['tmp_name'],'book_img/'.$submit_file_name);
 
     $book_title  = $_POST['book_title'];
     $book_author = $_POST['book_author'];

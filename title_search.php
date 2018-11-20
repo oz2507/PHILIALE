@@ -24,7 +24,7 @@ if ($_POST['book_title'] !== '') {
     </div>
   </div>
 
-  <?php if ($_POST['book_title'] == ''){ ?>
+  <?php if ($_POST['book_title'] == '') : ?>
   <div class="container" style="margin-bottom: 50px;">
     <div class="row">
       <div class="col-xs-12 col-md-6 col-md-offset-3">
@@ -54,8 +54,8 @@ if ($_POST['book_title'] !== '') {
       </div>
     </div><!-- row -->
   </div><!-- container -->
-  <?php }else{ 
-      foreach($posts as $post){?>
+  <?php else :
+      foreach($posts as $post) :?>
   <form>
     <p>本のタイトル :<?php echo $post->volumeInfo->title; ?></p>
     <p>著者 :<?php echo $post->volumeInfo->authors[0]; ?></p>
@@ -63,7 +63,7 @@ if ($_POST['book_title'] !== '') {
     <button type="submit">追加する</button>
   </form><br>
   <p>---------------------------------------------</p>
-  <?php } ?>
-  <?php } ?>
+  <?php endforeach ?>
+  <?php endif; ?>
 </body>
 </html>

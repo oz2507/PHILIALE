@@ -1,4 +1,4 @@
-<?php  
+<?php
 
 require('../dbconnect.php');
 session_start();
@@ -21,7 +21,7 @@ if (isset($_POST['future_isbn'])) {
         $future_author = $posts[0]->volumeInfo->authors[0];
 
         if (isset($_POST['comment'])) {
-            $future_comment = $_POST["comment"];	
+            $future_comment = $_POST["comment"];
         } else {
             $future_comment = '';
         }

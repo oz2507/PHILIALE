@@ -1,4 +1,4 @@
-<?php foreach ($books as $book) { ?>
+<?php foreach ($books as $book) : ?>
 
 <!-- pop -->
 <div id="modal-content-modal-open<?php echo $book['id']; ?>" class="modal-content-lib">
@@ -18,7 +18,7 @@
                         <img src="book_img/<?php echo $book["book_img"]; ?>">
                     <?php }else{ ?>
                         <img src="assets/img/philia2.png" alt="no image">
-                    <?php } ?>            
+                    <?php } ?>
                 </div>
             </div>
         </div><!-- row -->
@@ -41,9 +41,9 @@
 </div>
 
 
-	<a id="modal-open<?php echo $book["id"]; ?>" class="button-link modal-open">	
+	<a id="modal-open<?php echo $book["id"]; ?>" class="button-link modal-open">
       <div class="col-xs-6 col-md-3">
-          <?php if ($book["book_img"] != '') {?> 
+          <?php if ($book["book_img"] != '') :?>
               <div class="l-thumbnail">
               <figure class="thumbnail-wrapper">
                 <img src="book_img/<?php echo $book["book_img"]; ?>">
@@ -53,7 +53,7 @@
                       <p>作者:<?php echo $book['book_author']; ?></p>
                   </span>
               </div>
-          <?php }else{ ?>
+          <?php else :?>
               <div class="l-thumbnail">
                   <figure class="thumbnail-wrapper">
                       <img src="assets/img/philia2.png" alt="no image">
@@ -62,8 +62,8 @@
                       <p>タイトル:<?php echo $book['book_title']; ?></p>
                       <p>作者:<?php echo $book['book_author']; ?></p>
                   </span>
-              </div>          
-          <?php } ?>
-    </div>    	
+              </div>
+          <?php endif; ?>
+    </div>
 	</a>
-<?php } ?>
+ <?php endforeach; ?>
