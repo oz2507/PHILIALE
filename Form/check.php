@@ -27,13 +27,13 @@ $comment = $_SESSION['inquiry']['comment'];
 <body style="margin: 60px 0;">
   <div class="container">
     <div class="row">
-      
+
         <div class="col-xs-12 col-md-6 col-md-offset-3" style="height:500px;">
         <h2 class="text-center">お問い合わせ内容の確認</h2>
         <br><br><br>
         <div class="row">
           <div class="col-xs-12">
-            
+
               <div class="form-group">
               <span>お名前</span>
               <p class="lead text-center"><?php echo htmlspecialchars($name); ?>&nbsp;様</p>
@@ -43,12 +43,12 @@ $comment = $_SESSION['inquiry']['comment'];
               <span>メッセージ</span>
               <p class="lead text-center"><?php echo htmlspecialchars($comment); ?></p>
               </div>
-            
+
             <form method="POST" action="thanks.php">
-              
+
               <input type="hidden" name="action" value="submit">
               <input type="submit" class="btn btn-secondary btn-lg btn-block" value="お問合わせ" style="margin-top: 50px;">
-              
+
               <a href="contact.php" class="btn btn-default btn-lg btn-block">&laquo;&nbsp;戻る</a>
             </form>
           </div>
@@ -56,6 +56,6 @@ $comment = $_SESSION['inquiry']['comment'];
       </div>
     </div>
   </div>
-  
+
 </body>
 </html>

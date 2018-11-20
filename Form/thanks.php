@@ -10,8 +10,8 @@ $comment = $_SESSION['inquiry']['comment'];
 $sql = 'INSERT INTO `contacts` SET `user_id` = ?, `name` = ?, `comment` = ?';
 
 $data = array($user_id,$name,$comment);
-$stmt = $dbh -> prepare($sql);
-$stmt -> execute($data);
+$stmt = $dbh->prepare($sql);
+$stmt->execute($data);
 
 ?>
 
@@ -35,26 +35,26 @@ $stmt -> execute($data);
                     <div class="thumbnail" style="letter-spacing: 0.2em; line-height:1.65; border: none;">
                       <img class="img-responsive" src="../assets/img/お辞儀2.png" style="width:200px;margin-bottom: 20px;margin-top: 10px;">
 
-                      <br>     
+                      <br>
                     <div class="form-group">
                         <span>お名前</span>
                         <p class="lead text-center"><?php echo htmlspecialchars($name); ?>&nbsp;様</p>
                     </div>
-            
+
                     <div class="form-group infobox" style="height:150px;">
                         <span>メッセージ</span>
                         <p class="lead text-center"><?php echo htmlspecialchars($comment); ?></p>
                     </div>
-            
+
                     <div class="right_btn">
                       <a href="../top.php"><button type="button" class="btn btn-original">Back Home</button></a>
                     </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
     </div>
-  </div>      
+  </div>
 </body>
 </html>

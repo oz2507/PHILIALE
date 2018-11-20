@@ -1,4 +1,4 @@
-<?php  
+<?php
 
 require('../dbconnect.php');
 session_start();
@@ -12,7 +12,7 @@ if (isset($_POST['past_isbn'])) {
     $json        = file_get_contents($data);
     $json_decode = json_decode($json);
     $posts       = $json_decode->items;
- 
+
     if (isset($posts[0]->volumeInfo->title)) {
         $past_book   = $posts[0]->volumeInfo->title;
         $past_author = $posts[0]->volumeInfo->authors[0];
@@ -20,7 +20,7 @@ if (isset($_POST['past_isbn'])) {
         $flag = 0;
 
         if (isset($_POST['past_story'])) {
-            $past_comment = $_POST["past_story"]; 
+            $past_comment = $_POST["past_story"];
         } else {
             $past_comment = '';
         }
@@ -30,7 +30,6 @@ if (isset($_POST['past_isbn'])) {
         header("Location:../search_books/result_search.php?flag=".$flag);
     }
 }
-var_dump($past_isbn);
 
 if (isset($_GET['isbn'])) {
     $past_isbn2 = $_GET['isbn'];
@@ -53,8 +52,7 @@ if (isset($_GET['isbn'])) {
         $past_comment2 = '';
     }
 
-    $past_sql = 'INSERT INTO `past_archives` SET `user_id` = ?, `isbn_code` = ?, `book_title` = ?, `book_author` = ?, `comment` = ?';
-
+    $past_sql  = 'INSERT INTO `past_archives` SET `user_id` = ?, `isbn_code` = ?, `book_title` = ?, `book_author` = ?, `comment` = ?';
     $past_data = array($user_id,$past_isbn2,$past_book2,$past_author2,$past_comment2);
     $past_stmt = $dbh->prepare($past_sql);
     $past_stmt->execute($past_data);
