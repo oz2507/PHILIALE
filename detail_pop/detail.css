@@ -25,6 +25,7 @@
 /*読みたい*/
 .modal-content-future{
 	width: 80%;
+	height: 85%;
 	margin: 0.5rem auto 0;
 	padding: 10px 10px;
 	border: 2px solid #aaa;
