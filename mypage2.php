@@ -262,7 +262,7 @@ if (isset($_POST['past_isbn'])) {
               <img src="assets/img/add.png">
             </figure>
             <span class="more-text">
-            ADDITION
+              ADDITION
 	        </span>
     	　</div>
  	    </div>
