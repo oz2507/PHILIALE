@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 session_start();
 require("dbconnect.php");
@@ -11,4 +11,3 @@ $stmt = $dbh->prepare($sql);
 $stmt->execute($data);
 
 header("Location:mypage2.php");
-?>

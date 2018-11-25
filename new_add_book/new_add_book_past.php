@@ -45,7 +45,7 @@
 			  <div class="spread">
 			  	<a class="sheet" href="absorb/submit_2.php">スプレッドシートですでに管理してる方はこちら</a>
 			  </div>
-			  
+
 			</div>
 		  </div>
     	</div><!-- row -->

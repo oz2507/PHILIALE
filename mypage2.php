@@ -9,7 +9,7 @@ if (empty($_SESSION)) {
 
 $past_books = array();
 
-if (isset($_GET['search_word']) == true) {
+if (isset($_GET['search_word']) === true) {
     $past_sql = 'SELECT * FROM `past_archives` WHERE `book_title` LIKE "%' . $_GET['search_word'] . '%" OR `book_author` LIKE "%' . $_GET['search_word'] . '%" AND `user_id` = ?';
 } else {
     $past_sql = 'SELECT * FROM `past_archives` WHERE `user_id` = ?';
@@ -20,9 +20,9 @@ $past_stmt = $dbh->prepare($past_sql);
 $past_stmt->execute($past_data);
 
 while (true) {
-    $record_past = $past_stmt -> fetch(PDO::FETCH_ASSOC);
+    $record_past = $past_stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($record_past == false) {
+    if ($record_past === false) {
         break;
     }
     $past_books[] = $record_past;
@@ -30,25 +30,25 @@ while (true) {
 
 $future_books = array();
 
-if (isset($_GET['search_word']) == true) {
+if (isset($_GET['search_word']) === true) {
     $future_sql = 'SELECT * FROM `future_archives` WHERE `user_id` = ? AND `book_title` LIKE "%' . $_GET['search_word'] . '%" OR `book_author` LIKE "%' . $_GET['search_word'] . '%"';
 } else {
     $future_sql = 'SELECT * FROM `future_archives` WHERE `user_id` = ?';
 }
 
 $future_data = array($_SESSION["id"]);
-$future_stmt = $dbh -> prepare($future_sql);
+$future_stmt = $dbh->prepare($future_sql);
 $future_stmt->execute($future_data);
 
 while (true) {
    	$record_future = $future_stmt->fetch(PDO::FETCH_ASSOC);
-    if ($record_future == false) {
+    if ($record_future === false) {
         break;
     }
     $future_books[] = $record_future;
 }
 
-if(isset($_POST['isbn'])){
+if(isset($_POST['isbn'])) {
     $isbn = $_POST['isbn'];
 
 } elseif (isset($_GET['isbn_code'])) {
@@ -70,7 +70,7 @@ if (isset($_POST['isbn']) && empty($isbn_record)) {
     echo '<script type="text/javascript">
             alert("初めて追加された本だったので図書館の方に寄贈させていただきました。ありがとうございます。");
           </script>';
-} elseif (isset($_GET['isbn_code']) && empty($isbn_record)){
+} elseif (isset($_GET['isbn_code']) && empty($isbn_record)) {
     echo '<script type="text/javascript">
              alert("初めて追加された本だったので図書館の方に寄贈させていただきました。ありがとうございます。");
          </script>';
@@ -88,7 +88,7 @@ if (isset($_POST['future_isbn'])) {
         $future_book   = $posts[0]->volumeInfo->title;
         $future_author = $posts[0]->volumeInfo->authors[0];
 
-        if (isset($_POST['img'])){
+        if (isset($_POST['img'])) {
             $future_img = $_POST["img"];
         } else {
             $future_img = '';
@@ -122,8 +122,7 @@ if (isset($_POST['future_isbn'])) {
             }
         }
 
-        $future_sql = 'INSERT INTO `future_archives` SET `user_id` = ?, `isbn_code` = ?, `book_title` = ?, `book_author`=?, `book_img` = ?, `comment` = ?';
-
+        $future_sql  = 'INSERT INTO `future_archives` SET `user_id` = ?, `isbn_code` = ?, `book_title` = ?, `book_author`=?, `book_img` = ?, `comment` = ?';
         $future_data = array($user_id,$future_isbn2,$future_book,$future_author,$img,$future_comment);
         $future_stmt = $dbh->prepare($future_sql);
         $future_stmt->execute($future_data);
@@ -146,13 +145,13 @@ if (isset($_POST['past_isbn'])) {
         $past_author = $posts[0]->volumeInfo->authors[0];
 
         if (isset($_POST['img'])) {
-            $future_img = $_POST["img"];	
+            $future_img = $_POST["img"];
         } else {
             $future_img = '';
         }
 
         if (isset($_POST['comment'])) {
-            $past_comment = $_POST["comment"];	
+            $past_comment = $_POST["comment"];
         } else {
             $past_comment = '';
         }
@@ -178,9 +177,8 @@ if (isset($_POST['past_isbn'])) {
                 $past_comment2 = '';
             }
 
-            $past_sql = 'INSERT INTO `future_archives` SET `user_id` = ?, `isbn_code` = ?, `book_title` = ?, `book_author` = ?, `book_img` = ?, `comment` = ?';
-
-            $past_data=array($user_id,$past_isbn2,$past_book,$past_author,$img,$past_comment);
+            $past_sql  = 'INSERT INTO `future_archives` SET `user_id` = ?, `isbn_code` = ?, `book_title` = ?, `book_author` = ?, `book_img` = ?, `comment` = ?';
+            $past_data = array($user_id,$past_isbn2,$past_book,$past_author,$img,$past_comment);
             $past_stmt = $dbh->prepare($past_sql);
             $past_stmt->execute($past_data);
         }
@@ -224,11 +222,11 @@ if (isset($_POST['past_isbn'])) {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-      </button> 
+      </button>
 
       <a class="navbar-brand-center" style="position: absolute;top:10px;z-index:2000;"  href="library2.php">
         <img alt="philia" src="assets/img/philia2.png" style="height: 35px;">
-      </a>       
+      </a>
     </div>
 
     <div class="collapse navbar-collapse" id="navbarExample">
@@ -258,7 +256,7 @@ if (isset($_POST['past_isbn'])) {
 	<!-- add book -->
 	<div class="container">
 	  <div class="row">
-	    <div class="col-xs-6 col-md-3 modal-open-content"> 
+	    <div class="col-xs-6 col-md-3 modal-open-content">
 	      <div class="l-thumbnail">
     		<figure class="thumbnail-wrapper">
               <img src="assets/img/add.png">
@@ -283,7 +281,7 @@ if (isset($_POST['past_isbn'])) {
 	<div class="container">
 	  <div class="row">
 		<!-- 新規追加 -->
-		<div class="col-xs-6 col-md-3 modal-open"> 
+		<div class="col-xs-6 col-md-3 modal-open">
           <div class="l-thumbnail">
     		<figure class="thumbnail-wrapper">
     		  <img src="assets/img/add.png">

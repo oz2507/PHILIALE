@@ -42,6 +42,7 @@
 			</div>
 			<div>
 			  <button type="submit" name="" class="book_add_btn2">検索する</button>
+
 			</div>
 		  </form>
 

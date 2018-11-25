@@ -1,4 +1,4 @@
-<?php foreach ($past_books as $past) { ?>
+<?php foreach ($past_books as $past) : ?>
 
 <!-- pop -->
 <div id="modal-content-past<?php echo $past[`id`]; ?>" class="modal-content-past">
@@ -42,7 +42,7 @@
 					    <label for="book_author">著者</label>
 					    <textarea name="book_author"><?php echo $past['book_author']; ?></textarea>
 					</div>
-					
+
 					<div>
 					    <label for="book_story">解説文</label>
 					    <textarea id="book_story" name="comment"><?php echo $past['comment']; ?></textarea>
@@ -53,10 +53,10 @@
 					 		<button type="submit" name="" class="book_add_btn">更新する</button>
 					 	</a>
 					</div>
-					
+
 				</form>
-				
-				<div> 
+
+				<div>
 					<a onClick="return confirm('この本をリストから削除しますか？');" href="past_delete.php?id=<?php echo $past['id'];?>" class="book_del_btn">
 						<button type="submit" name="" class=" book_delete_btn">削除する</button>
 					</a>
@@ -67,9 +67,9 @@
 
 </div><!-- modal-content-past -->
 
-<a id="modal-open-past<?php echo $past['id']; ?>" class="button-link modal-open-past">	
+<a id="modal-open-past<?php echo $past['id']; ?>" class="button-link modal-open-past">
 	<div class="col-xs-6 col-md-3">
-		<?php if ($past["book_img"] != '') {?> 
+		<?php if ($past["book_img"] != '') :?>
             <div class="l-thumbnail">
 			    <figure class="thumbnail-wrapper">
 			    	<img src="book_img/<?php echo $past["book_img"]; ?>">
@@ -79,7 +79,7 @@
                 	<p>作者:<?php echo $past['book_author']; ?></p>
             	</span>
 			</div>
-		<?php }else{ ?>
+		<?php else : ?>
 			<div class="l-thumbnail">
 			    <figure class="thumbnail-wrapper">
 			    	<img src="assets/img/philia2.png" alt="no image">
@@ -88,8 +88,8 @@
                 	<p>タイトル:<?php echo $past['book_title']; ?></p>
                 	<p>作者:<?php echo $past['book_author']; ?></p>
             	</span>
-            </div>    			
-        <?php } ?>
+            </div>
+		<?php endif; ?>
  	</div>
 </a>
-<?php } ?>
+<?php endforeach; ?>
