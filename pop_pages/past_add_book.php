@@ -1,4 +1,4 @@
-<?php  
+<?php
 
 require('../dbconnect.php');
 session_start();
@@ -12,7 +12,7 @@ if (isset($_POST['past_isbn'])) {
     $json        = file_get_contents($data);
     $json_decode = json_decode($json);
     $posts       = $json_decode->items;
- 
+
     if (isset($posts[0]->volumeInfo->title)) {
         $past_book   = $posts[0]->volumeInfo->title;
         $past_author = $posts[0]->volumeInfo->authors[0];
@@ -20,7 +20,7 @@ if (isset($_POST['past_isbn'])) {
         $flag = 0;
 
         if (isset($_POST['past_story'])) {
-            $past_comment = $_POST["past_story"]; 
+            $past_comment = $_POST["past_story"];
         } else {
             $past_comment = '';
         }

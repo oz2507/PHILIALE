@@ -38,7 +38,7 @@ while (true) {
 
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.phl.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700">
-  
+
 	<link rel="stylesheet" href="assets/css/mypage.css">
     <link rel="shortcut icon" href="assets/img/favicon/favicon.ico" type="image/vnd.microsoft.icon">
     <link rel="icon" href="assets/img/favicon/favicon.ico" type="image/vnd.microsoft.icon">
@@ -53,7 +53,7 @@ while (true) {
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
-        </button> 
+        </button>
 
         <a class="navbar-brand-center" style="position: absolute;top:10px;z-index:2000;"  href="mypage2.php">
           <img alt="philia" src="assets/img/philia2.png" style="height: 35px;">

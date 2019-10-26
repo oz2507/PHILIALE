@@ -22,7 +22,7 @@
   	  	  	<div class="new_book">
 
   	  	  		<form action="pop_pages/future_add_check.php" method="post">
-  	  	  		   <div>                       
+  	  	  		   <div>
                     	<input type="file" name="book_img" id="img_name" accept="image/*" placeholder="画像" class="new_book_img">
                 	</div>
 			  		<div>

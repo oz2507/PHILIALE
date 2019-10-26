@@ -2,7 +2,7 @@
 
 <!-- pop -->
 <div id="modal-content-future-modal-open-future<?php echo $future["id"]; ?>" class="modal-content-future">
- 
+
         <div class="container-fluid pop_header" style="background-color: white;">
            <div class="row">
               <div class="col-xs-12 col-md-12">
@@ -46,7 +46,7 @@
                             <label for="book_story">解説文</label>
                             <textarea id="book_story" name="comment"><?php echo $future['comment']; ?></textarea>
                         </div>
-                    
+
                         <div>
                             <button type="submit" name="" class="book_add_btn">更新する</button>
                         </div>
@@ -57,7 +57,7 @@
                             <button type="submit" name="" class=" book_past_btn">読んだへ追加</button>
                         </a>
                     </div>
-                    
+
                     <div>
                         <a onClick="return confirm('この本をリストから削除しますか？');" href="future_delete.php?id=<?php echo $future['id'];?>" class="book_del_btn"><button type="submit" name="" class="book_delete_btn">削除する</button>
                         </a>
@@ -70,7 +70,7 @@
 
 <a id="modal-open-future<?php echo $future["id"]; ?>" class="button-link modal-open-future"> 
     <div class="col-xs-6 col-md-3">
-        <?php if ($future["book_img"] != '') {?> 
+        <?php if ($future["book_img"] != '') {?>
             <div class="l-thumbnail">
                 <figure class="thumbnail-wrapper">
                     <img src="book_img/<?php echo $future["book_img"]; ?>">
@@ -89,7 +89,7 @@
                     <p>タイトル:<?php echo $future['book_title']; ?></p>
                     <p>作者:<?php echo $future['book_author']; ?></p>
                 </span>
-            </div>       
+            </div>
           <?php } ?>
     </div>
 </a>

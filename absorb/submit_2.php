@@ -1,4 +1,4 @@
-<?php  
+<?php
 
 if (!empty($_POST['id'])) {
     header("Location: check.php?id=".$_POST['id']);

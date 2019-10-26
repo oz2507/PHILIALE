@@ -62,14 +62,12 @@ if (!empty($_POST)) {
                           <a href="../top2.php" class="btn btn-default btn-lg btn-block">&laquo;&nbsp;戻る</a>
                        <?php }else{ ?>
                     <form method="POST" action="contact.php" enctype="multipart/form-data">
-                            
                         <div>
                             <input type="name" name="input_name" class="form-control" id="name" placeholder="お名前">
                             <?php if(isset($errors['name']) && $errors['name'] == 'name_blank') { ?>
                             <span class="text-danger">お名前が入力されていません</span>
                             <?php } ?>
                         </div>
-                        
                         <div>
                             <textarea type="text" name="input_comment" class="form-control" placeholder="メッセージ" id="message"></textarea>
                             <?php if(isset($errors['comment']) && $errors['comment'] == 'comment_blank') { ?>
@@ -79,7 +77,6 @@ if (!empty($_POST)) {
                         <div>
                           <button type="submit" href="#" class="btn btn-original">送　信</button>
                         </div>
-                            
                         <?php } ?>
                     </form>
                 </div>

@@ -146,13 +146,13 @@ if (isset($_POST['past_isbn'])) {
         $past_author = $posts[0]->volumeInfo->authors[0];
 
         if (isset($_POST['img'])) {
-            $future_img = $_POST["img"];	
+            $future_img = $_POST["img"];
         } else {
             $future_img = '';
         }
 
         if (isset($_POST['comment'])) {
-            $past_comment = $_POST["comment"];	
+            $past_comment = $_POST["comment"];
         } else {
             $past_comment = '';
         }
@@ -224,11 +224,11 @@ if (isset($_POST['past_isbn'])) {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-      </button> 
+      </button>
 
       <a class="navbar-brand-center" style="position: absolute;top:10px;z-index:2000;"  href="library2.php">
         <img alt="philia" src="assets/img/philia2.png" style="height: 35px;">
-      </a>       
+      </a>
     </div>
 
     <div class="collapse navbar-collapse" id="navbarExample">
@@ -258,7 +258,7 @@ if (isset($_POST['past_isbn'])) {
 	<!-- add book -->
 	<div class="container">
 	  <div class="row">
-	    <div class="col-xs-6 col-md-3 modal-open-content"> 
+	    <div class="col-xs-6 col-md-3 modal-open-content">
 	      <div class="l-thumbnail">
     		<figure class="thumbnail-wrapper">
               <img src="assets/img/add.png">
@@ -283,7 +283,7 @@ if (isset($_POST['past_isbn'])) {
 	<div class="container">
 	  <div class="row">
 		<!-- 新規追加 -->
-		<div class="col-xs-6 col-md-3 modal-open"> 
+		<div class="col-xs-6 col-md-3 modal-open">
           <div class="l-thumbnail">
     		<figure class="thumbnail-wrapper">
     		  <img src="assets/img/add.png">

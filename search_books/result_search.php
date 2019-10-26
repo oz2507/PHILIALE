@@ -57,13 +57,13 @@ if (!empty($_POST)) {
       <div class="col-xs-12 col-md-6 col-md-offset-3">
           <div class="new_book">
             <form action="result_search.php?flag=<?php echo $_GET['flag']; ?>" method="post" class="form_original_2">
-               
+
             <div>
               <textarea type="text" id="book_title" name="book_title" placeholder="  本のタイトル"></textarea>
             </div>
           <div>
               <textarea id="book_story" name="book_story" placeholder="  解説文（54文字まで)"></textarea>
-          </div>     
+          </div>
           <div>
               <button type="submit" name="" class="book_add_btn">検索する</button>
           </div>
@@ -82,18 +82,18 @@ if (!empty($_POST)) {
             <div class="head">
               <h3>該当する本の追加するボタンを押して下さい。</h3>
               <h6>※空白部分は入力して情報を追加することができます。</h6>
-            </div>          
+            </div>
           </div>
-        </div>  
+        </div>
     </div>
 
     <?php foreach($posts as $post){ ?>
       <div class="container">
         <div class="row">
             <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
-              <form action="insert.php" method="post" class="list_form">              
+              <form action="insert.php" method="post" class="list_form">
               <div>
-                <h5>本のタイトル</h5> 
+                <h5>本のタイトル</h5>
                 <?php if (isset($post->volumeInfo->title)){ ?>
                 <textarea readonly="true" class="list_form" name="book_title"><?php echo $post->volumeInfo->title;?>
                 </textarea>

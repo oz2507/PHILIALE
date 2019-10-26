@@ -41,34 +41,28 @@ if (!empty($_POST)) {
 <body style="margin: 60px 0;">
   <div class="container">
     <div class="row">
-      
         <div class="col-xs-12 col-md-6 col-md-offset-3" style="height:500px;">
         <h2 class="text-center">登録情報の確認</h2>
         <br><br><br>
         <div class="row">
           <div class="col-xs-12">
-            
               <div class="form-group">
               <span>お名前</span>
               <p class="lead text-center"><?php echo htmlspecialchars($name); ?>&nbsp;様</p>
             </div>
-            
               <div class="form-group">
               <span>メールアドレス</span>
               <p class="lead text-center"><?php echo htmlspecialchars($email); ?></p>
             </div>
-            
               <div class="form-group">
               <span>パスワード</span>
-              
               <p class="lead text-center">●●●●●●●●</p>
             </div>
-            
             <form method="POST" action="">
-              
+
               <input type="hidden" name="action" value="submit">
               <input type="submit" class="btn btn-secondary btn-lg btn-block" value="  ユーザー登録  " style="margin-top: 50px;">
-              
+
               <a href="signup.php" class="btn btn-default btn-lg btn-block">&laquo;&nbsp;戻る</a>
             </form>
           </div>
@@ -76,6 +70,5 @@ if (!empty($_POST)) {
       </div>
     </div>
   </div>
-  
 </body>
 </html>

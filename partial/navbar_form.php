@@ -6,11 +6,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-            </button> 
+            </button>
 
             <a class="navbar-brand" href="../top.php">
                 <i class="fas fa-book-open fa-2x"><span>PHILIALE</span></i>
-            </a>           
+            </a>
         </div>
 
         <div class="collapse navbar-collapse navbar-right" id="navbarEexample">

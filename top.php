@@ -25,11 +25,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-            </button> 
+            </button>
 
             <a class="navbar-brand" href="#top">
                 <i class="fas fa-book-open fa-2x"><span>PHILIALE</span></i>
-            </a>           
+            </a>
         </div>
 
         <div class="collapse navbar-collapse navbar-right" id="navbarExample">
@@ -66,7 +66,7 @@
 				<p>フィリアールはあなたの<font color="#8f4796">愛する本を簡単にそして美しく</font>管理することができます。</p>
 				<div>
 				<div class="botton">
-					<a class="btn" href="register/signup.php">フィリアールの会員になる</a> 
+					<a class="btn" href="register/signup.php">フィリアールの会員になる</a>
 				</div>
 			</div>
 
@@ -74,9 +74,9 @@
 				<h5>
 					<a href="signin.php"><!-- <font color="#8f4796">  -->会員の方はこちらから入館<!-- </font> --></a>
 				</h5>
-			</div>	
-			</div>	
-		</div>	
+			</div>
+			</div>
+		</div>
 	</div>
 </div>
 
@@ -115,7 +115,7 @@
 					<p>保管した本がまだ誰も保管していない本なら<br>フィリアールからメッセージが届き…？</p>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</div>
 </div>
 
@@ -129,7 +129,6 @@
 		<div class="row1">
 			<img src="assets/img/how/philia_1.png" alt="pc_img">
 		</div>
-	
 
 		<div class="row2">
 			<h2>
@@ -144,10 +143,10 @@
 
 			<div class="botton">
 				<a class="btn" href="https://twitter.com/philia_san" target="_blank">フィリアールのTwitterを覗く</a> 
-			</div>	
-		</div>	
-	</div>	
-</div>	
+			</div>
+		</div>
+	</div>
+</div>
 
 <!-- message -->
 <div id="msg" class="container-msg">
@@ -162,7 +161,7 @@
 			<a href="Form/contact.php">
 				お問い合わせはこちらから
 			</a>
-		</div>	
+		</div>
 	</div>
 </div>
 
@@ -170,7 +169,7 @@
 <div id="footer">
 	<div id="copyright">
 	    <div class="container-copy">
-	    	<a href="Form/terms.php"> 
+	    	<a href="Form/terms.php">
 		       <p>
 		          &copy; 2018 T-zerg ALL RIGHTS RESERVE
 		        </p>
