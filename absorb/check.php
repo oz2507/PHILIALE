@@ -1,32 +1,33 @@
 <?php
 
-function getApiData($url){
-    $options = [
-        'http' => [
-            'method'  => 'GET',
-            'timeout' => 10, 
-        ]
-    ];
-}
+// function getApiData($url){
+//     $options = [
+//         'http' => [
+//             'method'  => 'GET',
+//             'timeout' => 10,
+//         ]
+//     ];
 
-$json = @file_get_contents($url, false, stream_context_create($options));
+//     $json = @file_get_contents($url, false, stream_context_create($options));
 
-if ($json === false) {
-    return null;
-}
+//     if ($json === false) {
+//         return null;
+//     }
 
-preg_match('/HTTP\/1\.[0|1|x] ([0-9]{3})/', $http_response_header[0], $matches);
-$statusCode = (int)$matches[1];
+//     preg_match('/HTTP\/1\.[0|1|x] ([0-9]{3})/', $http_response_header[0], $matches);
+//     $statusCode = (int)$matches[1];
 
-if ($statusCode !== 200) {
-    return null;
-}
+//     if ($statusCode !== 200) {
+//         return null;
+//     }
+// }
 
-$jsonArray = json_decode($json);
+// $jsonArray = json_decode($json);
 if (isset($_GET['id'])) {
     $id          = $_GET['id'];
     $data        = "https://spreadsheets.google.com/feeds/list/$id/od6/public/values?alt=json";
-    $json_decode = getApiData($data);
+    $json        = @file_get_contents($data, false, stream_context_create($options));
+    $json_decode = json_decode($json);
 
     if ($json_decode == null){
         echo '';
