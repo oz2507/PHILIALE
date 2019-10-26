@@ -71,6 +71,7 @@
 <a id="modal-open-future<?php echo $future["id"]; ?>" class="button-link modal-open-future">
     <div class="col-xs-6 col-md-3">
         <?php if ($future["book_img"] != '') : ?>
+
             <div class="l-thumbnail">
                 <figure class="thumbnail-wrapper">
                     <img src="book_img/<?php echo $future["book_img"]; ?>">

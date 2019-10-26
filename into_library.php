@@ -9,7 +9,8 @@ $data = array($isbn);
 $stmt = $dbh->prepare($sql);
 $stmt->execute($data);
 
-$record      = $stmt->fetch(PDO::FETCH_ASSOC);
+$record = $stmt->fetch(PDO::FETCH_ASSOC);
+
 $insert_sql  = 'INSERT INTO library_archives SET user_id = ?, isbn_code = ?, book_title = ?, book_author = ?, book_img = ?';
 $insert_data = array($_SESSION['id'],$record["isbn_code"],$record["book_title"],$record["book_author"],$record["book_img"]);
 $insert_stmt = $dbh->prepare($insert_sql);

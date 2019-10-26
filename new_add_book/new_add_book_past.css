@@ -1,7 +1,21 @@
 /*読んだ本*/
 
-#modal-content,#modal-content-addition{
+#modal-content{
 	width: 80%;
+	margin: 0.5rem auto 0;
+	padding: 10px 10px;
+	border: 2px solid #aaa;
+	background: #fff;
+	display: none ;
+	/*手前に表示させる（通常は0）*/
+	z-index: 2;
+	/*対象の要素を固定させる*/
+	position:fixed;
+}
+
+#modal-content-addition{
+	width: 80%;
+	height: 87%;
 	margin: 0.5rem auto 0;
 	padding: 10px 10px;
 	border: 2px solid #aaa;

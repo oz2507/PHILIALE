@@ -57,6 +57,7 @@ if (!empty($_POST)) {
               <span>パスワード</span>
               <p class="lead text-center">●●●●●●●●</p>
             </div>
+
             <form method="POST" action="">
 
               <input type="hidden" name="action" value="submit">

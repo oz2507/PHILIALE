@@ -1,13 +1,10 @@
 <div id="modal-content-addition">
 
-	  <div class="container-fluid pop_header2">
-  	    <div class="row">
-  	  	  <div class="col-xs-12 col-md-6 col-md-offset-3">
-  	    	<p>本を登録する</p>
-	  	  </div>
-    	</div>
+  <div class="container-fluid pop_header2">
+	<div class="row">
+	  <div class="col-xs-12">
+	    <p> 本を登録する </p>
   	  </div>
-
   	  <div class="container" style="margin-bottom: 50px;">
 		<div class="row">
   	  	  <div class="col-xs-12 col-md-6 col-md-offset-3">
@@ -49,12 +46,13 @@
 			  <div>
 			  	<button type="submit" name="" class="book_add_btn2">検索する</button>
 			  </div>
-
 			</form>
 
 			</div>
-		  </div>
-    	</div><!-- row -->
-      </div><!-- container -->
+		  </form>
 
+		</div>
+	  </div>
+    </div><!-- row -->
+  </div><!-- container -->
 </div>

@@ -19,9 +19,9 @@ $past_stmt = $dbh->prepare($past_sql);
 $past_stmt->execute($past_data);
 
 while (true) {
-    $record_past = $past_stmt -> fetch(PDO::FETCH_ASSOC);
+    $record_past = $past_stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($record_past == false) {
+    if ($record_past === false) {
         break;
     }
     $past_books[] = $record_past;
@@ -35,12 +35,12 @@ if (isset($_GET['search_word']) == true) {
 }
 
 $future_data = array($_SESSION["id"]);
-$future_stmt = $dbh -> prepare($future_sql);
+$future_stmt = $dbh->prepare($future_sql);
 $future_stmt->execute($future_data);
 
 while (true) {
    	$record_future = $future_stmt->fetch(PDO::FETCH_ASSOC);
-    if ($record_future == false) {
+    if ($record_future === false) {
         break;
     }
     $future_books[] = $record_future;
@@ -66,7 +66,7 @@ if (isset($_POST['isbn']) && empty($isbn_record)) {
     echo '<script type="text/javascript">
             alert("初めて追加された本だったので図書館の方に寄贈させていただきました。ありがとうございます。");
           </script>';
-} elseif (isset($_GET['isbn_code']) && empty($isbn_record)){
+} elseif (isset($_GET['isbn_code']) && empty($isbn_record)) {
     echo '<script type="text/javascript">
              alert("初めて追加された本だったので図書館の方に寄贈させていただきました。ありがとうございます。");
          </script>';
@@ -257,7 +257,7 @@ if (isset($_POST['past_isbn'])) {
               <img src="assets/img/add.png">
             </figure>
             <span class="more-text">
-            ADDITION
+              ADDITION
 	        </span>
     	　</div>
  	    </div>

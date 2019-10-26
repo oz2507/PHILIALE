@@ -124,5 +124,3 @@ if (!empty($_POST)) {
 <?php endif; ?>
 </body>
 </html>
-
-<!-- <?php echo PHP_EOL;?> -->

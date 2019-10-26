@@ -75,6 +75,7 @@ if (!empty($_POST)) {
                         <div>
                           <button type="submit" href="#" class="btn btn-original">送　信</button>
                         </div>
+
                         <?php endif; ?>
                     </form>
                 </div>

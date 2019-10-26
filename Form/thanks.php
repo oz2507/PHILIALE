@@ -9,8 +9,8 @@ $comment = $_SESSION['inquiry']['comment'];
 
 $sql  = 'INSERT INTO `contacts` SET `user_id` = ?, `name` = ?, `comment` = ?';
 $data = array($user_id,$name,$comment);
-$stmt = $dbh -> prepare($sql);
-$stmt -> execute($data);
+$stmt = $dbh->prepare($sql);
+$stmt->execute($data);
 
 ?>
 

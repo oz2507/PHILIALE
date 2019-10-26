@@ -9,20 +9,16 @@ if (!empty($_POST)) {
     $name     = $_POST['input_name'];
     $email    = $_POST['input_email'];
     $password = $_POST['input_password'];
-
-    $count = strlen($password);
+    $count    = strlen($password);
 
     if ($name == '') {
         $errors['name'] = 'blank';
     }
-
     if ($email == '') {
         $errors['email'] = 'blank';
     }
-
     if ($password == '') {
         $errors['password'] = 'blank';
-
     } elseif ($count < 4 || $count > 16) {
         $errors['password'] = 'length';
     }
@@ -69,10 +65,10 @@ if (!empty($_POST)) {
         <h2 class="text-center">入館する</h2>
 
           <div class="row">
-                <div class="col-xs-12 text-center">
-                    <div class="thumbnail" style="letter-spacing: 0.2em; line-height:1.65; border: none;">
-                      <img class="img-responsive" src="assets/img/お辞儀1.png" style="width:100px;margin-top: 30px;">
-                    </div>
+            <div class="col-xs-12 text-center">
+              <div class="thumbnail" style="letter-spacing: 0.2em; line-height:1.65; border: none;">
+                <img class="img-responsive" src="assets/img/お辞儀1.png" style="width:100px;margin-top: 30px;">
+              </div>
 
         <form method="POST" action="signin.php" enctype="multipart/form-data">
 

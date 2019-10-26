@@ -1,20 +1,80 @@
+<?php 
+
+session_start();
+require('dbconnect.php');
+
+$errors = array();
+
+if (!empty($_POST)) {
+    $name     = $_POST['input_name'];
+    $email    = $_POST['input_email'];
+    $password = $_POST['input_password'];
+
+    $count = strlen($password);
+
+    if ($name == '') {
+        $errors['name'] = 'blank';
+    }
+
+    if ($email == '') {
+        $errors['email'] = 'blank';
+    }
+
+    if ($password == '') {
+        $errors['password'] = 'blank';
+
+    }elseif ($count < 4 || $count > 16) {
+        $errors['password'] = 'length';
+    }
+
+    if ($name !== '' && $email !== '' && $password !== '') {
+        $sql  = 'SELECT * FROM `users` WHERE `email` = ?';
+        $data = array($email);
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute($data);
+
+        $record = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($record == false) {
+            $errors['signin'] = 'failed';
+        } else {
+
+            if (password_verify($password,$record['password'])){
+                $_SESSION['id'] = $record['id'];
+
+                header("Location: mypage2.php");
+                exit();
+            }else{
+                $errors['signin'] = 'failed';
+            }
+        }
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
+	<meta charset="UTF-8">
 
-  <title>PHILIALE</title>
+	<title>PHILIALE</title>
 
-  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+	<!-- signin -->
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+	<link rel="icon" href="assets/img/favicon/favicon.ico" type="image/vnd.microsoft.icon">
+	<link rel="shortcut icon" href="assets/img/favicon/favicon.ico" type="image/vnd.microsoft.icon">
+	<link rel="stylesheet" href="assets/css/signin_pop.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style_r.css">
+	<!-- top -->
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" href="assets/css/top2.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700">
+	<link rel="shortcut icon" href="assets/img/favicon/favicon.ico" type="image/vnd.microsoft.icon">
+	<link rel="icon" href="assets/img/favicon/favicon.ico" type="image/vnd.microsoft.icon">
 
-  <!-- <link rel="stylesheet" href="assets/css/styles.css"> -->
-  <!-- <link rel="stylesheet" href="assets/css/mystyle.css"> -->
-  <link rel="stylesheet" href="assets/css/top2.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700">
-  <link rel="shortcut icon" href="assets/img/favicon/favicon.ico" type="image/vnd.microsoft.icon">
-  <link rel="icon" href="assets/img/favicon/favicon.ico" type="image/vnd.microsoft.icon">
+
 </head>
 <body style="margin: 0px; margin-top: 50px;">
   <div id="wrapper">
@@ -27,28 +87,30 @@
 	          <span class="icon-bar"></span>
 	          <span class="icon-bar"></span>
 	          <span class="icon-bar"></span>
-	        </button>
+	        </button> 
 
 	        <a class="navbar-brand" href="#top">
 	          <i class="fas fa-book-open fa-2x"><span>PHILIALE</span></i>
-	        </a>
+	        </a>           
 	      </div>
 
         <div class="collapse navbar-collapse navbar-right" id="navbarExample">
           <ul class="nav navbar-nav">
             <li><a href="register/signup.php">新規登録</a></li>
             <li class="right diviver">|</li>
-            <li><a href="signin.php">ログイン</a></li>
+            <li><a href="#" class="modal-signin">ログイン</a></li>
           </ul>
-	  	  </div>
+	  		</div>
 	    </div>
 	  </nav>
+
+	<?php include("signin_pop.php"); ?>
 
 	<!-- header -->
 	<div class="container-head">
 		<div class="row">
 			<div class="col-xs-12 col-md-12">
-				<img src="assets/img/gif/フィリア.gif" alt="head-design" class="head-img" style="width: 100%;">
+				<img src="assets/img/gif/フィリア.gif" alt="head-design" class="head-img" style="width: 100%;">	
 			</div>
 		</div>
 	</div>
@@ -76,7 +138,7 @@
 
 			<!-- right -->
 			<div class="col-xs-12 col-md-6 half-col_2">
-				<img src="assets/img/phone.png" alt="phone_img" class="pc_only">
+				<img src="assets/img/phone.png" alt="phone_img" class="pc_only">	
 			</div>
 		</div>
 	</div>
@@ -88,14 +150,14 @@
 		<div class="row">
 			<div class="title">
 				<h1>HOW TO USE?</h1>
-          </div>
-          <div class="col-xs-12 col-md-4">
-          <img src="assets/img/how/how1.png" alt="">
-            <h2><font color="#8f4796">追加したい本の情報を入力</font></h2>
-              <div class="intro">
-                <p>新規追加ボタンから「読みたい本」<br>「読んだ本」の情報を入力します。</p>
-              </div>
-          </div>
+			</div>
+		  <div class="col-xs-12 col-md-4">
+				<img src="assets/img/how/how1.png" alt="">
+				<h2><font color="#8f4796">追加したい本の情報を入力</font></h2>
+			  <div class="intro">
+				  <p>新規追加ボタンから「読みたい本」<br>「読んだ本」の情報を入力します。</p>
+			  </div>
+		  </div>
 
 			<div class="col-xs-12 col-md-4">
 				<img src="assets/img/how/how2.png" alt="">
@@ -116,7 +178,7 @@
 					<p>保管した本がまだ誰も保管していない本なら<br>フィリアールからメッセージが届き…？</p>
 				</div>
 			</div>
-		</div>
+		</div>	
 	</div>
 
 	<div class="box"></div>
@@ -144,7 +206,7 @@
 
 				<div class="botton">
 					<a class="btn" href="https://twitter.com/philia_san" target="_blank">フィリアールのTwitterを覗く</a> 
-				</div>
+				</div>			
 			</div>
 		</div>
 	</div>
@@ -159,13 +221,13 @@
 				<div class="button">
 					<a class="btn" href="register/signup.php">
 					フィリアールの会員になる
-					</a>
+					</a> 
 				</div>
 				<div class="contact">
 					<a href="Form/contact.php">
 						お問い合わせはこちらから
 					</a>
-				</div>
+				</div>			
 			</div>
 		</div>
 	</div>
@@ -174,18 +236,20 @@
 	<div id="copy" class="container">
 		<div class="row">
 			<div class="col-xs-12 col-md-12">
-		    	<a href="Form/terms.php">
+		    	<a href="Form/terms.php"> 
 			       <p>
 			          &copy; 2018 T-zerg ALL RIGHTS RESERVE
 			        </p>
 			    </a>
-			</div>
-		</div>
+			</div>		
+		</div>	
 	</div>
 </div>
+
 
 <script src="assets/js/jquery-3.1.1.js"></script>
 <script src="assets/js/jquery-migrate-1.4.1.js"></script>
 <script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/signin.js"></script>
 </body>
 </html>

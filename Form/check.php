@@ -43,6 +43,7 @@ $comment = $_SESSION['inquiry']['comment'];
             <form method="POST" action="thanks.php">
               <input type="hidden" name="action" value="submit">
               <input type="submit" class="btn btn-secondary btn-lg btn-block" value="お問合わせ" style="margin-top: 50px;">
+
               <a href="contact.php" class="btn btn-default btn-lg btn-block">&laquo;&nbsp;戻る</a>
             </form>
           </div>

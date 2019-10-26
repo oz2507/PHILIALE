@@ -1,0 +1,34 @@
+#signin-content{
+	display: none;
+}
+
+#signin-content{
+	width: 80%;
+	height: 85%;
+	/*margin: 0.5rem auto 0;*/
+	margin: 35px auto 0;
+	padding: 10px 10px;
+	border: 2px solid #aaa;
+	background: #fff;
+	display: none ;
+	/*手前に表示させる（通常は0）*/
+	z-index: 3;
+	/*対象の要素を固定させる*/
+	position:fixed;
+}
+
+#modal-overlay{
+	/*上でPOP表示させるものを「2」に
+	設定しているので「1」*/
+	z-index: 1;
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	/*画面全体を覆う*/
+	width: 100%;
+	/*スマホ対応の120%*/
+	height: 120%;
+	/*rgbaで「不透明度」を設定する*/
+	background-color: rgba(0,0,0,0.75);
+}
