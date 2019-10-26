@@ -23,7 +23,7 @@ if (!empty($_POST)) {
     if ($password == '') {
         $errors['password'] = 'blank';
 
-    }elseif ($count < 4 || $count > 16) {
+    } elseif ($count < 4 || $count > 16) {
         $errors['password'] = 'length';
     }
 
@@ -34,17 +34,15 @@ if (!empty($_POST)) {
         $stmt->execute($data);
 
         $record = $stmt->fetch(PDO::FETCH_ASSOC);
-
         if ($record == false) {
             $errors['signin'] = 'failed';
         } else {
-
-            if (password_verify($password,$record['password'])){
+            if (password_verify($password,$record['password'])) {
                 $_SESSION['id'] = $record['id'];
 
                 header("Location: mypage2.php");
                 exit();
-            }else{
+            } else {
                 $errors['signin'] = 'failed';
             }
         }
@@ -81,31 +79,31 @@ if (!empty($_POST)) {
           <div>
             <!-- <label for="name">お名前</label> -->
             <input type="text" name="input_name" class="form-control signin" id="name" placeholder="お名前">
-            <?php if(isset($errors['name']) && $errors['name'] == 'blank') { ?>
+            <?php if (isset($errors['name']) && $errors['name'] == 'blank') : ?>
               <p class="text-danger">お名前を入力してください</p>
-            <?php } ?>
+            <?php endif; ?>
           </div>
 
           <div>
             <!-- <label for="email">メールアドレス</label> -->
             <input type="text" name="input_email" class="form-control signin" id="email" placeholder="メールアドレス">
-            <?php if(isset($errors['email']) && $errors['email'] == 'blank') { ?>
+            <?php if (isset($errors['email']) && $errors['email'] == 'blank') : ?>
               <p class="text-danger">メールアドレスを入力してください</p>
-            <?php } ?>
+            <?php endif; ?>
           </div>
 
           <div>
             <!-- <label for="password">パスワード</label> -->
             <input type="password" name="input_password" class="form-control signin" id="password" placeholder="4 ~ 16文字のパスワード">
-            <?php if(isset($errors['password']) && $errors['password'] == 'blank') { ?>
+            <?php if (isset($errors['password']) && $errors['password'] == 'blank') : ?>
               <p class="text-danger">パスワードを入力してください</p>
-            <?php } ?>
-            <?php if(isset($errors['password']) && $errors['password'] == 'length') { ?>
+            <?php endif; ?>
+            <?php if (isset($errors['password']) && $errors['password'] == 'length') : ?>
               <p class="text-danger">パスワードは4〜16文字で入力してください</p>
-            <?php } ?>
-            <?php if(isset($errors['signin']) && $errors['signin'] == 'failed') { ?>
+            <?php endif; ?>
+            <?php if (isset($errors['signin']) && $errors['signin'] == 'failed') : ?>
               <p class="text-danger">ログインに失敗しました</p>
-            <?php } ?>
+            <?php endif; ?>
           </div>
 
           <div>

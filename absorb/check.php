@@ -6,7 +6,7 @@ if (isset($_GET['id'])) {
     $json        = @file_get_contents($data, false, stream_context_create($options));
     $json_decode = json_decode($json);
 
-    if ($json_decode == null){
+    if ($json_decode == null) {
         echo '';
     } else {
         $books = $json_decode->feed->entry;
@@ -39,17 +39,17 @@ if (isset($_GET['id'])) {
         <div class="head">
           <h1>検索結果</h1>
 
-          <?php if (!empty($books)) { ?>
+          <?php if (!empty($books)) : ?>
             <a href="absorb.php?id=<?php echo $id; ?>">
               <button class="import_btn">この内容でフィリアールの書庫に保管</button>
             </a>
-          <?php } ?>
+          <?php endif; ?>
         </div>
       </div>
 
       <!-- <h1>検索結果</h1> -->
-      <?php if ($json_decode !== null) {
-          foreach($books as $book){ ?>
+      <?php if ($json_decode !== null) :
+          foreach ($books as $book) : ?>
         <div class="row">
           <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
             <div class="list_form">
@@ -58,14 +58,14 @@ if (isset($_GET['id'])) {
             </div>
           </div>
         </div>
-      <?php } ?>
-      <?php } else {
+      <?php endforeach; ?>
+      <?php else :
         $message = "IDが正しくない可能性があります。"; ?>
         <div style="text-align: center;">
           <p><?php echo $message; ?></p>
           <a href="submit_2.php"><button class="import_btn">戻る</button></a>
         </div>
-      <?php } ?>
+      <?php endif; ?>
 
     </div><!-- container -->
 

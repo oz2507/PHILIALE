@@ -1,4 +1,4 @@
-<?php foreach ($future_books as $future) { ?>
+<?php foreach ($future_books as $future) : ?>
 
 <!-- pop -->
 <div id="modal-content-future-modal-open-future<?php echo $future["id"]; ?>" class="modal-content-future">
@@ -15,11 +15,11 @@
             <div class="row">
                 <div class="col-xs-12 col-md-6 col-md-offset-3">
                    <div class="book_img">
-                      <?php if ($future["book_img"]!='') {?>
-                          <img src="book_img/<?php echo $future["book_img"]; ?>" class="book_pic">
-                      <?php }else{ ?>
-                          <img src="assets/img/philia2.png" alt="no image" class="book_pic">
-                       <?php } ?>
+                    <?php if ($future["book_img"] != '') : ?>
+                        <img src="book_img/<?php echo $future["book_img"]; ?>" class="book_pic">
+                    <?php else : ?>
+                        <img src="assets/img/philia2.png" alt="no image" class="book_pic">
+                    <?php endif; ?>
                    </div>
                  </div>
             </div><!-- row -->
@@ -68,9 +68,9 @@
 </div><!-- modal-content-future -->
 
 
-<a id="modal-open-future<?php echo $future["id"]; ?>" class="button-link modal-open-future"> 
+<a id="modal-open-future<?php echo $future["id"]; ?>" class="button-link modal-open-future">
     <div class="col-xs-6 col-md-3">
-        <?php if ($future["book_img"] != '') {?>
+        <?php if ($future["book_img"] != '') : ?>
             <div class="l-thumbnail">
                 <figure class="thumbnail-wrapper">
                     <img src="book_img/<?php echo $future["book_img"]; ?>">
@@ -80,7 +80,7 @@
                    <p>作者:<?php echo $future['book_author']; ?></p>
                 </span>
             </div>
-        <?php }else{ ?>
+        <?php else : ?>
             <div class="l-thumbnail">
                 <figure class="thumbnail-wrapper">
                     <img src="assets/img/philia2.png" alt="no image">
@@ -90,7 +90,7 @@
                     <p>作者:<?php echo $future['book_author']; ?></p>
                 </span>
             </div>
-          <?php } ?>
+        <?php endif; ?>
     </div>
 </a>
-<?php } ?>
+<?php endforeach; ?>

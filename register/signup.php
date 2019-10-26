@@ -1,14 +1,13 @@
 <?php
 
 session_start();
+
 $errors = array();
-
 if (!empty($_POST)) {
-    $name     = $_POST['input_name'];
-    $email    = $_POST['input_email'];
-    $password = $_POST['input_password'];
-    $check    = $_POST['input_chk_password'];
-
+    $name      = $_POST['input_name'];
+    $email     = $_POST['input_email'];
+    $password  = $_POST['input_password'];
+    $check     = $_POST['input_chk_password'];
     $count     = strlen($password);
     $chk_count = strlen($check);
 
@@ -41,7 +40,6 @@ if (!empty($_POST)) {
         $stmt->execute($data);
 
         $dbh = null;
-
         $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($rec['cnt'] > 0) {//メールアドレスの数が0異常ですでに登録済み
@@ -51,14 +49,12 @@ if (!empty($_POST)) {
 
     if ($password == '') {
         $errors['password'] = 'blank';
-
     } elseif ($count < 4 || $count > 16) {
         $errors['password'] = 'length';
     }
 
     if ($check == '') {
         $errors['check'] = 'blank';
-
     } elseif ($chk_count < 4 || $chk_count > 16) {
         $errors['check'] = 'length';
     }
@@ -105,45 +101,45 @@ if (!empty($_POST)) {
             <input type="text" name="input_name" class="form-control" id="name" placeholder="お名前">
             <span>　</span>
             <span>　</span>
-              <?php if(isset($errors['name']) && $errors['name'] == 'blank') { ?>
+              <?php if (isset($errors['name']) && $errors['name'] == 'blank') : ?>
               <span class="text-danger">お名前を入力してください</span>
-              <?php } ?>
-              <?php if(isset($errors['name']) && $errors['name'] == 'duplication') { ?>
+              <?php endif; ?>
+              <?php if (isset($errors['name']) && $errors['name'] == 'duplication') : ?>
               <span class="text-danger">すでに存在するお名前です</span>
-              <?php } ?>
+              <?php endif; ?>
           </div>
 
           <div>
             <input type="email" name="input_email" class="form-control" id="email" placeholder="メールアドレス">
             <span>　</span>
-            <?php if(isset($errors['email']) && $errors['email'] == 'blank') { ?>
+            <?php if (isset($errors['email']) && $errors['email'] == 'blank') : ?>
               <span class="text-danger">メールアドレスを入力してください</span>
-            <?php } ?>
-            <?php if(isset($errors['email']) && $errors['email'] == 'duplication') { ?>
+            <?php endif; ?>
+            <?php if (isset($errors['email']) && $errors['email'] == 'duplication') : ?>
               <span class="text-danger">すでに登録されたメールアドレスです</span>
-            <?php } ?>
+            <?php endif; ?>
           </div>
 
           <div>
             <input type="password" name="input_password" class="form-control" id="password" placeholder="パスワード">
             <span>　</span>
-            <?php if(isset($errors['password']) && $errors['password'] == 'blank') { ?>
+            <?php if (isset($errors['password']) && $errors['password'] == 'blank') : ?>
               <span class="text-danger">パスワードを入力してください</span>
-            <?php } ?>
-            <?php if(isset($errors['password']) && $errors['password'] == 'length') { ?>
+            <?php endif; ?>
+            <?php if (isset($errors['password']) && $errors['password'] == 'length') : ?>
               <span class="text-danger">パスワードは4〜16文字で入力してください</span>
-            <?php } ?>
+            <?php endif; ?>
           </div>
 
           <div>
             <input type="password" name="input_chk_password" class="form-control" id="chk_password" placeholder="確認用パスワード">
             <span>　</span>
-            <?php if(isset($errors['check']) && $errors['check'] == 'blank') { ?>
+            <?php if (isset($errors['check']) && $errors['check'] == 'blank') : ?>
               <span class="text-danger">確認用パスワードを入力してください</span>
-            <?php } ?>
-            <?php if(isset($errors['check']) && $errors['check'] == 'length') { ?>
+            <?php endif; ?>
+            <?php if (isset($errors['check']) && $errors['check'] == 'length') : ?>
               <span class="text-danger">パスワードは4〜16文字で入力してください</span>
-            <?php } ?>
+            <?php endif; ?>
           </div>
 
           <div>

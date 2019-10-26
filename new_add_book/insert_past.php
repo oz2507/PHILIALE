@@ -4,8 +4,7 @@ session_start();
 require('dbconnect.php');
 
 if (isset($_POST['isbn'])) {
-    $isbn = $_POST["isbn"];
-
+    $isbn        = $_POST["isbn"];
     $data        = "https://www.googleapis.com/books/v1/volumes?q=isbn:$isbn";
     $json        = file_get_contents($data);
     $json_decode = json_decode($json);
@@ -18,8 +17,7 @@ if (isset($_POST['isbn'])) {
     $img     = $_POST["img"];
     $comment = $_POST["comment"];
 
-    $sql = 'INSERT INTO `past_archives` SET `user_id` = ?, `isbn_code` = ?, `book_title` = ?, `book_author` = ?, `book_img` = ?, `comment` = ?';
-
+    $sql  = 'INSERT INTO `past_archives` SET `user_id` = ?, `isbn_code` = ?, `book_title` = ?, `book_author` = ?, `book_img` = ?, `comment` = ?';
     $data = array($user_id,$isbn,$book,$author,$img,$comment);
     $stmt = $dbh->prepare($sql);
     $stmt->execute($data);

@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+require('../dbconnect.php');
 
 if (!isset($_SESSION['register'])) {
     header("Location: signup.php");
@@ -12,8 +13,6 @@ $email         = $_SESSION['register']['email'];
 $user_password = $_SESSION['register']['password'];
 
 if (!empty($_POST)) {
-    require('../dbconnect.php');
-
     $sql  = 'INSERT INTO `users` SET `name` = ?, `email` = ?, `password` = ? ';
     $data = array($name, $email, password_hash($user_password, PASSWORD_DEFAULT),);
     $stmt = $dbh->prepare($sql);

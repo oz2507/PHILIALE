@@ -36,7 +36,7 @@ if (!empty($_POST)) {
 </div>
 
 
-<?php if (empty($_POST) || $_POST['book_title'] == '') { ?>
+<?php if (empty($_POST) || $_POST['book_title'] == '') : ?>
   <div class="container">
       <div class="row">
           <div class="col-xs-12 col-md-8 col-md-offset-2">
@@ -71,10 +71,10 @@ if (!empty($_POST)) {
       </div>
       </div>
   </div><!-- row -->
-<?php  } ?>
+<?php endif; ?>
 
-<?php if (!empty($_POST)) {
-    if ($_POST['book_title'] !== '') { ?>
+<?php if (!empty($_POST)) :
+    if ($_POST['book_title'] !== '') : ?>
 
     <div class="container-head">
         <div class="row">
@@ -87,30 +87,30 @@ if (!empty($_POST)) {
         </div>
     </div>
 
-    <?php foreach($posts as $post){ ?>
+    <?php foreach ($posts as $post) : ?>
       <div class="container">
         <div class="row">
             <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
               <form action="insert.php" method="post" class="list_form">
               <div>
                 <h5>本のタイトル</h5>
-                <?php if (isset($post->volumeInfo->title)){ ?>
+                <?php if (isset($post->volumeInfo->title)) : ?>
                 <textarea readonly="true" class="list_form" name="book_title"><?php echo $post->volumeInfo->title;?>
                 </textarea>
-              <?php }else{ ?>
+              <?php else : ?>
                 <textarea class="list_form" name="book_title" placeholder="タイトルを入力してください。">
                 </textarea>
-              <?php } ?>
+              <?php endif; ?>
               </div>
               <div>
                 <h5>著者</h5>
-                <?php if (isset($post->volumeInfo->authors[0])) { ?>
+                <?php if (isset($post->volumeInfo->authors[0])) : ?>
                 <textarea readonly="true" class="list_form" name="book_author"><?php echo $post->volumeInfo->authors[0]; ?>
                 </textarea>
-              <?php }else{ ?>
+              <?php else : ?>
                 <textarea class="list_form" name="book_author" placeholder="著者を入力してください。">
                 </textarea>
-              <?php } ?>
+              <?php endif; ?>
               </div>
               <div class="add_btn">
                 <button type="submit" class="import_btn">追加する</button>
@@ -119,9 +119,9 @@ if (!empty($_POST)) {
           </div>
         </div>
       </div>
-    <?php } ?>
-  <?php } ?>
-<?php } ?>
+    <?php endforeach; ?>
+  <?php endif; ?>
+<?php endif; ?>
 </body>
 </html>
 

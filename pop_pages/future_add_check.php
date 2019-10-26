@@ -1,27 +1,24 @@
-<?php  
+<?php
 
 require('../dbconnect.php');
 session_start();
 
 $user_id = $_SESSION['id'];
-
 if (isset($_POST['future_isbn'])) {
     $future_isbn = $_POST["future_isbn"];
-
     $data        = "https://www.googleapis.com/books/v1/volumes?q=isbn:$future_isbn";
     $json        = @file_get_contents($data);
     $json_decode = json_decode($json);
     $posts       = $json_decode->items;
 
     if (isset($posts[0]->volumeInfo->title)) {
-        $flag = 0;
-
+        $flag          = 0;
         $user_id       = $_SESSION["id"];
         $future_book   = $posts[0]->volumeInfo->title;
         $future_author = $posts[0]->volumeInfo->authors[0];
 
         if (isset($_POST['comment'])) {
-            $future_comment = $_POST["comment"];	
+            $future_comment = $_POST["comment"];
         } else {
             $future_comment = '';
         }
@@ -39,13 +36,11 @@ if (isset($_GET['isbn'])) {
     } else {
         $future_book2 = '';
     }
-
     if (isset($_POST['future_author'])) {
         $future_author2 = $_POST['future_author'];
     } else {
         $future_author2 = '';
     }
-
     if (isset($_POST['future_story'])) {
         $future_comment2 = $_POST['future_story'];
     } else {
@@ -53,7 +48,6 @@ if (isset($_GET['isbn'])) {
     }
 
     $future_sql  = 'INSERT INTO `future_archives` SET `user_id` = ?, `isbn_code` = ?, `book_title` = ?, `book_author` =?, `comment` = ?';
-
     $future_data = array($user_id,$future_isbn2,$future_book2,$future_author2,$future_comment2);
     $future_stmt = $dbh->prepare($future_sql);
     $future_stmt->execute($future_data);
@@ -82,7 +76,7 @@ if (isset($_GET['isbn'])) {
     </div>
   </div>
 
-  <?php if ($flag == 0) { ?>
+  <?php if ($flag == 0) : ?>
   <div class="container" style="">
 
   	<div class="row">
@@ -117,9 +111,9 @@ if (isset($_GET['isbn'])) {
     </div><!-- row -->
 
   </div><!-- container -->
-	<?php }else{ ?>
+	<?php else : ?>
 		<p>isbnが違う可能性があります。</p>
 		<a href="../mypage2.php">マイページに戻る。</a>
-	<?php } ?>
+  <?php endif; ?>
 </body>
 </html>

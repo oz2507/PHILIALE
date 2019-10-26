@@ -8,7 +8,6 @@ if (empty($_SESSION)) {
 }
 
 $past_books = array();
-
 if (isset($_GET['search_word']) == true) {
     $past_sql = 'SELECT * FROM `past_archives` WHERE `book_title` LIKE "%' . $_GET['search_word'] . '%" OR `book_author` LIKE "%' . $_GET['search_word'] . '%" AND `user_id` = ?';
 } else {
@@ -29,7 +28,6 @@ while (true) {
 }
 
 $future_books = array();
-
 if (isset($_GET['search_word']) == true) {
     $future_sql = 'SELECT * FROM `future_archives` WHERE `user_id` = ? AND `book_title` LIKE "%' . $_GET['search_word'] . '%" OR `book_author` LIKE "%' . $_GET['search_word'] . '%"';
 } else {
@@ -48,12 +46,10 @@ while (true) {
     $future_books[] = $record_future;
 }
 
-if(isset($_POST['isbn'])){
+if (isset($_POST['isbn'])) {
     $isbn = $_POST['isbn'];
-
 } elseif (isset($_GET['isbn_code'])) {
     $isbn = $_GET['isbn_code'];
-
 } else {
     $isbn = 0;
 }
@@ -88,7 +84,7 @@ if (isset($_POST['future_isbn'])) {
         $future_book   = $posts[0]->volumeInfo->title;
         $future_author = $posts[0]->volumeInfo->authors[0];
 
-        if (isset($_POST['img'])){
+        if (isset($_POST['img'])) {
             $future_img = $_POST["img"];
         } else {
             $future_img = '';
@@ -122,8 +118,7 @@ if (isset($_POST['future_isbn'])) {
             }
         }
 
-        $future_sql = 'INSERT INTO `future_archives` SET `user_id` = ?, `isbn_code` = ?, `book_title` = ?, `book_author`=?, `book_img` = ?, `comment` = ?';
-
+        $future_sql  = 'INSERT INTO `future_archives` SET `user_id` = ?, `isbn_code` = ?, `book_title` = ?, `book_author`=?, `book_img` = ?, `comment` = ?';
         $future_data = array($user_id,$future_isbn2,$future_book,$future_author,$img,$future_comment);
         $future_stmt = $dbh->prepare($future_sql);
         $future_stmt->execute($future_data);
@@ -178,13 +173,11 @@ if (isset($_POST['past_isbn'])) {
                 $past_comment2 = '';
             }
 
-            $past_sql = 'INSERT INTO `future_archives` SET `user_id` = ?, `isbn_code` = ?, `book_title` = ?, `book_author` = ?, `book_img` = ?, `comment` = ?';
-
-            $past_data=array($user_id,$past_isbn2,$past_book,$past_author,$img,$past_comment);
+            $past_sql  = 'INSERT INTO `future_archives` SET `user_id` = ?, `isbn_code` = ?, `book_title` = ?, `book_author` = ?, `book_img` = ?, `comment` = ?';
+            $past_data = array($user_id,$past_isbn2,$past_book,$past_author,$img,$past_comment);
             $past_stmt = $dbh->prepare($past_sql);
             $past_stmt->execute($past_data);
         }
-
     } else {
         echo "isbnが正しくないもしくはisbnが入力されていません。";
     }
@@ -251,9 +244,9 @@ if (isset($_POST['past_isbn'])) {
 <!-- 読みたい -->
 <div class="tab-content">
   <div id="tab1" class="tab-pane fade">
-    <?php if (isset($_GET['flag']) && $_GET['flag'] == 2 ) { ?>
+    <?php if (isset($_GET['flag']) && $_GET['flag'] == 2 ) : ?>
       <p>検索結果が得られなかった方は<a href="title_search.php?flag=<?php echo $_GET['flag']; ?>">こちら</a>。</p>
-    <?php } ?>
+    <?php endif; ?>
 
 	<!-- add book -->
 	<div class="container">
@@ -276,10 +269,10 @@ if (isset($_POST['past_isbn'])) {
 
 　<!-- 読んだ -->
 　<div id="tab2" class="tab-pane fade">
-	<?php if (isset($_GET['flag']) && $_GET['flag'] == 1) { ?>
+	<?php if (isset($_GET['flag']) && $_GET['flag'] == 1) : ?>
 	<p>isbnが正しくないもしくはisbnが入力されていません。</p>
 	<p>検索結果が得られなかった方は<a href="title_search.php?flag=<?php echo $_GET['flag']; ?>">こちら</a>。</p>
-    <?php } ?>
+    <?php endif; ?>
 	<div class="container">
 	  <div class="row">
 		<!-- 新規追加 -->

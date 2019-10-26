@@ -4,7 +4,6 @@ session_start();
 require('../dbconnect.php');
 
 $user_id = $_SESSION['id'];
-
 if (!isset($_SESSION['inquiry'])) {
     header("Location: contact.php");
     exit();
