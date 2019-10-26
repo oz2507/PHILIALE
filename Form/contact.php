@@ -18,11 +18,9 @@ if (!empty($_POST)) {
     if ($name == '') {
         $errors['name'] = 'name_blank';
     }
-
     if ($comment == '') {
         $errors['comment'] = 'comment_blank';
     }
-
     if (empty($errors)) {
         $_SESSION['inquiry']['name']    = $name;
         $_SESSION['inquiry']['comment'] = $comment;
@@ -60,19 +58,17 @@ if (!empty($_POST)) {
                          <p style="margin: 100px auto 150px;">お問い合わせにはログインが必要です。</p>
                           <a href="../signin.php"><button type="button" class="btn btn-original">ログイン</button></a>
                           <a href="../top2.php" class="btn btn-default btn-lg btn-block">&laquo;&nbsp;戻る</a>
-                       <?php else : ?>
+                        <?php else : ?>
                     <form method="POST" action="contact.php" enctype="multipart/form-data">
-
                         <div>
                             <input type="name" name="input_name" class="form-control" id="name" placeholder="お名前">
-                            <?php if(isset($errors['name']) && $errors['name'] == 'name_blank') : ?>
-                            <span class="text-danger">お名前が入力されていません</span>
+                            <?php if (isset($errors['name']) && $errors['name'] == 'name_blank') : ?>
+                              <span class="text-danger">お名前が入力されていません</span>
                             <?php endif; ?>
                         </div>
-
                         <div>
                             <textarea type="text" name="input_comment" class="form-control" placeholder="メッセージ" id="message"></textarea>
-                            <?php if(isset($errors['comment']) && $errors['comment'] == 'comment_blank') : ?>
+                            <?php if (isset($errors['comment']) && $errors['comment'] == 'comment_blank') : ?>
                               <span class="text-danger">お問合せ内容が入力されていません</span>
                             <?php endif; ?>
                         </div>

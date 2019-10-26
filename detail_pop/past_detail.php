@@ -15,11 +15,11 @@
         <div class="row">
             <div class="col-xs-12 col-md-6 col-md-offset-3">
                 <div class="book_img">
-                    <?php if ($past["book_img"]!='') {?>
+                    <?php if ($past["book_img"] != '') : ?>
                         <img src="book_img/<?php echo $past["book_img"]; ?>" class="book_pic">
-                    <?php }else{ ?>
+                    <?php else : ?>
                         <img src="assets/img/philia2.png" alt="no image" class="book_pic">
-                    <?php } ?>
+                    <?php endif; ?>
                </div>
             </div>
         </div><!-- row -->
@@ -53,7 +53,7 @@
                     </div>
                 </form>
 
-                <div> 
+                <div>
                     <a onClick="return confirm('この本をリストから削除しますか？');" href="past_delete.php?id=<?php echo $past['id'];?>" class="book_del_btn">
                         <button type="submit" name="" class=" book_delete_btn">削除する</button>
                     </a>
@@ -65,7 +65,7 @@
 
 <a id="modal-open-past<?php echo $past['id']; ?>" class="button-link modal-open-past">
     <div class="col-xs-6 col-md-3">
-        <?php if ($past["book_img"] != '') :?>
+        <?php if ($past["book_img"] != '') : ?>
             <div class="l-thumbnail">
                 <figure class="thumbnail-wrapper">
                     <img src="book_img/<?php echo $past["book_img"]; ?>">

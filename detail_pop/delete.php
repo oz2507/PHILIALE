@@ -15,11 +15,11 @@
 		<div class="row">
 		  	  <div class="col-xs-12 col-md-6 col-md-offset-3">
 		  	    <div class="book_img">
-		  	  	<?php if ($past["book_img"]!='') {?>
-	                        <img src="book_img/<?php echo $past["book_img"]; ?>" class="book_pic">
-	                    <?php }else{ ?>
-	                        <img src="assets/img/philia2.png" alt="no image" class="book_pic">
-	                    <?php } ?>
+		  	  	<?php if ($past["book_img"] != '') : ?>
+                    <img src="book_img/<?php echo $past["book_img"]; ?>" class="book_pic">
+	            <?php else : ?>
+	                <img src="assets/img/philia2.png" alt="no image" class="book_pic">
+				<?php endif; ?>
 		  	    </div>
 		  	  </div>
 		</div><!-- row -->
@@ -53,7 +53,6 @@
 					 		<button type="submit" name="" class="book_add_btn">更新する</button>
 					 	</a>
 					</div>
-
 				</form>
 
 				<div>
@@ -69,7 +68,7 @@
 
 <a id="modal-open-past<?php echo $past['id']; ?>" class="button-link modal-open-past">
 	<div class="col-xs-6 col-md-3">
-		<?php if ($past["book_img"] != '') :?>
+		<?php if ($past["book_img"] !== '') : ?>
             <div class="l-thumbnail">
 			    <figure class="thumbnail-wrapper">
 			    	<img src="book_img/<?php echo $past["book_img"]; ?>">

@@ -4,10 +4,8 @@ require('../dbconnect.php');
 session_start();
 
 $user_id = $_SESSION['id'];
-
 if (isset($_POST['past_isbn'])) {
-    $past_isbn = $_POST["past_isbn"];
-
+    $past_isbn   = $_POST["past_isbn"];
     $data        = "https://www.googleapis.com/books/v1/volumes?q=isbn:$past_isbn";
     $json        = file_get_contents($data);
     $json_decode = json_decode($json);
@@ -16,8 +14,7 @@ if (isset($_POST['past_isbn'])) {
     if (isset($posts[0]->volumeInfo->title)) {
         $past_book   = $posts[0]->volumeInfo->title;
         $past_author = $posts[0]->volumeInfo->authors[0];
-
-        $flag = 0;
+        $flag        = 0;
 
         if (isset($_POST['past_story'])) {
             $past_comment = $_POST["past_story"];
@@ -39,13 +36,11 @@ if (isset($_GET['isbn'])) {
     } else {
         $past_book2 = '';
     }
-
     if (isset($_POST['past_author'])) {
         $past_author2 = $_POST['past_author'];
     } else {
         $past_author2 = '';
     }
-
     if (isset($_POST['past_story'])) {
         $past_comment2 = $_POST['past_story'];
     } else {
@@ -56,8 +51,6 @@ if (isset($_GET['isbn'])) {
     $past_data = array($user_id,$past_isbn2,$past_book2,$past_author2,$past_comment2);
     $past_stmt = $dbh->prepare($past_sql);
     $past_stmt->execute($past_data);
-
-    // header("Location: ../mypage2.php?isbn_code=" . $_GET['isbn']);
 }
 
 ?>
@@ -81,7 +74,7 @@ if (isset($_GET['isbn'])) {
     </div>
   </div>
 
-  <?php if ($flag == 0) { ?>
+  <?php if ($flag == 0) : ?>
   <div class="container" style="">
 
     <div class="row">
@@ -116,9 +109,9 @@ if (isset($_GET['isbn'])) {
     </div><!-- row -->
 
   </div><!-- container -->
-  <?php }else{ ?>
+  <?php else : ?>
   <p>isbnが違う可能性があります。</p>
   <a href="../mypage2.php">マイページに戻る。</a>
-  <?php } ?>
+  <?php endif; ?>
 </body>
 </html>

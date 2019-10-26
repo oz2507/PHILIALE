@@ -4,7 +4,6 @@ session_start();
 require('dbconnect.php');
 
 $isbn = $_GET['isbn_code'];
-
 $sql  = 'SELECT * FROM past_archives WHERE isbn_code = ?';
 $data = array($isbn);
 $stmt = $dbh->prepare($sql);

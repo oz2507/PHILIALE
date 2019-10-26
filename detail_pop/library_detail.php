@@ -14,11 +14,11 @@
         <div class="row">
             <div class="col-xs-12 col-md-6 col-md-offset-3">
                 <div class="book_img">
-                    <?php if ($book["book_img"]!='') {?>
+                    <?php if ($book["book_img"] != '') : ?>
                         <img src="book_img/<?php echo $book["book_img"]; ?>">
-                    <?php }else{ ?>
+                    <?php else : ?>
                         <img src="assets/img/philia2.png" alt="no image">
-                    <?php } ?>
+                    <?php endif; ?>
                 </div>
             </div>
         </div><!-- row -->
@@ -43,27 +43,27 @@
 
 	<a id="modal-open<?php echo $book["id"]; ?>" class="button-link modal-open">
       <div class="col-xs-6 col-md-3">
-          <?php if ($book["book_img"] != '') :?>
-              <div class="l-thumbnail">
-              <figure class="thumbnail-wrapper">
-                <img src="book_img/<?php echo $book["book_img"]; ?>">
-                </figure>
-                <span class="more-text">
-                      <p>タイトル:<?php echo $book['book_title']; ?></p>
-                      <p>作者:<?php echo $book['book_author']; ?></p>
-                  </span>
-              </div>
-          <?php else :?>
-              <div class="l-thumbnail">
-                  <figure class="thumbnail-wrapper">
-                      <img src="assets/img/philia2.png" alt="no image">
-                  </figure>
-                  <span class="more-text">
-                      <p>タイトル:<?php echo $book['book_title']; ?></p>
-                      <p>作者:<?php echo $book['book_author']; ?></p>
-                  </span>
-              </div>
-          <?php endif; ?>
+        <?php if ($book["book_img"] != '') : ?>
+        <div class="l-thumbnail">
+          <figure class="thumbnail-wrapper">
+            <img src="book_img/<?php echo $book["book_img"]; ?>">
+          </figure>
+          <span class="more-text">
+            <p>タイトル:<?php echo $book['book_title']; ?></p>
+            <p>作者:<?php echo $book['book_author']; ?></p>
+          </span>
+        </div>
+        <?php else : ?>
+        <div class="l-thumbnail">
+          <figure class="thumbnail-wrapper">
+            <img src="assets/img/philia2.png" alt="no image">
+          </figure>
+          <span class="more-text">
+            <p>タイトル:<?php echo $book['book_title']; ?></p>
+            <p>作者:<?php echo $book['book_author']; ?></p>
+          </span>
+        </div>
+        <?php endif; ?>
     </div>
 	</a>
- <?php endforeach; ?>
+<?php endforeach; ?>

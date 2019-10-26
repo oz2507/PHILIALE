@@ -44,33 +44,33 @@
 	    </div>
 	  </nav>
 
-    <!-- header -->
-    <div class="container-head">
-      <div class="row">
-        <div class="col-xs-12 col-md-12">
-          <img src="assets/img/gif/フィリア.gif" alt="head-design" class="head-img" style="width: 100%;">	
-        </div>
-      </div>
-    </div>
+	<!-- header -->
+	<div class="container-head">
+		<div class="row">
+			<div class="col-xs-12 col-md-12">
+				<img src="assets/img/gif/フィリア.gif" alt="head-design" class="head-img" style="width: 100%;">
+			</div>
+		</div>
+	</div>
 
-    <!-- what's philiale -->
-    <div id="what" class="container">
-      <div class="row">
-        <div class="title">
-          <h1>WHAT'S PHILILALE?</h1>
-        </div>
-        <!-- left -->
-        <div class="col-xs-12 col-md-6 half-col_1">
-          <h3>読書フェチのためのWeb上の書庫です。</h3>
-            <p>フィリアールは<font color="#8f4796">読み終わった本や読みたい本を保管するため</font>の<br>あなた専用のWeb上の書庫です。</p>
-            <p>フィリアールで本を保管しておけば、<font color="#8f4796">あなたに代わって本の詳細を記載して</font><br>いつでも引き出せるように本を管理することができます。</p>
-            <p>利用方法はとてもシンプルで、<font color="#8f4796">本のタイトルを入力する</font>だけ。</p>
-            <p>フィリアールはあなたの<font color="#8f4796">愛する本を簡単にそして美しく</font>管理することができます。</p>
-            <div class="botton">
-              <a class="btn" href="register/signup.php">フィリアールの会員になる</a>
-            </div>
-          <div>
-          <h5><a href="signin.php">会員の方はこちらから入館</a></h5>
+	<!-- what's philiale -->
+	<div id="what" class="container">
+		<div class="row">
+			<div class="title">
+				<h1>WHAT'S PHILILALE?</h1>
+			</div>
+			<!-- left -->
+			<div class="col-xs-12 col-md-6 half-col_1">
+				<h3>読書フェチのためのWeb上の書庫です。</h3>
+				  <p>フィリアールは<font color="#8f4796">読み終わった本や読みたい本を保管するため</font>の<br>あなた専用のWeb上の書庫です。</p>
+				  <p>フィリアールで本を保管しておけば、<font color="#8f4796">あなたに代わって本の詳細を記載して</font><br>いつでも引き出せるように本を管理することができます。</p>
+				  <p>利用方法はとてもシンプルで、<font color="#8f4796">本のタイトルを入力する</font>だけ。</p>
+				  <p>フィリアールはあなたの<font color="#8f4796">愛する本を簡単にそして美しく</font>管理することができます。</p>
+			    <div class="botton">
+				    <a class="btn" href="register/signup.php">フィリアールの会員になる</a> 
+				  </div>
+				<div>
+					<h5><a href="signin.php">会員の方はこちらから入館</a></h5>
 		    </div>
 			</div>
 

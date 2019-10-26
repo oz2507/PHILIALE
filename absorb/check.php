@@ -1,34 +1,12 @@
 <?php
 
-function getApiData($url) {
-    $options = [
-        'http' => [
-            'method'  => 'GET',
-            'timeout' => 10,
-        ],
-    ];
-}
-
-$json = @file_get_contents($url, false, stream_context_create($options));
-
-if ($json === false) {
-    return null;
-}
-
-preg_match('/HTTP\/1\.[0|1|x] ([0-9]{3})/', $http_response_header[0], $matches);
-$statusCode = (int)$matches[1];
-
-if ($statusCode !== 200) {
-    return null;
-}
-
-$jsonArray = json_decode($json);
 if (isset($_GET['id'])) {
     $id          = $_GET['id'];
     $data        = "https://spreadsheets.google.com/feeds/list/$id/od6/public/values?alt=json";
-    $json_decode = getApiData($data);
+    $json        = @file_get_contents($data, false, stream_context_create($options));
+    $json_decode = json_decode($json);
 
-    if ($json_decode == null){
+    if ($json_decode == null) {
         echo '';
     } else {
         $books = $json_decode->feed->entry;
@@ -71,7 +49,7 @@ if (isset($_GET['id'])) {
 
       <!-- <h1>検索結果</h1> -->
       <?php if ($json_decode !== null) :
-          foreach($books as $book) : ?>
+          foreach ($books as $book) : ?>
         <div class="row">
           <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
             <div class="list_form">

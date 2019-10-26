@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+require('../dbconnect.php');
 
 if (!isset($_SESSION['register'])) {
     header("Location: signup.php");
@@ -12,8 +13,6 @@ $email         = $_SESSION['register']['email'];
 $user_password = $_SESSION['register']['password'];
 
 if (!empty($_POST)) {
-    require('../dbconnect.php');
-
     $sql  = 'INSERT INTO `users` SET `name` = ?, `email` = ?, `password` = ? ';
     $data = array($name, $email, password_hash($user_password, PASSWORD_DEFAULT),);
     $stmt = $dbh->prepare($sql);
@@ -41,26 +40,21 @@ if (!empty($_POST)) {
 <body style="margin: 60px 0;">
   <div class="container">
     <div class="row">
-
         <div class="col-xs-12 col-md-6 col-md-offset-3" style="height:500px;">
         <h2 class="text-center">登録情報の確認</h2>
         <br><br><br>
         <div class="row">
           <div class="col-xs-12">
-
               <div class="form-group">
               <span>お名前</span>
               <p class="lead text-center"><?php echo htmlspecialchars($name); ?>&nbsp;様</p>
             </div>
-
               <div class="form-group">
               <span>メールアドレス</span>
               <p class="lead text-center"><?php echo htmlspecialchars($email); ?></p>
             </div>
-
               <div class="form-group">
               <span>パスワード</span>
-
               <p class="lead text-center">●●●●●●●●</p>
             </div>
 
@@ -76,6 +70,5 @@ if (!empty($_POST)) {
       </div>
     </div>
   </div>
-
 </body>
 </html>

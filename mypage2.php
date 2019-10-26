@@ -8,8 +8,7 @@ if (empty($_SESSION)) {
 }
 
 $past_books = array();
-
-if (isset($_GET['search_word']) === true) {
+if (isset($_GET['search_word']) == true) {
     $past_sql = 'SELECT * FROM `past_archives` WHERE `book_title` LIKE "%' . $_GET['search_word'] . '%" OR `book_author` LIKE "%' . $_GET['search_word'] . '%" AND `user_id` = ?';
 } else {
     $past_sql = 'SELECT * FROM `past_archives` WHERE `user_id` = ?';
@@ -29,8 +28,7 @@ while (true) {
 }
 
 $future_books = array();
-
-if (isset($_GET['search_word']) === true) {
+if (isset($_GET['search_word']) == true) {
     $future_sql = 'SELECT * FROM `future_archives` WHERE `user_id` = ? AND `book_title` LIKE "%' . $_GET['search_word'] . '%" OR `book_author` LIKE "%' . $_GET['search_word'] . '%"';
 } else {
     $future_sql = 'SELECT * FROM `future_archives` WHERE `user_id` = ?';
@@ -48,12 +46,10 @@ while (true) {
     $future_books[] = $record_future;
 }
 
-if(isset($_POST['isbn'])) {
+if (isset($_POST['isbn'])) {
     $isbn = $_POST['isbn'];
-
 } elseif (isset($_GET['isbn_code'])) {
     $isbn = $_GET['isbn_code'];
-
 } else {
     $isbn = 0;
 }
@@ -182,7 +178,6 @@ if (isset($_POST['past_isbn'])) {
             $past_stmt = $dbh->prepare($past_sql);
             $past_stmt->execute($past_data);
         }
-
     } else {
         echo "isbnが正しくないもしくはisbnが入力されていません。";
     }
@@ -249,9 +244,9 @@ if (isset($_POST['past_isbn'])) {
 <!-- 読みたい -->
 <div class="tab-content">
   <div id="tab1" class="tab-pane fade">
-    <?php if (isset($_GET['flag']) && $_GET['flag'] == 2 ) { ?>
+    <?php if (isset($_GET['flag']) && $_GET['flag'] == 2 ) : ?>
       <p>検索結果が得られなかった方は<a href="title_search.php?flag=<?php echo $_GET['flag']; ?>">こちら</a>。</p>
-    <?php } ?>
+    <?php endif; ?>
 
 	<!-- add book -->
 	<div class="container">
@@ -274,10 +269,10 @@ if (isset($_POST['past_isbn'])) {
 
 　<!-- 読んだ -->
 　<div id="tab2" class="tab-pane fade">
-	<?php if (isset($_GET['flag']) && $_GET['flag'] == 1) { ?>
+	<?php if (isset($_GET['flag']) && $_GET['flag'] == 1) : ?>
 	<p>isbnが正しくないもしくはisbnが入力されていません。</p>
 	<p>検索結果が得られなかった方は<a href="title_search.php?flag=<?php echo $_GET['flag']; ?>">こちら</a>。</p>
-    <?php } ?>
+    <?php endif; ?>
 	<div class="container">
 	  <div class="row">
 		<!-- 新規追加 -->

@@ -15,11 +15,11 @@
             <div class="row">
                 <div class="col-xs-12 col-md-6 col-md-offset-3">
                    <div class="book_img">
-                      <?php if ($future["book_img"]!='') :?>
-                          <img src="book_img/<?php echo $future["book_img"]; ?>" class="book_pic">
-                      <?php else : ?>
-                          <img src="assets/img/philia2.png" alt="no image" class="book_pic">
-                      <?php endif; ?>
+                    <?php if ($future["book_img"] != '') : ?>
+                        <img src="book_img/<?php echo $future["book_img"]; ?>" class="book_pic">
+                    <?php else : ?>
+                        <img src="assets/img/philia2.png" alt="no image" class="book_pic">
+                    <?php endif; ?>
                    </div>
                  </div>
             </div><!-- row -->
@@ -70,7 +70,8 @@
 
 <a id="modal-open-future<?php echo $future["id"]; ?>" class="button-link modal-open-future">
     <div class="col-xs-6 col-md-3">
-        <?php if ($future["book_img"] != '') :?>
+        <?php if ($future["book_img"] != '') : ?>
+
             <div class="l-thumbnail">
                 <figure class="thumbnail-wrapper">
                     <img src="book_img/<?php echo $future["book_img"]; ?>">

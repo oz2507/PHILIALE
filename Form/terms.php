@@ -101,7 +101,6 @@
             </p>
           </a>
         </div>
-
         <div class="policy col-xs-12">
           <a href="policies.php">
             <p>プライバシーポリシーはこちらから</p>

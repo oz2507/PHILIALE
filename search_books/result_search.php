@@ -87,7 +87,7 @@ if (!empty($_POST)) {
         </div>
     </div>
 
-    <?php foreach($posts as $post) : ?>
+    <?php foreach ($posts as $post) : ?>
       <div class="container">
         <div class="row">
             <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
@@ -120,7 +120,7 @@ if (!empty($_POST)) {
         </div>
       </div>
     <?php endforeach; ?>
-    <?php endif; ?>
+  <?php endif; ?>
 <?php endif; ?>
 </body>
 </html>

@@ -4,7 +4,6 @@ session_start();
 require('dbconnect.php');
 
 $errors = array();
-
 if (!empty($_POST)) {
     $book_id  = $_GET['id'];
     $book_img = $_FILES['book_img']['name'];
@@ -19,7 +18,7 @@ if (!empty($_POST)) {
     }
 }
 
-if(empty($errors)){
+if (empty($errors)) {
     date_default_timezone_set('Asia/Manila');
     $date_str         = date('YmdHis');
     $submit_file_name = $date_str.$book_img;

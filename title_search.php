@@ -55,7 +55,7 @@ if ($_POST['book_title'] !== '') {
     </div><!-- row -->
   </div><!-- container -->
   <?php else :
-      foreach($posts as $post) :?>
+      foreach ($posts as $post) :?>
   <form>
     <p>本のタイトル :<?php echo $post->volumeInfo->title; ?></p>
     <p>著者 :<?php echo $post->volumeInfo->authors[0]; ?></p>
@@ -63,7 +63,7 @@ if ($_POST['book_title'] !== '') {
     <button type="submit">追加する</button>
   </form><br>
   <p>---------------------------------------------</p>
-  <?php endforeach ?>
+  <?php endforeach; ?>
   <?php endif; ?>
 </body>
 </html>
